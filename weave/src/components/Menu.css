@@ -1,0 +1,100 @@
+/* 메뉴.CSS - Menu.css */
+/* html,body{
+    width: 100%;
+    height: 100%;
+} */
+
+.top{
+    width: 80%;
+    margin: 0 auto;
+    border-bottom: 1px solid#cecece;
+}
+
+.menubox{
+    /* position: relative; */
+    width: 150px;
+    height: 60px;
+    margin: 0 auto;
+    line-height: 67px;
+    font-size: 24px;
+}
+
+.menu_a{
+    position: relative;
+    width: 100px;
+    outline: 1px solid red;
+    border-bottom: 3px solid #0090A8;
+    margin-right: 20px;
+    padding-bottom: 10px;
+    
+}
+
+.menu_m{
+
+}
+
+.menu_a,.menu_m:active{
+    color: #0090A8;
+}
+
+/* 더보기버튼 */
+.more{
+    position: absolute;
+    top: 80%;
+    transform: translateX(-50%);
+    left: 50%;
+    width: 90px;
+    height: 30px;
+    border: none;
+    background-color: #cecece;
+}
+
+/* ul */
+.file_table{
+    width: 60%;
+    height: 40px;
+    outline: 1px solid #cecece;
+}
+
+/* li */
+.file_table li{
+    width: 25%;
+    outline: 1px solid orange;
+}
+
+/* li 구분선 가상요소 */
+.file_table>li::before{
+    content: "";
+    display: block;
+    border-left: 1xp solid #cecece;
+}
+
+/* input */
+.file_table input{
+    width: 20px;
+    display: inline-block;
+    font-size: inherit;
+    line-height: normal;
+    background-color: transparent;
+    cursor: pointer;
+    
+}
+
+.file_table input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:rect(0,0,0,0);
+}
+
+.icon01::after{
+    width: 28px;
+    height: 28px;
+    background: url(../imgs/ico01.jpg) no-repeat;
+}
+
+
+
