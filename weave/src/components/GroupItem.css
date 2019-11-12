@@ -1,0 +1,57 @@
+/* 그룹아이템.CSS - GroupItem.css */
+
+.groupitem{
+    position: relative;
+    width: 80%;
+    top: 10px;
+    margin: 0 auto;
+    /* outline: 1px solid red; */
+}
+
+
+/* 그룹공통 */
+.contbox{
+    position: relative;
+    width: 280px;
+    height: 310px;
+    outline: 1px solid #cecece;
+    display: inline-block;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+/* 그룹타이틀 */
+.contbox>h1{
+    padding: 5px 0 0 5px;
+    font: bold 1.25rem "Nanum Gothic",'san-serief';
+    color: #333;
+}
+
+/* 그룹소개글 */
+.contbox>p{
+    padding-left: 5px;
+    font: 1rem "Nanum Gothic",'san-serief';
+    color: #555;
+    overflow: hidden;
+}
+
+.dogimg{
+    width: 280px;
+    height: 70%;
+    background: url(../imgs/puppy.jpg) no-repeat center/cover;
+}
+
+.foodimg{
+    width: 280px;
+    height: 70%;
+    background: url(../imgs/food.jpg) no-repeat center/cover;
+}
+
+.travelimg{
+    width: 280px;
+    height: 70%;
+    background: url(../imgs/fly.jpg) no-repeat center/cover;
+}
+
+

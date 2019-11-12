@@ -1,11 +1,11 @@
 import React from 'react';
-
+import axios from 'axios';
 //import './First.css';
 //import '../routes/Templete.css';
 
 class File extends React.Component{
   constructor(props){
-    super(props)
+    super(props);
     this.state = {
       file: null
     }
@@ -16,9 +16,21 @@ class File extends React.Component{
       file: URL.createObjectURL(event.target.files[0])
     })
   }
+  state={
+    selctedFile:null
+  }
+  fileUpSelcetedHandler=event=>{
+    //console.log(event.target.file);
+    this.setState({
+      selctedFile:event.target.file[0]
+    })
+  }
+
+  fileUploadHandler=()=>{
+    axios.post('');
+  }
 
   render(){
-
     return(
         <form className="pop">
           <div className="gimg">
@@ -37,10 +49,14 @@ class File extends React.Component{
             <label htmlFor ="name" className="gtit"> 그룹소개</label>
             <input type="text" name="gintro" className="gintro"></input>
             <p className="send">
-              <input type="submit" value="올리기"></input>
+              <input type="submit" value="올리기"
+                     onClick={this.fileUploadHandler}
+              ></input>
               <input type="reset" value="취소" onClick={function(){
                 var pop = document.querySelector(".pop")
+                var block = document.querySelector(".block")
                 pop.style.display="none"
+                block.style.display="none"
               }}></input>
             </p>
             {this.props.children}

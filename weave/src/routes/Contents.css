@@ -1,0 +1,203 @@
+/* 전체글 게시물올리기 양식 CSS - Contents.css */
+
+.wrap{
+    position: relative;
+    top: 30px;
+    left: 0;
+    margin: 0 auto;
+    width: 80%;
+    /* height: 100%; */
+    /* outline: 3px solid orange; */
+}
+
+/* 그룹정보 전체 */
+.groupinfo{
+    position: relative;
+    left: 0;
+    width: 23%;
+    height: 390px;
+    outline: 1px solid #cecece;
+}
+/* 그룹정보 이미지 */
+.groupimg{
+    width: 100%;
+    height: 50%;
+    background: url(../imgs/puppy.jpg) no-repeat top/cover;
+}
+.grouptext{
+    margin: 13px;
+}
+/* 그룹정보 h1텍스트 */
+.grouptext h1{
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+/* 그룹정보 p 텍스트 */
+.grouptext p{
+    font-size: 1rem;
+    color: #777;
+}
+.grouptext div{
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 50px;
+    margin-right: 20px;
+}
+
+/* 가입하기 */
+.gjoin{
+    width: 90px;
+    height: 30px;
+    background-color: #0090A8;
+    border-radius: 5px;
+    text-align: center;
+    font: 0.875rem/1.75rem "Nanum Gothic";
+    color: #fff;
+    cursor: pointer;
+}
+/* 탈퇴하기 */
+.gout{
+    color: #0090A8;
+    font: 0.875rem/1.75rem "Nanum Gothic";
+}
+.gout::before{
+    content: "";
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background: url(../imgs/ico_setting.jpg) no-repeat;
+    vertical-align: -9px;
+    cursor: pointer;
+}
+
+
+/* 테이블전체 */
+.uploadTb{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 75%;
+    height: 198px;
+    outline: 1px solid #cecece;
+    padding: 0;
+    margin: 0;
+}
+.uploadTb>tbody{
+    margin: 0;
+    padding: 0;
+}
+
+/* 행 */
+.uploadTb > tr{
+    width: 1100%;
+    height: 60%;
+    border-bottom: 1px solid #cecece;
+}
+
+/* 두번째행 각 열 */
+.uploadTb>tr>td{
+    width: 24%; /*4등분 */
+    height: 40%;
+    /* background-color: #fff; */
+    text-align: center;
+}
+
+/* 첫번째칸  */
+.uploadTb > .row1{
+    text-align: left;
+}
+
+.uploadTb input[type="textarea"]{
+    width: 100%;
+    height: 100%;
+    color: #333;
+    border: none;
+    font-size: 1rem;
+    border-bottom: 1px solid #cecece;
+}
+
+.uploadTb input::placeholder{
+    text-indent: 20px;
+    color: #0090A8;
+    font: bold 1rem/1rem "Nanum Gothic",'san-serief';
+}
+
+/* .row2>input{
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+ */
+
+
+/* 
+.uploadTb input[type="file"], .uploadTb input[type="submit"]{ 
+    position: relative;
+    display: block; 
+    width: 100%; 
+    height: 100%; 
+    padding: 0; 
+    margin: 0; 
+    overflow: hidden; 
+    clip:rect(0,0,0,0); 
+    border: 0; 
+    border-right: 1px solid #cecece;
+    cursor: pointer;
+    background-color: transparent;
+} */
+
+
+/* 각 아이콘이미지 */
+.row2 td:nth-child(1){
+    background: url(../imgs/ico01.jpg) no-repeat;
+}
+.row2 td:nth-child(2){
+    background: url(../imgs/ico02.jpg) no-repeat;
+}
+.row2 td:nth-child(3){
+    background: url(../imgs/ico03.jpg) no-repeat;
+}
+.row2 td:nth-child(4){
+    background: url(../imgs/ico04.jpg) no-repeat;
+}
+
+/* 
+#img_file{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:rect(0,0,0,0);
+} */
+
+/* 게시물 아무것도 없을 때 */
+.letsbegin{
+    position: absolute;
+    top: 55%;
+    right: 0;
+    width: 75%;
+    height: 50px;
+    outline: 1px solid #cecece;
+    font: 1rem/3.125rem "Nanum Gothic";
+    color: #666;
+    text-indent: 20px;
+}
+
+
+
+
+/* 더보기버튼 */
+.more{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(100%);
+    margin-top: 300px;
+    width: 90px;
+    height: 30px;
+    border: none;
+    background-color: #cecece;
+}

@@ -22,7 +22,7 @@
 .menu_a{
     position: relative;
     width: 100px;
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
     border-bottom: 3px solid #0090A8;
     margin-right: 20px;
     padding-bottom: 10px;
@@ -30,24 +30,13 @@
 }
 
 .menu_m{
-
+    color: #cecece;
 }
 
 .menu_a,.menu_m:active{
     color: #0090A8;
 }
 
-/* 더보기버튼 */
-.more{
-    position: absolute;
-    top: 80%;
-    transform: translateX(-50%);
-    left: 50%;
-    width: 90px;
-    height: 30px;
-    border: none;
-    background-color: #cecece;
-}
 
 /* ul */
 .file_table{

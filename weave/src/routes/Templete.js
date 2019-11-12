@@ -1,71 +1,39 @@
 import React, {Component} from 'react';
+import {NavLink} from 'react-router-dom';
+
+import File from "../components/File";
+import Plus from "../components/plus";
+import Dog from "../components/Dog";
+import Travel from "../components/Travel";
+import Food from "../components/Food";
 
 import './Templete.css';
-import File from "../components/File";
+import '../components/GroupItem.css';
 
 class Templete extends Component{
-  constructor(props){
-    super(props)
-    console.log('모달창떠라');
-    this.state = {
-      
-    }
-    this.ModalPop = this.ModalPop.bind(this)
-  }
-  ModalPop(event) {
-    var pop = document.getElementsByClassName('pop');
- 
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0]; 
-
-    // When the user clicks on the button, open the modal 
-    btn.onclick = function() {
-      pop.style.display = "block";
-  }
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-        pop.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == pop) {
-            pop.style.display = "none";
-      }
-  }
-  
-
- }///ModalPop///
-
   render(){
     return (
       <div>
         {/* 구분선 */}
-        <hr className="hrline"></hr>
+        <span className="hrline"></span>
         {/* 그룹만들기창 */}
         <File></File>
-        {/*  Trigger/Open The Modal  */}
-        <div className="btnbox">
-          <p>그룹만들기</p>
-          <button id="myBtn" onClick={function(){
-            var pop = document.querySelector('.pop');
-            pop.style.display="block"
-          }}></button>
+        {/* 컨텐츠그룹 */}
+        <div className="groupitem">
+          <Plus></Plus>
+          <NavLink  exact to="/dog" className="" activeClassName="active">
+            <Dog></Dog>
+          </NavLink>            
+          <NavLink to="/travel" className="" activeClassName="active">
+            <Travel></Travel>
+          </NavLink>            
+          <NavLink to="/food" className="" activeClassName="active">
+            <Food></Food>
+          </NavLink>        
         </div>
-        {/* The Modal */}
-        <div id="myModal" className="modal">
-          {/*  Modal content  */}
-          <div className="modal-content">
-            <span className="close">&times;</span>
-          </div>
-        </div>
-        {/* 터지방지막 */}
+      
+        {/* 터치방지막 */}
         <div className="block"></div>
-
       </div>
     );
   }

@@ -68,7 +68,7 @@
     width: 45px;
     height: 39px;
     background: url(./imgs/ico_upload.png) no-repeat bottom/cover;
-    margin-top: 22px;
+    margin-top: 25px;
     margin-left: 90px;
     vertical-align: -10px;
 }
@@ -138,61 +138,28 @@
 
 /* 터치방지막 */
 .block{
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     display: none;
+    background-color: rgba(83, 83, 83, 0.5);
 }
 
-
-
-
-/* 모달 */
-
- /* The Modal (background) */
- .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; 
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%; /* Could be more or less, depending on screen size */                          
-}
-/* The Close Button */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
 
 /* 버튼부모박스 */
 .btnbox{
     position: relative;
-    top: 10px;
-    left: 10%;
+    /* top: 10px; */
+    /* left: 10%; */
     width: 280px;
     height: 310px;
     outline: 1px solid #cecece;
-    text-align: bottom; 
+    text-align: bottom;
+    display: inline-block; 
+    float: left;
+    margin-left: 10px;
 }
 
 /* 플러스버튼 */
@@ -206,6 +173,7 @@
     background: url(../imgs/ico_plus.png) no-repeat;
     margin-top: 5px;
     border: none;
+    cursor: pointer;
 }
 
 /*  그룹만들기text */
