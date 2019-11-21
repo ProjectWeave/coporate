@@ -28,17 +28,3 @@ const App = () => {
 };
 
 export default App;
-
-//
-//   class App extends Component{
-//     render(){
-//       return(
-//         <div>
-//           <Information></Information>
-//           <Login></Login>
-//         </div>
-//       )
-//     }
-//   }
-
-// export default App;
