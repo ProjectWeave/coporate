@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import '../components/First.css';
+//import '../components/First.css';
 
 class Information extends Component{
   render(){
