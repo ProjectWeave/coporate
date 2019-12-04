@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 //import './First.css';
-//import '../routes/Templete.css';
+import '../routes/Templete.css';
 
 class File extends React.Component{
   constructor(props){
@@ -41,23 +41,23 @@ class File extends React.Component{
             <label htmlFor ="file">사진을 선택해주세요.</label>
             <input type="file" id="file" name="file" size="100" 
                    accept=".jpg, .jpeg, .png" className="upload"
-                   onChange={this.handleChange}/>
+                   onChange={this.handleChange} />
           </div>
           <div className="group">
             <label htmlFor ="name" className="gtit"> 그룹이름</label>
-            <input type="text" name="gname" className="gname"></input>
+            <input type="text" name="gname" className="gname" />
             <label htmlFor ="name" className="gtit"> 그룹소개</label>
-            <input type="text" name="gintro" className="gintro"></input>
+            <input type="text" name="gintro" className="gintro" />
             <p className="send">
               <input type="submit" value="올리기"
                      onClick={this.fileUploadHandler}
-              ></input>
+              />
               <input type="reset" value="취소" onClick={function(){
                 var pop = document.querySelector(".pop")
                 var block = document.querySelector(".block")
                 pop.style.display="none"
                 block.style.display="none"
-              }}></input>
+              }} />
             </p>
             {this.props.children}
           </div>

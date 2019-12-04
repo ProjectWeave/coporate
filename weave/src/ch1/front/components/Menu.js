@@ -1,9 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
+//import { BrowserRouter as Router,Route, Switch } from 'react-router-dom';
+//import Contents from '../routes/Contents';
+//import Member from '../routes/Member';
 import './Menu.css';
 
-
-const Menu = () => {
+ const Menu = () => {
   return (
     <div className="top">
         <div className="menubox">
@@ -16,10 +18,16 @@ const Menu = () => {
         </div>
       </div>
   );
-};
+};      
 
 export default Menu;
 
+
+{/* <Switch>
+    <Route exact path="/" component={Contents}/>
+    <Route path="/contents" component={Member}/>
+ </Switch>
+          */}
 
 //import React, {Component} from 'react';
 // import {NavLink} from 'react-router-dom';

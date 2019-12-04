@@ -20,13 +20,14 @@ import { useSelector } from 'react-redux';
 import Home from '../components/Home';
 import PostForm from '../components/PostForm';
 import '../components/First.css';
+
 const HomePage = () => {
   const { isLoggedIn } = useSelector(state => state.user);
   const { mainPosts } = useSelector(state => state.post);
 
   return (
     <div>
-      {isLoggedIn && <Home />}
+      {/* {isLoggedIn && <Home />} */}
       {mainPosts.map((c) => {
         return (
           <div key={c} post={c} />

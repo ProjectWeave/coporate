@@ -39,7 +39,7 @@ const Join = () => {
     useEffect(() => {
         if(me){
             alert('로그인했으니 메인페이지로 이동합니다.');
-            Router.push("/");
+            Router.push("/indexpage");
         }
     }, [me && me.id]);
 
@@ -89,29 +89,29 @@ const Join = () => {
     return(
         <>
             <form onSubmit={onSubmit}>
-                <div value={id} required onChange={onChangeId}>
-                    <label htmlFor="user-id">아이디</label><br />
-                    <input name="user-id"></input>
+                <div>
+                    <label htmlFor="user-id" placeholder="아이디" /><br />
+                    <input name="user-id"  value={id} required onChange={onChangeId} />
                 </div>
-                <div value={nick} required onChange={onChangeNick}>
-                    <label htmlFor="user-nick">닉네임</label><br />
-                    <input name="user-nick"></input>
+                <div>
+                    <label htmlFor="user-nick" />닉네임<br />
+                    <input name="user-nick" value={nick} required onChange={onChangeNick} />
                 </div>
-                <div value={password} required onChange={onChangePassword}>
-                    <label htmlFor="user-password">비밀번호</label><br />
-                    <input name="user-password" type="password" ></input>
+                <div>
+                    <label htmlFor="user-password" />비밀번호<br />
+                    <input name="user-password" type="password" value={password} required onChange={onChangePassword} />
                 </div>
-                <div value={passwordCheck} required onChange={onChangePasswordCheck}>
-                    <label htmlFor="user-password-chk">비밀번호체크</label><br />
-                    <input name="user-password-chk" type="password"></input>
+                <div>
+                    <label htmlFor="user-password-chk" />비밀번호체크<br />
+                    <input name="user-password-chk" type="password" value={passwordCheck} required onChange={onChangePasswordCheck} />
                     {passwordError && <div style={{color:'red'}}>비밀번호가 일치하지 않습니다.</div>}
                 </div>
-                <div checked={term} onChange={onChangeTerm}>
-                    <input type="checkbox" name="user-term">말을 잘 들을것에 동의 합니다</input>
+                <div>
+                    <input type="checkbox" name="user-term" checked={term} onChange={onChangeTerm} placeholder="말을 잘 들을것에 동의 합니다" />
                     {termError && <div style={{color:'red'}}>약관에 동의하셔야합니다.</div>}
                 </div>
                 <div style={{ marginTop:10 }}>
-                    <input type="button" htmlType="submit" loading={isSigningUp}>가입하기</input>
+                    <button htmlType="submit" loading={isSigningUp} placeholder="가입하기" />
                 </div>
             </form>
         </>

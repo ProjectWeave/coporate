@@ -280,44 +280,7 @@ const Login = () => {
   }, "\uD68C\uC6D0\uAC00\uC785"))))))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Login); // import React,{useCallback} from 'react';
-// import { Button,Input,Form } from 'antd';
-// import Link from 'next/link';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { useInput } from '../pages/signup';
-// import { LOG_IN_REQUEST } from '../reducers/user';
-// const LonginForm = () => {
-//     const [id, onChangeId] = useInput();
-//     const [password, onChangePassword] = useInput();
-//     const { isLoggingIn } = useSelector(state => state.user);
-//     const dispatch = useDispatch();
-//     const onSubmitForm = useCallback((e) => {
-//         e.preventDefault();
-//         dispatch({
-//             type: LOG_IN_REQUEST,
-//             data: {
-//                 id, password,
-//             },
-//         });
-//     },[id, password]);
-//     return (
-//         <Form onSubmit={onSubmitForm} style={{padding:'10px'}}>
-//             <div>
-//                 <label htmlFor="user-id">아이디</label><br />
-//                 <Input name="user-id" value={id} onChange={onChangeId} required ></Input>
-//             </div>
-//             <div>
-//                 <label htmlFor="user-password">비밀번호</label><br />
-//                 <Input name="user-pasword" value={password} onChange={onChangePassword} type="password" required></Input>
-//             </div>
-//             <div style={{marginTop:'10px'}}>
-//                 <Button type="primary" htmlType="submit" loading={isLoggingIn}>로그인</Button>
-//                 <Link href="/signup"><a><Button>회원가입</Button></a></Link>
-//             </div>
-//         </Form>
-//     );
-// };
-// export default LonginForm;
+/* harmony default export */ __webpack_exports__["default"] = (Login);
 
 /***/ }),
 
@@ -11569,7 +11532,7 @@ const Join = () => {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     if (me) {
       alert('로그인했으니 메인페이지로 이동합니다.');
-      next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push("/");
+      next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push("/indexpage");
     }
   }, [me && me.id]);
   const onSubmit = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
@@ -11619,9 +11582,6 @@ const Join = () => {
     },
     __self: undefined
   }, __jsx("div", {
-    value: id,
-    required: true,
-    onChange: onChangeId,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 92
@@ -11629,12 +11589,13 @@ const Join = () => {
     __self: undefined
   }, __jsx("label", {
     htmlFor: "user-id",
+    placeholder: "\uC544\uC774\uB514",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 93
     },
     __self: undefined
-  }, "\uC544\uC774\uB514"), __jsx("br", {
+  }), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 93
@@ -11642,15 +11603,15 @@ const Join = () => {
     __self: undefined
   }), __jsx("input", {
     name: "user-id",
+    value: id,
+    required: true,
+    onChange: onChangeId,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 94
     },
     __self: undefined
   })), __jsx("div", {
-    value: nick,
-    required: true,
-    onChange: onChangeNick,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 96
@@ -11663,7 +11624,7 @@ const Join = () => {
       lineNumber: 97
     },
     __self: undefined
-  }, "\uB2C9\uB124\uC784"), __jsx("br", {
+  }), "\uB2C9\uB124\uC784", __jsx("br", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 97
@@ -11671,15 +11632,15 @@ const Join = () => {
     __self: undefined
   }), __jsx("input", {
     name: "user-nick",
+    value: nick,
+    required: true,
+    onChange: onChangeNick,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 98
     },
     __self: undefined
   })), __jsx("div", {
-    value: password,
-    required: true,
-    onChange: onChangePassword,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 100
@@ -11692,7 +11653,7 @@ const Join = () => {
       lineNumber: 101
     },
     __self: undefined
-  }, "\uBE44\uBC00\uBC88\uD638"), __jsx("br", {
+  }), "\uBE44\uBC00\uBC88\uD638", __jsx("br", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 101
@@ -11701,15 +11662,15 @@ const Join = () => {
   }), __jsx("input", {
     name: "user-password",
     type: "password",
+    value: password,
+    required: true,
+    onChange: onChangePassword,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 102
     },
     __self: undefined
   })), __jsx("div", {
-    value: passwordCheck,
-    required: true,
-    onChange: onChangePasswordCheck,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 104
@@ -11722,7 +11683,7 @@ const Join = () => {
       lineNumber: 105
     },
     __self: undefined
-  }, "\uBE44\uBC00\uBC88\uD638\uCCB4\uD06C"), __jsx("br", {
+  }), "\uBE44\uBC00\uBC88\uD638\uCCB4\uD06C", __jsx("br", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 105
@@ -11731,6 +11692,9 @@ const Join = () => {
   }), __jsx("input", {
     name: "user-password-chk",
     type: "password",
+    value: passwordCheck,
+    required: true,
+    onChange: onChangePasswordCheck,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 106
@@ -11746,8 +11710,6 @@ const Join = () => {
     },
     __self: undefined
   }, "\uBE44\uBC00\uBC88\uD638\uAC00 \uC77C\uCE58\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.")), __jsx("div", {
-    checked: term,
-    onChange: onChangeTerm,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 109
@@ -11756,12 +11718,15 @@ const Join = () => {
   }, __jsx("input", {
     type: "checkbox",
     name: "user-term",
+    checked: term,
+    onChange: onChangeTerm,
+    placeholder: "\uB9D0\uC744 \uC798 \uB4E4\uC744\uAC83\uC5D0 \uB3D9\uC758 \uD569\uB2C8\uB2E4",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 110
     },
     __self: undefined
-  }, "\uB9D0\uC744 \uC798 \uB4E4\uC744\uAC83\uC5D0 \uB3D9\uC758 \uD569\uB2C8\uB2E4"), termError && __jsx("div", {
+  }), termError && __jsx("div", {
     style: {
       color: 'red'
     },
@@ -11779,16 +11744,16 @@ const Join = () => {
       lineNumber: 113
     },
     __self: undefined
-  }, __jsx("input", {
-    type: "button",
+  }, __jsx("button", {
     htmlType: "submit",
     loading: isSigningUp,
+    placeholder: "\uAC00\uC785\uD558\uAE30",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 114
     },
     __self: undefined
-  }, "\uAC00\uC785\uD558\uAE30"))));
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Join);
@@ -11807,7 +11772,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Home */ "./components/Home.js");
+/* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Home */ "./components/Home.js");
 /* harmony import */ var _components_PostForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/PostForm */ "./components/PostForm.js");
 /* harmony import */ var _components_First_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/First.css */ "./components/First.css");
 /* harmony import */ var _components_First_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_First_css__WEBPACK_IMPORTED_MODULE_4__);
@@ -11842,22 +11807,16 @@ const HomePage = () => {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
-    },
-    __self: undefined
-  }, isLoggedIn && __jsx(_components_Home__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 29
     },
     __self: undefined
-  }), mainPosts.map(c => {
+  }, mainPosts.map(c => {
     return __jsx("div", {
       key: c,
       post: c,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32
+        lineNumber: 33
       },
       __self: undefined
     });

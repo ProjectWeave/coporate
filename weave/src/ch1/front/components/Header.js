@@ -1,24 +1,23 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+//import {NavLink} from 'react-router-dom';
+import { Link } from 'next/link';
 
 import './Header.css';
 
 const Header = () => {
     return (
         <div className="header">
-          <NavLink to="/" className="logo_w" activeClassName="active"></NavLink>
-          <div>
+          <div className="logo_w" activeClassName="active" />
             
-          </div>
           <div className="profile">
             {/* 프로필이미지 */}
             {/* 더보기란 */}
-            <button className="pfBtn"></button>
+            <button className="pfBtn" />
           </div>
           
           <div className="srcbox">
-              <input type="text" placeholder="검색해보세요." className="txtbox"></input>  
-              <input type="submit" value="Search" className="search"></input>
+              <input type="text" placeholder="검색해보세요." className="txtbox" />  
+              <input type="submit" value="Search" className="search" />
           </div>
 
         </div>

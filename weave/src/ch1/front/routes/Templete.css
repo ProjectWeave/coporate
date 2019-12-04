@@ -1,6 +1,13 @@
 /* 그룹생성CSS.Templete.css */
 
+html,body{
+    width:100%;
+    height:100%;
+} 
 
+.bld{
+    display: none;
+}
 /* 구분선 */
 .hrline{
     display: block;
@@ -151,8 +158,8 @@
 /* 버튼부모박스 */
 .btnbox{
     position: relative;
-    /* top: 10px; */
-    /* left: 10%; */
+    top: 10px;
+    left: 10%;
     width: 280px;
     height: 310px;
     outline: 1px solid #cecece;
