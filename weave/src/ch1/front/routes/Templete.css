@@ -26,15 +26,15 @@ html,body{
 /* 게시물올리는창 */
 .pop{
     position: absolute;
-    top: 5%;
+    top: -1%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%)  scale(0.9);
     width: 650px;
     height: 860px;
     background-color: #dedede;
     display: none;
     border-radius: 10px;
-    z-index: 1;
+    z-index: 99;
 }
 
 .gimg{
@@ -152,21 +152,23 @@ html,body{
     height: 100%;
     display: none;
     background-color: rgba(83, 83, 83, 0.5);
+    z-index: 2;
 }
 
 
 /* 버튼부모박스 */
 .btnbox{
-    position: relative;
-    top: 10px;
-    left: 10%;
+    position: absolute;
+    top: 15%;
+    /* left: 10%; */
     width: 280px;
     height: 310px;
     outline: 1px solid #cecece;
     text-align: bottom;
     display: inline-block; 
-    float: left;
+    /* float: left; */
     margin-left: 10px;
+    z-index: 9;
 }
 
 /* 플러스버튼 */
@@ -184,7 +186,7 @@ html,body{
 }
 
 /*  그룹만들기text */
-.btnbox>p{
+.btnbox>.plustit{
     padding-top: 250px;
     text-align: center;
     font: bold 1.25rem/1.25rem 'Nanum Gothic'; 

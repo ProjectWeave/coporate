@@ -9,8 +9,8 @@ const Plus = () => {
     return (
         <>
             <File />
-            <div className="btnbox">
-                    <p>그룹만들기</p>
+            <div className="btnbox contbox">
+                    <p className="plustit">그룹만들기</p>
                     <button id="myBtn" onClick={function(e){
                         e.preventDefault();
                         var pop = document.querySelector('.pop');

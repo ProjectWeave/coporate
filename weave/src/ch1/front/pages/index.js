@@ -19,6 +19,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import Home from '../components/Home';
 import PostForm from '../components/PostForm';
+import IndexPage from '../components/IndexPage';
 import '../components/First.css';
 
 const HomePage = () => {
@@ -27,7 +28,7 @@ const HomePage = () => {
 
   return (
     <div>
-      {/* {isLoggedIn && <Home />} */}
+      {isLoggedIn && <IndexPage />}
       {mainPosts.map((c) => {
         return (
           <div key={c} post={c} />

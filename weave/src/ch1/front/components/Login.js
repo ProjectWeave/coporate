@@ -1,8 +1,12 @@
-import React,{ useCallback } from 'react';
+import React,{ useCallback,useState } from 'react';
+//import {Router, Link, Route} from 'react-router-dom'; 
 import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
 import { useInput } from '../pages/Join';
 import { LOG_IN_REQUEST } from '../reducers/user';
+//import Router from 'next/router';
+// import IndexPage from './IndexPage';
+//import Join from '../pages/Join';
 
 
 const Login = () => {
@@ -10,6 +14,7 @@ const Login = () => {
   const [password, onChangePassword] = useInput();
   const { isLoggingIn } = useSelector(state => state.user);
   const dispatch = useDispatch();
+  //const [ mode, setMode ] = useState(false); //초기값
   
   const onSubmitForm = useCallback((e) => {
     e.preventDefault();
@@ -19,7 +24,21 @@ const Login = () => {
             id, password,
         },
     });
-},[id, password]);
+  },[id, password]);
+
+  // const onChangePage =((e) => {
+  //       alert('회원가입페이지로 이동합니다.');
+  //       Router.push("/join");
+  // });
+  // const onChangeForm = ((e)=>{
+  //   e.preventDefault();
+  //   return(
+  //     <>
+  //       <Join /> 
+  //     </>
+  //   );
+  // });
+
 
   return (
     <div>
@@ -39,8 +58,16 @@ const Login = () => {
                 <input name="user-pasword" type="password" placeholder="비밀번호를 입력하세요." className="tbox" required />
               </div>
               <div className="btngroup">
-              <button htmlType="submit" className="btn" loading={isLoggingIn}>로그인</button>
-              <Link href="/join"><a><button className="btn">회원가입</button></a></Link>
+                <button htmlType="submit" className="btn" loading={isLoggingIn}>로그인</button>
+                {/* <Router>
+                  <div>
+                    <Link to="/join"><button className="btn">회원가입</button></Link>
+                  </div>
+                  <div>
+                    <Route path="/join" component={Join} />
+                  </div>
+                </Router> */}
+                <Link to="/join"><a><button className="btn">회원가입</button></a></Link>
               </div>
             </form>
           </div>

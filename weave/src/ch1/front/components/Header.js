@@ -1,13 +1,15 @@
 import React from 'react';
 //import {NavLink} from 'react-router-dom';
-import { Link } from 'next/link';
+import Link from 'next/link';
 
 import './Header.css';
 
 const Header = () => {
     return (
         <div className="header">
-          <div className="logo_w" activeClassName="active" />
+          <div className="logo_w">
+            <Link href="/"><a><span className="bld">로고</span></a></Link>
+          </div>
             
           <div className="profile">
             {/* 프로필이미지 */}

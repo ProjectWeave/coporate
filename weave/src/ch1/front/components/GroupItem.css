@@ -1,9 +1,9 @@
 /* 그룹아이템.CSS - GroupItem.css */
 
 .groupitem{
-    position: relative;
+    /* position: relative; */
     width: 80%;
-    top: 10px;
+    /* top: 10px; */
     margin: 0 auto;
     /* outline: 1px solid red; */
 }

@@ -16,6 +16,7 @@
     height: 55px;
     /* outline: 1px solid red; */
     background-image: url("../imgs/logo_w.png");
+    cursor: pointer;
 }
 
 

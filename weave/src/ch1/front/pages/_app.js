@@ -9,20 +9,21 @@ import reducer from '../reducers';
 import rootSaga from '../sagas';
 
 import AppLayout from '../components/AppLayout';
-//import Home from '../components/Home';
-//import IndexPage from '../components/IndexPage';
-//import { LOG_IN_SUCCESS } from '../reducers/user';
+import { LOG_IN_SUCCESS } from '../reducers/user';
+import Home from '../components/Home';
 
 
 const Weave = ({Component, store}) => {
+    if(LOG_IN_SUCCESS)
     return (
         <Provider store={store}>
-            <AppLayout>
-                <Component />
-            </AppLayout>
+                <AppLayout>
+                    <Component />
+                </AppLayout>
         </Provider>
     );
 };
+
 
 Weave.propTypes={
     Component: PropTypes.elementType.isRequired,

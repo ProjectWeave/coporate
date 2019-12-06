@@ -12,29 +12,34 @@
 
 .menubox{
     /* position: relative; */
-    width: 150px;
+    width: 200px;
     height: 60px;
     margin: 0 auto;
-    line-height: 67px;
-    font-size: 24px;
+    line-height: 60px;
+    font-size: 1.5rem;
+}
+.menubox>li{
+    cursor: pointer;
+    width: 100px;
 }
 
-.menu_a{
-    position: relative;
+
+.menu_a,.menu_m{
+    /* position: relative; */
     width: 100px;
-    /* outline: 1px solid red; */
-    border-bottom: 3px solid #0090A8;
-    margin-right: 20px;
-    padding-bottom: 10px;
-    
+    /* margin-right: 20px;
+    padding-bottom: 10px; */
+    text-align: center;
+    line-height: 59px;
 }
 
 .menu_m{
-    color: #cecece;
+    color: #999;
 }
 
 .menu_a,.menu_m:active{
     color: #0090A8;
+    border-bottom: 3px solid #0090A8;
 }
 
 
