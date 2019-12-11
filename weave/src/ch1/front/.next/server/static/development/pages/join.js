@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -268,13 +268,13 @@ const Join = () => {
   const {
     isSigningUp,
     me
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useSelector"])(state => state.user); // useEffect(() => {
-  //     if(me){
-  //         alert('로그인했으니 메인페이지로 이동합니다.');
-  //         Router.push("/indexpage");
-  //     }
-  // }, [me && me.id]);
-
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useSelector"])(state => state.user);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (me) {
+      alert('로그인했으니 메인페이지로 이동합니다.');
+      next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push("/indexpage");
+    }
+  }, [me && me.id]);
   const onSubmit = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
     e.preventDefault();
 
@@ -724,7 +724,7 @@ const loginAction = data => {
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /*!*****************************!*\
   !*** multi ./pages/join.js ***!
   \*****************************/

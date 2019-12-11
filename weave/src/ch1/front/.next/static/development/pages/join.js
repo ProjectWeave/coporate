@@ -10276,13 +10276,13 @@ const Join = () => {
   const {
     isSigningUp,
     me
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useSelector"])(state => state.user); // useEffect(() => {
-  //     if(me){
-  //         alert('로그인했으니 메인페이지로 이동합니다.');
-  //         Router.push("/indexpage");
-  //     }
-  // }, [me && me.id]);
-
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useSelector"])(state => state.user);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (me) {
+      alert('로그인했으니 메인페이지로 이동합니다.');
+      next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push("/indexpage");
+    }
+  }, [me && me.id]);
   const onSubmit = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
     e.preventDefault();
 
@@ -10732,7 +10732,7 @@ const loginAction = data => {
 
 /***/ }),
 
-/***/ 11:
+/***/ 10:
 /*!************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fjoin&absolutePagePath=C%3A%5CUsers%5C%EC%9D%B4%EA%B7%80%EC%98%81%5CDocuments%5Ccoporate%5Cweave%5Csrc%5Cch1%5Cfront%5Cpages%5Cjoin.js ***!
   \************************************************************************************************************************************************************************************/
@@ -10755,5 +10755,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[11,"static/runtime/webpack.js"]]]);
+},[[10,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=join.js.map

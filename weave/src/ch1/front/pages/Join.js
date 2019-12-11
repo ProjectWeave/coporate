@@ -36,12 +36,12 @@ const Join = () => {
     const dispatch = useDispatch();
     const { isSigningUp,me } = useSelector(state=> state.user);
 
-    // useEffect(() => {
-    //     if(me){
-    //         alert('로그인했으니 메인페이지로 이동합니다.');
-    //         Router.push("/indexpage");
-    //     }
-    // }, [me && me.id]);
+    useEffect(() => {
+        if(me){
+            alert('로그인했으니 메인페이지로 이동합니다.');
+            Router.push("/indexpage");
+        }
+    }, [me && me.id]);
 
 
     const onSubmit= useCallback((e)=>{

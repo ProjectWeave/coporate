@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -526,6 +526,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _pages_Join__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/Join */ "./pages/Join.js");
 /* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _signup_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./signup.css */ "./components/signup.css");
+/* harmony import */ var _signup_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_signup_css__WEBPACK_IMPORTED_MODULE_6__);
 var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\Login.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
  //import {Router, Link, Route} from 'react-router-dom'; 
@@ -533,9 +537,11 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
- //import Router from 'next/router';
-// import IndexPage from './IndexPage';
-//import Join from '../pages/Join';
+
+ // import IndexPage from './IndexPage';
+
+
+
 
 const Login = () => {
   const [id, onChangeId] = Object(_pages_Join__WEBPACK_IMPORTED_MODULE_3__["useInput"])();
@@ -543,7 +549,10 @@ const Login = () => {
   const {
     isLoggingIn
   } = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.user);
-  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useDispatch"])(); //const [ mode, setMode ] = useState(false); //초기값
+  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useDispatch"])();
+  const [mode, setMode] = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState({
+    mode: 'read'
+  }); //초기값
 
   const onSubmitForm = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
     e.preventDefault();
@@ -554,51 +563,53 @@ const Login = () => {
         password
       }
     });
-  }, [id, password]); // const onChangePage =((e) => {
-  //       alert('회원가입페이지로 이동합니다.');
-  //       Router.push("/join");
-  // });
-  // const onChangeForm = ((e)=>{
-  //   e.preventDefault();
-  //   return(
-  //     <>
-  //       <Join /> 
-  //     </>
-  //   );
-  // });
+  }, [id, password]);
+
+  const onChangeMode = e => {
+    //alert('모드 변경');
+    setMode(e.target.mode);
+  };
+
+  const onChangePage = e => {
+    alert('회원가입페이지로 이동합니다.');
+    next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push("/join");
+    setMode({
+      mode: 'clicked'
+    });
+  };
 
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 43
     },
     __self: undefined
   }, __jsx("article", {
     className: "rLg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 44
     },
     __self: undefined
   }, __jsx("div", {
     className: "logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 45
     },
     __self: undefined
   }), __jsx("div", {
     className: "lg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 46
     },
     __self: undefined
   }, __jsx("h2", {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 47
     },
     __self: undefined
   }, "\uB85C\uADF8\uC778"), __jsx("form", {
@@ -608,20 +619,20 @@ const Login = () => {
     onSubmit: onSubmitForm,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 48
     },
     __self: undefined
   }, __jsx("div", {
     className: "lg_title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 52
     },
     __self: undefined
   }, "\uC9C0\uAE08 \uBC14\uB85C \uAC00\uC785\uD558\uC138\uC694!"), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 53
     },
     __self: undefined
   }, __jsx("label", {
@@ -629,7 +640,7 @@ const Login = () => {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 54
     },
     __self: undefined
   }, "\uC544\uC774\uB514"), __jsx("input", {
@@ -641,7 +652,7 @@ const Login = () => {
     required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 55
     },
     __self: undefined
   }), __jsx("label", {
@@ -651,7 +662,7 @@ const Login = () => {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 56
     },
     __self: undefined
   }, "\uBE44\uBC00\uBC88\uD638"), __jsx("input", {
@@ -662,14 +673,14 @@ const Login = () => {
     required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 57
     },
     __self: undefined
   })), __jsx("div", {
     className: "btngroup",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 59
     },
     __self: undefined
   }, __jsx("button", {
@@ -678,31 +689,58 @@ const Login = () => {
     loading: isLoggingIn,
     __source: {
       fileName: _jsxFileName,
+      lineNumber: 60
+    },
+    __self: undefined
+  }, "\uB85C\uADF8\uC778"), __jsx("button", {
+    className: "btn",
+    onClick: onChangePage,
+    setMode: mode,
+    __source: {
+      fileName: _jsxFileName,
       lineNumber: 61
     },
     __self: undefined
-  }, "\uB85C\uADF8\uC778"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    to: "/join",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 70
-    },
-    __self: undefined
-  }, __jsx("a", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 70
-    },
-    __self: undefined
-  }, __jsx("button", {
-    className: "btn",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 70
-    },
-    __self: undefined
-  }, "\uD68C\uC6D0\uAC00\uC785"))))))));
-};
+  }, "\uD68C\uC6D0\uAC00\uC785"))))));
+}; // return (
+//   <div>
+//       <article className="lLg">
+//           <h2 className="bld">위브설명란</h2>
+//           <div className="wlogo"></div>
+//           <div className="tpic"></div>
+//       </article>
+//       <div>
+//           <form onSubmit={onSubmitForm} className="joinForm">
+//               <div>
+//                   <label htmlFor="user-id" />아이디<br />
+//                   <input name="user-id"  value={id} required onChange={onChangeId} />
+//               </div>
+//               <div>
+//                   <label htmlFor="user-nick" />닉네임<br />
+//                   <input name="user-nick"/>
+//               </div>
+//               <div>
+//                   <label htmlFor="user-password" />비밀번호<br />
+//                   <input name="user-password" type="password" />
+//               </div>
+//               <div>
+//                   <label htmlFor="user-password-chk" />비밀번호체크<br />
+//                   <input name="user-password-chk" type="password" />
+//                   {passwordError && <div style={{color:'red'}}>비밀번호가 일치하지 않습니다.</div>}
+//               </div>
+//               <div>
+//                   <input type="checkbox" name="user-term" />말을 잘 들을것에 동의 합니다.
+//                   {termError && <div style={{color:'red'}}>약관에 동의하셔야합니다.</div>}
+//               </div>
+//               <div className="joinBtn">
+//                   <button htmlType="submit">가입하기</button>
+//               </div>
+//           </form>
+//       </div>
+//   </div>
+// );
+// };
+
 
 /* harmony default export */ __webpack_exports__["default"] = (Login);
 
@@ -1054,6 +1092,17 @@ const PostForm = () => {
 /*!******************************!*\
   !*** ./components/reset.css ***!
   \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./components/signup.css":
+/*!*******************************!*\
+  !*** ./components/signup.css ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -3194,13 +3243,13 @@ const Join = () => {
   const {
     isSigningUp,
     me
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useSelector"])(state => state.user); // useEffect(() => {
-  //     if(me){
-  //         alert('로그인했으니 메인페이지로 이동합니다.');
-  //         Router.push("/indexpage");
-  //     }
-  // }, [me && me.id]);
-
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useSelector"])(state => state.user);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (me) {
+      alert('로그인했으니 메인페이지로 이동합니다.');
+      next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push("/indexpage");
+    }
+  }, [me && me.id]);
   const onSubmit = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
     e.preventDefault();
 
@@ -3482,13 +3531,7 @@ const HomePage = () => {
       lineNumber: 30
     },
     __self: undefined
-  }, isLoggedIn && __jsx(_components_IndexPage__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31
-    },
-    __self: undefined
-  }), mainPosts.map(c => {
+  }, mainPosts.map(c => {
     return __jsx("div", {
       key: c,
       post: c,
@@ -4178,7 +4221,7 @@ const Header = () => {
 
 /***/ }),
 
-/***/ 3:
+/***/ 6:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

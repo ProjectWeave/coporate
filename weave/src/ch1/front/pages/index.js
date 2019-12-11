@@ -28,7 +28,7 @@ const HomePage = () => {
 
   return (
     <div>
-      {isLoggedIn && <IndexPage />}
+      {/* {isLoggedIn && <IndexPage />} */}
       {mainPosts.map((c) => {
         return (
           <div key={c} post={c} />

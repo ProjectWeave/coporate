@@ -23,14 +23,14 @@ html,body{
     width: 50%;
     height: 100%;
     background-color:#0090A8;
-    z-index: 1;
+    /* z-index: 1; */
 }
-.lLg::after{
+.rLg::after{
     content: "";
     display: block;
     position: absolute;
     top: 50%;
-    left: 100%;
+    left: 0%;
     transform: translate(-86%, -50%) rotate(45deg);
     border-top: 40px solid #0090A8;
     border-bottom: 40px solid transparent;
@@ -96,6 +96,14 @@ html,body{
     border: none;
     color: #fff;
     font: 1rem NanumGothic,"serief";
+}
+
+.joinBtn{
+    position: absolute;
+}
+.joinBtn>a{
+    width: 100%;
+    height: 100%;
 }
 
 .lgform>.btngroup{

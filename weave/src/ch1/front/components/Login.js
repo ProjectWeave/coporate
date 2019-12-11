@@ -4,9 +4,10 @@ import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
 import { useInput } from '../pages/Join';
 import { LOG_IN_REQUEST } from '../reducers/user';
-//import Router from 'next/router';
+import Router from 'next/router';
 // import IndexPage from './IndexPage';
-//import Join from '../pages/Join';
+import Join from '../pages/Join';
+import "./signup.css"
 
 
 const Login = () => {
@@ -14,7 +15,7 @@ const Login = () => {
   const [password, onChangePassword] = useInput();
   const { isLoggingIn } = useSelector(state => state.user);
   const dispatch = useDispatch();
-  //const [ mode, setMode ] = useState(false); //초기값
+  const [ mode, setMode ] = React.useState({mode:'read'}); //초기값
   
   const onSubmitForm = useCallback((e) => {
     e.preventDefault();
@@ -26,18 +27,16 @@ const Login = () => {
     });
   },[id, password]);
 
-  // const onChangePage =((e) => {
-  //       alert('회원가입페이지로 이동합니다.');
-  //       Router.push("/join");
-  // });
-  // const onChangeForm = ((e)=>{
-  //   e.preventDefault();
-  //   return(
-  //     <>
-  //       <Join /> 
-  //     </>
-  //   );
-  // });
+  const onChangeMode = (e) => {
+    //alert('모드 변경');
+    setMode(e.target.mode);
+  };
+
+  const onChangePage =((e) => {
+        alert('회원가입페이지로 이동합니다.');
+        Router.push("/join");
+        setMode({mode:'clicked'});
+  });
 
 
   return (
@@ -59,15 +58,8 @@ const Login = () => {
               </div>
               <div className="btngroup">
                 <button htmlType="submit" className="btn" loading={isLoggingIn}>로그인</button>
-                {/* <Router>
-                  <div>
-                    <Link to="/join"><button className="btn">회원가입</button></Link>
-                  </div>
-                  <div>
-                    <Route path="/join" component={Join} />
-                  </div>
-                </Router> */}
-                <Link to="/join"><a><button className="btn">회원가입</button></a></Link>
+                <button className="btn" onClick={onChangePage} setMode={mode}>회원가입</button>
+                {/* <Link href="/join"><a><button className="btn" onClick={onChangePage}>회원가입</button></a></Link> */}
               </div>
             </form>
           </div>
@@ -75,5 +67,44 @@ const Login = () => {
     </div>
   );
 };
+// return (
+//   <div>
+//       <article className="lLg">
+//           <h2 className="bld">위브설명란</h2>
+//           <div className="wlogo"></div>
+//           <div className="tpic"></div>
+//       </article>
+
+//       <div>
+//           <form onSubmit={onSubmitForm} className="joinForm">
+//               <div>
+//                   <label htmlFor="user-id" />아이디<br />
+//                   <input name="user-id"  value={id} required onChange={onChangeId} />
+//               </div>
+//               <div>
+//                   <label htmlFor="user-nick" />닉네임<br />
+//                   <input name="user-nick"/>
+//               </div>
+//               <div>
+//                   <label htmlFor="user-password" />비밀번호<br />
+//                   <input name="user-password" type="password" />
+//               </div>
+//               <div>
+//                   <label htmlFor="user-password-chk" />비밀번호체크<br />
+//                   <input name="user-password-chk" type="password" />
+//                   {passwordError && <div style={{color:'red'}}>비밀번호가 일치하지 않습니다.</div>}
+//               </div>
+//               <div>
+//                   <input type="checkbox" name="user-term" />말을 잘 들을것에 동의 합니다.
+//                   {termError && <div style={{color:'red'}}>약관에 동의하셔야합니다.</div>}
+//               </div>
+//               <div className="joinBtn">
+//                   <button htmlType="submit">가입하기</button>
+//               </div>
+//           </form>
+//       </div>
+//   </div>
+// );
+// };
 
 export default Login;

@@ -14,7 +14,7 @@ import Home from '../components/Home';
 
 
 const Weave = ({Component, store}) => {
-    if(LOG_IN_SUCCESS)
+    // if(LOG_IN_SUCCESS)
     return (
         <Provider store={store}>
                 <AppLayout>

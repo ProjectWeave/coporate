@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { useState,useCallback, useEffect } from 'react';
 
 import Login from '../components/Login';
 import '../components/First.css';
 
+
+
 const signup = () => {
+
+    const onSubmit= useCallback((e)=>{
+        e.preventDefault();
+        if(password !== passwordCheck){
+            return setPasswordError(true);
+        }
+        if(!term){
+            return setTermError(true);
+        }
+        dispatch({
+            type : SIGN_UP_REQUEST,
+            data : {
+                id,
+                password,
+                nick,
+            },
+        });
+    },[password, passwordCheck, term]);
+
     return (
         <div>
             <article className="lLg">
@@ -11,7 +32,6 @@ const signup = () => {
                 <div className="wlogo"></div>
                 <div className="tpic"></div>
             </article>
-            <div>
 
             <div>
                 <form onSubmit={onSubmit} className="joinForm">
@@ -39,8 +59,7 @@ const signup = () => {
                     <div className="joinBtn">
                         <button htmlType="submit" loading={isSigningUp}>가입하기</button>
                     </div>
-            </form>
-        </div>
+                </form>
             </div>
         </div>
     );
