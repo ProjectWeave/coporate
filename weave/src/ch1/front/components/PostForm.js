@@ -41,7 +41,7 @@ const PostForm = () => {
     
     return (
         <form style={{ margin: '10px 0 20px'}} encType="multipart/form-data" onSubmit={onSubmitForm}>
-            <input htmlType="textarea" maxLength={140} placeholder="어떤 신기한 일이 있었나요?" value={text} onChange={onChangeText}></input>
+            <input htmlType="textarea" maxLength={140} placeholder="소식을 남겨주세요" value={text} onChange={onChangeText}></input>
             <div>
                 <input type="file" multiple hidden></input>
                 <button>이미지 업로드</button>

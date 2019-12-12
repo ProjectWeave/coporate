@@ -17,8 +17,13 @@ const AppLayout = ({children}) => {
     const { isLoggedIn } = useSelector(state => state.user);
     const { setState } = useSelector(state => state.user);
     if(!isLoggedIn)return<><Home /></>
-    // if(!isLoggedIn && mode === 'read')return<><Home /></>
-    // if(!isLoggedIn && mode==='clcicked')return<></>
+    // if(!isLoggedIn && Mode === 'clicked')
+    // return
+    // <>
+    //     <Header />
+    //     <div className="col-12">{children}</div>
+    // </>
+    // if(!isLoggedIn && Mode==='clicked')return<></>
     if(isLoggedIn)
     return (
         <>

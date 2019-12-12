@@ -3,12 +3,22 @@ export const initialState={
         id:1,
         User:{
             id: 1,
-            nickname: "두리안",
+            nickname: "위브",
         },
         content: "첫번째 게시글",
         img:"https://img1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/liveboard/dailylife/187ea4bc2ad54b1db5030743265c5397.jpg", 
         Comments: [],
     }], // 화면에 보일 포스트들 
+    GroupPosts:[{
+        id:1,
+        User:{
+            id: 1,
+            nickname: "위브",
+        },
+        content: "첫번째 게시글",
+        img:"https://img1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/liveboard/dailylife/187ea4bc2ad54b1db5030743265c5397.jpg", 
+        Comments: [],
+    }], // 그룹화면에 보일 포스트들 
     imagePaths:[], //미리보기 이미지경로
     addPostErrorReason: false,  //포스트 업로드 실패사유
     isAddingPost: false,  //포스트 업로드중
@@ -16,15 +26,19 @@ export const initialState={
     isAddingComment: false,
     addCommentErrorReason: '',
     commentAdded: false,
+    addingGroupPost: false, // 그룹만들기폴더 업로드중
+    GroupErrorReason: '', //그룹만들기업로드 실패사유
+    addedGroupPost: false, // 그룹만들기폴더 업로드 성공
+
 };
 
 const dummyPosts = {
     id:2,
     User: {
         id: 1,
-        nickname: '두리안',
+        nickname: '위브',
     },
-    content: '나는 더미입니다.',
+    content: '나는 위브입니다.',
     Comments: [],
 };
 
@@ -32,11 +46,33 @@ const dummyComment = {
     id:1,
     User : {
       id:1,
-      nickname:"두리안",
+      nickname:"위브",
   },
     createdAt: new Date(),
-    content: '더미댓글입니다.',
+    content: '위브댓글입니다.',
 };
+
+const dummyGroupPost = {
+    id:1,
+    User : {
+      id:1,
+      nickname:"위브",
+  },
+    createdAt: new Date(),
+    content: "위브글입니다.",
+};
+
+// mainPosts:[{
+//     id:1,
+//     User:{
+//         id: 1,
+//         nickname: "위브",
+//     },
+//     content: "첫번째 게시글",
+//     img:"https://img1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/liveboard/dailylife/187ea4bc2ad54b1db5030743265c5397.jpg", 
+//     Comments: [],
+// }], // 화면에 보일 포스트들 
+
 
 
 export const LOAD_MAIN_POSTS_REQUEST = 'LOAD_MAIN_POSTS_REQUEST';
@@ -84,6 +120,10 @@ export const RETWEET_FAILURE = 'RETWEET_FAILURE';
 export const REMOVE_POST_REQUEST = 'REMOVE_POST_REQUEST';
 export const REMOVE_POST_SUCCESS = 'REMOVE_POST_SUCCESS';
 export const REMOVE_POST_FAILURE = 'REMOVE_POST_FAILURE';
+
+export const ADD_GROUP_REQUEST = 'ADD_GROUP_REQUEST';
+export const ADD_GROUP_SUCCESS = 'ADD_GROUP_SUCCESS';
+export const ADD_GROUP_FAILURE = 'ADD_GROUP_FAILURE';
 
 const ADD_POST = "ADD_POST";
 const ADD_DUMMY = "ADD_DUMMY";
@@ -154,6 +194,30 @@ export default (state = initialState, action) => {
                 ...state,
                 isAddingComment: false,
                 addCommentErrorReason : action.error,
+            };
+        }
+        //그룹만들기 업로드 
+        case ADD_GROUP_REQUEST: {
+            return {
+                ...state,
+                addingGroupPost: true,
+                GroupErrorReason : '',
+                addedGroupPost: false,
+            };
+        }
+        case ADD_GROUP_SUCCESS: {
+            return {
+                ...state,
+                addingGroupPost: false,
+                addedGroupPost: true,
+                mainPosts: [dummyGroupPost, ...state.GroupPosts],
+            };
+        }
+        case ADD_GROUP_FAILURE: {
+            return {
+                ...state,
+                addedGroupPost: false,
+                GroupErrorReason : action.error,
             };
         }
         default: {

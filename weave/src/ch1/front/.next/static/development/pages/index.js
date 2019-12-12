@@ -6831,178 +6831,251 @@ function valueEqual(a, b) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _PostForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PostForm */ "./components/PostForm.js");
 /* harmony import */ var _routes_Templete_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../routes/Templete.css */ "./routes/Templete.css");
 /* harmony import */ var _routes_Templete_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_routes_Templete_css__WEBPACK_IMPORTED_MODULE_3__);
-
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../reducers/post */ "./reducers/post.js");
 var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\File.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-
- //import './First.css';
-
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+//import React from 'react';
 
 
-class File extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
-  constructor(props) {
-    super(props);
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "state", {
-      selctedFile: null
+
+
+
+
+const File = () => {
+  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useDispatch"])();
+  const {
+    0: text,
+    1: setText
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
+  const {
+    imagePaths,
+    addingGroupPost,
+    addedGroupPost
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useSelector"])(state => state.post); // useEffect(() => {
+  //     setText('');
+  // },[addedGroupPost === true]);
+
+  const onSubmitGroup = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
+    e.preventDefault();
+    dispatch({
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_5__["ADD_GROUP_REQUEST"],
+      data: {
+        text
+      }
     });
+  }, []);
+  return __jsx("form", {
+    className: "pop",
+    onSubmit: onSubmitGroup,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "gimg",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32
+    },
+    __self: undefined
+  }), __jsx("div", {
+    className: "filebox",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: undefined
+  }, __jsx("label", {
+    htmlFor: "file",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: undefined
+  }, "\uC0AC\uC9C4\uC744 \uC120\uD0DD\uD574\uC8FC\uC138\uC694.")), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39
+    },
+    __self: undefined
+  }, imagePaths.map(v => __jsx("div", {
+    key: v,
+    style: {
+      display: "inline-block"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: undefined
+  }, __jsx("img", {
+    src: "http://localhost:3065/".concat(v),
+    style: {
+      width: '200px'
+    },
+    alt: v,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43
+    },
+    __self: undefined
+  }), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44
+    },
+    __self: undefined
+  }, __jsx("button", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45
+    },
+    __self: undefined
+  }, "\uC81C\uAC70"))))), __jsx("div", {
+    className: "group",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    },
+    __self: undefined
+  }, __jsx("label", {
+    htmlFor: "name",
+    className: "gtit",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    },
+    __self: undefined
+  }, " \uADF8\uB8F9\uC774\uB984"), __jsx("input", {
+    type: "text",
+    name: "gname",
+    className: "gname",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
+    },
+    __self: undefined
+  }), __jsx("label", {
+    htmlFor: "name",
+    className: "gtit",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    },
+    __self: undefined
+  }, " \uADF8\uB8F9\uC18C\uAC1C"), __jsx("input", {
+    type: "text",
+    name: "gintro",
+    className: "gintro",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: undefined
+  }), __jsx("p", {
+    className: "send",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
+    },
+    __self: undefined
+  }, __jsx("input", {
+    type: "submit",
+    value: "\uC62C\uB9AC\uAE30",
+    loading: addingGroupPost,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57
+    },
+    __self: undefined
+  }), __jsx("input", {
+    type: "reset",
+    value: "\uCDE8\uC18C",
+    onClick: function () {
+      var pop = document.querySelector(".pop");
+      var block = document.querySelector(".block");
+      pop.style.display = "none";
+      block.style.display = "none";
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60
+    },
+    __self: undefined
+  }))));
+};
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "fileUpSelcetedHandler", event => {
-      //console.log(event.target.file);
-      this.setState({
-        selctedFile: event.target.file[0]
-      });
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "fileUploadHandler", () => {
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('');
-    });
-
-    this.state = {
-      file: null
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({
-      file: URL.createObjectURL(event.target.files[0])
-    });
-  }
-
-  render() {
-    return __jsx("form", {
-      className: "pop",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 35
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "gimg",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 36
-      },
-      __self: this
-    }, __jsx("img", {
-      src: this.state.file,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 37
-      },
-      __self: this
-    })), __jsx("div", {
-      className: "filebox",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 40
-      },
-      __self: this
-    }, __jsx("label", {
-      htmlFor: "file",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 41
-      },
-      __self: this
-    }, "\uC0AC\uC9C4\uC744 \uC120\uD0DD\uD574\uC8FC\uC138\uC694."), __jsx("input", {
-      type: "file",
-      id: "file",
-      name: "file",
-      size: "100",
-      accept: ".jpg, .jpeg, .png",
-      className: "upload",
-      onChange: this.handleChange,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 42
-      },
-      __self: this
-    })), __jsx("div", {
-      className: "group",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 46
-      },
-      __self: this
-    }, __jsx("label", {
-      htmlFor: "name",
-      className: "gtit",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 47
-      },
-      __self: this
-    }, " \uADF8\uB8F9\uC774\uB984"), __jsx("input", {
-      type: "text",
-      name: "gname",
-      className: "gname",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 48
-      },
-      __self: this
-    }), __jsx("label", {
-      htmlFor: "name",
-      className: "gtit",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 49
-      },
-      __self: this
-    }, " \uADF8\uB8F9\uC18C\uAC1C"), __jsx("input", {
-      type: "text",
-      name: "gintro",
-      className: "gintro",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 50
-      },
-      __self: this
-    }), __jsx("p", {
-      className: "send",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 51
-      },
-      __self: this
-    }, __jsx("input", {
-      type: "submit",
-      value: "\uC62C\uB9AC\uAE30",
-      onClick: this.fileUploadHandler,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 52
-      },
-      __self: this
-    }), __jsx("input", {
-      type: "reset",
-      value: "\uCDE8\uC18C",
-      onClick: function () {
-        var pop = document.querySelector(".pop");
-        var block = document.querySelector(".block");
-        pop.style.display = "none";
-        block.style.display = "none";
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 55
-      },
-      __self: this
-    })), this.props.children));
-  }
-
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (File);
+/* harmony default export */ __webpack_exports__["default"] = (File); // class File extends React.Component{
+//   constructor(props){
+//     super(props);
+//     this.state = {
+//       file: null
+//     }
+//     this.handleChange = this.handleChange.bind(this)
+//   }
+//   handleChange(event) {
+//     this.setState({
+//       file: URL.createObjectURL(event.target.files[0])
+//     })
+//   }
+//   state={
+//     selctedFile:null
+//   }
+//   fileUpSelcetedHandler=event=>{
+//     //console.log(event.target.file);
+//     this.setState({
+//       selctedFile:event.target.file[0]
+//     })
+//   }
+//   fileUploadHandler=()=>{
+//     axios.post('');
+//   }
+//   render(){
+//     return(
+//       <form className="pop" onSubmit={onSubmitGroup}>
+//           <div className="gimg">
+//             <img src={this.state.file}/>
+//           </div>
+//           {/* <input type="image" alt="submit"></input> */}
+//           <div className="filebox">
+//             <label htmlFor ="file">사진을 선택해주세요.</label>
+//             <input type="file" id="file" name="file" size="2000" 
+//                    accept=".jpg, .jpeg, .png" className="upload"
+//                    onChange={this.handleChange} />
+//           </div>
+//           <div className="group">
+//             <label htmlFor ="name" className="gtit"> 그룹이름</label>
+//             <input type="text" name="gname" className="gname" />
+//             <label htmlFor ="name" className="gtit"> 그룹소개</label>
+//             <input type="text" name="gintro" className="gintro" />
+//             <p className="send">
+//               <input type="submit" value="올리기"
+//                      onClick={this.fileUploadHandler}
+//               />
+//               <input type="reset" value="취소" onClick={function(){
+//                 var pop = document.querySelector(".pop")
+//                 var block = document.querySelector(".block")
+//                 pop.style.display="none"
+//                 block.style.display="none"
+//               }} />
+//             </p>
+//             {this.props.children}
+//           </div>
+//         </form>
+//     );
+//   }
+// }
+//   export default File;
 
 /***/ }),
 
@@ -7215,6 +7288,325 @@ const IndexPage = () => {
 
 /***/ }),
 
+/***/ "./components/Join.js":
+/*!****************************!*\
+  !*** ./components/Join.js ***!
+  \****************************/
+/*! exports provided: useInput, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useInput", function() { return useInput; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _Join_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Join.css */ "./components/Join.css");
+/* harmony import */ var _Join_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_Join_css__WEBPACK_IMPORTED_MODULE_5__);
+var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\Join.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+
+
+const TextInput = ({
+  value
+}) => {
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: undefined
+  }, value) //npmjs.com
+  ;
+};
+
+TextInput.propTypes = {
+  value: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+}; //커스텀훅
+
+const useInput = (initValue = null) => {
+  const {
+    0: value,
+    1: setter
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(initValue);
+  const handler = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
+    setter(e.target.value);
+  }, []);
+  return [value, handler];
+};
+
+const Join = () => {
+  const {
+    0: passwordCheck,
+    1: setPasswordCheck
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])();
+  const {
+    0: term,
+    1: setTerm
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const {
+    0: passwordError,
+    1: setPasswordError
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const {
+    0: termError,
+    1: setTermError
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const [id, onChangeId] = useInput();
+  const [nick, onChangeNick] = useInput();
+  const [password, onChangePassword] = useInput();
+  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useDispatch"])();
+  const {
+    isSigningUp,
+    me
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useSelector"])(state => state.user);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(me => {
+    if (me) {
+      alert('로그인했으니 메인페이지로 이동합니다.');
+      next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push("/indexpage");
+    }
+  }, [me && me.id]);
+  const onSubmit = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
+    e.preventDefault();
+
+    if (password !== passwordCheck) {
+      return setPasswordError(true);
+    }
+
+    if (!term) {
+      return setTermError(true);
+    }
+
+    dispatch({
+      type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["SIGN_UP_REQUEST"],
+      data: {
+        id,
+        password,
+        nick
+      }
+    });
+  }, [password, passwordCheck, term]); // const onChangeId=(e)=>{
+  //     setId(e.target.value);
+  // };
+  // const onChangeNick=(e)=>{
+  //     setNick(e.target.value);
+  // };
+  // const onChangePassword=(e)=>{
+  //     setPassword(e.target.value);
+  // };
+
+  const onChangePasswordCheck = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
+    setPasswordError(e.target.value !== password); //비밀번호체크
+
+    setPasswordCheck(e.target.value);
+  }, [password]);
+  const onChangeTerm = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
+    setTermError(false); //setTermError메세기 기본적으로 꺼두기
+
+    setTerm(e.target.checked);
+  }, []);
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
+    className: "logo_",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 91
+    },
+    __self: undefined
+  }), __jsx("div", {
+    className: "rbg2",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 93
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "lg_title2",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 94
+    },
+    __self: undefined
+  }, "\uC9C0\uAE08 \uBC14\uB85C \uAC00\uC785\uD558\uC138\uC694!"), __jsx("form", {
+    onSubmit: onSubmit,
+    className: "joinForm",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 95
+    },
+    __self: undefined
+  }, __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 96
+    },
+    __self: undefined
+  }, __jsx("label", {
+    htmlFor: "user-id",
+    className: "bld",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 97
+    },
+    __self: undefined
+  }), __jsx("input", {
+    name: "user-id",
+    value: id,
+    required: true,
+    onChange: onChangeId,
+    className: "tbox",
+    placeholder: "\uC544\uC774\uB514\uB97C \uC785\uB825\uD558\uC138\uC694.",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 98
+    },
+    __self: undefined
+  })), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 100
+    },
+    __self: undefined
+  }, __jsx("label", {
+    htmlFor: "user-nick",
+    className: "bld",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 101
+    },
+    __self: undefined
+  }), __jsx("input", {
+    name: "user-nick",
+    value: nick,
+    required: true,
+    onChange: onChangeNick,
+    className: "tbox",
+    placeholder: "\uB2C9\uB124\uC784\uC744 \uC785\uB825\uD558\uC138\uC694.",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 102
+    },
+    __self: undefined
+  })), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 104
+    },
+    __self: undefined
+  }, __jsx("label", {
+    htmlFor: "user-password",
+    className: "bld",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 105
+    },
+    __self: undefined
+  }), __jsx("input", {
+    name: "user-password",
+    type: "password",
+    value: password,
+    required: true,
+    onChange: onChangePassword,
+    className: "tbox",
+    placeholder: "\uBE44\uBC00\uBC88\uD638\uB97C \uC785\uB825\uD558\uC138\uC694.",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 106
+    },
+    __self: undefined
+  })), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 108
+    },
+    __self: undefined
+  }, __jsx("label", {
+    htmlFor: "user-password-chk",
+    className: "bld",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 109
+    },
+    __self: undefined
+  }), __jsx("input", {
+    name: "user-password-chk",
+    type: "password",
+    value: passwordCheck,
+    required: true,
+    onChange: onChangePasswordCheck,
+    className: "tbox",
+    placeholder: "\uBE44\uBC00\uBC88\uD638\uB97C \uD655\uC778\uD558\uC138\uC694.",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 110
+    },
+    __self: undefined
+  }), passwordError && __jsx("div", {
+    style: {
+      color: 'red'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 111
+    },
+    __self: undefined
+  }, "\uBE44\uBC00\uBC88\uD638\uAC00 \uC77C\uCE58\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.")), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 113
+    },
+    __self: undefined
+  }, __jsx("input", {
+    type: "checkbox",
+    name: "user-term",
+    checked: term,
+    onChange: onChangeTerm,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 114
+    },
+    __self: undefined
+  }), "\uAC1C\uC778\uC815\uBCF4 \uC218\uC9D1 \uBC0F \uC774\uC6A9\uC5D0 \uB3D9\uC758\uD569\uB2C8\uB2E4.", termError && __jsx("div", {
+    style: {
+      color: 'red'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 115
+    },
+    __self: undefined
+  }, "\uC57D\uAD00\uC5D0 \uB3D9\uC758\uD558\uC154\uC57C\uD569\uB2C8\uB2E4.")), __jsx("div", {
+    className: "joinBtn",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 117
+    },
+    __self: undefined
+  }, __jsx("button", {
+    htmlType: "submit",
+    className: "btn",
+    loading: isSigningUp,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 118
+    },
+    __self: undefined
+  }, "\uAC00\uC785\uD558\uAE30")))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Join);
+
+/***/ }),
+
 /***/ "./components/Login.js":
 /*!*****************************!*\
   !*** ./components/Login.js ***!
@@ -7233,8 +7625,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _signup_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./signup.css */ "./components/signup.css");
-/* harmony import */ var _signup_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_signup_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _Join__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Join */ "./components/Join.js");
 var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\Login.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
  //import {Router, Link, Route} from 'react-router-dom'; 
@@ -7247,7 +7638,6 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-
 const Login = () => {
   const [id, onChangeId] = Object(_pages_Join__WEBPACK_IMPORTED_MODULE_3__["useInput"])();
   const [password, onChangePassword] = Object(_pages_Join__WEBPACK_IMPORTED_MODULE_3__["useInput"])();
@@ -7255,9 +7645,7 @@ const Login = () => {
     isLoggingIn
   } = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.user);
   const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useDispatch"])();
-  const [mode, setMode] = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState({
-    mode: 'read'
-  }); //초기값
+  const [Mode, setMode] = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState('read'); //초기값
 
   const onSubmitForm = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
     e.preventDefault();
@@ -7271,50 +7659,62 @@ const Login = () => {
   }, [id, password]);
 
   const onChangeMode = e => {
-    //alert('모드 변경');
-    setMode(e.target.mode);
-  };
+    // alert('회원가입페이지로 이동합니다.');
+    e.preventDefault(); //setMode(e.target.mode);
+    //alert('회원가입페이지로 이동합니다.');
+    //Router.push("/join");
 
-  const onChangePage = e => {
-    alert('회원가입페이지로 이동합니다.');
-    next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push("/join");
-    setMode({
-      mode: 'clicked'
-    });
-  };
+    setMode('clicked');
+  }; // const onChangePage =((e) => {
+  //       //alert('회원가입페이지로 이동합니다.');
+  //       //Router.push("/join");
+  //       setMode('clicked');
+  // });
 
-  return __jsx("div", {
+
+  if (Mode === 'clicked') {
+    return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_Join__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 46
+      },
+      __self: undefined
+    }));
+  }
+
+  ;
+  if (Mode === 'read') return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 52
     },
     __self: undefined
   }, __jsx("article", {
     className: "rLg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 53
     },
     __self: undefined
   }, __jsx("div", {
     className: "logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 54
     },
     __self: undefined
   }), __jsx("div", {
     className: "lg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 55
     },
     __self: undefined
   }, __jsx("h2", {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 56
     },
     __self: undefined
   }, "\uB85C\uADF8\uC778"), __jsx("form", {
@@ -7324,20 +7724,20 @@ const Login = () => {
     onSubmit: onSubmitForm,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 57
     },
     __self: undefined
   }, __jsx("div", {
     className: "lg_title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 61
     },
     __self: undefined
   }, "\uC9C0\uAE08 \uBC14\uB85C \uAC00\uC785\uD558\uC138\uC694!"), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 62
     },
     __self: undefined
   }, __jsx("label", {
@@ -7345,7 +7745,7 @@ const Login = () => {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 63
     },
     __self: undefined
   }, "\uC544\uC774\uB514"), __jsx("input", {
@@ -7357,7 +7757,7 @@ const Login = () => {
     required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 64
     },
     __self: undefined
   }), __jsx("label", {
@@ -7367,7 +7767,7 @@ const Login = () => {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 65
     },
     __self: undefined
   }, "\uBE44\uBC00\uBC88\uD638"), __jsx("input", {
@@ -7378,14 +7778,14 @@ const Login = () => {
     required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 66
     },
     __self: undefined
   })), __jsx("div", {
     className: "btngroup",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 68
     },
     __self: undefined
   }, __jsx("button", {
@@ -7394,58 +7794,19 @@ const Login = () => {
     loading: isLoggingIn,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 69
     },
     __self: undefined
   }, "\uB85C\uADF8\uC778"), __jsx("button", {
     className: "btn",
-    onClick: onChangePage,
-    setMode: mode,
+    onClick: onChangeMode,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 70
     },
     __self: undefined
   }, "\uD68C\uC6D0\uAC00\uC785"))))));
-}; // return (
-//   <div>
-//       <article className="lLg">
-//           <h2 className="bld">위브설명란</h2>
-//           <div className="wlogo"></div>
-//           <div className="tpic"></div>
-//       </article>
-//       <div>
-//           <form onSubmit={onSubmitForm} className="joinForm">
-//               <div>
-//                   <label htmlFor="user-id" />아이디<br />
-//                   <input name="user-id"  value={id} required onChange={onChangeId} />
-//               </div>
-//               <div>
-//                   <label htmlFor="user-nick" />닉네임<br />
-//                   <input name="user-nick"/>
-//               </div>
-//               <div>
-//                   <label htmlFor="user-password" />비밀번호<br />
-//                   <input name="user-password" type="password" />
-//               </div>
-//               <div>
-//                   <label htmlFor="user-password-chk" />비밀번호체크<br />
-//                   <input name="user-password-chk" type="password" />
-//                   {passwordError && <div style={{color:'red'}}>비밀번호가 일치하지 않습니다.</div>}
-//               </div>
-//               <div>
-//                   <input type="checkbox" name="user-term" />말을 잘 들을것에 동의 합니다.
-//                   {termError && <div style={{color:'red'}}>약관에 동의하셔야합니다.</div>}
-//               </div>
-//               <div className="joinBtn">
-//                   <button htmlType="submit">가입하기</button>
-//               </div>
-//           </form>
-//       </div>
-//   </div>
-// );
-// };
-
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (Login);
 
@@ -7695,7 +8056,7 @@ const PostForm = () => {
   }, __jsx("input", {
     htmlType: "textarea",
     maxLength: 140,
-    placeholder: "\uC5B4\uB5A4 \uC2E0\uAE30\uD55C \uC77C\uC774 \uC788\uC5C8\uB098\uC694?",
+    placeholder: "\uC18C\uC2DD\uC744 \uB0A8\uACA8\uC8FC\uC138\uC694",
     value: text,
     onChange: onChangeText,
     __source: {
@@ -21579,7 +21940,7 @@ const HomePage = () => {
 /*!**************************!*\
   !*** ./reducers/post.js ***!
   \**************************/
-/*! exports provided: initialState, LOAD_MAIN_POSTS_REQUEST, LOAD_MAIN_POSTS_SUCCESS, LOAD_MAIN_POSTS_FAILURE, LOAD_HASHTAG_POSTS_REQUEST, LOAD_HASHTAG_POSTS_SUCCESS, LOAD_HASHTAG_POSTS_FAILURE, LOAD_USER_POSTS_REQUEST, LOAD_USER_POSTS_SUCCESS, LOAD_USER_POSTS_FAILURE, UPLOAD_IMAGES_REQUEST, UPLOAD_IMAGES_SUCCESS, UPLOAD_IMAGES_FAILURE, REMOVE_IMAGE, ADD_POST_REQUEST, ADD_POST_SUCCESS, ADD_POST_FAILURE, LIKE_POST_REQUEST, LIKE_POST_SUCCESS, LIKE_POST_FAILURE, UNLIKE_POST_REQUEST, UNLIKE_POST_SUCCESS, UNLIKE_POST_FAILURE, ADD_COMMENT_REQUEST, ADD_COMMENT_SUCCESS, ADD_COMMENT_FAILURE, LOAD_COMMENTS_REQUEST, LOAD_COMMENTS_SUCCESS, LOAD_COMMENTS_FAILURE, RETWEET_REQUEST, RETWEET_SUCCESS, RETWEET_FAILURE, REMOVE_POST_REQUEST, REMOVE_POST_SUCCESS, REMOVE_POST_FAILURE, default */
+/*! exports provided: initialState, LOAD_MAIN_POSTS_REQUEST, LOAD_MAIN_POSTS_SUCCESS, LOAD_MAIN_POSTS_FAILURE, LOAD_HASHTAG_POSTS_REQUEST, LOAD_HASHTAG_POSTS_SUCCESS, LOAD_HASHTAG_POSTS_FAILURE, LOAD_USER_POSTS_REQUEST, LOAD_USER_POSTS_SUCCESS, LOAD_USER_POSTS_FAILURE, UPLOAD_IMAGES_REQUEST, UPLOAD_IMAGES_SUCCESS, UPLOAD_IMAGES_FAILURE, REMOVE_IMAGE, ADD_POST_REQUEST, ADD_POST_SUCCESS, ADD_POST_FAILURE, LIKE_POST_REQUEST, LIKE_POST_SUCCESS, LIKE_POST_FAILURE, UNLIKE_POST_REQUEST, UNLIKE_POST_SUCCESS, UNLIKE_POST_FAILURE, ADD_COMMENT_REQUEST, ADD_COMMENT_SUCCESS, ADD_COMMENT_FAILURE, LOAD_COMMENTS_REQUEST, LOAD_COMMENTS_SUCCESS, LOAD_COMMENTS_FAILURE, RETWEET_REQUEST, RETWEET_SUCCESS, RETWEET_FAILURE, REMOVE_POST_REQUEST, REMOVE_POST_SUCCESS, REMOVE_POST_FAILURE, ADD_GROUP_REQUEST, ADD_GROUP_SUCCESS, ADD_GROUP_FAILURE, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21619,6 +21980,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_POST_REQUEST", function() { return REMOVE_POST_REQUEST; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_POST_SUCCESS", function() { return REMOVE_POST_SUCCESS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_POST_FAILURE", function() { return REMOVE_POST_FAILURE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_GROUP_REQUEST", function() { return ADD_GROUP_REQUEST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_GROUP_SUCCESS", function() { return ADD_GROUP_SUCCESS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_GROUP_FAILURE", function() { return ADD_GROUP_FAILURE; });
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-properties */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js");
@@ -21649,13 +22013,24 @@ const initialState = {
     id: 1,
     User: {
       id: 1,
-      nickname: "두리안"
+      nickname: "위브"
     },
     content: "첫번째 게시글",
     img: "https://img1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/liveboard/dailylife/187ea4bc2ad54b1db5030743265c5397.jpg",
     Comments: []
   }],
   // 화면에 보일 포스트들 
+  GroupPosts: [{
+    id: 1,
+    User: {
+      id: 1,
+      nickname: "위브"
+    },
+    content: "첫번째 게시글",
+    img: "https://img1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/liveboard/dailylife/187ea4bc2ad54b1db5030743265c5397.jpg",
+    Comments: []
+  }],
+  // 그룹화면에 보일 포스트들 
   imagePaths: [],
   //미리보기 이미지경로
   addPostErrorReason: false,
@@ -21666,26 +22041,51 @@ const initialState = {
   //포스트 업로드 성공
   isAddingComment: false,
   addCommentErrorReason: '',
-  commentAdded: false
+  commentAdded: false,
+  addingGroupPost: false,
+  // 그룹만들기폴더 업로드중
+  GroupErrorReason: '',
+  //그룹만들기업로드 실패사유
+  addedGroupPost: false // 그룹만들기폴더 업로드 성공
+
 };
 const dummyPosts = {
   id: 2,
   User: {
     id: 1,
-    nickname: '두리안'
+    nickname: '위브'
   },
-  content: '나는 더미입니다.',
+  content: '나는 위브입니다.',
   Comments: []
 };
 const dummyComment = {
   id: 1,
   User: {
     id: 1,
-    nickname: "두리안"
+    nickname: "위브"
   },
   createdAt: new Date(),
-  content: '더미댓글입니다.'
+  content: '위브댓글입니다.'
 };
+const dummyGroupPost = {
+  id: 1,
+  User: {
+    id: 1,
+    nickname: "위브"
+  },
+  createdAt: new Date(),
+  content: "위브글입니다."
+}; // mainPosts:[{
+//     id:1,
+//     User:{
+//         id: 1,
+//         nickname: "위브",
+//     },
+//     content: "첫번째 게시글",
+//     img:"https://img1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/liveboard/dailylife/187ea4bc2ad54b1db5030743265c5397.jpg", 
+//     Comments: [],
+// }], // 화면에 보일 포스트들 
+
 const LOAD_MAIN_POSTS_REQUEST = 'LOAD_MAIN_POSTS_REQUEST';
 const LOAD_MAIN_POSTS_SUCCESS = 'LOAD_MAIN_POSTS_SUCCESS';
 const LOAD_MAIN_POSTS_FAILURE = 'LOAD_MAIN_POSTS_FAILURE';
@@ -21720,6 +22120,9 @@ const RETWEET_FAILURE = 'RETWEET_FAILURE';
 const REMOVE_POST_REQUEST = 'REMOVE_POST_REQUEST';
 const REMOVE_POST_SUCCESS = 'REMOVE_POST_SUCCESS';
 const REMOVE_POST_FAILURE = 'REMOVE_POST_FAILURE';
+const ADD_GROUP_REQUEST = 'ADD_GROUP_REQUEST';
+const ADD_GROUP_SUCCESS = 'ADD_GROUP_SUCCESS';
+const ADD_GROUP_FAILURE = 'ADD_GROUP_FAILURE';
 const ADD_POST = "ADD_POST";
 const ADD_DUMMY = "ADD_DUMMY";
 const addPost = {
@@ -21796,6 +22199,33 @@ const addPost = {
         return _objectSpread({}, state, {
           isAddingComment: false,
           addCommentErrorReason: action.error
+        });
+      }
+    //그룹만들기 업로드 
+
+    case ADD_GROUP_REQUEST:
+      {
+        return _objectSpread({}, state, {
+          addingGroupPost: true,
+          GroupErrorReason: '',
+          addedGroupPost: false
+        });
+      }
+
+    case ADD_GROUP_SUCCESS:
+      {
+        return _objectSpread({}, state, {
+          addingGroupPost: false,
+          addedGroupPost: true,
+          mainPosts: [dummyGroupPost, ...state.GroupPosts]
+        });
+      }
+
+    case ADD_GROUP_FAILURE:
+      {
+        return _objectSpread({}, state, {
+          addedGroupPost: false,
+          GroupErrorReason: action.error
         });
       }
 
@@ -22213,7 +22643,7 @@ const Header = () => {
 
 /***/ }),
 
-/***/ 12:
+/***/ 10:
 /*!*********************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5C%EC%9D%B4%EA%B7%80%EC%98%81%5CDocuments%5Ccoporate%5Cweave%5Csrc%5Cch1%5Cfront%5Cpages%5Cindex.js ***!
   \*********************************************************************************************************************************************************************************/
@@ -22236,5 +22666,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[12,"static/runtime/webpack.js","styles"]]]);
+},[[10,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map

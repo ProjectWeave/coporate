@@ -36,21 +36,20 @@
     overflow: hidden;
 }
 
-.dogimg{
+/* 이미지박스크기설정 */
+.contbox div{
     width: 280px;
     height: 70%;
+}
+.dogimg{
     background: url(../imgs/puppy.jpg) no-repeat center/cover;
 }
 
 .foodimg{
-    width: 280px;
-    height: 70%;
     background: url(../imgs/food.jpg) no-repeat center/cover;
 }
 
-.travelimg{
-    width: 280px;
-    height: 70%;
+.travelimg{   
     background: url(../imgs/fly.jpg) no-repeat center/cover;
 }
 

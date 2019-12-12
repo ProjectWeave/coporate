@@ -25,6 +25,7 @@ html,body{
     background-color:#0090A8;
     /* z-index: 1; */
 }
+/* 세모 */
 .rLg::after{
     content: "";
     display: block;

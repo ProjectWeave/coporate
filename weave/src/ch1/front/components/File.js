@@ -1,69 +1,140 @@
-import React from 'react';
+//import React from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import axios from 'axios';
-//import './First.css';
+import PostForm from './PostForm';
 import '../routes/Templete.css';
 
-class File extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      file: null
-    }
-    this.handleChange = this.handleChange.bind(this)
-  }
-  handleChange(event) {
-    this.setState({
-      file: URL.createObjectURL(event.target.files[0])
-    })
-  }
-  state={
-    selctedFile:null
-  }
-  fileUpSelcetedHandler=event=>{
-    //console.log(event.target.file);
-    this.setState({
-      selctedFile:event.target.file[0]
-    })
-  }
+import { useSelector, useDispatch } from 'react-redux';
+import {  ADD_GROUP_REQUEST } from '../reducers/post';
 
-  fileUploadHandler=()=>{
-    axios.post('');
-  }
 
-  render(){
-    return(
-        <form className="pop">
-          <div className="gimg">
-            <img src={this.state.file}/>
-          </div>
-          {/* <input type="image" alt="submit"></input> */}
-          <div className="filebox">
-            <label htmlFor ="file">사진을 선택해주세요.</label>
-            <input type="file" id="file" name="file" size="100" 
-                   accept=".jpg, .jpeg, .png" className="upload"
-                   onChange={this.handleChange} />
-          </div>
-          <div className="group">
-            <label htmlFor ="name" className="gtit"> 그룹이름</label>
-            <input type="text" name="gname" className="gname" />
-            <label htmlFor ="name" className="gtit"> 그룹소개</label>
-            <input type="text" name="gintro" className="gintro" />
-            <p className="send">
-              <input type="submit" value="올리기"
-                     onClick={this.fileUploadHandler}
-              />
-              <input type="reset" value="취소" onClick={function(){
+const File = () => {
+    const dispatch = useDispatch();
+    const [text, setText ] = useState('');
+    const { imagePaths, addingGroupPost, addedGroupPost } = useSelector(state => state.post);
+    
+    // useEffect(() => {
+    //     setText('');
+    // },[addedGroupPost === true]);
+
+    const onSubmitGroup = useCallback((e) => {
+        e.preventDefault();
+        dispatch({
+            type: ADD_GROUP_REQUEST,
+            data: {
+                text,
+            },
+        });
+    }, []);
+ 
+    return (
+      <form className="pop" onSubmit={onSubmitGroup}>
+        <div className="gimg">
+          {/* <img src={setFile}/> */}
+        </div>
+        <div className="filebox">
+          <label htmlFor ="file" >사진을 선택해주세요.</label>
+          {/* <input type="file" multiple hidden value="사진을 선택해주세요"></input> */}
+        </div>
+        <div>
+          {/* 반복문 */}
+          {imagePaths.map((v) => (
+                  <div key={v} style={{display:"inline-block"}}>
+                      <img src={`http://localhost:3065/${v}`} style={{ width:'200px'}} alt={v}></img> 
+                      <div>
+                          <button>제거</button>
+                      </div>   
+                  </div>
+          ))}
+            </div>
+        <div className="group">
+          <label htmlFor ="name" className="gtit"> 그룹이름</label>
+          <input type="text" name="gname" className="gname" />
+          <label htmlFor ="name" className="gtit"> 그룹소개</label>
+          <input type="text" name="gintro" className="gintro" />
+          <p className="send">
+            
+            <input type="submit" value="올리기"
+                  loading={addingGroupPost}
+            />
+            <input type="reset" value="취소" 
+              onClick={function(){
                 var pop = document.querySelector(".pop")
                 var block = document.querySelector(".block")
                 pop.style.display="none"
                 block.style.display="none"
-              }} />
-            </p>
-            {this.props.children}
-          </div>
-        </form>
+              }}/>
+          </p>
+        </div>
+      </form>
     );
-  }
-}
+};
+export default File;
 
-  export default File;
+
+// class File extends React.Component{
+//   constructor(props){
+//     super(props);
+//     this.state = {
+//       file: null
+//     }
+//     this.handleChange = this.handleChange.bind(this)
+//   }
+//   handleChange(event) {
+//     this.setState({
+//       file: URL.createObjectURL(event.target.files[0])
+//     })
+//   }
+//   state={
+//     selctedFile:null
+//   }
+//   fileUpSelcetedHandler=event=>{
+//     //console.log(event.target.file);
+//     this.setState({
+//       selctedFile:event.target.file[0]
+//     })
+//   }
+
+//   fileUploadHandler=()=>{
+//     axios.post('');
+//   }
+
+
+//   render(){
+//     return(
+//       <form className="pop" onSubmit={onSubmitGroup}>
+//           <div className="gimg">
+//             <img src={this.state.file}/>
+//           </div>
+//           {/* <input type="image" alt="submit"></input> */}
+//           <div className="filebox">
+//             <label htmlFor ="file">사진을 선택해주세요.</label>
+//             <input type="file" id="file" name="file" size="2000" 
+//                    accept=".jpg, .jpeg, .png" className="upload"
+//                    onChange={this.handleChange} />
+//           </div>
+//           <div className="group">
+//             <label htmlFor ="name" className="gtit"> 그룹이름</label>
+//             <input type="text" name="gname" className="gname" />
+//             <label htmlFor ="name" className="gtit"> 그룹소개</label>
+//             <input type="text" name="gintro" className="gintro" />
+//             <p className="send">
+//               <input type="submit" value="올리기"
+//                      onClick={this.fileUploadHandler}
+//               />
+//               <input type="reset" value="취소" onClick={function(){
+//                 var pop = document.querySelector(".pop")
+//                 var block = document.querySelector(".block")
+//                 pop.style.display="none"
+//                 block.style.display="none"
+//               }} />
+//             </p>
+//             {this.props.children}
+//           </div>
+//         </form>
+//     );
+//   }
+// }
+
+//   export default File;
+

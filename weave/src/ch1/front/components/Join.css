@@ -3,21 +3,81 @@ html,body{
     height: 100%;
 }
 
-.joinForm{
-    position: relative;
-    top: 50%;
+.bld{
+    display: none;
+}
+/* 로고 */
+.logo_{
+    position: absolute;
+    left: 75%;
+    top: 15%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 87px;
+    background: url("../imgs/logo_color.png") no-repeat;
+}
+/* 지금바로 가입하세요 */
+.lg_title2{
+    display: inline-block;
+    position: absolute;
+    color: #333;
+    font: bold 1.25rem "NanumGothic",'serief';
+    margin-top: 5px;
+    margin-left: -3px;
+    top: 30%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 999999;
+    transform: translateX(-50%);
 }
 
+.rbg2{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 50%;
+}
+
+.joinForm{
+    position: absolute;
+    left: 50%;
+    top: 34%;
+    transform: translateX(-50%);
+    margin-left: -3px;
+    margin-top: 6px;
+}
+.tbox{ 
+    width: 300px;
+    height: 50px;
+    font: 1rem NanumGothic,'serief';
+    padding-left: 5px;
+    margin-bottom: 7px;
+}
 
 .joinBtn{
-    background-color: #0090A8;
-    padding-left: 5px;
+    position: absolute;
+    width: 306px;
+    height: 60px;
     font: 1rem "Nanum Gothic",'san-serief';
     color: #555;
-    overflow: hidden;
+    /* overflow: hidden; */
+    background-color: #0090A8;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    margin-top: 20px;
 }
 
 
+/* 세모 */
+.rbg2::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(-86%, -50%) rotate(45deg);
+    border-top: 40px solid #0090A8;
+    border-bottom: 40px solid transparent;
+    border-left: 40px solid transparent;
+    /* border-right: 20px solid transparent; */
+    /* outline: 1px solid red; */
+}

@@ -88,32 +88,37 @@ const Join = () => {
    
     return(
         <>
-            <form onSubmit={onSubmit} className="joinForm">
-                <div>
-                    <label htmlFor="user-id" />아이디<br />
-                    <input name="user-id"  value={id} required onChange={onChangeId} />
-                </div>
-                <div>
-                    <label htmlFor="user-nick" />닉네임<br />
-                    <input name="user-nick" value={nick} required onChange={onChangeNick} />
-                </div>
-                <div>
-                    <label htmlFor="user-password" />비밀번호<br />
-                    <input name="user-password" type="password" value={password} required onChange={onChangePassword} />
-                </div>
-                <div>
-                    <label htmlFor="user-password-chk" />비밀번호체크<br />
-                    <input name="user-password-chk" type="password" value={passwordCheck} required onChange={onChangePasswordCheck} />
-                    {passwordError && <div style={{color:'red'}}>비밀번호가 일치하지 않습니다.</div>}
-                </div>
-                <div>
-                    <input type="checkbox" name="user-term" checked={term} onChange={onChangeTerm} />말을 잘 들을것에 동의 합니다.
-                    {termError && <div style={{color:'red'}}>약관에 동의하셔야합니다.</div>}
-                </div>
-                <div className="joinBtn">
-                    <button htmlType="submit" loading={isSigningUp}>가입하기</button>
-                </div>
-            </form>
+            <div className="logo_"></div>
+            
+            <div className="rbg2">
+            <div className="lg_title2">지금 바로 가입하세요!</div>
+                <form onSubmit={onSubmit} className="joinForm">
+                    <div>
+                        <label htmlFor="user-id" className="bld"/>
+                        <input name="user-id"  value={id} required onChange={onChangeId} className="tbox" placeholder="아이디를 입력하세요." />
+                    </div>
+                    <div>
+                        <label htmlFor="user-nick" className="bld" />
+                        <input name="user-nick" value={nick} required onChange={onChangeNick} className="tbox" placeholder="닉네임을 입력하세요."/>
+                    </div>
+                    <div>
+                        <label htmlFor="user-password" className="bld" />
+                        <input name="user-password" type="password" value={password} required onChange={onChangePassword} className="tbox" placeholder="비밀번호를 입력하세요." />
+                    </div>
+                    <div>
+                        <label htmlFor="user-password-chk" className="bld" />
+                        <input name="user-password-chk" type="password" value={passwordCheck} required onChange={onChangePasswordCheck} className="tbox" placeholder="비밀번호를 확인하세요." />
+                        {passwordError && <div style={{color:'red'}}>비밀번호가 일치하지 않습니다.</div>}
+                    </div>
+                    <div>
+                        <input type="checkbox" name="user-term" checked={term} onChange={onChangeTerm} />개인정보 수집 및 이용에 동의합니다.
+                        {termError && <div style={{color:'red'}}>약관에 동의하셔야합니다.</div>}
+                    </div>
+                    <div className="joinBtn">
+                        <button htmlType="submit" className="btn" loading={isSigningUp}>가입하기</button>
+                    </div>
+                </form>
+            </div>
         </>
     );
 };
