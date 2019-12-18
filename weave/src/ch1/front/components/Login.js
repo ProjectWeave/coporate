@@ -35,11 +35,11 @@ const Login = () => {
     setMode('clicked');
   };
 
-  // const onChangePage =((e) => {
-  //       //alert('회원가입페이지로 이동합니다.');
-  //       //Router.push("/join");
-  //       setMode('clicked');
-  // });
+  // const onChangePage = () => {
+  //   alert('로그인했으니 메인페이지로 이동합니다.');
+  //   Router.push("/main");
+  // };
+
   if(Mode==='clicked'){
     return(
     <>
@@ -68,7 +68,6 @@ const Login = () => {
               <div className="btngroup">
                 <button htmlType="submit" className="btn" loading={isLoggingIn}>로그인</button>
                 <button className="btn" onClick={onChangeMode}>회원가입</button>
-                {/* <Link href="/join"><a><button className="btn" onClick={onChangePage}>회원가입</button></a></Link> */}
               </div>
             </form>
           </div>

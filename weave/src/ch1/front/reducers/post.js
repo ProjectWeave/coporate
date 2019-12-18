@@ -38,7 +38,7 @@ const dummyPosts = {
         id: 1,
         nickname: '위브',
     },
-    content: '나는 위브입니다.',
+    content: '위브위브위브',
     Comments: [],
 };
 

@@ -1,5 +1,5 @@
 import { all, delay, fork, put, takeLatest } from 'redux-saga/effects';
-import { ADD_COMMENT_FAILURE, ADD_COMMENT_REQUEST, ADD_COMMENT_SUCCESS, ADD_POST_FAILURE, ADD_POST_REQUEST, ADD_POST_SUCCESS } from '../reducers/post';
+import { ADD_COMMENT_FAILURE, ADD_COMMENT_REQUEST, ADD_COMMENT_SUCCESS, ADD_POST_FAILURE, ADD_POST_REQUEST, ADD_POST_SUCCESS, ADD_GROUP_REQUEST, ADD_GROUP_SUCCESS } from '../reducers/post';
 
 
 function addPostAPI(){

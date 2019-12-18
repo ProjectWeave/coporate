@@ -1,18 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router,Route, Switch } from 'react-router-dom';
-
 import Link from 'next/link';
 import Head from 'next/head';
-import Menu from './Menu';
-import Plus from './Plus';
+
+import Menu from '../components/Menu';
+import Plus from '../components/Plus';
 import '../routes/Contents.css';
 import '../routes/Templete.css';
-import './GroupItem.css';
-import Home from "../components/Home";
-import About from "../routes/About";
-import Login from "./Login";
+import '../components/GroupItem.css';
 
-const IndexPage = () => {
+const Main = () => {
     return (
         <div className="groupitem">
             <Plus />
@@ -47,5 +43,5 @@ const IndexPage = () => {
     );
 };
 
-export default IndexPage;
+export default Main;
 

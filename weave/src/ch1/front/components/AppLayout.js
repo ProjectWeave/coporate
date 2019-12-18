@@ -23,7 +23,9 @@ const AppLayout = ({children}) => {
     //     <Header />
     //     <div className="col-12">{children}</div>
     // </>
-    // if(!isLoggedIn && Mode==='clicked')return<></>
+    const onChangePage =((e) => {
+        
+    });
     if(isLoggedIn)
     return (
         <>

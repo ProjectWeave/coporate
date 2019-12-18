@@ -29,11 +29,11 @@ const HomePage = () => {
   return (
     <div>
       {/* {isLoggedIn && <IndexPage />} */}
-      {mainPosts.map((c) => {
+      {/* {mainPosts.map((c) => {
         return (
           <div key={c} post={c} />
         );
-      })}
+      })} */}
     </div>
   );
 };

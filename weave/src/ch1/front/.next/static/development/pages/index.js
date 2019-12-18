@@ -6857,13 +6857,21 @@ const File = () => {
     1: setText
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
   const {
+    0: file,
+    1: setFile
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
+  const {
+    0: selctedFile,
+    1: setSelctedFile
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
+  const {
     imagePaths,
     addingGroupPost,
     addedGroupPost
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useSelector"])(state => state.post); // useEffect(() => {
-  //     setText('');
-  // },[addedGroupPost === true]);
-
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useSelector"])(state => state.post);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    setText('');
+  }, [addedGroupPost === true]);
   const onSubmitGroup = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
     e.preventDefault();
     dispatch({
@@ -6873,39 +6881,79 @@ const File = () => {
       }
     });
   }, []);
+
+  const handleChange = event => {
+    setFile({
+      file: URL.createObjectURL(event.target.files[0])
+    });
+  };
+
+  const fileUpSelcetedHandler = event => {
+    //console.log(event.target.file);
+    setSelctedFile({
+      selctedFile: event.target.file[0]
+    });
+  };
+
+  const fileUploadHandler = () => {
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('');
+  };
+
   return __jsx("form", {
     className: "pop",
     onSubmit: onSubmitGroup,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 50
     },
     __self: undefined
   }, __jsx("div", {
     className: "gimg",
+    onClick: file,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 51
     },
     __self: undefined
-  }), __jsx("div", {
+  }, __jsx("img", {
+    src: setFile,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
+    },
+    __self: undefined
+  })), __jsx("div", {
     className: "filebox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 54
     },
     __self: undefined
   }, __jsx("label", {
     htmlFor: "file",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 55
     },
     __self: undefined
-  }, "\uC0AC\uC9C4\uC744 \uC120\uD0DD\uD574\uC8FC\uC138\uC694.")), __jsx("div", {
+  }, "\uC0AC\uC9C4\uC744 \uC120\uD0DD\uD574\uC8FC\uC138\uC694."), __jsx("input", {
+    type: "file",
+    id: "file",
+    name: "file",
+    size: "2000",
+    accept: ".jpg, .jpeg, .png",
+    className: "upload",
+    value: "",
+    onChange: handleChange,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 56
+    },
+    __self: undefined
+  })), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60
     },
     __self: undefined
   }, imagePaths.map(v => __jsx("div", {
@@ -6915,7 +6963,7 @@ const File = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 63
     },
     __self: undefined
   }, __jsx("img", {
@@ -6926,26 +6974,14 @@ const File = () => {
     alt: v,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 64
     },
     __self: undefined
-  }), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: undefined
-  }, __jsx("button", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 45
-    },
-    __self: undefined
-  }, "\uC81C\uAC70"))))), __jsx("div", {
+  })))), __jsx("div", {
     className: "group",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 69
     },
     __self: undefined
   }, __jsx("label", {
@@ -6953,7 +6989,7 @@ const File = () => {
     className: "gtit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 70
     },
     __self: undefined
   }, " \uADF8\uB8F9\uC774\uB984"), __jsx("input", {
@@ -6962,7 +6998,7 @@ const File = () => {
     className: "gname",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 71
     },
     __self: undefined
   }), __jsx("label", {
@@ -6970,7 +7006,7 @@ const File = () => {
     className: "gtit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 72
     },
     __self: undefined
   }, " \uADF8\uB8F9\uC18C\uAC1C"), __jsx("input", {
@@ -6979,23 +7015,24 @@ const File = () => {
     className: "gintro",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 73
     },
     __self: undefined
   }), __jsx("p", {
     className: "send",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 74
     },
     __self: undefined
   }, __jsx("input", {
     type: "submit",
     value: "\uC62C\uB9AC\uAE30",
     loading: addingGroupPost,
+    onSubmit: fileUploadHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 75
     },
     __self: undefined
   }), __jsx("input", {
@@ -7009,7 +7046,7 @@ const File = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 78
     },
     __self: undefined
   }))));
@@ -7103,41 +7140,41 @@ const Home = () => {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 9
     },
     __self: undefined
   }, __jsx("article", {
     className: "lLg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 11
     },
     __self: undefined
   }, __jsx("h2", {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 12
     },
     __self: undefined
   }, "\uC704\uBE0C\uC124\uBA85\uB780"), __jsx("div", {
     className: "wlogo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 13
     },
     __self: undefined
   }), __jsx("div", {
     className: "tpic",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 14
     },
     __self: undefined
   })), __jsx(_components_Login__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 16
     },
     __self: undefined
   }));
@@ -7200,85 +7237,98 @@ const IndexPage = () => {
   }, __jsx(_Plus__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 18
     },
     __self: undefined
-  }), __jsx("div", {
+  }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/contents",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: undefined
+  }, __jsx("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: undefined
+  }, __jsx("div", {
     className: "contbox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 20
     },
     __self: undefined
   }, __jsx("div", {
     className: "dogimg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 21
     },
     __self: undefined
   }), __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 22
     },
     __self: undefined
   }, " \uB315\uB315\uC774\uC9D1\uC0AC \uADF8\uB8F9"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 23
     },
     __self: undefined
-  }, "\uC138\uC824\uC608 \uB315\uB315\uC774\uB4E4 \uBAA8\uC5EC\uB77C~!")), __jsx("div", {
+  }, "\uC138\uC824\uC608 \uB315\uB315\uC774\uB4E4 \uBAA8\uC5EC\uB77C~!")))), __jsx("div", {
     className: "contbox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 29
     },
     __self: undefined
   }, __jsx("div", {
     className: "travelimg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 30
     },
     __self: undefined
   }), __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 31
     },
     __self: undefined
   }, "\uC138\uACC4\uB300\uD0D0\uBC29\uADF8\uB8F9"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 32
     },
     __self: undefined
   }, "\uC5F4\uC2EC\uD788 \uC77C\uD55C \uB2F9\uC2E0, \uB5A0\uB098\uB77C. \uC5F4\uC2EC\uD788 \uB178\uB294 \uB2F9\uC2E0, \uB2F9\uC2E0\uB3C4 \uB5A0\uB098\uB77C.")), __jsx("div", {
     className: "contbox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 38
     },
     __self: undefined
   }, __jsx("div", {
     className: "foodimg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 39
     },
     __self: undefined
   }), __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 40
     },
     __self: undefined
   }, " \uBA39\uBD80\uB9BC \uADF8\uB8F9"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 41
     },
     __self: undefined
   }, "\uBBF8\uC2DD\uAC00 \uC5EC\uB7EC\uBD84 \uD658\uC601\uD569\uB2C8\uB2E4~!")));
@@ -7665,11 +7715,10 @@ const Login = () => {
     //Router.push("/join");
 
     setMode('clicked');
-  }; // const onChangePage =((e) => {
-  //       //alert('회원가입페이지로 이동합니다.');
-  //       //Router.push("/join");
-  //       setMode('clicked');
-  // });
+  }; // const onChangePage = () => {
+  //   alert('로그인했으니 메인페이지로 이동합니다.');
+  //   Router.push("/main");
+  // };
 
 
   if (Mode === 'clicked') {
@@ -21919,17 +21968,7 @@ const HomePage = () => {
       lineNumber: 30
     },
     __self: undefined
-  }, mainPosts.map(c => {
-    return __jsx("div", {
-      key: c,
-      post: c,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 34
-      },
-      __self: undefined
-    });
-  }));
+  });
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (HomePage);
@@ -22055,7 +22094,7 @@ const dummyPosts = {
     id: 1,
     nickname: '위브'
   },
-  content: '나는 위브입니다.',
+  content: '위브위브위브',
   Comments: []
 };
 const dummyComment = {

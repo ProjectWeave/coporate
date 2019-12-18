@@ -4,6 +4,7 @@ import Login from '../components/Login';
 import '../components/First.css';
 
 const Home = () => {
+
     return (
         <div>
             
@@ -12,7 +13,7 @@ const Home = () => {
                 <div className="wlogo"></div>
                 <div className="tpic"></div>
             </article>
-            <Login />
+            <Login/>
         </div>
     );
 };
