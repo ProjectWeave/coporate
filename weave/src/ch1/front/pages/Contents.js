@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { ADD_POST_REQUEST } from '../reducers/post';
 
 import '../components/Contents.css';
+import Menu from '../components/Menu';
 
 
 const Contents = () => {
@@ -38,6 +39,7 @@ const Contents = () => {
     
     return (
         <>
+            <Menu />
             <div className="wrap">
                 <div className="groupinfo">
                     <div className="groupimg"></div>
@@ -95,6 +97,12 @@ const Contents = () => {
 
 export default Contents;
 
+
+// {/* 그룹에 게시물이 아무것도 없을때 */}
+// <div className="letsbegin">
+// 그룹에 재미있는 이야기를 써 보세요.
+// </div>
+// <button className="more">더보기</button>
 
 // <table className="uploadTb">
 //     <tbody>

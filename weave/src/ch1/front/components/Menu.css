@@ -33,11 +33,28 @@
     line-height: 59px;
 }
 
-.menu_m{
+.menu_a, .menu_m{
     color: #999;
 }
 
-.menu_a,.menu_m:active{
+.menu_a#on{
+    color: #0090A8;
+    border-bottom: 3px solid #0090A8;
+}
+
+.menu_m#on{
+    color: #0090A8;
+    border-bottom: 3px solid #0090A8;
+}
+
+
+/* 
+.lighton{
+    color: #0090A8;
+    border-bottom: 3px solid #0090A8;
+} */
+
+.menu_a:hover, .menu_m:hover{
     color: #0090A8;
     border-bottom: 3px solid #0090A8;
 }

@@ -115,7 +115,7 @@ const Join = () => {
                         {termError && <div style={{color:'red'}}>약관에 동의하셔야합니다.</div>}
                     </div>
                     <div className="joinBtn">
-                        <button htmlType="submit" className="btn" loading={isSigningUp}>가입하기</button>
+                        <button type="submit" className="btn" loading={isSigningUp}>가입하기</button>
                     </div>
                 </form>
             </div>

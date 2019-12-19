@@ -126,10 +126,14 @@ export const ADD_GROUP_SUCCESS = 'ADD_GROUP_SUCCESS';
 export const ADD_GROUP_FAILURE = 'ADD_GROUP_FAILURE';
 
 const ADD_POST = "ADD_POST";
+const ADD_GROUPPOST = "ADD_GROUPPOST";
 const ADD_DUMMY = "ADD_DUMMY";
 
 const addPost={
     type: ADD_POST,   
+};
+const addGroupPost={
+    type: ADD_GROUPPOST,   
 };
 
 // const addDummy = {
@@ -209,8 +213,8 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 addingGroupPost: false,
-                addedGroupPost: true,
                 mainPosts: [dummyGroupPost, ...state.GroupPosts],
+                addedGroupPost: true,
             };
         }
         case ADD_GROUP_FAILURE: {

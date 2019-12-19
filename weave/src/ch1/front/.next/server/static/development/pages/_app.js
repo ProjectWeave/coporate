@@ -104,32 +104,24 @@ module.exports =
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "prop-types");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
-/* harmony import */ var _Menu__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Menu */ "./components/Menu.js");
-/* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Home */ "./components/Home.js");
-/* harmony import */ var _IndexPage__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./IndexPage */ "./components/IndexPage.js");
-/* harmony import */ var _Header_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Header.css */ "./components/Header.css");
-/* harmony import */ var _Header_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_Header_css__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! next/head */ "next/head");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Login */ "./components/Login.js");
-/* harmony import */ var _Grid_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Grid.css */ "./components/Grid.css");
-/* harmony import */ var _Grid_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_Grid_css__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
+/* harmony import */ var _Menu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Menu */ "./components/Menu.js");
+/* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Home */ "./components/Home.js");
+/* harmony import */ var _IndexPage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./IndexPage */ "./components/IndexPage.js");
+/* harmony import */ var _Header_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Header.css */ "./components/Header.css");
+/* harmony import */ var _Header_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_Header_css__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Login */ "./components/Login.js");
+/* harmony import */ var _Grid_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Grid.css */ "./components/Grid.css");
+/* harmony import */ var _Grid_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_Grid_css__WEBPACK_IMPORTED_MODULE_9__);
 var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\AppLayout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-
-
-
+ //import Router from 'next/router';
 
 
 
@@ -144,14 +136,12 @@ const AppLayout = ({
 }) => {
   const {
     isLoggedIn
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useSelector"])(state => state.user);
-  const {
-    setState
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useSelector"])(state => state.user);
-  if (!isLoggedIn) return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_Home__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.user); //const { setState } = useSelector(state => state.user);
+
+  if (!isLoggedIn) return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_Home__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 17
     },
     __self: undefined
   })); // if(!isLoggedIn && Mode === 'clicked')
@@ -163,38 +153,43 @@ const AppLayout = ({
 
   const onChangePage = e => {};
 
-  if (isLoggedIn) return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_Header__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  if (isLoggedIn) return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_Header__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
-    },
-    __self: undefined
-  }), __jsx(_Menu__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 30
     },
     __self: undefined
   }), __jsx("div", {
     className: "col-12",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 32
     },
     __self: undefined
-  }, __jsx(_IndexPage__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, __jsx(_IndexPage__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 33
     },
     __self: undefined
   }), children));
 };
 
 AppLayout.propTypes = {
-  children: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.node
+  children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node
 };
 /* harmony default export */ __webpack_exports__["default"] = (AppLayout);
+
+/***/ }),
+
+/***/ "./components/Contents.css":
+/*!*********************************!*\
+  !*** ./components/Contents.css ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
 
 /***/ }),
 
@@ -209,156 +204,144 @@ AppLayout.propTypes = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _PostForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PostForm */ "./components/PostForm.js");
-/* harmony import */ var _routes_Templete_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../routes/Templete.css */ "./routes/Templete.css");
-/* harmony import */ var _routes_Templete_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_routes_Templete_css__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../reducers/post */ "./reducers/post.js");
+/* harmony import */ var _Templete_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Templete.css */ "./components/Templete.css");
+/* harmony import */ var _Templete_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Templete_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reducers/post */ "./reducers/post.js");
 var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\File.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 //import React from 'react';
-
-
+ //import { useSelector, useDispatch } from 'react-redux';
+//import axios from 'axios';
 
 
 
 
 
 const File = () => {
-  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useDispatch"])();
+  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useDispatch"])();
   const {
     0: text,
     1: setText
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''); //const [file, setFile ] = useState(null);
+  //const [selctedFile, setSelctedFile ] = useState(null);
+
   const {
-    0: file,
-    1: setFile
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
-  const {
-    0: selctedFile,
-    1: setSelctedFile
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
-  const {
-    imagePaths,
     addingGroupPost,
     addedGroupPost
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useSelector"])(state => state.post);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    setText('');
-  }, [addedGroupPost === true]);
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.post); //text 초기값
+
+  const {
+    0: grouptit,
+    1: setGrouptit
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
+  const {
+    0: grouptext,
+    1: setGrouptext
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
+
+  const InputChangeTit = e => {
+    e.preventDefault();
+    console.log(e.target.value);
+    setGrouptit(e.target.value);
+  };
+
+  const InputChangeText = e => {
+    setGrouptext(e.target.value);
+  }; //단일 이미지 미리보기
+
+
+  const {
+    0: img,
+    1: setImg
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
+  const onChangeImage = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
+    var reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+
+    reader.onloadend = function () {
+      setImg(reader.result);
+    };
+  }, []); // 취소버튼클릭시 파일창닫기
+
+  const popBlockClose = e => {
+    e.preventDefault();
+    let pop = document.querySelector(".pop");
+    let block = document.querySelector(".block");
+    pop.style.display = "none";
+    block.style.display = "none";
+    setGrouptit('');
+    setGrouptext('');
+    setImg(null);
+  }; // 그룹만들기서브밋
+
+
   const onSubmitGroup = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
     e.preventDefault();
     dispatch({
-      type: _reducers_post__WEBPACK_IMPORTED_MODULE_5__["ADD_GROUP_REQUEST"],
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_3__["ADD_GROUP_REQUEST"],
       data: {
-        text
+        text,
+        img
       }
     });
   }, []);
-
-  const handleChange = event => {
-    setFile({
-      file: URL.createObjectURL(event.target.files[0])
-    });
-  };
-
-  const fileUpSelcetedHandler = event => {
-    //console.log(event.target.file);
-    setSelctedFile({
-      selctedFile: event.target.file[0]
-    });
-  };
-
-  const fileUploadHandler = () => {
-    axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('');
-  };
-
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    setText('');
+  }, [addedGroupPost === true]);
   return __jsx("form", {
     className: "pop",
     onSubmit: onSubmitGroup,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 71
     },
     __self: undefined
   }, __jsx("div", {
     className: "gimg",
-    onClick: file,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 72
     },
     __self: undefined
   }, __jsx("img", {
-    src: setFile,
+    src: img,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 73
     },
     __self: undefined
   })), __jsx("div", {
     className: "filebox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 76
     },
     __self: undefined
   }, __jsx("label", {
     htmlFor: "file",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 77
     },
     __self: undefined
   }, "\uC0AC\uC9C4\uC744 \uC120\uD0DD\uD574\uC8FC\uC138\uC694."), __jsx("input", {
     type: "file",
     id: "file",
-    name: "file",
-    size: "2000",
+    onChange: onChangeImage,
     accept: ".jpg, .jpeg, .png",
     className: "upload",
-    value: "",
-    onChange: handleChange,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 78
     },
     __self: undefined
   })), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 60
-    },
-    __self: undefined
-  }, imagePaths.map(v => __jsx("div", {
-    key: v,
-    style: {
-      display: "inline-block"
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 63
-    },
-    __self: undefined
-  }, __jsx("img", {
-    src: `http://localhost:3065/${v}`,
-    style: {
-      width: '200px'
-    },
-    alt: v,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 64
-    },
-    __self: undefined
-  })))), __jsx("div", {
     className: "group",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 82
     },
     __self: undefined
   }, __jsx("label", {
@@ -366,16 +349,18 @@ const File = () => {
     className: "gtit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 83
     },
     __self: undefined
   }, " \uADF8\uB8F9\uC774\uB984"), __jsx("input", {
     type: "text",
     name: "gname",
     className: "gname",
+    value: grouptit,
+    onChange: InputChangeTit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 84
     },
     __self: undefined
   }), __jsx("label", {
@@ -383,53 +368,64 @@ const File = () => {
     className: "gtit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 85
     },
     __self: undefined
   }, " \uADF8\uB8F9\uC18C\uAC1C"), __jsx("input", {
     type: "text",
     name: "gintro",
     className: "gintro",
+    value: grouptext,
+    onChange: InputChangeText,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 86
     },
     __self: undefined
   }), __jsx("p", {
     className: "send",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 87
     },
     __self: undefined
   }, __jsx("input", {
     type: "submit",
     value: "\uC62C\uB9AC\uAE30",
     loading: addingGroupPost,
-    onSubmit: fileUploadHandler,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 88
     },
     __self: undefined
   }), __jsx("input", {
-    type: "reset",
+    type: "button",
     value: "\uCDE8\uC18C",
-    onClick: function () {
-      var pop = document.querySelector(".pop");
-      var block = document.querySelector(".block");
-      pop.style.display = "none";
-      block.style.display = "none";
-    },
+    onClick: popBlockClose,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 89
     },
     __self: undefined
   }))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (File); // class File extends React.Component{
+/* harmony default export */ __webpack_exports__["default"] = (File); // const handleChange = (event) => {
+//   //console.log(event.target);
+//   setFile({
+//     file: URL.createObjectURL(event.target.files[0])
+//   });
+// };
+// const fileUpSelcetedHandler = (event) => {
+//   //console.log(event.target.file);
+//   setSelctedFile({
+//     selctedFile:event.target.file[0]
+//   })
+// };
+// const fileUploadHandler = () => {
+//     axios.post('');
+// };
+// class File extends React.Component{
 //   constructor(props){
 //     super(props);
 //     this.state = {
@@ -512,6 +508,152 @@ const File = () => {
 /***/ (function(module, exports) {
 
 
+
+/***/ }),
+
+/***/ "./components/GroupForm.js":
+/*!*********************************!*\
+  !*** ./components/GroupForm.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/post */ "./reducers/post.js");
+var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\GroupForm.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+const GroupForm = () => {
+  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])();
+  const {
+    0: text,
+    1: setText
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
+  const {
+    imagePaths,
+    isAddingPost,
+    postAdded
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.post);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    setText('');
+  }, [postAdded === true]);
+  const onSubmitForm = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
+    e.preventDefault();
+    dispatch({
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_POST_REQUEST"],
+      data: {
+        text
+      }
+    });
+  }, []);
+  const onChangeText = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
+    setText(e.target.value);
+  }, []);
+  return __jsx("form", {
+    style: {
+      margin: '10px 0 20px'
+    },
+    encType: "multipart/form-data",
+    onSubmit: onSubmitForm,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: undefined
+  }, __jsx("input", {
+    htmltype: "textarea",
+    maxLength: 140,
+    placeholder: "\uC18C\uC2DD\uC744 \uB0A8\uACA8\uC8FC\uC138\uC694",
+    value: text,
+    onChange: onChangeText,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30
+    },
+    __self: undefined
+  }), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31
+    },
+    __self: undefined
+  }, __jsx("input", {
+    type: "file",
+    multiple: true,
+    hidden: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32
+    },
+    __self: undefined
+  }), __jsx("button", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
+    },
+    __self: undefined
+  }, "\uC774\uBBF8\uC9C0 \uC5C5\uB85C\uB4DC"), __jsx("button", {
+    style: {
+      float: "right"
+    },
+    htmltype: "submit",
+    loading: isAddingPost,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: undefined
+  }, "\uC9F9\uC9F9")), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: undefined
+  }, imagePaths.map(v => __jsx("div", {
+    key: v,
+    style: {
+      display: "inline-block"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39
+    },
+    __self: undefined
+  }, __jsx("img", {
+    src: `http://localhost:3065/${v}`,
+    style: {
+      width: '200px'
+    },
+    alt: v,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40
+    },
+    __self: undefined
+  }), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: undefined
+  }, __jsx("button", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: undefined
+  }, "\uC81C\uAC70"))))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (GroupForm);
 
 /***/ }),
 
@@ -719,30 +861,25 @@ const Home = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "react-router-dom");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/head */ "next/head");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Menu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Menu */ "./components/Menu.js");
-/* harmony import */ var _Plus__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Plus */ "./components/Plus.js");
-/* harmony import */ var _routes_Contents_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../routes/Contents.css */ "./routes/Contents.css");
-/* harmony import */ var _routes_Contents_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_routes_Contents_css__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _routes_Templete_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../routes/Templete.css */ "./routes/Templete.css");
-/* harmony import */ var _routes_Templete_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_routes_Templete_css__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "react-router-dom");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _Plus__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Plus */ "./components/Plus.js");
+/* harmony import */ var _GroupForm__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./GroupForm */ "./components/GroupForm.js");
+/* harmony import */ var _Contents_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Contents.css */ "./components/Contents.css");
+/* harmony import */ var _Contents_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_Contents_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _Templete_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Templete.css */ "./components/Templete.css");
+/* harmony import */ var _Templete_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_Templete_css__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./GroupItem.css */ "./components/GroupItem.css");
 /* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_GroupItem_css__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Home */ "./components/Home.js");
-/* harmony import */ var _routes_About__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../routes/About */ "./routes/About.js");
-/* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Login */ "./components/Login.js");
 var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\IndexPage.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-
-
-
+ // import { } from '../File';
 
 
 
@@ -752,114 +889,131 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 const IndexPage = () => {
+  const {
+    GroupPosts
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.post);
+  const {
+    isLoggedIn
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.user);
   return __jsx("div", {
     className: "groupitem",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: undefined
-  }, __jsx(_Plus__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 18
     },
     __self: undefined
-  }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  }, __jsx(_Plus__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: undefined
+  }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
     href: "/contents",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 20
     },
     __self: undefined
   }, __jsx("a", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "contbox",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 20
     },
     __self: undefined
   }, __jsx("div", {
-    className: "dogimg",
+    className: "contbox",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 21
     },
     __self: undefined
-  }), __jsx("h1", {
+  }, __jsx("div", {
+    className: "dogimg",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 22
     },
     __self: undefined
-  }, " \uB315\uB315\uC774\uC9D1\uC0AC \uADF8\uB8F9"), __jsx("p", {
+  }), __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 23
+    },
+    __self: undefined
+  }, " \uB315\uB315\uC774\uC9D1\uC0AC \uADF8\uB8F9"), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
     },
     __self: undefined
   }, "\uC138\uC824\uC608 \uB315\uB315\uC774\uB4E4 \uBAA8\uC5EC\uB77C~!")))), __jsx("div", {
     className: "contbox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 30
     },
     __self: undefined
   }, __jsx("div", {
     className: "travelimg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 31
     },
     __self: undefined
   }), __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 32
     },
     __self: undefined
   }, "\uC138\uACC4\uB300\uD0D0\uBC29\uADF8\uB8F9"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 33
     },
     __self: undefined
   }, "\uC5F4\uC2EC\uD788 \uC77C\uD55C \uB2F9\uC2E0, \uB5A0\uB098\uB77C. \uC5F4\uC2EC\uD788 \uB178\uB294 \uB2F9\uC2E0, \uB2F9\uC2E0\uB3C4 \uB5A0\uB098\uB77C.")), __jsx("div", {
     className: "contbox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 39
     },
     __self: undefined
   }, __jsx("div", {
     className: "foodimg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 40
     },
     __self: undefined
   }), __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 41
     },
     __self: undefined
   }, " \uBA39\uBD80\uB9BC \uADF8\uB8F9"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 42
     },
     __self: undefined
   }, "\uBBF8\uC2DD\uAC00 \uC5EC\uB7EC\uBD84 \uD658\uC601\uD569\uB2C8\uB2E4~!")));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (IndexPage);
+/* harmony default export */ __webpack_exports__["default"] = (IndexPage); // {GroupPosts.map((v)=>{
+//     return(
+//         <div className="contbox">
+//             <div className="foodimg"></div>
+//             <h1></h1> {/* {grouptit} */}
+//             <p>
+//                 {/* {grouptext} */}
+//             </p>
+//         </div>
+//     );
+// })
+// }
 
 /***/ }),
 
@@ -1179,7 +1333,7 @@ const Join = () => {
     },
     __self: undefined
   }, __jsx("button", {
-    htmlType: "submit",
+    type: "submit",
     className: "btn",
     loading: isSigningUp,
     __source: {
@@ -1349,8 +1503,6 @@ const Login = () => {
     __self: undefined
   }), __jsx("label", {
     htmlFor: "user-password",
-    value: password,
-    onChange: onChangePassword,
     className: "bld",
     __source: {
       fileName: _jsxFileName,
@@ -1362,6 +1514,8 @@ const Login = () => {
     type: "password",
     placeholder: "\uBE44\uBC00\uBC88\uD638\uB97C \uC785\uB825\uD558\uC138\uC694.",
     className: "tbox",
+    value: password,
+    onChange: onChangePassword,
     required: true,
     __source: {
       fileName: _jsxFileName,
@@ -1372,24 +1526,25 @@ const Login = () => {
     className: "btngroup",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 69
     },
     __self: undefined
   }, __jsx("button", {
-    htmlType: "submit",
+    htmltype: "submit",
     className: "btn",
     loading: isLoggingIn,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 70
     },
     __self: undefined
   }, "\uB85C\uADF8\uC778"), __jsx("button", {
+    htmltype: "button",
     className: "btn",
     onClick: onChangeMode,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 71
     },
     __self: undefined
   }, "\uD68C\uC6D0\uAC00\uC785"))))));
@@ -1438,60 +1593,89 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 const Menu = () => {
+  //  const OnLight = (e) => {
+  //   e.preventDefault();
+  //   var onclass = document.getElementsByClassName(".menu_a");
+  //   onclass.onClick =function(){
+  //     alert("클릭");
+  //   }
+  //  };
+  const test1 = e => {
+    e.preventDefault();
+    let classa = document.querySelector(".menu_a");
+    let classm = document.querySelector(".menu_m");
+    classa.setAttribute("id", "on");
+    classm.setAttribute("id", "");
+  };
+
+  const test2 = e => {
+    e.preventDefault();
+    let classa = document.querySelector(".menu_a");
+    let classm = document.querySelector(".menu_m");
+    classa.setAttribute("id", "");
+    classm.setAttribute("id", "on");
+  };
+
   return __jsx("div", {
     className: "top",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 34
     },
     __self: undefined
   }, __jsx("ul", {
     className: "menubox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 35
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: undefined
+  }, __jsx("a", {
+    href: "/contents",
+    onClick: test1,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
     },
     __self: undefined
   }, __jsx("li", {
     className: "menu_a",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 36
     },
     __self: undefined
-  }, "\uC804\uCCB4\uAE00"), __jsx("li", {
+  }, "\uC804\uCCB4\uAE00"))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37
+    },
+    __self: undefined
+  }, __jsx("a", {
+    href: "/member",
+    onClick: test2,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37
+    },
+    __self: undefined
+  }, __jsx("li", {
     className: "menu_m",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 37
     },
     __self: undefined
-  }, "\uBA64\uBC84")));
+  }, "\uBA64\uBC84")))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Menu); //import React, {Component} from 'react';
-// import {NavLink} from 'react-router-dom';
-// // import Menu from './Menu';
-// //import Template from './Templete';
-// // import Member from './Member';
-// import './Menu.css';
-// class Menu extends Component{
-//   render(){
-//     return (
-//       <div className="top">
-//         <div className="menubox">
-//         <NavLink  exact to="/contents" className="menu_a" activeClassName="active">
-//             전체글
-//         </NavLink>            
-//         <NavLink to="/member" className="menu_m" activeClassName="active">
-//             멤버
-//         </NavLink>            
-//         </div>
-//       </div>
-//       );
-//   }
-// }
-// export default Menu;
+/* harmony default export */ __webpack_exports__["default"] = (Menu);
 
 /***/ }),
 
@@ -1507,8 +1691,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_File__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/File */ "./components/File.js");
-/* harmony import */ var _routes_Templete_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../routes/Templete.css */ "./routes/Templete.css");
-/* harmony import */ var _routes_Templete_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_routes_Templete_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Templete_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Templete.css */ "./components/Templete.css");
+/* harmony import */ var _Templete_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Templete_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./GroupItem.css */ "./components/GroupItem.css");
 /* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_GroupItem_css__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\Plus.js";
@@ -1519,45 +1703,48 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 const Plus = () => {
+  const popBlock = e => {
+    e.preventDefault();
+    let pop = document.querySelector('.pop');
+    let block = document.querySelector(".block");
+    pop.style.display = "block";
+    block.style.display = "block";
+  };
+
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_components_File__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 20
     },
     __self: undefined
   }), __jsx("div", {
     className: "btnbox contbox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 21
     },
     __self: undefined
   }, __jsx("p", {
     className: "plustit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 22
     },
     __self: undefined
   }, "\uADF8\uB8F9\uB9CC\uB4E4\uAE30"), __jsx("button", {
+    type: "button",
     id: "myBtn",
-    onClick: function (e) {
-      e.preventDefault();
-      var pop = document.querySelector('.pop');
-      var block = document.querySelector(".block");
-      pop.style.display = "block";
-      block.style.display = "block";
-    },
+    onClick: popBlock,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 23
     },
     __self: undefined
   })), __jsx("div", {
     className: "block",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 26
     },
     __self: undefined
   }));
@@ -1583,161 +1770,14 @@ const Plus = () => {
 
 /***/ }),
 
-/***/ "./components/PostForm.js":
-/*!********************************!*\
-  !*** ./components/PostForm.js ***!
-  \********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/post */ "./reducers/post.js");
-var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\PostForm.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+/***/ "./components/Templete.css":
+/*!*********************************!*\
+  !*** ./components/Templete.css ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
 
 
- //임시로만든 데이터객체
-// const dummy={
-//     isLoggedIn: true,
-//     imagePaths:[],
-//     mainPosts:[{
-//         User:{
-//             id: 1,
-//             nickname: "두리안",
-//         },
-//             content: "첫번째 게시글",
-//             img:"https://img1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/liveboard/dailylife/187ea4bc2ad54b1db5030743265c5397.jpg", 
-//     }],
-// };
-
-const PostForm = () => {
-  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])();
-  const {
-    0: text,
-    1: setText
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
-  const {
-    imagePaths,
-    isAddingPost,
-    postAdded
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.post);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    setText('');
-  }, [postAdded === true]);
-  const onSubmitForm = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    e.preventDefault();
-    dispatch({
-      type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_POST_REQUEST"],
-      data: {
-        text
-      }
-    });
-  }, []);
-  const onChangeText = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    setText(e.target.value);
-  }, []);
-  return __jsx("form", {
-    style: {
-      margin: '10px 0 20px'
-    },
-    encType: "multipart/form-data",
-    onSubmit: onSubmitForm,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: undefined
-  }, __jsx("input", {
-    htmlType: "textarea",
-    maxLength: 140,
-    placeholder: "\uC18C\uC2DD\uC744 \uB0A8\uACA8\uC8FC\uC138\uC694",
-    value: text,
-    onChange: onChangeText,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: undefined
-  }), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 45
-    },
-    __self: undefined
-  }, __jsx("input", {
-    type: "file",
-    multiple: true,
-    hidden: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 46
-    },
-    __self: undefined
-  }), __jsx("button", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 47
-    },
-    __self: undefined
-  }, "\uC774\uBBF8\uC9C0 \uC5C5\uB85C\uB4DC"), __jsx("button", {
-    style: {
-      float: "right"
-    },
-    htmlType: "submit",
-    loading: isAddingPost,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 48
-    },
-    __self: undefined
-  }, "\uC9F9\uC9F9")), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 50
-    },
-    __self: undefined
-  }, imagePaths.map(v => __jsx("div", {
-    key: v,
-    style: {
-      display: "inline-block"
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 53
-    },
-    __self: undefined
-  }, __jsx("img", {
-    src: `http://localhost:3065/${v}`,
-    style: {
-      width: '200px'
-    },
-    alt: v,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 54
-    },
-    __self: undefined
-  }), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 55
-    },
-    __self: undefined
-  }, __jsx("button", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 56
-    },
-    __self: undefined
-  }, "\uC81C\uAC70"))))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (PostForm);
 
 /***/ }),
 
@@ -4417,9 +4457,13 @@ const ADD_GROUP_REQUEST = 'ADD_GROUP_REQUEST';
 const ADD_GROUP_SUCCESS = 'ADD_GROUP_SUCCESS';
 const ADD_GROUP_FAILURE = 'ADD_GROUP_FAILURE';
 const ADD_POST = "ADD_POST";
+const ADD_GROUPPOST = "ADD_GROUPPOST";
 const ADD_DUMMY = "ADD_DUMMY";
 const addPost = {
   type: ADD_POST
+};
+const addGroupPost = {
+  type: ADD_GROUPPOST
 }; // const addDummy = {
 //     type: ADD_DUMMY,
 //     data:{
@@ -4509,8 +4553,8 @@ const addPost = {
       {
         return _objectSpread({}, state, {
           addingGroupPost: false,
-          addedGroupPost: true,
-          mainPosts: [dummyGroupPost, ...state.GroupPosts]
+          mainPosts: [dummyGroupPost, ...state.GroupPosts],
+          addedGroupPost: true
         });
       }
 
@@ -4752,225 +4796,6 @@ const loginAction = data => {
 
 /***/ }),
 
-/***/ "./routes/About.js":
-/*!*************************!*\
-  !*** ./routes/About.js ***!
-  \*************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "react-router-dom");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Header */ "./routes/Header.js");
-/* harmony import */ var _Templete__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Templete */ "./routes/Templete.js");
-/* harmony import */ var _Templete__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Templete__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\routes\\About.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
- // import './About.css';
-
-const About = () => {
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    },
-    __self: undefined
-  }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: undefined
-  }), __jsx(_Templete__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: undefined
-  }));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (About);
-
-/***/ }),
-
-/***/ "./routes/Contents.css":
-/*!*****************************!*\
-  !*** ./routes/Contents.css ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ "./routes/Header.css":
-/*!***************************!*\
-  !*** ./routes/Header.css ***!
-  \***************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ "./routes/Header.js":
-/*!**************************!*\
-  !*** ./routes/Header.js ***!
-  \**************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "react-router-dom");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Header_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Header.css */ "./routes/Header.css");
-/* harmony import */ var _Header_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Header_css__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\routes\\Header.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-const Header = () => {
-  return __jsx("div", {
-    className: "header",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 8
-    },
-    __self: undefined
-  }, __jsx(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-    to: "/",
-    className: "logo_w",
-    activeClassName: "active",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9
-    },
-    __self: undefined
-  }), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10
-    },
-    __self: undefined
-  }), __jsx("div", {
-    className: "profile",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: undefined
-  }, __jsx("button", {
-    className: "pfBtn",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    },
-    __self: undefined
-  })), __jsx("div", {
-    className: "srcbox",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: undefined
-  }, __jsx("input", {
-    type: "text",
-    placeholder: "\uAC80\uC0C9\uD574\uBCF4\uC138\uC694.",
-    className: "txtbox",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20
-    },
-    __self: undefined
-  }), __jsx("input", {
-    type: "submit",
-    value: "Search",
-    className: "search",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: undefined
-  })));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Header);
-
-/***/ }),
-
-/***/ "./routes/Templete.css":
-/*!*****************************!*\
-  !*** ./routes/Templete.css ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ "./routes/Templete.js":
-/*!****************************!*\
-  !*** ./routes/Templete.js ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// import React, {Component} from 'react';
-// import {NavLink} from 'react-router-dom';
-// import File from "../components/File";
-// import Plus from "../components/plus";
-// import Dog from "../components/Dog";
-// import Travel from "../components/Travel";
-// import Food from "../components/Food";
-// import './Templete.css';
-// import '../components/GroupItem.css';
-// class Templete extends Component{
-//   render(){
-//     return (
-//       <div>
-//         {/* 구분선 */}
-//         <span className="hrline"></span>
-//         {/* 그룹만들기창 */}
-//         <File></File>
-//         {/* 컨텐츠그룹 */}
-//         <div className="groupitem">
-//           <Plus></Plus>
-//           <NavLink  exact to="/dog" className="" activeClassName="active">
-//             <Dog></Dog>
-//           </NavLink>            
-//           <NavLink to="/travel" className="" activeClassName="active">
-//             <Travel></Travel>
-//           </NavLink>            
-//           <NavLink to="/food" className="" activeClassName="active">
-//             <Food></Food>
-//           </NavLink>        
-//         </div>
-//         {/* 터치방지막 */}
-//         <div className="block"></div>
-//       </div>
-//     );
-//   }
-// };
-// export default Templete;
-
-/***/ }),
-
 /***/ "./sagas/index.js":
 /*!************************!*\
   !*** ./sagas/index.js ***!
@@ -5012,6 +4837,10 @@ __webpack_require__.r(__webpack_exports__);
 
 function addPostAPI() {}
 
+function addCommentAPI() {}
+
+function addGroupPosttAPI() {}
+
 function* addPost() {
   try {
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["delay"])(2000);
@@ -5025,12 +4854,6 @@ function* addPost() {
     });
   }
 }
-
-function* watchAddPost() {
-  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeLatest"])(_reducers_post__WEBPACK_IMPORTED_MODULE_1__["ADD_POST_REQUEST"], addPost);
-}
-
-function addCommentAPI() {}
 
 function* addComment(action) {
   try {
@@ -5049,12 +4872,37 @@ function* addComment(action) {
   }
 }
 
+function* addGroupPost(action) {
+  try {
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["delay"])(2000);
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_1__["ADD_GROUP_SUCCESS"],
+      data: {
+        postId: action.data.postId
+      }
+    });
+  } catch (e) {
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_1__["ADD_GROUP_FAILURE"],
+      error: e
+    });
+  }
+}
+
+function* watchAddPost() {
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeLatest"])(_reducers_post__WEBPACK_IMPORTED_MODULE_1__["ADD_POST_REQUEST"], addPost);
+}
+
 function* watchAddComment() {
   yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeLatest"])(_reducers_post__WEBPACK_IMPORTED_MODULE_1__["ADD_COMMENT_REQUEST"], addComment);
 }
 
+function* watchAddGroupPost() {
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeLatest"])(_reducers_post__WEBPACK_IMPORTED_MODULE_1__["ADD_GROUP_REQUEST"], addGroupPost);
+}
+
 function* postSaga() {
-  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchAddPost), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchAddComment)]);
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchAddPost), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchAddComment), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchAddGroupPost)]);
 }
 
 /***/ }),
@@ -5295,17 +5143,6 @@ module.exports = require("core-js/library/fn/weak-map");
 /***/ (function(module, exports) {
 
 module.exports = require("next-redux-wrapper");
-
-/***/ }),
-
-/***/ "next/head":
-/*!****************************!*\
-  !*** external "next/head" ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("next/head");
 
 /***/ }),
 

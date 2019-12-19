@@ -1,23 +1,26 @@
 import React from 'react';
 
 import File from '../components/File';
-import '../routes/Templete.css';
+import './Templete.css';
 import './GroupItem.css';
 
 
 const Plus = () => {
+
+    const popBlock = (e) => {
+        e.preventDefault();
+        let pop = document.querySelector('.pop');
+        let block = document.querySelector(".block");
+        pop.style.display="block"
+        block.style.display="block";
+    };
+
     return (
         <>
             <File />
             <div className="btnbox contbox">
                     <p className="plustit">그룹만들기</p>
-                    <button id="myBtn" onClick={function(e){
-                        e.preventDefault();
-                        var pop = document.querySelector('.pop');
-                        var block = document.querySelector(".block");
-                        pop.style.display="block"
-                        block.style.display="block"
-                    }} />
+                    <button type="button" id="myBtn" onClick={popBlock} />
             </div>
             {/* 터치방지막 */}
             <div className="block"></div>

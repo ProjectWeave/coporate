@@ -1,11 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import Head from 'next/head';
 
 import Menu from '../components/Menu';
 import Plus from '../components/Plus';
-import '../routes/Contents.css';
-import '../routes/Templete.css';
+import '../components/Contents.css';
+import '../components/Templete.css';
 import '../components/GroupItem.css';
 
 const Main = () => {

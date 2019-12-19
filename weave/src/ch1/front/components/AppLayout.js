@@ -1,21 +1,19 @@
 import React from 'react';
-import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
-import Router from 'next/router';
+//import Router from 'next/router';
 
 import Header from './Header';
 import Menu from './Menu';
 import Home from './Home';
 import IndexPage from './IndexPage';
 import './Header.css';
-import Head from 'next/head';
 import Login from './Login';
 import './Grid.css';
 
 const AppLayout = ({children}) => {
     const { isLoggedIn } = useSelector(state => state.user);
-    const { setState } = useSelector(state => state.user);
+    //const { setState } = useSelector(state => state.user);
     if(!isLoggedIn)return<><Home /></>
     // if(!isLoggedIn && Mode === 'clicked')
     // return
@@ -30,7 +28,7 @@ const AppLayout = ({children}) => {
     return (
         <>
             <Header />
-            <Menu />
+            {/* <Menu /> */}
             <div className="col-12">
                 <IndexPage />
                 {children}

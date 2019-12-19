@@ -1,10 +1,17 @@
 import { all, delay, fork, put, takeLatest } from 'redux-saga/effects';
-import { ADD_COMMENT_FAILURE, ADD_COMMENT_REQUEST, ADD_COMMENT_SUCCESS, ADD_POST_FAILURE, ADD_POST_REQUEST, ADD_POST_SUCCESS, ADD_GROUP_REQUEST, ADD_GROUP_SUCCESS } from '../reducers/post';
+import { ADD_COMMENT_FAILURE, ADD_COMMENT_REQUEST, ADD_COMMENT_SUCCESS, ADD_POST_FAILURE, ADD_POST_REQUEST, ADD_POST_SUCCESS, ADD_GROUP_REQUEST, ADD_GROUP_SUCCESS, ADD_GROUP_FAILURE } from '../reducers/post';
 
 
 function addPostAPI(){
 
 }
+function addCommentAPI(){
+
+}
+function addGroupPosttAPI(){
+
+}
+
 
 function* addPost() {
     try {
@@ -19,14 +26,6 @@ function* addPost() {
       });
     }
   }
-
-function* watchAddPost(){
-    yield takeLatest(ADD_POST_REQUEST, addPost);
-}
-
-function addCommentAPI(){
-
-}
 
 function* addComment(action){
     try{
@@ -45,19 +44,40 @@ function* addComment(action){
     }
 }
 
+function* addGroupPost(action){
+    try{
+        yield delay(2000);
+        yield put({
+            type: ADD_GROUP_SUCCESS,
+            data:{
+                postId : action.data.postId,
+            },
+        });
+    } catch (e){ 
+        yield put({
+            type: ADD_GROUP_FAILURE,
+            error: e,
+        });
+    }
+}
 
+function* watchAddPost(){
+    yield takeLatest(ADD_POST_REQUEST, addPost);
+}
 
 function* watchAddComment(){
     yield takeLatest(ADD_COMMENT_REQUEST, addComment);
 }
 
-
-
+function* watchAddGroupPost(){
+    yield takeLatest(ADD_GROUP_REQUEST, addGroupPost);
+}
 
 
 export default function* postSaga(){
     yield all([
         fork(watchAddPost),
         fork(watchAddComment),
+        fork(watchAddGroupPost),
     ]);
 }

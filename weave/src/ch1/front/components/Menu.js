@@ -7,44 +7,37 @@ import './Menu.css';
 import './reset.css';
 
  const Menu = () => {
+  //  const OnLight = (e) => {
+  //   e.preventDefault();
+  //   var onclass = document.getElementsByClassName(".menu_a");
+  //   onclass.onClick =function(){
+  //     alert("클릭");
+  //   }
+  //  };
+  const test1 = (e) => {
+    e.preventDefault();
+    let classa = document.querySelector(".menu_a")
+    let classm = document.querySelector(".menu_m")
+    classa.setAttribute("id","on");
+    classm.setAttribute("id","");
+  };
+
+  const test2 = (e) => {
+    e.preventDefault();
+    let classa = document.querySelector(".menu_a")
+    let classm = document.querySelector(".menu_m")
+    classa.setAttribute("id","");
+    classm.setAttribute("id","on");
+  };
+
   return (
     <div className="top">
       <ul className="menubox">
-        <li className="menu_a">전체글</li>
-        <li className="menu_m">멤버</li>
+        <Link><a href="/contents" onClick={test1}><li className="menu_a">전체글</li></a></Link>
+        <Link><a href="/member" onClick={test2}><li className="menu_m">멤버</li></a></Link>
       </ul>           
     </div>
   );
 };      
 
 export default Menu;
-
-
-//import React, {Component} from 'react';
-// import {NavLink} from 'react-router-dom';
-
-// // import Menu from './Menu';
-// //import Template from './Templete';
-// // import Member from './Member';
-// import './Menu.css';
-
-
-// class Menu extends Component{
-//   render(){
-//     return (
-//       <div className="top">
-//         <div className="menubox">
-//         <NavLink  exact to="/contents" className="menu_a" activeClassName="active">
-//             전체글
-//         </NavLink>            
-//         <NavLink to="/member" className="menu_m" activeClassName="active">
-//             멤버
-//         </NavLink>            
-//         </div>
-//       </div>
-
-//       );
-//   }
-// }
-
-// export default Menu;

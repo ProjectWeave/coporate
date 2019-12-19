@@ -62,12 +62,13 @@ const Login = () => {
               <div>
                 <label htmlFor="user-id" className="bld">아이디</label>
                 <input name="user-id" value={id} onChange={onChangeId} placeholder="아이디를 입력하세요." className="tbox" required />
-                <label htmlFor="user-password" value={password} onChange={onChangePassword} className="bld">비밀번호</label>
-                <input name="user-pasword" type="password" placeholder="비밀번호를 입력하세요." className="tbox" required />
+                <label htmlFor="user-password" className="bld">비밀번호</label>
+                <input name="user-pasword" type="password" placeholder="비밀번호를 입력하세요." 
+                       className="tbox" value={password} onChange={onChangePassword} required />
               </div>
               <div className="btngroup">
-                <button htmlType="submit" className="btn" loading={isLoggingIn}>로그인</button>
-                <button className="btn" onClick={onChangeMode}>회원가입</button>
+                <button htmltype="submit" className="btn" loading={isLoggingIn}>로그인</button>
+                <button htmltype="button" className="btn" onClick={onChangeMode}>회원가입</button>
               </div>
             </form>
           </div>
