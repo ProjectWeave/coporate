@@ -132,6 +132,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Menu_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Menu_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _reset_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./reset.css */ "./components/reset.css");
 /* harmony import */ var _reset_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_reset_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\Menu.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -142,20 +144,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 const Menu = () => {
-  //  const OnLight = (e) => {
-  //   e.preventDefault();
-  //   var onclass = document.getElementsByClassName(".menu_a");
-  //   onclass.onClick =function(){
-  //     alert("클릭");
-  //   }
-  //  };
   const test1 = e => {
     e.preventDefault();
     let classa = document.querySelector(".menu_a");
     let classm = document.querySelector(".menu_m");
     classa.setAttribute("id", "on");
-    classm.setAttribute("id", "");
+    classm.setAttribute("id", ""); //Router.push("/contents");
   };
 
   const test2 = e => {
@@ -163,66 +159,53 @@ const Menu = () => {
     let classa = document.querySelector(".menu_a");
     let classm = document.querySelector(".menu_m");
     classa.setAttribute("id", "");
-    classm.setAttribute("id", "on");
+    classm.setAttribute("id", "on"); //Router.push("/member");
+  };
+
+  const test3 = e => {
+    e.preventDefault();
+    let tg = document.querySelector(".menubox li");
+    let target = e.target;
+
+    if (target.classList.contain('on')) {
+      tg.setAttribute("id", "");
+    } else {
+      tg.setAttribute("id", "on");
+    }
   };
 
   return __jsx("div", {
     className: "top",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 42
     },
     __self: undefined
   }, __jsx("ul", {
     className: "menubox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
-    },
-    __self: undefined
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 36
-    },
-    __self: undefined
-  }, __jsx("a", {
-    href: "/contents",
-    onClick: test1,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 43
     },
     __self: undefined
   }, __jsx("li", {
     className: "menu_a",
+    id: "on",
+    onClick: test1,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 44
     },
     __self: undefined
-  }, "\uC804\uCCB4\uAE00"))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 37
-    },
-    __self: undefined
-  }, __jsx("a", {
-    href: "/member",
+  }, "\uC804\uCCB4\uAE00"), __jsx("li", {
+    className: "menu_m",
     onClick: test2,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 45
     },
     __self: undefined
-  }, __jsx("li", {
-    className: "menu_m",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 37
-    },
-    __self: undefined
-  }, "\uBA64\uBC84")))));
+  }, "\uBA64\uBC84")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Menu);
@@ -2443,8 +2426,7 @@ const Contents = () => {
       lineNumber: 58
     },
     __self: undefined
-  }, __jsx("input", {
-    type: "textarea",
+  }, __jsx("textarea", {
     maxLength: 1500,
     placeholder: "\uC18C\uC2DD\uC744 \uB0A8\uACA8\uC8FC\uC138\uC694",
     className: "tarea",
@@ -2562,7 +2544,7 @@ const Contents = () => {
     },
     __self: undefined
   })))), __jsx("div", {
-    className: "posting",
+    className: "letsbegin",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 81
@@ -3124,6 +3106,17 @@ module.exports = require("core-js/library/fn/promise");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/weak-map");
+
+/***/ }),
+
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
 
 /***/ }),
 

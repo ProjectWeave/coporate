@@ -33,6 +33,9 @@
     height: 45px;
     border-radius: 50%;
     background-color: #cecece;
+    background-image: url(../imgs/profile.jpg);
+    background-position: center;
+    background-size: 100%;
 }
 .pfBtn{
     position: absolute;
@@ -45,7 +48,53 @@
     background: transparent url(../imgs/down.png) no-repeat;
 }
 
+/* 프로필클릭시내려오는 토글박스 */
+.toggleBox{
+    position: absolute;
+    top: 37px;
+    right: -10px;
+    /* margin-left: -80px;
+    margin-top: 20px; */
+    background-color: #dedede;
+    width: 100px;
+    height: 70px;
+    border-radius: 5px    
+}
+.toggleBox ul{
+    padding-top: 5px;
+}
+.toggleBox ul li{
+    float: none;
+    font: 0.875rem/1.75rem "Nanum Gothic",san-serief;
+    text-align: left;
+    padding-left: 12px;
+    cursor: pointer;
+}
+.toggleBox ul li a{
+    text-indent: 5px;
+}
+/* 밑줄 */
+.toggleBox ul li:first-child a::after{
+    content: "";
+    display: block;
+    width: 75px;
+    height: 1px;
+    background-color: #999;
+}
 
+/* 세모 */
+.toggleBox::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: -15%;
+    right: 0%;
+    /* border-top: 20px solid #dddddd; */
+    border-bottom: 20px solid#dedede;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    /* outline: 1px solid red; */
+}
 
 /* 검색박스 */
 .srcbox{

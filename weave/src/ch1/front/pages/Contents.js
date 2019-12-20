@@ -56,8 +56,8 @@ const Contents = () => {
                 
                 <form className="uploadTb" encType="multipart/form-data" onSubmit={onSubmitForm}>
                     <div className='row1'>
-                        <input type="textarea" maxLength={1500} placeholder="소식을 남겨주세요" 
-                               className="tarea" value={text} onChange={onChangeText} />
+                        <textarea maxLength={1500} placeholder="소식을 남겨주세요"
+                                  className="tarea" value={text} onChange={onChangeText} />
                     </div>
                     <div className='row2'>
                         <div>
@@ -74,11 +74,11 @@ const Contents = () => {
                         </div>
                         <div>
                             <label Htmlfor="file-input" className="icon04"></label>
-                            <button id="file-input" className="icon04" type="submit" loading={isAddingPost}  />
+                            <button id="file-input" className="icon04" type="submit" loading={isAddingPost} ></button>
                         </div>
                     </div>
                 </form>
-                <div className="posting" >
+                <div className="letsbegin" >
                     그룹에 재미있는 이야기를 써보세요. 
                     {/* 반복문 */}
                     {imagePaths.map((v) => (

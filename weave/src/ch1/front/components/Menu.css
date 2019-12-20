@@ -24,7 +24,7 @@
 }
 
 
-.menu_a,.menu_m{
+.menu_a,.menu_m,.menu_g{
     /* position: relative; */
     width: 100px;
     /* margin-right: 20px;
@@ -47,6 +47,11 @@
     border-bottom: 3px solid #0090A8;
 }
 
+.menu_g{
+    color: #0090A8;
+    border-bottom: 3px solid #0090A8;
+}
+
 
 /* 
 .lighton{
@@ -56,7 +61,6 @@
 
 .menu_a:hover, .menu_m:hover{
     color: #0090A8;
-    border-bottom: 3px solid #0090A8;
 }
 
 

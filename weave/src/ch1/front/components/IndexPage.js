@@ -17,7 +17,7 @@ const IndexPage = () => {
     return (
         <div className="groupitem">
             <Plus />
-            <Link href="/contents"><a>
+            <Link href="/cont"><a>
                 <div className="contbox">
                     <div className="dogimg"></div>
                     <h1> 댕댕이집사 그룹</h1>

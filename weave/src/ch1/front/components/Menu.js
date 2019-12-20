@@ -5,21 +5,17 @@ import Link from 'next/link';
 //import Member from '../routes/Member';
 import './Menu.css';
 import './reset.css';
+import { Router } from 'next/router';
 
  const Menu = () => {
-  //  const OnLight = (e) => {
-  //   e.preventDefault();
-  //   var onclass = document.getElementsByClassName(".menu_a");
-  //   onclass.onClick =function(){
-  //     alert("클릭");
-  //   }
-  //  };
+   
   const test1 = (e) => {
     e.preventDefault();
     let classa = document.querySelector(".menu_a")
     let classm = document.querySelector(".menu_m")
     classa.setAttribute("id","on");
     classm.setAttribute("id","");
+    //Router.push("/contents");
   };
 
   const test2 = (e) => {
@@ -28,13 +24,25 @@ import './reset.css';
     let classm = document.querySelector(".menu_m")
     classa.setAttribute("id","");
     classm.setAttribute("id","on");
+    //Router.push("/member");
   };
 
+  const test3 = (e) => {
+    e.preventDefault();
+    let tg = document.querySelector(".menubox li");
+    let target= e.target;
+    if(target.classList.contain('on')){
+      tg.setAttribute("id","");
+    }
+    else{
+      tg.setAttribute("id","on");
+    }
+  }
   return (
     <div className="top">
       <ul className="menubox">
-        <Link><a href="/contents" onClick={test1}><li className="menu_a">전체글</li></a></Link>
-        <Link><a href="/member" onClick={test2}><li className="menu_m">멤버</li></a></Link>
+        <li className="menu_a" id="on" onClick={test1}>전체글</li>
+        <li className="menu_m"  onClick={test2}>멤버</li>
       </ul>           
     </div>
   );

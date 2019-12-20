@@ -4,11 +4,11 @@ import { useSelector } from 'react-redux';
 //import Router from 'next/router';
 
 import Header from './Header';
-import Menu from './Menu';
+import Gmenu from './Gmenu';
 import Home from './Home';
 import IndexPage from './IndexPage';
 import './Header.css';
-import Login from './Login';
+import Cont from '../pages/Cont';
 import './Grid.css';
 
 const AppLayout = ({children}) => {
@@ -28,9 +28,10 @@ const AppLayout = ({children}) => {
     return (
         <>
             <Header />
-            {/* <Menu /> */}
-            <div className="col-12">
-                <IndexPage />
+            {/* <Gmenu /> */}
+            <div>
+                {/* <IndexPage /> */}
+                {/* <Cont /> */}
                 {children}
                     
                 {/* { isLoggedIn ? <IndexPage /> : <Home /> }       */}
