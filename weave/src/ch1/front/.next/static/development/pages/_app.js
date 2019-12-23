@@ -7211,8 +7211,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Menu_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Menu.css */ "./components/Menu.css");
-/* harmony import */ var _Menu_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_Menu_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _Menu_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Menu.css */ "./components/Menu.css");
+/* harmony import */ var _Menu_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Menu_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _reset_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./reset.css */ "./components/reset.css");
 /* harmony import */ var _reset_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_reset_css__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\Gmenu.js";
@@ -24989,6 +24989,7 @@ const Cont = () => {
     },
     __self: undefined
   }, __jsx("div", {
+    className: "icon01",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 122
@@ -24996,7 +24997,6 @@ const Cont = () => {
     __self: undefined
   }, __jsx("label", {
     Htmlfor: "file-input",
-    className: "icon01",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 123
@@ -25017,6 +25017,7 @@ const Cont = () => {
     },
     __self: undefined
   })), __jsx("div", {
+    className: "icon02",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 126
@@ -25024,7 +25025,6 @@ const Cont = () => {
     __self: undefined
   }, __jsx("label", {
     Htmlfor: "file-input",
-    className: "icon02",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 127
@@ -25041,6 +25041,7 @@ const Cont = () => {
     },
     __self: undefined
   })), __jsx("div", {
+    className: "icon03",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 130
@@ -25048,7 +25049,6 @@ const Cont = () => {
     __self: undefined
   }, __jsx("label", {
     Htmlfor: "file-input",
-    className: "icon03",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 131
@@ -25064,6 +25064,7 @@ const Cont = () => {
     },
     __self: undefined
   })), __jsx("div", {
+    className: "icon04",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 134
@@ -25071,7 +25072,6 @@ const Cont = () => {
     __self: undefined
   }, __jsx("label", {
     Htmlfor: "file-input",
-    className: "icon04",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 135
@@ -25079,7 +25079,6 @@ const Cont = () => {
     __self: undefined
   }), __jsx("button", {
     id: "file-input",
-    className: "icon04",
     type: "submit",
     loading: isAddingPost,
     __source: {

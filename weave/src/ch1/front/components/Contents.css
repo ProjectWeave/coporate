@@ -93,7 +93,7 @@
 
 /* 테이블전체 */
 .uploadTb{
-    position: relative;
+    position: absolute;
     /* top: 0;
     right: 0; */
     width: 75%;
@@ -109,7 +109,9 @@
 .uploadTb > .row1{
     width: 100%;
     height: 70%;
+    text-align: left;
 }
+
 /* 텍스트창 */
 .tarea{
     width: 100%;
@@ -152,20 +154,20 @@
     background-color: #fff; 
     text-align: center;
     outline: 1px solid red;
+    background-position: center;
 }
 /* 구분선넣기 */
 /* .uploadTb .row2 div+div::before{
     content: '';
     display: block;
+    position: absolute;
     border-left: 1px solid #cecece;
+    background-color: #cecece;
     width: 1px;
     height: 100%;
 } */
 
-/* 첫번째칸  */
-.uploadTb > .row1{
-    text-align: left;
-}
+
 /* 
 .uploadTb input[type="textarea"]{
     width: 100%;
@@ -183,15 +185,14 @@
 }
 
 /* 파일선택 선택된 파일 없음 없애기 */
-/* .uploadTb input[type="file"]{
+.uploadTb input[type="file"]{
     position: absolute;
     width: 1px;
     height: 1px;
     margin: -1px;
     overflow: hidden;
     clip:rect(0,0,0,0);
-} */
-
+}
 
 /* .uploadTb input[type="file"], .uploadTb input[type="submit"]{ 
     position: relative;
@@ -210,22 +211,34 @@
 
 
 /* 각 아이콘이미지 */
-.row2 div{
-    cursor: pointer;
-}
-.row2 div:nth-child(1){
-    background: url(../imgs/ico01.jpg) no-repeat;
-}
-.row2 div:nth-child(2){
-    background: url(../imgs/ico02.jpg) no-repeat;
-}
-.row2 div:nth-child(3){
-    background: url(../imgs/ico03.jpg) no-repeat;
-}
-.row2 div:nth-child(4){
-    background: url(../imgs/ico04.jpg) no-repeat;
+
+
+/* 사진올리기칸 */
+.row2 div:first-child{
+    line-height: 119px;
+    background-position: 5%;
 }
 
+.icon01{
+    background: url(../imgs/ico01.jpg) no-repeat;
+}
+.icon02{
+    background: url(../imgs/ico02.jpg) no-repeat;
+}
+.icon03{
+    background: url(../imgs/ico03.jpg) no-repeat;
+}
+.icon04{
+    background: url(../imgs/ico04.jpg) no-repeat;
+}
+.icon04 button{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
 /* 
 #img_file{
     position: absolute;
@@ -240,8 +253,10 @@
 /* 게시물 아무것도 없을 때 */
 .letsbegin{
     position: absolute;
-    bottom: 0;
-    right: 0;
+    /* bottom: 0; */
+    top: 63%;
+    right: 1%;
+    /* right: 0; */
     width: 75%;
     height: 50px;
     outline: 1px solid #cecece;

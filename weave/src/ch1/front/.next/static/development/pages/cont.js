@@ -11348,6 +11348,7 @@ const Cont = () => {
     },
     __self: undefined
   }, __jsx("div", {
+    className: "icon01",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 122
@@ -11355,7 +11356,6 @@ const Cont = () => {
     __self: undefined
   }, __jsx("label", {
     Htmlfor: "file-input",
-    className: "icon01",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 123
@@ -11376,6 +11376,7 @@ const Cont = () => {
     },
     __self: undefined
   })), __jsx("div", {
+    className: "icon02",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 126
@@ -11383,7 +11384,6 @@ const Cont = () => {
     __self: undefined
   }, __jsx("label", {
     Htmlfor: "file-input",
-    className: "icon02",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 127
@@ -11400,6 +11400,7 @@ const Cont = () => {
     },
     __self: undefined
   })), __jsx("div", {
+    className: "icon03",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 130
@@ -11407,7 +11408,6 @@ const Cont = () => {
     __self: undefined
   }, __jsx("label", {
     Htmlfor: "file-input",
-    className: "icon03",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 131
@@ -11423,6 +11423,7 @@ const Cont = () => {
     },
     __self: undefined
   })), __jsx("div", {
+    className: "icon04",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 134
@@ -11430,7 +11431,6 @@ const Cont = () => {
     __self: undefined
   }, __jsx("label", {
     Htmlfor: "file-input",
-    className: "icon04",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 135
@@ -11438,7 +11438,6 @@ const Cont = () => {
     __self: undefined
   }), __jsx("button", {
     id: "file-input",
-    className: "icon04",
     type: "submit",
     loading: isAddingPost,
     __source: {

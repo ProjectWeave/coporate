@@ -119,21 +119,21 @@ const Cont = () => {
                                   className="tarea" value={text} onChange={onChangeText} />
                     </div>
                     <div className='row2'>
-                        <div>
-                            <label Htmlfor="file-input" className="icon01">사진올리기</label>
+                        <div className="icon01">
+                            <label Htmlfor="file-input">사진올리기</label>
                             <input id="img_file" type="file" name="file" size="200" accept=".jpg, .jpeg, .png" className="icon01" value="" onChange={handleChange} />
                         </div>
-                        <div>
-                            <label Htmlfor="file-input" className="icon02"></label>
+                        <div className="icon02">
+                            <label Htmlfor="file-input"></label>
                             <input id="file-input" type="file" name="mv_file" accept=".mp4, .wmv, .avi" />
                         </div>
-                        <div>
-                            <label Htmlfor="file-input" className="icon03"></label>
+                        <div className="icon03">
+                            <label Htmlfor="file-input"></label>
                             <input id="doc_file" type="file" accept=".txt" />
                         </div>
-                        <div>
-                            <label Htmlfor="file-input" className="icon04"></label>
-                            <button id="file-input" className="icon04" type="submit" loading={isAddingPost} ></button>
+                        <div className="icon04">
+                            <label Htmlfor="file-input"></label>
+                            <button id="file-input" type="submit" loading={isAddingPost} ></button>
                         </div>
                     </div>
                 </form>
