@@ -36,6 +36,8 @@
     background-image: url(../imgs/profile.jpg);
     background-position: center;
     background-size: 100%;
+    cursor: pointer;
+    /* outline: 1px solid red; */
 }
 .pfBtn{
     position: absolute;
@@ -45,8 +47,9 @@
     border: none;
     width: 18px;
     height: 11px;
-    background: transparent url(../imgs/down.png) no-repeat;
+    background: transparent url(../imgs/down_hover.png) no-repeat;
 }
+
 
 /* 프로필클릭시내려오는 토글박스 */
 .toggleBox{

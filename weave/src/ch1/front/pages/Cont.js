@@ -52,7 +52,17 @@ const Cont = () => {
         setFile({
           file:URL.createObjectURL(event.target.files[0])
         });
-      }
+    };
+
+    //단일이미지 미리보기
+    const [img, setImg] = useState(null);
+    const onChangeImage = useCallback((e)=>{
+        var reader = new FileReader();
+        reader.readAsDataURL(e.target.files[0]);
+        reader.onloadend = function () {
+            setImg(reader.result)
+          }
+    },[]);
 
     const onChangeText = useCallback((e) => {
         setText(e.target.value);
@@ -118,14 +128,17 @@ const Cont = () => {
                         <textarea maxLength={1500} placeholder="소식을 남겨주세요"
                                   className="tarea" value={text} onChange={onChangeText} />
                     </div>
+
                     <div className='row2'>
                         <div className="icon01">
-                            <label Htmlfor="file-input">사진올리기</label>
-                            <input id="img_file" type="file" name="file" size="200" accept=".jpg, .jpeg, .png" className="icon01" value="" onChange={handleChange} />
+                            <label Htmlfor="file-input"></label>
+                            <input id="img_file" type="file" name="file" size="200" accept=".jpg, .jpeg, .png" 
+                                value="" onChange={onChangeImage} />
                         </div>
                         <div className="icon02">
                             <label Htmlfor="file-input"></label>
-                            <input id="file-input" type="file" name="mv_file" accept=".mp4, .wmv, .avi" />
+                            <input id="mv_file" type="file" name="mv_file" 
+                                   accept=".mp4, .wmv, .avi" />
                         </div>
                         <div className="icon03">
                             <label Htmlfor="file-input"></label>
@@ -133,15 +146,23 @@ const Cont = () => {
                         </div>
                         <div className="icon04">
                             <label Htmlfor="file-input"></label>
-                            <button id="file-input" type="submit" loading={isAddingPost} ></button>
+                            <button id="file-input" type="submit" value="" loading={isAddingPost} />
                         </div>
+                        
                     </div>
                 </form>
+                {/* 게시물올라갈부분 */}
                 <div className="letsbegin" >
                     그룹에 재미있는 이야기를 써보세요.
                     {/* <div post={c}></div> */}
                 </div>
-                
+                {/* 더보기버튼 */}
+                <button className="more">더보기</button>
+
+                <div className="filetest">
+                            <label Htmlfor="file-input">tlqkf</label>
+                            <input id="doc_file" type="file" accept=".txt" />
+                </div>
             </div>
             
         </>

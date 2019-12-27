@@ -8,7 +8,7 @@
     margin-top: 30px;
     width: 80%;
     /* height: 100%; */
-    outline: 3px solid orange;
+    /* outline: 3px solid orange; */
 }
 
 /* 그룹정보 전체 */
@@ -129,16 +129,6 @@
     line-height: 130px;
 }
 
-.tarea::after{
-    content: "";
-    display: block;
-    width: 100px;
-    height: 1px;
-    background-color: #999;
-    /* outline: 5px solid #575757; */
-}
-
-
 /* 행2 */
 .uploadTb > .row2{
     display: inline-block;
@@ -153,7 +143,7 @@
     height: 100%;
     background-color: #fff; 
     text-align: center;
-    outline: 1px solid red;
+    outline: 1px solid #cecece;
     background-position: center;
 }
 /* 구분선넣기 */
@@ -165,17 +155,6 @@
     background-color: #cecece;
     width: 1px;
     height: 100%;
-} */
-
-
-/* 
-.uploadTb input[type="textarea"]{
-    width: 100%;
-    height: 100%;
-    color: #333;
-    border: none;
-    font-size: 1rem;
-    border-bottom: 1px solid #cecece;
 } */
 
 .uploadTb input::placeholder{
@@ -194,30 +173,12 @@
     clip:rect(0,0,0,0);
 }
 
-/* .uploadTb input[type="file"], .uploadTb input[type="submit"]{ 
-    position: relative;
-    display: block; 
-    width: 100%; 
-    height: 100%; 
-    padding: 0; 
-    margin: 0; 
-    overflow: hidden; 
-    clip:rect(0,0,0,0); 
-    border: 0; 
-    border-right: 1px solid #cecece;
-    cursor: pointer;
-    background-color: transparent;
-} */
-
-
-/* 각 아이콘이미지 */
-
 
 /* 사진올리기칸 */
-.row2 div:first-child{
+/* .row2 div:first-child{
     line-height: 119px;
-    background-position: 5%;
-}
+    background-position: 10%;
+} */
 
 .icon01{
     background: url(../imgs/ico01.jpg) no-repeat;
@@ -236,25 +197,14 @@
     height: 100%;
     background-color: transparent;
     border: 0;
-    margin: 0;
-    padding: 0;
 }
-/* 
-#img_file{
-    position: absolute;
-    width: 0px;
-    height: 0px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip:rect(0,0,0,0);
-} */
+
 
 /* 게시물 아무것도 없을 때 */
 .letsbegin{
     position: absolute;
     /* bottom: 0; */
-    top: 63%;
+    top: 55%;
     right: 1%;
     /* right: 0; */
     width: 75%;
@@ -263,7 +213,6 @@
     font: 1rem/3.125rem "Nanum Gothic";
     color: #666;
     text-indent: 20px;
-    outline: 3px solid rgba(114, 255, 213, 0.548);
 }
 
 /* 더보기버튼 */
@@ -271,24 +220,51 @@
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translateX(100%);
+    transform: translateX(50%);
     margin-top: 300px;
     width: 90px;
     height: 30px;
     border: none;
+    font: 1rem/1rem "Nanum Gothic";
     background-color: #cecece;
+    color: #333;
+    /* display: none; */
 }
 
 
 /* 멤버페이지.CSS */
-
 .memberbox{
     position: absolute;
     top: 0;
-    right: 0;
+    right: 1%;
     width: 75%;
     height: 390px;
     outline: 1px solid #cecece;
     padding: 0;
     margin: 0;
+}
+
+/* test - tlqkf 버튼 */
+.filetest label {
+    display: inline-block; 
+    padding: .5em .75em; 
+    color: #999; 
+    font-size: inherit; 
+    line-height: normal; 
+    vertical-align: middle; 
+    background-color: #fdfdfd; 
+    cursor: pointer; 
+    border: 1px solid #ebebeb; 
+    border-bottom-color: #e2e2e2; 
+    border-radius: .25em; 
+} 
+.filetest input[type="file"] {
+    position: absolute; 
+    width: 1px; 
+    height: 1px; 
+    padding: 0; 
+    margin: -1px; 
+    overflow: hidden; 
+    clip:rect(0,0,0,0); 
+    border: 0; 
 }

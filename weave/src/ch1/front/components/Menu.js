@@ -27,17 +27,7 @@ import { Router } from 'next/router';
     //Router.push("/member");
   };
 
-  const test3 = (e) => {
-    e.preventDefault();
-    let tg = document.querySelector(".menubox li");
-    let target= e.target;
-    if(target.classList.contain('on')){
-      tg.setAttribute("id","");
-    }
-    else{
-      tg.setAttribute("id","on");
-    }
-  }
+  
   return (
     <div className="top">
       <ul className="menubox">

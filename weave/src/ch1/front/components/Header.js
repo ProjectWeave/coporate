@@ -13,6 +13,10 @@ const Header = () => {
     e.preventDefault();
     setClickBtn(!clickBtn);
   };
+  const handleGoProfile = () => {
+    alert("프로필페이지로 이동합니다.");
+    
+  };
 
   const logout = () => {
     alert('로그아웃 하시겠습니까?');
@@ -43,13 +47,12 @@ const Header = () => {
           </div>
         </a></Link>
           
-        <div className="profile">
+        <div className="profile" onClick={handleGoProfile} >
           {/* 프로필이미지 */}
           {/* 더보기란 */}
           <button htmltype="button" className="pfBtn" value={clickBtn} onClick={handleClick} >
             { !clickBtn && <Toggle /> }
           </button>
-          
         </div>
         
         <div className="srcbox">

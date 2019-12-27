@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2269,8 +2269,21 @@ const Cont = () => {
     setFile({
       file: URL.createObjectURL(event.target.files[0])
     });
-  };
+  }; //단일이미지 미리보기
 
+
+  const {
+    0: img,
+    1: setImg
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
+  const onChangeImage = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
+    var reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+
+    reader.onloadend = function () {
+      setImg(reader.result);
+    };
+  }, []);
   const onChangeText = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
     setText(e.target.value); //console.log();
   }, []);
@@ -2280,14 +2293,14 @@ const Cont = () => {
       className: "top",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65
+        lineNumber: 75
       },
       __self: undefined
     }, __jsx("ul", {
       className: "menubox",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66
+        lineNumber: 76
       },
       __self: undefined
     }, __jsx("li", {
@@ -2296,7 +2309,7 @@ const Cont = () => {
       onClick: handleChangePage2,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67
+        lineNumber: 77
       },
       __self: undefined
     }, "\uC804\uCCB4\uAE00"), __jsx("li", {
@@ -2304,82 +2317,82 @@ const Cont = () => {
       onClick: handleChangePage,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 78
       },
       __self: undefined
     }, "\uBA64\uBC84"))), __jsx("div", {
       className: "wrap",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 71
+        lineNumber: 81
       },
       __self: undefined
     }, __jsx("div", {
       className: "groupinfo",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72
+        lineNumber: 82
       },
       __self: undefined
     }, __jsx("div", {
       className: "groupimg",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 83
       },
       __self: undefined
     }), __jsx("div", {
       className: "grouptext",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74
+        lineNumber: 84
       },
       __self: undefined
     }, __jsx("h1", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 75
+        lineNumber: 85
       },
       __self: undefined
     }, "\uB315\uB315\uC774\uC9D1\uC0AC \uADF8\uB8F9"), __jsx("p", {
       className: "numMem",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 76
+        lineNumber: 86
       },
       __self: undefined
     }, "Member. 43"), __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 77
+        lineNumber: 87
       },
       __self: undefined
     }, "\uC138\uC824\uC608 \uB315\uB315\uC774\uB4E4 \uBAA8\uC5EC\uB77C~!"), __jsx("nav", {
       className: "groupSubmitBtn",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 78
+        lineNumber: 88
       },
       __self: undefined
     }, __jsx("button", {
       className: "gjoin",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 79
+        lineNumber: 89
       },
       __self: undefined
     }, "\uAC00\uC785\uD558\uAE30"), __jsx("button", {
       className: "gout",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 80
+        lineNumber: 90
       },
       __self: undefined
     }, "\uADF8\uB8F9\uD0C8\uD1F4")))), __jsx("div", {
       className: "memberbox",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 95
       },
       __self: undefined
     }, "\uBA64\uBC84\uBAA9\uB85D")));
@@ -2390,14 +2403,14 @@ const Cont = () => {
     className: "top",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 106
     },
     __self: undefined
   }, __jsx("ul", {
     className: "menubox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 107
     },
     __self: undefined
   }, __jsx("li", {
@@ -2406,7 +2419,7 @@ const Cont = () => {
     onClick: handleChangePage2,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 108
     },
     __self: undefined
   }, "\uC804\uCCB4\uAE00"), __jsx("li", {
@@ -2414,75 +2427,75 @@ const Cont = () => {
     onClick: handleChangePage,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 109
     },
     __self: undefined
   }, "\uBA64\uBC84"))), __jsx("div", {
     className: "wrap",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 112
     },
     __self: undefined
   }, __jsx("div", {
     className: "groupinfo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 113
     },
     __self: undefined
   }, __jsx("div", {
     className: "groupimg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 114
     },
     __self: undefined
   }), __jsx("div", {
     className: "grouptext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 115
     },
     __self: undefined
   }, __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 116
     },
     __self: undefined
   }, "\uB315\uB315\uC774\uC9D1\uC0AC \uADF8\uB8F9"), __jsx("p", {
     className: "numMem",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 117
     },
     __self: undefined
   }, "Member. 43"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 118
     },
     __self: undefined
   }, "\uC138\uC824\uC608 \uB315\uB315\uC774\uB4E4 \uBAA8\uC5EC\uB77C~!"), __jsx("nav", {
     className: "groupSubmitBtn",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 119
     },
     __self: undefined
   }, __jsx("button", {
     className: "gjoin",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110
+      lineNumber: 120
     },
     __self: undefined
   }, "\uAC00\uC785\uD558\uAE30"), __jsx("button", {
     className: "gout",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111
+      lineNumber: 121
     },
     __self: undefined
   }, "\uADF8\uB8F9\uD0C8\uD1F4")))), __jsx("form", {
@@ -2491,14 +2504,14 @@ const Cont = () => {
     onSubmit: onSubmitForm,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116
+      lineNumber: 126
     },
     __self: undefined
   }, __jsx("div", {
     className: "row1",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117
+      lineNumber: 127
     },
     __self: undefined
   }, __jsx("textarea", {
@@ -2509,80 +2522,79 @@ const Cont = () => {
     onChange: onChangeText,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118
+      lineNumber: 128
     },
     __self: undefined
   })), __jsx("div", {
     className: "row2",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121
+      lineNumber: 132
     },
     __self: undefined
   }, __jsx("div", {
     className: "icon01",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122
+      lineNumber: 133
     },
     __self: undefined
   }, __jsx("label", {
     Htmlfor: "file-input",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 123
+      lineNumber: 134
     },
     __self: undefined
-  }, "\uC0AC\uC9C4\uC62C\uB9AC\uAE30"), __jsx("input", {
+  }), __jsx("input", {
     id: "img_file",
     type: "file",
     name: "file",
     size: "200",
     accept: ".jpg, .jpeg, .png",
-    className: "icon01",
     value: "",
-    onChange: handleChange,
+    onChange: onChangeImage,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124
+      lineNumber: 135
     },
     __self: undefined
   })), __jsx("div", {
     className: "icon02",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126
+      lineNumber: 138
     },
     __self: undefined
   }, __jsx("label", {
     Htmlfor: "file-input",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 127
+      lineNumber: 139
     },
     __self: undefined
   }), __jsx("input", {
-    id: "file-input",
+    id: "mv_file",
     type: "file",
     name: "mv_file",
     accept: ".mp4, .wmv, .avi",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128
+      lineNumber: 140
     },
     __self: undefined
   })), __jsx("div", {
     className: "icon03",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130
+      lineNumber: 143
     },
     __self: undefined
   }, __jsx("label", {
     Htmlfor: "file-input",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 131
+      lineNumber: 144
     },
     __self: undefined
   }), __jsx("input", {
@@ -2591,40 +2603,71 @@ const Cont = () => {
     accept: ".txt",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 132
+      lineNumber: 145
     },
     __self: undefined
   })), __jsx("div", {
     className: "icon04",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 134
+      lineNumber: 147
     },
     __self: undefined
   }, __jsx("label", {
     Htmlfor: "file-input",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 135
+      lineNumber: 148
     },
     __self: undefined
   }), __jsx("button", {
     id: "file-input",
     type: "submit",
+    value: "",
     loading: isAddingPost,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 136
+      lineNumber: 149
     },
     __self: undefined
   })))), __jsx("div", {
     className: "letsbegin",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 140
+      lineNumber: 155
     },
     __self: undefined
-  }, "\uADF8\uB8F9\uC5D0 \uC7AC\uBBF8\uC788\uB294 \uC774\uC57C\uAE30\uB97C \uC368\uBCF4\uC138\uC694.")));
+  }, "\uADF8\uB8F9\uC5D0 \uC7AC\uBBF8\uC788\uB294 \uC774\uC57C\uAE30\uB97C \uC368\uBCF4\uC138\uC694."), __jsx("button", {
+    className: "more",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 160
+    },
+    __self: undefined
+  }, "\uB354\uBCF4\uAE30"), __jsx("div", {
+    className: "filetest",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 162
+    },
+    __self: undefined
+  }, __jsx("label", {
+    Htmlfor: "file-input",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 163
+    },
+    __self: undefined
+  }, "tlqkf"), __jsx("input", {
+    id: "doc_file",
+    type: "file",
+    accept: ".txt",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 164
+    },
+    __self: undefined
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Cont);
@@ -2937,7 +2980,7 @@ const addGroupPost = {
 
 /***/ }),
 
-/***/ 6:
+/***/ 4:
 /*!*****************************!*\
   !*** multi ./pages/cont.js ***!
   \*****************************/
