@@ -35,7 +35,6 @@ const AppLayout = ({children}) => {
                 {children}
                     
                 {/* { isLoggedIn ? <IndexPage /> : <Home /> }       */}
-                {/* 로그인에 성공하면 인덱스페이지로 안했으면 홈으로 */}
             </div>
         </>
     );

@@ -1,39 +1,43 @@
-import React, { useState, useEffect, Component } from 'react';
+import React, { useState, useEffect, Component,useCallback } from 'react';
 import Link from 'next/link';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { LOG_OUT_REQUEST } from '../reducers/user';
 import './Header.css';
-
+import Router from 'next/router';
 
 const Header = () => {
 
   const { isLoggedOut } = useSelector(state => state.user);
   const [clickBtn, setClickBtn] = useState({isToggleOn: false});
-  
+  const { isLoggingOut } = useSelector(state => state.user);
+  const dispatch = useDispatch();
+
   const handleClick =(e)=>{
     e.preventDefault();
     setClickBtn(!clickBtn);
   };
-  const handleGoProfile = () => {
+  const handleProfile = () => {
     alert("프로필페이지로 이동합니다.");
     
   };
 
-  const logout = () => {
+  //로그아웃 리퀘스트
+  const logout = useCallback((e) => {
     alert('로그아웃 하시겠습니까?');
-//     useEffect((me) => {
-//       if(me){
-//         alert('로그인했으니 메인페이지로 이동합니다.');
-//         Router.push("/indexpage");
-//     }
-// }, [me && me.id]);(isLoggedOut);
-  };
+    e.preventDefault();
+    dispatch({
+        type: LOG_OUT_REQUEST,
+        data: {},
+    });
+  },[]);
+
   //프로필창클릭시 내려오는 박스
   const Toggle = (e) => { 
     return(
         <div className="toggleBox">
           <ul>
             <li><Link href="/mygroup"><a>내 그룹</a></Link></li>
-            <li onClick={logout}>로그아웃</li>
+            <li loading={isLoggingOut} onClick={logout}>로그아웃</li>
           </ul>
         </div>
     );
@@ -47,8 +51,9 @@ const Header = () => {
           </div>
         </a></Link>
           
-        <div className="profile" onClick={handleGoProfile} >
+        <div>
           {/* 프로필이미지 */}
+          <div className="profile" onClick={handleProfile} ></div>
           {/* 더보기란 */}
           <button htmltype="button" className="pfBtn" value={clickBtn} onClick={handleClick} >
             { !clickBtn && <Toggle /> }

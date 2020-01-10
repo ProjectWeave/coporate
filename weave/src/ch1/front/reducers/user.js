@@ -118,10 +118,28 @@ export default (state = initialState,action) => {
       case LOG_OUT_REQUEST : {
         return {
             ...state,
+            isLoggedIn : true,
+            isLoggingOut: true,
+        };
+      }
+      case LOG_OUT_SUCCESS : {
+        return {
+            ...state,
             isLoggedIn : false,
+            isLoggingOut: true,
             me : null,
         };
       }
+      case LOG_OUT_FAILURE : {
+        return {
+            ...state,
+            isLoggedIn : false,
+            isLoggingOut: false,
+            logInErrorReason : action.error,
+            me : dummyUser,
+        };
+      }
+
       case SIGN_UP_REQUEST : {
         return {
             ...state,

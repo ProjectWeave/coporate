@@ -139,75 +139,46 @@
 /* 두번째행 각 열 */
 .uploadTb .row2 div{
     display: inline-block;
-    width: 25%; /*4등분 */
+    width: 25%; 
     height: 100%;
     background-color: #fff; 
     text-align: center;
     outline: 1px solid #cecece;
     background-position: center;
+    cursor: pointer;
 }
-/* 구분선넣기 */
-/* .uploadTb .row2 div+div::before{
-    content: '';
-    display: block;
+/* label */
+.btn_file{
+    display:inline-block;
     position: absolute;
-    border-left: 1px solid #cecece;
-    background-color: #cecece;
-    width: 1px;
-    height: 100%;
-} */
-
-.uploadTb input::placeholder{
-    text-indent: 20px;
-    color: #0090A8;
-    font: bold 1rem/1rem "Nanum Gothic",'san-serief';
-}
-
-/* 파일선택 선택된 파일 없음 없애기 */
-.uploadTb input[type="file"]{
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    clip:rect(0,0,0,0);
+    width: 24%;
+    height: 30%;
+    margin-left: -12%;
+    cursor: pointer;
 }
 
 
-/* 사진올리기칸 */
-/* .row2 div:first-child{
-    line-height: 119px;
-    background-position: 10%;
-} */
-
-.icon01{
-    background: url(../imgs/ico01.jpg) no-repeat;
-}
-.icon02{
-    background: url(../imgs/ico02.jpg) no-repeat;
-}
-.icon03{
-    background: url(../imgs/ico03.jpg) no-repeat;
-}
 .icon04{
     background: url(../imgs/ico04.jpg) no-repeat;
 }
-.icon04 button{
+.icon04 input[type="submit"]{
     width: 100%;
     height: 100%;
     background-color: transparent;
     border: 0;
+    margin: 0;
+    padding: 0;
 }
 
 
 /* 게시물 아무것도 없을 때 */
 .letsbegin{
     position: absolute;
-    /* bottom: 0; */
-    top: 55%;
-    right: 1%;
-    /* right: 0; */
-    width: 75%;
+    /* top: 60%; */
+    bottom: -30%;
+    /* right: 1%; */
+    left: 0%;
+    width: 100%;
     height: 50px;
     outline: 1px solid #cecece;
     font: 1rem/3.125rem "Nanum Gothic";
@@ -221,14 +192,14 @@
     bottom: 0;
     left: 50%;
     transform: translateX(50%);
-    margin-top: 300px;
+    /* margin-top: 300px; */
     width: 90px;
     height: 30px;
     border: none;
     font: 1rem/1rem "Nanum Gothic";
     background-color: #cecece;
     color: #333;
-    /* display: none; */
+    display: none;
 }
 
 
@@ -244,27 +215,65 @@
     margin: 0;
 }
 
-/* test - tlqkf 버튼 */
-.filetest label {
-    display: inline-block; 
-    padding: .5em .75em; 
-    color: #999; 
-    font-size: inherit; 
-    line-height: normal; 
-    vertical-align: middle; 
-    background-color: #fdfdfd; 
-    cursor: pointer; 
-    border: 1px solid #ebebeb; 
-    border-bottom-color: #e2e2e2; 
-    border-radius: .25em; 
-} 
-.filetest input[type="file"] {
-    position: absolute; 
-    width: 1px; 
-    height: 1px; 
-    padding: 0; 
-    margin: -1px; 
-    overflow: hidden; 
-    clip:rect(0,0,0,0); 
-    border: 0; 
+.fileBox:nth-child(1){
+    background: url(../imgs/ico01.jpg) no-repeat;
+}
+
+.fileBox:nth-child(2){
+    background: url(../imgs/ico02.jpg) no-repeat;
+}
+
+.fileBox:nth-child(3){
+    background: url(../imgs/ico03.jpg) no-repeat;
+}
+
+/* 파일선택 선택된 파일 없음 없애기 */
+.fileBox input[type="file"]{
+    position:absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    border:0;
+}
+
+
+.postbox{
+    outline: 1px solid red;
+    width: 100%;
+    margin: 0 auto;
+}
+.contbox{
+    outline: 1px solid dedede;
+    width: 90%;
+    margin: 0 auto; 
+}
+/* 좋아요버튼 */
+.likeBtn{
+    border: 0;
+    background: #dedede url(../imgs/like.png) no-repeat center 100%;
+    width: 50px;
+    height: 30px;
+}
+/* 게시물지우기버튼 */
+.removeBtn{
+    background-color: #dedede;
+    width: 50px;
+    height: 30px;
+    border: 0;
+    /* line-height: -50px; */
+    vertical-align: middle;
+}
+
+.commentBtn{
+    background: #dedede url(../imgs/comment.png) no-repeat center 100%;
+    width: 50px;
+    height: 30px;
+    border: 0;
+}
+
+.comment{
+    display: none;
 }

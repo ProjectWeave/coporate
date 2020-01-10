@@ -6,7 +6,7 @@ export const initialState={
             nickname: "위브",
         },
         content: "첫번째 게시글",
-        img:"https://img1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/liveboard/dailylife/187ea4bc2ad54b1db5030743265c5397.jpg", 
+        img:"http://www.redpiltong.co.kr/shopimages/redpiltong/012002000104.jpg?1547186041", 
         Comments: [],
     }], // 화면에 보일 포스트들 
     GroupPosts:[{
@@ -161,7 +161,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 isAddingPost: false, 
-                mainPosts: [dummyPosts, ...state.mainPosts],
+                GroupPosts: [dummyPosts, ...state.mainPosts],
                 postAdded: true, 
             };
         }

@@ -1156,7 +1156,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Join__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Join */ "./components/Join.js");
 var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\Login.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
- //import {Router, Link, Route} from 'react-router-dom'; 
 
 
 
@@ -1187,10 +1186,7 @@ const Login = () => {
   }, [id, password]);
 
   const onChangeMode = e => {
-    // alert('회원가입페이지로 이동합니다.');
     e.preventDefault(); //setMode(e.target.mode);
-    //alert('회원가입페이지로 이동합니다.');
-    //Router.push("/join");
 
     setMode('clicked');
   }; // const onChangePage = () => {
@@ -1203,7 +1199,7 @@ const Login = () => {
     return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_Join__WEBPACK_IMPORTED_MODULE_6__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46
+        lineNumber: 42
       },
       __self: undefined
     }));
@@ -1213,35 +1209,35 @@ const Login = () => {
   if (Mode === 'read') return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 48
     },
     __self: undefined
   }, __jsx("article", {
     className: "rLg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 49
     },
     __self: undefined
   }, __jsx("div", {
     className: "logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 50
     },
     __self: undefined
   }), __jsx("div", {
     className: "lg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 51
     },
     __self: undefined
   }, __jsx("h2", {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 52
     },
     __self: undefined
   }, "\uB85C\uADF8\uC778"), __jsx("form", {
@@ -1251,20 +1247,20 @@ const Login = () => {
     onSubmit: onSubmitForm,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 53
     },
     __self: undefined
   }, __jsx("div", {
     className: "lg_title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 57
     },
     __self: undefined
   }, "\uC9C0\uAE08 \uBC14\uB85C \uAC00\uC785\uD558\uC138\uC694!"), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 58
     },
     __self: undefined
   }, __jsx("label", {
@@ -1272,7 +1268,7 @@ const Login = () => {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 59
     },
     __self: undefined
   }, "\uC544\uC774\uB514"), __jsx("input", {
@@ -1284,7 +1280,7 @@ const Login = () => {
     required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 60
     },
     __self: undefined
   }), __jsx("label", {
@@ -1292,7 +1288,7 @@ const Login = () => {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 61
     },
     __self: undefined
   }, "\uBE44\uBC00\uBC88\uD638"), __jsx("input", {
@@ -1305,14 +1301,14 @@ const Login = () => {
     required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 62
     },
     __self: undefined
   })), __jsx("div", {
     className: "btngroup",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 65
     },
     __self: undefined
   }, __jsx("button", {
@@ -1321,7 +1317,7 @@ const Login = () => {
     loading: isLoggingIn,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 66
     },
     __self: undefined
   }, "\uB85C\uADF8\uC778"), __jsx("button", {
@@ -1330,7 +1326,7 @@ const Login = () => {
     onClick: onChangeMode,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 67
     },
     __self: undefined
   }, "\uD68C\uC6D0\uAC00\uC785"))))));
@@ -4108,7 +4104,7 @@ const initialState = {
       nickname: "위브"
     },
     content: "첫번째 게시글",
-    img: "https://img1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/liveboard/dailylife/187ea4bc2ad54b1db5030743265c5397.jpg",
+    img: "http://www.redpiltong.co.kr/shopimages/redpiltong/012002000104.jpg?1547186041",
     Comments: []
   }],
   // 화면에 보일 포스트들 
@@ -4250,7 +4246,7 @@ const addGroupPost = {
       {
         return _objectSpread({}, state, {
           isAddingPost: false,
-          mainPosts: [dummyPosts, ...state.mainPosts],
+          GroupPosts: [dummyPosts, ...state.mainPosts],
           postAdded: true
         });
       }
@@ -4516,8 +4512,27 @@ const loginAction = data => {
     case LOG_OUT_REQUEST:
       {
         return _objectSpread({}, state, {
+          isLoggedIn: true,
+          isLoggingOut: true
+        });
+      }
+
+    case LOG_OUT_SUCCESS:
+      {
+        return _objectSpread({}, state, {
           isLoggedIn: false,
+          isLoggingOut: true,
           me: null
+        });
+      }
+
+    case LOG_OUT_FAILURE:
+      {
+        return _objectSpread({}, state, {
+          isLoggedIn: false,
+          isLoggingOut: false,
+          logInErrorReason: action.error,
+          me: dummyUser
         });
       }
 

@@ -1,5 +1,4 @@
-import React,{ useCallback,useState } from 'react';
-//import {Router, Link, Route} from 'react-router-dom'; 
+import React,{ useCallback,useState } from 'react'; 
 import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
 import { useInput } from '../pages/Join';
@@ -27,11 +26,8 @@ const Login = () => {
   },[id, password]);
 
   const onChangeMode = (e) => {
-    // alert('회원가입페이지로 이동합니다.');
     e.preventDefault();
     //setMode(e.target.mode);
-    //alert('회원가입페이지로 이동합니다.');
-    //Router.push("/join");
     setMode('clicked');
   };
 

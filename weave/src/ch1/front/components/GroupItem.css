@@ -3,7 +3,7 @@
 .groupitem{
     /* position: relative; */
     width: 80%;
-    /* top: 10px; */
+    padding-top: 2%;
     margin: 0 auto;
     /* outline: 1px solid red; */
 }

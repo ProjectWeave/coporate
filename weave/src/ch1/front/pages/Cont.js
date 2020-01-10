@@ -1,19 +1,18 @@
 // mode변경 test
 import React, { useCallback, useState, useEffect }  from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { ADD_POST_REQUEST } from '../reducers/post';
+import { ADD_POST_REQUEST, ADD_POST_SUCCESS, ADD_POST_FAILURE } from '../reducers/post';
 
 import '../components/Contents.css';
 import Link from 'next/link';
 import '../components/Menu.css';
 import '../components/reset.css';
-import { Router } from 'next/router';
 
   
 const Cont = () => {
     const dispatch = useDispatch();
     const [text, setText ] = useState('');
-    const { imagePaths, isAddingPost, postAdded, mainPosts } = useSelector(state => state.post);
+    const { imagePaths, isAddingPost, postAdded, mainPosts, GroupPosts } = useSelector(state => state.post);
     //메뉴클릭시 컨텐츠 변경
     const [ Mode, setMode ] = useState('read');
 
@@ -48,11 +47,11 @@ const Cont = () => {
         });
     }, []);
 
-    const handleChange = (event) => {
-        setFile({
-          file:URL.createObjectURL(event.target.files[0])
-        });
-    };
+    // const handleChange = (event) => {
+    //     setFile({
+    //       file:URL.createObjectURL(event.target.files[0])
+    //     });
+    // };
 
     //단일이미지 미리보기
     const [img, setImg] = useState(null);
@@ -66,7 +65,17 @@ const Cont = () => {
 
     const onChangeText = useCallback((e) => {
         setText(e.target.value);
-        //console.log();
+        //console.log('렌더링');
+    }, []);
+
+    const onGroupSubmitForm = useCallback((e) => {
+        e.preventDefault();
+        dispatch({
+            type: ADD_POST_REQUEST,
+            data: {
+                text,
+            },
+        });
     }, []);
 
     if(Mode==='member'){
@@ -128,41 +137,58 @@ const Cont = () => {
                         <textarea maxLength={1500} placeholder="소식을 남겨주세요"
                                   className="tarea" value={text} onChange={onChangeText} />
                     </div>
-
                     <div className='row2'>
-                        <div className="icon01">
-                            <label Htmlfor="file-input"></label>
-                            <input id="img_file" type="file" name="file" size="200" accept=".jpg, .jpeg, .png" 
-                                value="" onChange={onChangeImage} />
+                        <div class="fileBox" >
+                            <label for="uploadBtn" className="btn_file" > </label>
+                            <input type="file" id="uploadBtn" className="uploadBtn" onChange={onChangeImage} accept=".jpg, .jpeg, .png" />
                         </div>
-                        <div className="icon02">
-                            <label Htmlfor="file-input"></label>
-                            <input id="mv_file" type="file" name="mv_file" 
-                                   accept=".mp4, .wmv, .avi" />
+                        <div class="fileBox" >
+                            <label for="uploadBtn" className="btn_file" > </label>
+                            <input type="file" id="uploadBtn" className="uploadBtn" onChange={onChangeImage} accept=".mp4, .wmv, .avi" />
                         </div>
-                        <div className="icon03">
-                            <label Htmlfor="file-input"></label>
-                            <input id="doc_file" type="file" accept=".txt" />
+                        <div class="fileBox" >
+                            <label for="uploadBtn" className="btn_file" > </label>
+                            <input type="file" id="uploadBtn" className="uploadBtn" onChange={onChangeImage} accept=".txt" />
                         </div>
+                    
                         <div className="icon04">
-                            <label Htmlfor="file-input"></label>
-                            <button id="file-input" type="submit" value="" loading={isAddingPost} />
+                            <label for="file-input"></label>
+                            <input type="submit" value="" loading={isAddingPost} onSubmit={onGroupSubmitForm} />
                         </div>
-                        
+                    </div>
+
+                    {/* 게시물올라갈부분 */}
+                    <div className="letsbegin" >
+                        <div>그룹에 재미있는 이야기를 써보세요.</div>
+                        {/* 반복문 */}
+                        { postAdded === true } 
+                        {imagePaths.map((c) => (
+                            <div key={c} style={{display:"inline-block"}}>
+                                <img src={`http://localhost:3065/${c}`} style={{ width:'200px'}} alt={c}></img> 
+                                <div>
+                                    <button>제거</button>
+                                </div>   
+                            </div>
+                        ))}
+                        {/* 게시글 */}
+                        {GroupPosts.map((v) => {
+                            return(
+                                <div key={v} className="postbox" style={{display:"inline-block"}}>
+                                    <div className="contbox" post={v}></div>
+                                    <div>
+                                        <button type="button" className="commentBtn"  />
+                                        <input type="textarea" resize="none" className="comment" />
+                                        <button type="button" className="likeBtn" /> 
+                                        <button type="button" className="removeBtn">제거</button> 
+                                    </div> 
+                                </div>
+                             );
+                        })
+                        }
                     </div>
                 </form>
-                {/* 게시물올라갈부분 */}
-                <div className="letsbegin" >
-                    그룹에 재미있는 이야기를 써보세요.
-                    {/* <div post={c}></div> */}
-                </div>
                 {/* 더보기버튼 */}
                 <button className="more">더보기</button>
-
-                <div className="filetest">
-                            <label Htmlfor="file-input">tlqkf</label>
-                            <input id="doc_file" type="file" accept=".txt" />
-                </div>
             </div>
             
         </>
@@ -171,3 +197,29 @@ const Cont = () => {
 
 export default Cont;
 
+// {/* <div className='row1'>
+//                         <textarea maxLength={1500} placeholder="소식을 남겨주세요"
+//                                   className="tarea" value={text} onChange={onChangeText} />
+//                     </div>
+
+//                     <div className='row2'>
+//                         <div className="icon01">
+//                             <label for="file" className="btn_file2" >이거를 클릭하면</label>
+//                             <input type="file" name="file" accept=".jpg, .jpeg, .png" 
+//                                     onChange={onChangeImage} />
+//                         </div>
+//                         <div className="icon02">
+//                             <label for="file-input" className="btn_file2"></label>
+//                             <input type="file" name="mv_file" 
+//                                    accept=".mp4, .wmv, .avi" onClick={onChangeImage} />
+//                         </div>
+//                         <div className="icon03">
+//                             <label for="file-input" className="btn_file2"></label>
+//                             <input type="file" accept=".txt" onChange={onChangeImage} />
+//                         </div>
+//                         <div className="icon04">
+//                             <label for="file-input"></label>
+//                             <input type="submit" value="" loading={isAddingPost} />
+//                         </div>
+                        
+//                     </div> */}
