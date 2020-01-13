@@ -16,6 +16,8 @@ const Header = () => {
     e.preventDefault();
     setClickBtn(!clickBtn);
   };
+  
+  //프로필페이지이동
   const handleProfile = () => {
     alert("프로필페이지로 이동합니다.");
     

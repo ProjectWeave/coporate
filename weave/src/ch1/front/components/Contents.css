@@ -174,16 +174,19 @@
 /* 게시물 아무것도 없을 때 */
 .letsbegin{
     position: absolute;
-    /* top: 60%; */
-    bottom: -30%;
-    /* right: 1%; */
-    left: 0%;
-    width: 100%;
+    top: 60%;
+    /* bottom: -30%; */
+    right: 1%;
+    /* left: 0%; */
+    width: 75%;
     height: 50px;
     outline: 1px solid #cecece;
     font: 1rem/3.125rem "Nanum Gothic";
     color: #666;
-    text-indent: 20px;
+}
+/* 그룹에 재미있는 소식을 남겨주세요 */
+.letsbegin div:first-child{
+    text-indent:20px;
 }
 
 /* 더보기버튼 */
@@ -241,39 +244,77 @@
 
 
 .postbox{
-    outline: 1px solid red;
+    /* outline: 1px solid pink; */
     width: 100%;
+}
+.contBox{
+    outline: 1px solid #999999;
+    width: 100%; 
+    height: 300px;
     margin: 0 auto;
 }
-.contbox{
-    outline: 1px solid dedede;
-    width: 90%;
-    margin: 0 auto; 
+
+/* 댓글 좋아요버튼 삭제하기 버튼박스 */
+.btnsbox{
+    width: 100%;
 }
+/* 크기 3등분 */
+.btnsbox>button{
+    width: 33.33%; 
+    height: 50px;
+    border: 0;
+    outline: 1px solid #999999;
+    cursor: pointer;
+}
+
 /* 좋아요버튼 */
 .likeBtn{
-    border: 0;
-    background: #dedede url(../imgs/like.png) no-repeat center 100%;
-    width: 50px;
-    height: 30px;
+    background: #dedede url(../imgs/like.png) no-repeat center;
 }
 /* 게시물지우기버튼 */
 .removeBtn{
     background-color: #dedede;
-    width: 50px;
-    height: 30px;
     border: 0;
     /* line-height: -50px; */
-    vertical-align: middle;
+    /* vertical-align: middle; */ 
+    background: #dedede url(../imgs/trash.png) no-repeat center;
+}
+/* 댓글버튼 */
+.commentBtn{
+    background: #dedede url(../imgs/comment.png) no-repeat center;
 }
 
-.commentBtn{
-    background: #dedede url(../imgs/comment.png) no-repeat center 100%;
-    width: 50px;
+.commentbox{
+    width: 100%;
+    display: none;
+}
+.comment{
+    display: block;
+    width: 100%;
+    height: 30px;
+}
+/* 댓글올리기버튼 */
+.commentbox>button{
+    position: absolute;
+    right: 0;
+    width: 80px;
     height: 30px;
     border: 0;
+    background-color: #0090A8;
+    color: #fff;
+    font: 0.875rem/1rem "Nanum Gothic","sans-serif";
+    border: none;
 }
 
-.comment{
-    display: none;
+
+.remove{
+    position: absolute;
+    right: 0;
+    width: 80px;
+    height: 30px;
+    border: 0;
+    background-color: #0090A8;
+    color: #fff;
+    font: 0.875rem/1rem "Nanum Gothic";
+    border: none;
 }

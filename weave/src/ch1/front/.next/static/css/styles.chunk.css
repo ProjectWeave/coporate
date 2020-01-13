@@ -968,16 +968,19 @@ html,body{
 /* 게시물 아무것도 없을 때 */
 .letsbegin{
     position: absolute;
-    /* top: 60%; */
-    bottom: -30%;
-    /* right: 1%; */
-    left: 0%;
-    width: 100%;
+    top: 60%;
+    /* bottom: -30%; */
+    right: 1%;
+    /* left: 0%; */
+    width: 75%;
     height: 50px;
     outline: 1px solid #cecece;
     font: 1rem/3.125rem "Nanum Gothic";
     color: #666;
-    text-indent: 20px;
+}
+/* 그룹에 재미있는 소식을 남겨주세요 */
+.letsbegin div:first-child{
+    text-indent:20px;
 }
 
 /* 더보기버튼 */
@@ -1035,41 +1038,79 @@ html,body{
 
 
 .postbox{
-    outline: 1px solid red;
+    /* outline: 1px solid pink; */
     width: 100%;
+}
+.contBox{
+    outline: 1px solid #999999;
+    width: 100%; 
+    height: 300px;
     margin: 0 auto;
 }
-.contbox{
-    outline: 1px solid dedede;
-    width: 90%;
-    margin: 0 auto; 
+
+/* 댓글 좋아요버튼 삭제하기 버튼박스 */
+.btnsbox{
+    width: 100%;
 }
+/* 크기 3등분 */
+.btnsbox>button{
+    width: 33.33%; 
+    height: 50px;
+    border: 0;
+    outline: 1px solid #999999;
+    cursor: pointer;
+}
+
 /* 좋아요버튼 */
 .likeBtn{
-    border: 0;
-    background: #dedede url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAATCAYAAAB/TkaLAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAVNJREFUeNq0lNFxgzAMhm0uA7BBkw3SDZoN0rc8hg3wBEknKBvUj3lLNiAjeINkBLpBJfy7CHBwaa+6s/GhX5+FZKOVtOq0pHlLI8ebhsZFlbv7HI0W4iPNBxW3ioIMad5pXT7QvJHm2EH7QN7ZYb0WGXEmy4SmBWt8zg0vrzReydFgMxZzdnuRkaVhBpozjRf4VwwtEcii1be4X+saQY78zxF/jsT4aRY0PcHlokC2crdRU8Zx1clh4zxT/2AM/RQF/4utJdRinaO+883HhRNg9aARXNMN1cjNAHKGNaBXrn+oaQEgOz7QzZ8Avd7HNeCoDN27t2evq02dBHt/LWpZhKuaiWNhw05JcBx4kY1SA7CdBI+BFnEqDvXgor3DMfAYaKDvmZ6o2R5NCD8Qg+uci0+2sVCdaIYES3sITEM9eDs6NqIpv4N2B/yM32LyYnwJMACUuYRA99rbiQAAAABJRU5ErkJggg==) no-repeat center 100%;
-    width: 50px;
-    height: 30px;
+    background: #dedede url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAb5JREFUeNrslzFugzAUhoFm6Nb0Bj1CJC4QTpBygsLCDCdIegKalSXp1G5h7QQXQOIGZexIb9Bn6RH9oja2m6jtkCdZgPPzPuPn5+c4zsV+ydypH5MkWdBlDl1tURS9Qit0C+jqSdtagcnJPV3WI0eD1dSywSkPLqe2lGhb1tZaMDnaMFRnMV93BtpHgm+UYP7SA3R11J75/oZaNJp6Z6QtqX3y8wO1O/g9JHj5DcwxegfHTyTMJHHMeQBoe57SfqTfgVbE/FYGjmDaahIFE4uugpjaaGPSikE6M9DgtGw1MQth4XUa7RbAR8ZMIe6nPPGU1oYpK/Xl/dUG4ilGtjojYyVjILiE+4hX8EnGPiIZw4O4dRC3ueEmorM1pGfNDGmMMW9TTrGffq14N1X4dq7woWmaD9/3XVj+S3p+E/2WUJFqL9SuYct8NSkSmPRiQQRTlUYCrWCKS3o3NE2nkCvLEO+KHdpCWygmZvWYV2QFO9Tklyuggap+uwbpoIXbQrXgCXg2bPa8enMbqBFYAVcdBIygxmCAHxRHnOFIFJpArcCK4n48CBAwPtsp0xBuDT21AIgtNb38Q/j39iXAANGrv5M5Z1EbAAAAAElFTkSuQmCC) no-repeat center;
 }
 /* 게시물지우기버튼 */
 .removeBtn{
     background-color: #dedede;
-    width: 50px;
-    height: 30px;
     border: 0;
     /* line-height: -50px; */
-    vertical-align: middle;
+    /* vertical-align: middle; */ 
+    background: #dedede url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAATRJREFUeNpiYBhpgJFYhZ2dnQJAqh6IE4BYAE36AxAvAOLG8vLyD8SYx0KCI0GWFuCQE0CSKyTGMCYSLIYZDPKZIxpegKaGqj6GgYXA4DyAFg0M0ChgINtioCHngZQBuYkGqP8/FuELQMcaEgpqBQJmfyBSDK+Z2Cw2hMYbA1Jigccn0OUX0DVAxZDjHDmBOULNJC47IQWZI3qcEhHcDkBqP9RRjBQlLqBh76FMRVBehfGBbEFoHr8P41M7OwlAsQEanwEqJoClYKGKxVQFoxaPWjxq8ajFQ89iUlogF6D1KqxafIAm9wFNjDoWo7cggHxFJDbIUkFq+fgDtLbJh7apSAHxhFom+CxeAG01BkAxOWABLglmXBJ79uzZ6erqygiNVwESLQTF9URgFFQyjAIoAAgwAFAOUeDoLMk5AAAAAElFTkSuQmCC) no-repeat center;
+}
+/* 댓글버튼 */
+.commentBtn{
+    background: #dedede url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAOtJREFUeNpiYBhpgBHGSEtLEwBS64HYgUZ2HQDiwFmzZn0AcViQJECWCkAlN1DTRqCnAoBUPdQOR5AYE5I8yKeN1LYUBKBmNiKHJhOamg80jNYDyBwmeiUmWNzS3WJ0MGox3QALEXnQAEj1Q7mFwERygVgxiiyGFioOSGxSxCiy+ANSHvxAohhRxdp/IHagZbyC7BjNTqMWDx+LoY0BEK1AbD6m1EJYwQJqgRwAlmgP8FoM1JAApOZTu82Ft+RCsjQR6MIFdIljeliKzcfxQJxAa0ux+ZgulsIthqY8BnpZiuxjBXpaOqAAIMAAftJYxe5vpvUAAAAASUVORK5CYII=) no-repeat center;
 }
 
-.commentBtn{
-    background: #dedede url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAYAAABXuSs3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAWhJREFUeNrs2dFtwkAMAFBfxABsULpBNiiZgny2E+Q6AWSC0gna/tG/MgGMkA3KCNkg+C6+9tKeIKpUsCVbctDpIvQSGcUmpus6MMYArDc5AOwwp8AzWswCbNl4sz88vzvsJ6EbzJpO5BDOtMTMyXTbVYt2Qps2Qruralnd6/VmT9WQ00U8ZrR1R581O7S/rd5U08rhIUvUETCu8a/IQGgoXOEKV7jCZcMnf+gbZnicDZ5o2LFF+9PwWI6iGbQSfScad6EH3D/8LxzgnhqdEHvfmH1HaI/jKOi8EE+Y82jt+pCV1rjCWfw4bbk6WY+2dLVsznxHoaWicIUrXOEKV7jC0zGXB+8Hj4pWb+ObrH6qsVdi39DwEiapV6gWI+A9epcYxy4dH5gP49raIdrNlduroeO59iT8N5rVH/6ZRHQaLgCdgotAp2r8BTi/xDpzx9mjU3AR6J9wMegYLgrtwr8S17b2gnEUYAC8r3Dnji2vrAAAAABJRU5ErkJggg==) no-repeat center 100%;
-    width: 50px;
+.commentbox{
+    width: 100%;
+    display: none;
+}
+.comment{
+    display: block;
+    width: 100%;
+    height: 30px;
+}
+/* 댓글올리기버튼 */
+.commentbox>button{
+    position: absolute;
+    right: 0;
+    width: 80px;
     height: 30px;
     border: 0;
+    background-color: #0090A8;
+    color: #fff;
+    font: 0.875rem/1rem "Nanum Gothic","sans-serif";
+    border: none;
 }
 
-.comment{
-    display: none;
+
+.remove{
+    position: absolute;
+    right: 0;
+    width: 80px;
+    height: 30px;
+    border: 0;
+    background-color: #0090A8;
+    color: #fff;
+    font: 0.875rem/1rem "Nanum Gothic";
+    border: none;
 }
 /*Grid Set*/
 

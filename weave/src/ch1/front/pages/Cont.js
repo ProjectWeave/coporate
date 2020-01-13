@@ -1,7 +1,7 @@
 // mode변경 test
 import React, { useCallback, useState, useEffect }  from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { ADD_POST_REQUEST, ADD_POST_SUCCESS, ADD_POST_FAILURE } from '../reducers/post';
+import { ADD_POST_REQUEST, ADD_POST_SUCCESS, ADD_POST_FAILURE, ADD_COMMENT_REQUEST } from '../reducers/post';
 
 import '../components/Contents.css';
 import Link from 'next/link';
@@ -11,8 +11,11 @@ import '../components/reset.css';
   
 const Cont = () => {
     const dispatch = useDispatch();
+
     const [text, setText ] = useState('');
-    const { imagePaths, isAddingPost, postAdded, mainPosts, GroupPosts } = useSelector(state => state.post);
+    const [comments, setComments ] = useState('');
+    const { imagePaths, isAddingPost, postAdded, mainPosts, GroupPosts, commentAdded, isAddingComment } = useSelector(state => state.post);
+
     //메뉴클릭시 컨텐츠 변경
     const [ Mode, setMode ] = useState('read');
 
@@ -36,6 +39,10 @@ const Cont = () => {
     useEffect(() => {
         setText('');
     },[postAdded === true]);
+    
+    useEffect(() => {
+        setComments('');
+    },[commentAdded === true]);
 
     const onSubmitForm = useCallback((e) => {
         e.preventDefault();
@@ -46,14 +53,31 @@ const Cont = () => {
             },
         });
     }, []);
-
-    // const handleChange = (event) => {
-    //     setFile({
-    //       file:URL.createObjectURL(event.target.files[0])
+    // 댓글올리기 사이클
+    const onSubmitComment = useCallback((e) => {
+        e.preventDefault();
+        dispatch({
+            type: ADD_COMMENT_REQUEST,
+            data: {
+                text,
+            },
+        });
+    }, []);
+    // const onSubmitComment = useCallback((e) => {
+    //     e.preventDefault();
+    //     if(!me){
+    //         return alert('로그인이 필요합니다.');
+    //     }
+    //     return dispatch({
+    //         type: ADD_COMMENT_REQUEST,
+    //         data:{
+    //             postId: post.id,
+    //         },
     //     });
-    // };
+    // }, [me && me.id]);
 
-    //단일이미지 미리보기
+    
+    // 단일이미지 미리보기
     const [img, setImg] = useState(null);
     const onChangeImage = useCallback((e)=>{
         var reader = new FileReader();
@@ -63,11 +87,17 @@ const Cont = () => {
           }
     },[]);
 
+    // 소식을 남겨주세요부분 텍스트입력
     const onChangeText = useCallback((e) => {
         setText(e.target.value);
         //console.log('렌더링');
     }, []);
 
+    // 댓글
+    const onChangeComment = useCallback((e) => {
+        setComments(e.target.value);
+    }, []);
+    // 소식남기기칸포스트올리기 사이클
     const onGroupSubmitForm = useCallback((e) => {
         e.preventDefault();
         dispatch({
@@ -77,6 +107,13 @@ const Cont = () => {
             },
         });
     }, []);
+
+    //댓글창나오게
+    const onInputComment = (e) => {
+        e.preventDefault();
+        document.querySelector(".commentbox").style.display="block";
+    };
+    
 
     if(Mode==='member'){
         return(
@@ -156,7 +193,7 @@ const Cont = () => {
                             <input type="submit" value="" loading={isAddingPost} onSubmit={onGroupSubmitForm} />
                         </div>
                     </div>
-
+                </form>
                     {/* 게시물올라갈부분 */}
                     <div className="letsbegin" >
                         <div>그룹에 재미있는 이야기를 써보세요.</div>
@@ -173,20 +210,33 @@ const Cont = () => {
                         {/* 게시글 */}
                         {GroupPosts.map((v) => {
                             return(
-                                <div key={v} className="postbox" style={{display:"inline-block"}}>
-                                    <div className="contbox" post={v}></div>
-                                    <div>
-                                        <button type="button" className="commentBtn"  />
-                                        <input type="textarea" resize="none" className="comment" />
+                                <div key={v} className="postbox">
+                                    <div className="contBox" post={v}></div>
+                                    <div className="btnsbox">
+                                        <button type="button" className="commentBtn" onClick={onInputComment} />
                                         <button type="button" className="likeBtn" /> 
-                                        <button type="button" className="removeBtn">제거</button> 
+                                        <button type="button" className="removeBtn" />
+
+                                        <form className="commentbox">
+                                            <input type="textarea" resize="none" className="comment" value={comments} onChange={onChangeComment} />
+                                            <button type="submit" className="combtn" onClick={onSubmitComment}>COMMENT</button>
+                                            {/* 댓글올라갈부분 */}
+                                            {/* {mainPosts.map((c) => (
+                                                <div key={c} style={{display:"inline-block"}}>
+                                                    <div>
+                                                        <button type="button" className="remove">REMOVE</button>
+                                                    </div>   
+                                                </div>
+                                            ))} */}
+                                        </form>
+                                        
                                     </div> 
                                 </div>
                              );
                         })
                         }
                     </div>
-                </form>
+                
                 {/* 더보기버튼 */}
                 <button className="more">더보기</button>
             </div>

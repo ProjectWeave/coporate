@@ -1,9 +1,12 @@
 import { all, delay, fork, put, takeLatest } from 'redux-saga/effects';
 import { ADD_COMMENT_FAILURE, ADD_COMMENT_REQUEST, ADD_COMMENT_SUCCESS, ADD_POST_FAILURE, ADD_POST_REQUEST, ADD_POST_SUCCESS, ADD_GROUP_REQUEST, ADD_GROUP_SUCCESS, ADD_GROUP_FAILURE } from '../reducers/post';
+import Axios from 'axios';
 
 
 function addPostAPI(){
-
+    return Axios.post("/post", postData,{
+        withCredentials: true
+    });
 }
 function addCommentAPI(){
 
@@ -37,6 +40,7 @@ function* addComment(action){
             },
         });
     } catch (e){ 
+        console.error(e);
         yield put({
             type: ADD_COMMENT_FAILURE,
             error: e,
