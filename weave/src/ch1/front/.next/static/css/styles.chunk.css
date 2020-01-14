@@ -973,13 +973,13 @@ html,body{
     right: 1%;
     /* left: 0%; */
     width: 75%;
-    height: 50px;
+    /* height: 50px; */
     outline: 1px solid #cecece;
     font: 1rem/3.125rem "Nanum Gothic";
     color: #666;
 }
 /* 그룹에 재미있는 소식을 남겨주세요 */
-.letsbegin div:first-child{
+.startT{
     text-indent:20px;
 }
 
@@ -1051,6 +1051,7 @@ html,body{
 /* 댓글 좋아요버튼 삭제하기 버튼박스 */
 .btnsbox{
     width: 100%;
+    height: 0px;
 }
 /* 크기 3등분 */
 .btnsbox>button{
@@ -1080,12 +1081,15 @@ html,body{
 
 .commentbox{
     width: 100%;
-    display: none;
+    height: 150px;
+    /* display: none; */
+    
 }
 .comment{
     display: block;
+    margin-bottom: 5px;
     width: 100%;
-    height: 30px;
+    height: 75px;
 }
 /* 댓글올리기버튼 */
 .commentbox>button{
@@ -1103,7 +1107,7 @@ html,body{
 
 .remove{
     position: absolute;
-    right: 0;
+    right: 5%;
     width: 80px;
     height: 30px;
     border: 0;
@@ -1111,6 +1115,15 @@ html,body{
     color: #fff;
     font: 0.875rem/1rem "Nanum Gothic";
     border: none;
+    margin-top: 20px;
+}
+
+
+.comline{
+    border-bottom: 1px solid #cecece;
+    width: 90%;
+    height: 1px;
+    margin: 0 auto;
 }
 /*Grid Set*/
 

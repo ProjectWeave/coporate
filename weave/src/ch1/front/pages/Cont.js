@@ -3,17 +3,19 @@ import React, { useCallback, useState, useEffect }  from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ADD_POST_REQUEST, ADD_POST_SUCCESS, ADD_POST_FAILURE, ADD_COMMENT_REQUEST } from '../reducers/post';
 
+import ContentForm from '../components/ContentForm';
 import '../components/Contents.css';
 import Link from 'next/link';
 import '../components/Menu.css';
 import '../components/reset.css';
 
-  
 const Cont = () => {
     const dispatch = useDispatch();
 
     const [text, setText ] = useState('');
-    const [comments, setComments ] = useState('');
+    //const [initText, setinitText ] = useState('그룹에 재미있는 이야기를 써보세요.');
+    //const [comments, setComments ] = useState('');
+    //const [ commentFormOpened, setCommentFormOpened] = useState(false);
     const { imagePaths, isAddingPost, postAdded, mainPosts, GroupPosts, commentAdded, isAddingComment } = useSelector(state => state.post);
 
     //메뉴클릭시 컨텐츠 변경
@@ -40,9 +42,9 @@ const Cont = () => {
         setText('');
     },[postAdded === true]);
     
-    useEffect(() => {
-        setComments('');
-    },[commentAdded === true]);
+    // useEffect(() => {
+    //     setComments('');
+    // },[commentAdded === true]);
 
     const onSubmitForm = useCallback((e) => {
         e.preventDefault();
@@ -54,15 +56,16 @@ const Cont = () => {
         });
     }, []);
     // 댓글올리기 사이클
-    const onSubmitComment = useCallback((e) => {
-        e.preventDefault();
-        dispatch({
-            type: ADD_COMMENT_REQUEST,
-            data: {
-                text,
-            },
-        });
-    }, []);
+    // const onSubmitComment = useCallback((e) => {
+    //     e.preventDefault();
+    //     dispatch({
+    //         type: ADD_COMMENT_REQUEST,
+    //         data: {
+    //             text,
+    //         },
+    //     });
+    // }, []);
+
     // const onSubmitComment = useCallback((e) => {
     //     e.preventDefault();
     //     if(!me){
@@ -75,7 +78,7 @@ const Cont = () => {
     //         },
     //     });
     // }, [me && me.id]);
-
+    
     
     // 단일이미지 미리보기
     const [img, setImg] = useState(null);
@@ -94,9 +97,9 @@ const Cont = () => {
     }, []);
 
     // 댓글
-    const onChangeComment = useCallback((e) => {
-        setComments(e.target.value);
-    }, []);
+    // const onChangeComment = useCallback((e) => {
+    //     setComments(e.target.value);
+    // }, []);
     // 소식남기기칸포스트올리기 사이클
     const onGroupSubmitForm = useCallback((e) => {
         e.preventDefault();
@@ -109,11 +112,13 @@ const Cont = () => {
     }, []);
 
     //댓글창나오게
-    const onInputComment = (e) => {
-        e.preventDefault();
-        document.querySelector(".commentbox").style.display="block";
-    };
-    
+    // const onInputComment = (e) => {
+    //     e.preventDefault();
+    //     document.querySelector(".commentbox").style.display="block";
+    // };
+    // const onToggleComment = useCallback(() => {
+    //     setCommentFormOpened(prev => !prev);  
+    //   }, []);
 
     if(Mode==='member'){
         return(
@@ -177,15 +182,15 @@ const Cont = () => {
                     <div className='row2'>
                         <div class="fileBox" >
                             <label for="uploadBtn" className="btn_file" > </label>
-                            <input type="file" id="uploadBtn" className="uploadBtn" onChange={onChangeImage} accept=".jpg, .jpeg, .png" />
+                            <input type="file" id="uploadBtn_0" className="uploadBtn" onChange={onChangeImage} accept=".jpg, .jpeg, .png" />
                         </div>
                         <div class="fileBox" >
                             <label for="uploadBtn" className="btn_file" > </label>
-                            <input type="file" id="uploadBtn" className="uploadBtn" onChange={onChangeImage} accept=".mp4, .wmv, .avi" />
+                            <input type="file" id="uploadBtn_1" className="uploadBtn" onChange={onChangeImage} accept=".mp4, .wmv, .avi" />
                         </div>
                         <div class="fileBox" >
                             <label for="uploadBtn" className="btn_file" > </label>
-                            <input type="file" id="uploadBtn" className="uploadBtn" onChange={onChangeImage} accept=".txt" />
+                            <input type="file" id="uploadBtn_2" className="uploadBtn" onChange={onChangeImage} accept=".txt" />
                         </div>
                     
                         <div className="icon04">
@@ -194,82 +199,16 @@ const Cont = () => {
                         </div>
                     </div>
                 </form>
-                    {/* 게시물올라갈부분 */}
-                    <div className="letsbegin" >
-                        <div>그룹에 재미있는 이야기를 써보세요.</div>
-                        {/* 반복문 */}
-                        { postAdded === true } 
-                        {imagePaths.map((c) => (
-                            <div key={c} style={{display:"inline-block"}}>
-                                <img src={`http://localhost:3065/${c}`} style={{ width:'200px'}} alt={c}></img> 
-                                <div>
-                                    <button>제거</button>
-                                </div>   
-                            </div>
-                        ))}
-                        {/* 게시글 */}
-                        {GroupPosts.map((v) => {
-                            return(
-                                <div key={v} className="postbox">
-                                    <div className="contBox" post={v}></div>
-                                    <div className="btnsbox">
-                                        <button type="button" className="commentBtn" onClick={onInputComment} />
-                                        <button type="button" className="likeBtn" /> 
-                                        <button type="button" className="removeBtn" />
-
-                                        <form className="commentbox">
-                                            <input type="textarea" resize="none" className="comment" value={comments} onChange={onChangeComment} />
-                                            <button type="submit" className="combtn" onClick={onSubmitComment}>COMMENT</button>
-                                            {/* 댓글올라갈부분 */}
-                                            {/* {mainPosts.map((c) => (
-                                                <div key={c} style={{display:"inline-block"}}>
-                                                    <div>
-                                                        <button type="button" className="remove">REMOVE</button>
-                                                    </div>   
-                                                </div>
-                                            ))} */}
-                                        </form>
-                                        
-                                    </div> 
-                                </div>
-                             );
-                        })
-                        }
-                    </div>
+                <ContentForm />
+                
                 
                 {/* 더보기버튼 */}
                 <button className="more">더보기</button>
             </div>
+           
             
         </>
     );
 };
 
 export default Cont;
-
-// {/* <div className='row1'>
-//                         <textarea maxLength={1500} placeholder="소식을 남겨주세요"
-//                                   className="tarea" value={text} onChange={onChangeText} />
-//                     </div>
-
-//                     <div className='row2'>
-//                         <div className="icon01">
-//                             <label for="file" className="btn_file2" >이거를 클릭하면</label>
-//                             <input type="file" name="file" accept=".jpg, .jpeg, .png" 
-//                                     onChange={onChangeImage} />
-//                         </div>
-//                         <div className="icon02">
-//                             <label for="file-input" className="btn_file2"></label>
-//                             <input type="file" name="mv_file" 
-//                                    accept=".mp4, .wmv, .avi" onClick={onChangeImage} />
-//                         </div>
-//                         <div className="icon03">
-//                             <label for="file-input" className="btn_file2"></label>
-//                             <input type="file" accept=".txt" onChange={onChangeImage} />
-//                         </div>
-//                         <div className="icon04">
-//                             <label for="file-input"></label>
-//                             <input type="submit" value="" loading={isAddingPost} />
-//                         </div>
-                        
-//                     </div> */}
