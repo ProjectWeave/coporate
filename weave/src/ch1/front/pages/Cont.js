@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { ADD_POST_REQUEST, ADD_POST_SUCCESS, ADD_POST_FAILURE, ADD_COMMENT_REQUEST } from '../reducers/post';
 
 import ContentForm from '../components/ContentForm';
+import ContentFormCopy from '../components/ContentForm';
 import '../components/Contents.css';
 import Link from 'next/link';
 import '../components/Menu.css';
@@ -52,7 +53,7 @@ const Cont = () => {
             type: ADD_POST_REQUEST,
             data: {
                 text,
-            },
+            },  
         });
     }, []);
     // 댓글올리기 사이클
@@ -199,8 +200,15 @@ const Cont = () => {
                         </div>
                     </div>
                 </form>
+                {/* 게시물올라가는부분 */}
                 <ContentForm />
-                
+                {/* <div className="letsbegin">
+                    {postAdded===false && <div className="startT">그룹에 재미있는 이야기를 써보세요.</div>}
+                    {postAdded===true && mainPosts.map((v) => {
+                            <ContentFormCopy key={v} />
+                        })
+                    }
+                </div> */}
                 
                 {/* 더보기버튼 */}
                 <button className="more">더보기</button>

@@ -4017,7 +4017,23 @@ const HomePage = () => {
       lineNumber: 30
     },
     __self: undefined
-  });
+  }, isLoggedIn && __jsx(_components_IndexPage__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31
+    },
+    __self: undefined
+  }), mainPosts.map(c => {
+    return __jsx("div", {
+      key: c,
+      post: c,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 34
+      },
+      __self: undefined
+    });
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (HomePage);

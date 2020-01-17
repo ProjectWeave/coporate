@@ -1,21 +1,21 @@
 // mode변경 test
 import React, { useCallback, useState, useEffect }  from 'react';
+import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { ADD_POST_REQUEST, ADD_POST_SUCCESS, ADD_POST_FAILURE, ADD_COMMENT_REQUEST } from '../reducers/post';
+import { ADD_COMMENT_REQUEST } from '../reducers/post';
 
 import '../components/Contents.css';
 import Link from 'next/link';
 import '../components/reset.css';
 
-const ContentForm = () => {
+const ContentForm = ({post}) => {
     
     const [comments, setComments ] = useState('');
-    const [text, setText ] = useState('');
     const [ commentFormOpened, setCommentFormOpened] = useState(false);
-
+    const { me } = useSelector(state => state.user);
     const dispatch = useDispatch();
 
-    const { imagePaths, isAddingPost, postAdded, mainPosts, GroupPosts, commentAdded, isAddingComment } = useSelector(state => state.post);
+    const { imagePaths, postAdded, mainPosts, GroupPosts, commentAdded, isAddingComment } = useSelector(state => state.post);
 
     // 댓글
     const onChangeComment = useCallback((e) => {
@@ -28,19 +28,37 @@ const ContentForm = () => {
       }, []);
 
     // 댓글올리기 사이클
+    // const onSubmitComment = useCallback((e) => {
+    //     e.preventDefault();
+    //     dispatch({
+    //         type: ADD_COMMENT_REQUEST,
+    //         data: {
+    //             text,
+    //         },
+    //     });
+    // }, []);
     const onSubmitComment = useCallback((e) => {
         e.preventDefault();
-        dispatch({
+        if(!me){
+            return alert('로그인이 필요합니다.');
+        }
+        return dispatch({
             type: ADD_COMMENT_REQUEST,
-            data: {
-                text,
+            data:{
+
             },
         });
-    }, []);
-
+    }, [me && me.id]);
+    
+    // 댓글 성공시, 빈텍스트로 
     useEffect(() => {
         setComments('');
     },[commentAdded === true]);
+
+    const onRemoveComments = () => {
+        alert('댓글을 삭제하시겠습니까?');
+    };
+
 
     if(postAdded===false)
     return(
@@ -57,34 +75,50 @@ const ContentForm = () => {
                     <div key={v} className="postbox">
                         <div className="contBox">
                             {/* <img alt="example" src={post.img}/>  */}
-                            {/* {imagePaths.map((c) => (
+                            {imagePaths.map((c) => (
                                 <div key={c} style={{display:"inline-block"}}>
-                                    <img src={`http://localhost:3065/${c}`} style={{ width:'200px'}} alt={c}></img> 
+                                    <img src={`http://localhost:3000/${c}`} alt={c}></img> 
                                     <div>
                                         <button>제거</button>
                                     </div>   
                                 </div>
-                            ))} */}
+                            ))}
                         </div>
                         <div className="btnsbox">
                             <button type="button" className="commentBtn"  value={commentFormOpened} onClick={onToggleComment} />
                             <button type="button" className="likeBtn" /> 
                             <button type="button" className="removeBtn" />
-                            {commentFormOpened===true&&
-                                <form className="commentbox">
-                                    <textarea resize="none" className="comment" value={comments} onChange={onChangeComment} />
-                                    <button type="submit" className="combtn" onClick={onSubmitComment}>COMMENT</button>
+                            {commentFormOpened===true &&
+                                <form className="commentbox" onSubmit={onSubmitComment}>
+                                    <textarea className="comment" value={comments} onChange={onChangeComment} />
+                                    <button type="primary" htmlType="submit" className="combtn" loading={isAddingComment} >COMMENT</button>
                                 </form>
                             }
-                                {/* 댓글올라갈부분 */}
-                                {commentFormOpened===true&& mainPosts.map((c) => (
-                                    <div key={c} style={{display:"inline-block",width:"100%",height:"100px"}}>
-                                        <div className="comline">
-                                            댓글
-                                            <button type="button" className="remove">REMOVE</button>
-                                        </div>   
-                                    </div>
-                                ))}
+                            {/* 댓글올라갈부분 */}
+                            {/* {commentFormOpened===true && mainPosts.map((c) => (
+                                <div key={c} style={{display:"inline-block",width:"100%",height:"100px"}}>
+                                    <div className="comline">
+                                        댓글
+                                        <button type="button" className="remove">REMOVE</button>
+                                    </div>   
+                                </div>
+                            ))} */}
+                            {commentFormOpened===true && 
+                                <div style={{display:"inline-block",width:"100%",height:"100px"}}>
+                                    <div className="comline"></div>
+                                    {/* <p>{post.Comments ? post.Comments.length + '댓글' : 0 + '댓글'}</p> */}
+                                    <p style={{marginLeft:"10px"}}>{commentAdded ? '댓글' + post.Comments.length : '댓글'+' 0'}</p>
+                                    {  mainPosts.map((t) => {
+                                        return( 
+                                            <li key={t.createdAt}>
+                                                {t.User.nickname} : {t.content}
+                                                <button type="button" className="remove" onClick={onRemoveComments} >REMOVE</button>
+                                            </li>
+                                        );
+                                    })
+                                    }
+                                </div>
+                            }
                         </div> 
                     </div>
                 );
@@ -95,8 +129,17 @@ const ContentForm = () => {
     
 
 };
+
+ContentForm.propTypes={
+    post: PropTypes.shape({
+        User: PropTypes.object,
+        content: PropTypes.string,
+        img: PropTypes.string,
+        createdAt: PropTypes.object,
+    }),
+};
+
+
+
+
 export default ContentForm;
-    
-        
-        
-        

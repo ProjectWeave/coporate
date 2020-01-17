@@ -28,12 +28,12 @@ const HomePage = () => {
 
   return (
     <div>
-      {/* {isLoggedIn && <IndexPage />} */}
-      {/* {mainPosts.map((c) => {
+      {isLoggedIn && <IndexPage />}
+      {mainPosts.map((c) => {
         return (
           <div key={c} post={c} />
         );
-      })} */}
+      })}
     </div>
   );
 };

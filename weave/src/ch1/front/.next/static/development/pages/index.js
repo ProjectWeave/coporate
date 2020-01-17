@@ -19637,7 +19637,23 @@ const HomePage = () => {
       lineNumber: 30
     },
     __self: undefined
-  });
+  }, isLoggedIn && __jsx(_components_IndexPage__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31
+    },
+    __self: undefined
+  }), mainPosts.map(c => {
+    return __jsx("div", {
+      key: c,
+      post: c,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 34
+      },
+      __self: undefined
+    });
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (HomePage);
@@ -20190,7 +20206,7 @@ const loginAction = data => {
 
 /***/ }),
 
-/***/ 11:
+/***/ 9:
 /*!*********************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5C%EC%9D%B4%EA%B7%80%EC%98%81%5CDocuments%5Ccoporate%5Cweave%5Csrc%5Cch1%5Cfront%5Cpages%5Cindex.js ***!
   \*********************************************************************************************************************************************************************************/
@@ -20213,5 +20229,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[11,"static/runtime/webpack.js","styles"]]]);
+},[[9,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map
