@@ -18,14 +18,15 @@ const Header = () => {
   };
   
   //프로필페이지이동
-  const handleProfile = () => {
+  const handleProfile = useCallback((e) => {
     alert("프로필페이지로 이동합니다.");
-    
-  };
+    Router.push("/profile");
+  });
 
   //로그아웃 리퀘스트
   const logout = useCallback((e) => {
     alert('로그아웃 하시겠습니까?');
+    Router.push("/");
     e.preventDefault();
     dispatch({
         type: LOG_OUT_REQUEST,

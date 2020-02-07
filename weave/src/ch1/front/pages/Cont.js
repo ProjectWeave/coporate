@@ -49,6 +49,7 @@ const Cont = () => {
 
     const onSubmitForm = useCallback((e) => {
         e.preventDefault();
+        document.querySelector(".startT").style.display="none";
         dispatch({
             type: ADD_POST_REQUEST,
             data: {
@@ -56,6 +57,7 @@ const Cont = () => {
             },  
         });
     }, []);
+    
     // 댓글올리기 사이클
     // const onSubmitComment = useCallback((e) => {
     //     e.preventDefault();
@@ -201,7 +203,10 @@ const Cont = () => {
                     </div>
                 </form>
                 {/* 게시물올라가는부분 */}
-                <ContentForm />
+                <div className="letsbegin">
+                    <div className="startT">그룹에 재미있는 이야기를 써보세요.</div>
+                    {postAdded && <ContentForm />}
+                </div>
                 {/* <div className="letsbegin">
                     {postAdded===false && <div className="startT">그룹에 재미있는 이야기를 써보세요.</div>}
                     {postAdded===true && mainPosts.map((v) => {

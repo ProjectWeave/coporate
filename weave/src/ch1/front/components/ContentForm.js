@@ -60,15 +60,15 @@ const ContentForm = ({post}) => {
     };
 
 
-    if(postAdded===false)
+    // if(postAdded===false)
+    // return(
+    //     <div className="letsbegin" >
+    //         <div className="startT">그룹에 재미있는 이야기를 써보세요.</div>
+    //     </div>
+    // );
+    // if(postAdded===true)
     return(
-        <div className="letsbegin" >
-            <div className="startT">그룹에 재미있는 이야기를 써보세요.</div>
-        </div>
-    );
-    if(postAdded===true)
-    return(
-        <div className="letsbegin" >
+        <>
             {/* 게시물올라갈부분 */}
             {mainPosts.map((v) => {
                 return(
@@ -95,23 +95,15 @@ const ContentForm = ({post}) => {
                                 </form>
                             }
                             {/* 댓글올라갈부분 */}
-                            {/* {commentFormOpened===true && mainPosts.map((c) => (
-                                <div key={c} style={{display:"inline-block",width:"100%",height:"100px"}}>
-                                    <div className="comline">
-                                        댓글
-                                        <button type="button" className="remove">REMOVE</button>
-                                    </div>   
-                                </div>
-                            ))} */}
                             {commentFormOpened===true && 
                                 <div style={{display:"inline-block",width:"100%",height:"100px"}}>
-                                    <div className="comline"></div>
                                     {/* <p>{post.Comments ? post.Comments.length + '댓글' : 0 + '댓글'}</p> */}
                                     <p style={{marginLeft:"10px"}}>{commentAdded ? '댓글' + post.Comments.length : '댓글'+' 0'}</p>
-                                    {  mainPosts.map((t) => {
+                                    <div className="comline"></div>
+                                    { mainPosts.map((v) => {
                                         return( 
-                                            <li key={t.createdAt}>
-                                                {t.User.nickname} : {t.content}
+                                            <li key={v.createdAt} style={{listStyle:"none"}}>
+                                                {v.User.nickname} : {v.content}
                                                 <button type="button" className="remove" onClick={onRemoveComments} >REMOVE</button>
                                             </li>
                                         );
@@ -124,7 +116,7 @@ const ContentForm = ({post}) => {
                 );
             })
             }
-        </div>
+        </>
     );
     
 
@@ -138,8 +130,6 @@ ContentForm.propTypes={
         createdAt: PropTypes.object,
     }),
 };
-
-
 
 
 export default ContentForm;
