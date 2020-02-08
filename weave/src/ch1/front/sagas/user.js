@@ -26,16 +26,16 @@ function* watchLogin(){
     yield takeEvery(LOG_IN_REQUEST, login);
 }
 
-function signUpAPI(){
+function signUpAPI(signUpData){
     //서버에 요청을 보내는 부분
-    return axios.post('/login');
+    return axios.post('http://localhost:3065/api/user/login', signUpData);
 }
 
-function* signUp(){
+function* signUp(action){
     try {
         // yield fork(logger);  // logger는 내기록을 로깅하는 함수,
-        yield delay(2000);
-        // throw new Error('에러에러');
+        // yield delay(2000);
+        yield call(signUpAPI, action.data);
         yield put({ // put은 dispatch와 동일
             type: SIGN_UP_SUCCESS,
         });

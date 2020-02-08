@@ -19368,15 +19368,15 @@ const Join = () => {
       return setTermError(true);
     }
 
-    dispatch({
+    return dispatch({
       type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["SIGN_UP_REQUEST"],
       data: {
-        id,
+        userID: id,
         password,
-        nick
+        nickname: nick
       }
     });
-  }, [password, passwordCheck, term]); // const onChangeId=(e)=>{
+  }, [id, nick, password, passwordCheck, term]); // const onChangeId=(e)=>{
   //     setId(e.target.value);
   // };
   // const onChangeNick=(e)=>{

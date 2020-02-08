@@ -3112,7 +3112,7 @@ if (false) {} else {
 /*!***************************************************************************************************!*\
   !*** C:/Users/이귀영/Documents/coporate/weave/node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23317,7 +23317,7 @@ module.exports = (__webpack_require__(/*! dll-reference dll_ef0ff7c60362f24a921f
 /*!***********************************************************************!*\
   !*** ./node_modules/redux-saga/dist/redux-saga-core-npm-proxy.esm.js ***!
   \***********************************************************************/
-/*! exports provided: default, CANCEL, SAGA_LOCATION, buffers, detach, END, channel, eventChannel, isEnd, multicastChannel, runSaga, stdChannel */
+/*! exports provided: CANCEL, SAGA_LOCATION, buffers, detach, END, channel, eventChannel, isEnd, multicastChannel, runSaga, stdChannel, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25570,15 +25570,15 @@ const Join = () => {
       return setTermError(true);
     }
 
-    dispatch({
+    return dispatch({
       type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["SIGN_UP_REQUEST"],
       data: {
-        id,
+        userID: id,
         password,
-        nick
+        nickname: nick
       }
     });
-  }, [password, passwordCheck, term]); // const onChangeId=(e)=>{
+  }, [id, nick, password, passwordCheck, term]); // const onChangeId=(e)=>{
   //     setId(e.target.value);
   // };
   // const onChangeNick=(e)=>{
@@ -26598,16 +26598,16 @@ function* watchLogin() {
   yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeEvery"])(_reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_REQUEST"], login);
 }
 
-function signUpAPI() {
+function signUpAPI(signUpData) {
   //서버에 요청을 보내는 부분
-  return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/login');
+  return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('http://localhost:3065/api/user/login', signUpData);
 }
 
-function* signUp() {
+function* signUp(action) {
   try {
     // yield fork(logger);  // logger는 내기록을 로깅하는 함수,
-    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["delay"])(2000); // throw new Error('에러에러');
-
+    // yield delay(2000);
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["call"])(signUpAPI, action.data);
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
       // put은 dispatch와 동일
       type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["SIGN_UP_SUCCESS"]
