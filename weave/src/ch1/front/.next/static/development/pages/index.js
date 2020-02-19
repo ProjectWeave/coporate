@@ -7594,15 +7594,15 @@ const Join = () => {
       return setTermError(true);
     }
 
-    dispatch({
+    return dispatch({
       type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["SIGN_UP_REQUEST"],
       data: {
-        id,
+        userId: id,
         password,
-        nick
+        nickname: nick
       }
     });
-  }, [password, passwordCheck, term]); // const onChangeId=(e)=>{
+  }, [id, nick, password, passwordCheck, term]); // const onChangeId=(e)=>{
   //     setId(e.target.value);
   // };
   // const onChangeNick=(e)=>{
@@ -7858,7 +7858,7 @@ const Login = () => {
     dispatch({
       type: _reducers_user__WEBPACK_IMPORTED_MODULE_4__["LOG_IN_REQUEST"],
       data: {
-        id,
+        userId: id,
         password
       }
     });
@@ -7878,7 +7878,7 @@ const Login = () => {
     return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_Join__WEBPACK_IMPORTED_MODULE_6__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
+        lineNumber: 43
       },
       __self: undefined
     }));
@@ -7888,35 +7888,35 @@ const Login = () => {
   if (Mode === 'read') return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 49
     },
     __self: undefined
   }, __jsx("article", {
     className: "rLg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 50
     },
     __self: undefined
   }, __jsx("div", {
     className: "logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 51
     },
     __self: undefined
   }), __jsx("div", {
     className: "lg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 52
     },
     __self: undefined
   }, __jsx("h2", {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 53
     },
     __self: undefined
   }, "\uB85C\uADF8\uC778"), __jsx("form", {
@@ -7926,20 +7926,20 @@ const Login = () => {
     onSubmit: onSubmitForm,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 54
     },
     __self: undefined
   }, __jsx("div", {
     className: "lg_title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 58
     },
     __self: undefined
   }, "\uC9C0\uAE08 \uBC14\uB85C \uAC00\uC785\uD558\uC138\uC694!"), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 59
     },
     __self: undefined
   }, __jsx("label", {
@@ -7947,7 +7947,7 @@ const Login = () => {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 60
     },
     __self: undefined
   }, "\uC544\uC774\uB514"), __jsx("input", {
@@ -7959,7 +7959,7 @@ const Login = () => {
     required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 61
     },
     __self: undefined
   }), __jsx("label", {
@@ -7967,7 +7967,7 @@ const Login = () => {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 62
     },
     __self: undefined
   }, "\uBE44\uBC00\uBC88\uD638"), __jsx("input", {
@@ -7980,14 +7980,14 @@ const Login = () => {
     required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 63
     },
     __self: undefined
   })), __jsx("div", {
     className: "btngroup",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 66
     },
     __self: undefined
   }, __jsx("button", {
@@ -7996,7 +7996,7 @@ const Login = () => {
     loading: isLoggingIn,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 67
     },
     __self: undefined
   }, "\uB85C\uADF8\uC778"), __jsx("button", {
@@ -8005,7 +8005,7 @@ const Login = () => {
     onClick: onChangeMode,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 68
     },
     __self: undefined
   }, "\uD68C\uC6D0\uAC00\uC785"))))));

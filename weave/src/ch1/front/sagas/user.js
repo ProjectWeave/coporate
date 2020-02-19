@@ -2,6 +2,8 @@ import { all, fork, takeLatest, takeEvery, call, put, take, delay } from 'redux-
 import axios from "axios";
 import { LOG_IN_REQUEST, LOG_IN_SUCCESS, LOG_IN_FAILURE, SIGN_UP_REQUEST, SIGN_UP_FAILURE, SIGN_UP_SUCCESS, LOG_OUT_REQUEST,LOG_OUT_SUCCESS, LOG_OUT_FAILURE } from "../reducers/user";
 
+// axios.defaults.baseURL = 'http://localhost:3065/api';
+
 function loginAPI(){
     //서버에 요청을 보내는 부분
     return axios.post('/login');
@@ -28,7 +30,7 @@ function* watchLogin(){
 
 function signUpAPI(signUpData){
     //서버에 요청을 보내는 부분
-    return axios.post('http://localhost:3065/api/user/login', signUpData);
+    return axios.post('http://localhost:3065/api/user/', signUpData);
 }
 
 function* signUp(action){
