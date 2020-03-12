@@ -1,23 +1,23 @@
 export const initialState={
     mainPosts:[{
-        id:1,
+        id: 1,
         User:{
             id: 1,
             nickname: "위브",
         },
-        content: "첫번째 게시글",
+        content: "첫번째 게시글입니다.",
         img:"http://www.redpiltong.co.kr/shopimages/redpiltong/012002000104.jpg?1547186041", 
         Comments: [],
     }], // 화면에 보일 포스트들 
     GroupPosts:[{
-        id:1,
+        id: 1,
         User:{
             id: 1,
             nickname: "위브",
         },
-        content: "첫번째 게시글",
+        content: "두리안그룹",
         img:"https://img1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/liveboard/dailylife/187ea4bc2ad54b1db5030743265c5397.jpg", 
-        Comments: [],
+        gtext: ["두리안 좋아하는사람들의 모임"],
     }], // 그룹화면에 보일 포스트들 
     imagePaths:[], //미리보기 이미지경로
     addPostErrorReason: false,  //포스트 업로드 실패사유
@@ -161,7 +161,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 isAddingPost: false, 
-                GroupPosts: [dummyPosts, ...state.mainPosts],
+                mainPosts: [dummyPosts, ...state.mainPosts],
                 postAdded: true, 
             };
         }
@@ -213,7 +213,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 addingGroupPost: false,
-                mainPosts: [dummyGroupPost, ...state.GroupPosts],
+                GroupPosts: [dummyGroupPost, ...state.GroupPosts],
                 addedGroupPost: true,
             };
         }

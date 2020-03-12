@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { BrowserRouter as Router,Route, Switch } from 'react-router-dom';
-// import { } from '../File';
+// import { BrowserRouter as Router,Route, Switch } from 'react-router-dom';
 
 import Link from 'next/link';
 import Plus from './Plus';
@@ -9,11 +8,14 @@ import GroupForm from './GroupForm';
 import './Contents.css';
 import './Templete.css';
 import './GroupItem.css';
+import GroupBox from './GroupBox';
 
 
 const IndexPage = () => {
     const { GroupPosts } = useSelector(state => state.post);
-    const { isLoggedIn } = useSelector(state => state.user);
+    const { addedGroupPost } = useSelector(state => state.user);
+    const { gimg, grouptit, grouptext } = useSelector(state => state.user);
+    
     return (
         <div className="groupitem">
             <Plus />
@@ -43,15 +45,36 @@ const IndexPage = () => {
                     미식가 여러분 환영합니다~!
                 </p>
             </div>
-            {/* 게시물 올라갈곳 */}
-            {/* {addedGroupPost === true} */}
-            
-            {/* {isLoggedIn && <Plus  />}
-            {GroupPosts.map((c) => {
+            {/* 그룹 올라갈곳 */}
+            {/* <div>
+                {addedGroupPost==='true'&& <GroupBox />}
+                {GroupPosts.map((val)=>{
+                    <GroupBox key={val} gpost={val} />
+                    <div className="contbox" key={val} gpost={val}>
+                        <div className="group_img"> 
+                            <img src={} style={{width:"100%"}} /> 
+                        </div>
+                        <h1>{val.grouptit}</h1>
+                        <p>
+                            {val.grouptext}
+                        </p>
+                    </div>
+                })  
+                }
+            </div> */}
+            {addedGroupPost && GroupPosts.map((c) => {
                 return (
-                  <div key={c} post={c} />
+                    <div className="contbox" >
+                        <div className="group_img" key={c}> 
+                            <img src={c.img} style={{width:"100%"}} /> 
+                        </div>
+                        <h1>{c.content}</h1>
+                        <p>
+                            {c.gtext}
+                        </p>
+                    </div>
                 );
-            })} */}
+            })}
             
         </div>
     );

@@ -27,14 +27,9 @@ const HomePage = () => {
   const { mainPosts } = useSelector(state => state.post);
 
   return (
-    <div>
-      {isLoggedIn && <IndexPage />}
-      {mainPosts.map((c) => {
-        return (
-          <div key={c} post={c} />
-        );
-      })}
-    </div>
+    <>
+      <IndexPage />
+    </>
   );
 };
 

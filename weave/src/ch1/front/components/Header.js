@@ -10,6 +10,7 @@ const Header = () => {
   const { isLoggedOut } = useSelector(state => state.user);
   const [clickBtn, setClickBtn] = useState({isToggleOn: false});
   const { isLoggingOut } = useSelector(state => state.user);
+  // const { me } = useSelector(state => state.user);
   const dispatch = useDispatch();
 
   const handleClick =(e)=>{
@@ -56,7 +57,9 @@ const Header = () => {
           
         <div>
           {/* 프로필이미지 */}
-          <div className="profile" onClick={handleProfile} ></div>
+          <div className="profile" onClick={handleProfile} >
+             
+          </div>
           {/* 더보기란 */}
           <button htmltype="button" className="pfBtn" value={clickBtn} onClick={handleClick} >
             { !clickBtn && <Toggle /> }

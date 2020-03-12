@@ -130,7 +130,9 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const File = () => {
+const File = ({
+  gpost
+}) => {
   const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useDispatch"])();
   const {
     0: text,
@@ -153,8 +155,8 @@ const File = () => {
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
 
   const InputChangeTit = e => {
-    e.preventDefault();
-    console.log(e.target.value);
+    e.preventDefault(); // console.log(e.target.value);
+
     setGrouptit(e.target.value);
   };
 
@@ -189,52 +191,55 @@ const File = () => {
 
 
   const onSubmitGroup = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    e.preventDefault();
+    e.preventDefault(); // debugger;
+    // console.log(e);
+
     dispatch({
       type: _reducers_post__WEBPACK_IMPORTED_MODULE_3__["ADD_GROUP_REQUEST"],
-      data: {
-        text,
-        img
-      }
+      data: {}
     });
-  }, []);
+  }, []); //그룹포스트올리기성공하면 텍스트 초기화 & 창닫히기
+
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     setText('');
   }, [addedGroupPost === true]);
   return __jsx("form", {
     className: "pop",
+    encType: "multipart/form-data",
+    method: "post",
+    name: "gg",
     onSubmit: onSubmitGroup,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 74
     },
     __self: undefined
   }, __jsx("div", {
     className: "gimg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 75
     },
     __self: undefined
   }, __jsx("img", {
     src: img,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 76
     },
     __self: undefined
   })), __jsx("div", {
     className: "filebox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 79
     },
     __self: undefined
   }, __jsx("label", {
     htmlFor: "file",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 80
     },
     __self: undefined
   }, "\uC0AC\uC9C4\uC744 \uC120\uD0DD\uD574\uC8FC\uC138\uC694."), __jsx("input", {
@@ -245,14 +250,14 @@ const File = () => {
     className: "upload",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 81
     },
     __self: undefined
   })), __jsx("div", {
     className: "group",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
+      lineNumber: 85
     },
     __self: undefined
   }, __jsx("label", {
@@ -260,7 +265,7 @@ const File = () => {
     className: "gtit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
+      lineNumber: 86
     },
     __self: undefined
   }, " \uADF8\uB8F9\uC774\uB984"), __jsx("input", {
@@ -271,7 +276,7 @@ const File = () => {
     onChange: InputChangeTit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 87
     },
     __self: undefined
   }), __jsx("label", {
@@ -279,7 +284,7 @@ const File = () => {
     className: "gtit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 88
     },
     __self: undefined
   }, " \uADF8\uB8F9\uC18C\uAC1C"), __jsx("input", {
@@ -290,14 +295,14 @@ const File = () => {
     onChange: InputChangeText,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 89
     },
     __self: undefined
   }), __jsx("p", {
     className: "send",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 90
     },
     __self: undefined
   }, __jsx("input", {
@@ -306,7 +311,7 @@ const File = () => {
     loading: addingGroupPost,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 91
     },
     __self: undefined
   }), __jsx("input", {
@@ -315,88 +320,112 @@ const File = () => {
     onClick: popBlockClose,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 92
     },
     __self: undefined
   }))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (File); // const handleChange = (event) => {
-//   //console.log(event.target);
-//   setFile({
-//     file: URL.createObjectURL(event.target.files[0])
-//   });
+/* harmony default export */ __webpack_exports__["default"] = (File); // import React, { Component } from "react";
+// import './test.css';
+// class File extends Component{
+// inputChangedHandler = e => {
+//   const { changeInput } = this.props;
+//   const { name, value } = e.target;
+//   console.log("clicked", name, value);
+//   changeInput({ name, value });
 // };
-// const fileUpSelcetedHandler = (event) => {
-//   //console.log(event.target.file);
-//   setSelctedFile({
-//     selctedFile:event.target.file[0]
-//   })
+// htmlChangedHandler = ({ name, value }) => {
+//   const { changeInput } = this.props;
+//   changeInput({ name, value });
 // };
-// const fileUploadHandler = () => {
-//     axios.post('');
+// fileSelectedHandler = e => {
+//   console.log(e.target.files[0]);
+// // changeInput = ({ name, value }) => {
+// //   const { onChangeInput } = this.props;
+// //   onChangeInput({ name, value });
+// // };
+// // changeFile = (name, file) => {
+// //   const { onChangeFile } = this.props;
+// //   onChangeFile(name, file);
+// // };
+//   if (e.target.files != null || e.target.files[0] != null) {
+//     const { changeFile } = this.props;
+//     const { name } = e.target;
+//     let reader = new FileReader();
+//     reader.onload = e => {
+//       this.refImg.setAttribute("src", e.target.result);
+//       console.log(e.target.result);
+//       changeFile(name, e.target.result);
+//     };
+//     reader.readAsDataURL(e.target.files[0]);
+//   }
 // };
-// class File extends React.Component{
-//   constructor(props){
-//     super(props);
-//     this.state = {
-//       file: null
-//     }
-//     this.handleChange = this.handleChange.bind(this)
-//   }
-//   handleChange(event) {
-//     this.setState({
-//       file: URL.createObjectURL(event.target.files[0])
-//     })
-//   }
-//   state={
-//     selctedFile:null
-//   }
-//   fileUpSelcetedHandler=event=>{
-//     //console.log(event.target.file);
-//     this.setState({
-//       selctedFile:event.target.file[0]
-//     })
-//   }
-//   fileUploadHandler=()=>{
-//     axios.post('');
-//   }
-//   render(){
+// render() {
+//   const {
+//     title,
+//     sub,
+//     img,
+//     submitPost,
+//     isEdit
+//   } = this.props;
 //     return(
-//       <form className="pop" onSubmit={onSubmitGroup}>
-//           <div className="gimg">
-//             <img src={this.state.file}/>
-//           </div>
-//           {/* <input type="image" alt="submit"></input> */}
-//           <div className="filebox">
-//             <label htmlFor ="file">사진을 선택해주세요.</label>
-//             <input type="file" id="file" name="file" size="2000" 
-//                    accept=".jpg, .jpeg, .png" className="upload"
-//                    onChange={this.handleChange} />
-//           </div>
-//           <div className="group">
-//             <label htmlFor ="name" className="gtit"> 그룹이름</label>
-//             <input type="text" name="gname" className="gname" />
-//             <label htmlFor ="name" className="gtit"> 그룹소개</label>
-//             <input type="text" name="gintro" className="gintro" />
-//             <p className="send">
-//               <input type="submit" value="올리기"
-//                      onClick={this.fileUploadHandler}
+//       <div className="">
+//       <form className="pop" onSubmit={submitPost}>
+//             <div>
+//               <input
+//                 style={{ display: "none" }}
+//                 type="file"
+//                 name="img"
+//                 onChange={this.fileSelectedHandler}
+//                 ref={ref => (this.refInput = ref)}
 //               />
-//               <input type="reset" value="취소" onClick={function(){
-//                 var pop = document.querySelector(".pop")
-//                 var block = document.querySelector(".block")
-//                 pop.style.display="none"
-//                 block.style.display="none"
-//               }} />
-//             </p>
-//             {this.props.children}
+//               <div className="filebox">
+//                 {/* <h4>그룹 사진 업로드</h4> */}
+//                 <button type="button" onClick={() => this.refInput.click()}>
+//                   사진을 선택해주세요.
+//                 </button>
+//               </div>
+//               <div className="">
+//                 <img
+//                   ref={ref => (this.refImg = ref)}
+//                   alt={img ? "seleted_image" : null}
+//                   src={img ? img : null}
+//                   align="middle"
+//                   width="100%"
+//                   height="100%"
+//                 />
+//               </div>
+//             </div>
+//           <div className="group">
+//             <input
+//               type="text"
+//               name="title"
+//               value={title}
+//               className="gname"
+//               placeholder="그룹이름을 입력하세요"
+//               onChange={this.inputChangedHandler}
+//             />
+//             <input
+//               type="text"
+//               name="sub"
+//               value={sub}
+//               className="gintro"
+//               placeholder="그룹 소개를 입력하세요"
+//               onChange={this.inputChangedHandler}
+//             />
+//             <div className="">
+//               <button theme="point-big" type="submit">
+//                 {isEdit ? "수정" : "저장"}하기
+//               </button>
+//             </div>
 //           </div>
 //         </form>
+//       </div>
 //     );
 //   }
 // }
-//   export default File;
+// export default File;
 
 /***/ }),
 
@@ -408,6 +437,87 @@ const File = () => {
 /***/ (function(module, exports) {
 
 
+
+/***/ }),
+
+/***/ "./components/GroupBox.js":
+/*!********************************!*\
+  !*** ./components/GroupBox.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./GroupItem.css */ "./components/GroupItem.css");
+/* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_GroupItem_css__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\GroupBox.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+const GroupBox = () => {
+  const {
+    GroupPosts
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.post);
+  const {
+    grouptit,
+    grouptext
+  } = undefined.props;
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: undefined
+  }, __jsx(Link, {
+    href: "/cont",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: undefined
+  }, __jsx("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "contbox000000",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "group_img",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: undefined
+  }), __jsx("h1", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: undefined
+  }, " ", grouptit, " "), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: undefined
+  }, grouptext)))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (GroupBox);
 
 /***/ }),
 
@@ -649,23 +759,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "react-router-dom");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Plus__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Plus */ "./components/Plus.js");
-/* harmony import */ var _GroupForm__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./GroupForm */ "./components/GroupForm.js");
-/* harmony import */ var _Contents_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Contents.css */ "./components/Contents.css");
-/* harmony import */ var _Contents_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_Contents_css__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _Templete_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Templete.css */ "./components/Templete.css");
-/* harmony import */ var _Templete_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_Templete_css__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./GroupItem.css */ "./components/GroupItem.css");
-/* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_GroupItem_css__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Plus__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Plus */ "./components/Plus.js");
+/* harmony import */ var _GroupForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./GroupForm */ "./components/GroupForm.js");
+/* harmony import */ var _Contents_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Contents.css */ "./components/Contents.css");
+/* harmony import */ var _Contents_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_Contents_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _Templete_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Templete.css */ "./components/Templete.css");
+/* harmony import */ var _Templete_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_Templete_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./GroupItem.css */ "./components/GroupItem.css");
+/* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_GroupItem_css__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _GroupBox__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./GroupBox */ "./components/GroupBox.js");
 var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\IndexPage.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
+ // import { BrowserRouter as Router,Route, Switch } from 'react-router-dom';
 
- // import { } from '../File';
 
 
 
@@ -679,113 +788,157 @@ const IndexPage = () => {
     GroupPosts
   } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.post);
   const {
-    isLoggedIn
+    addedGroupPost
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.user);
+  const {
+    gimg,
+    grouptit,
+    grouptext
   } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.user);
   return __jsx("div", {
     className: "groupitem",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 20
     },
     __self: undefined
-  }, __jsx(_Plus__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, __jsx(_Plus__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 21
     },
     __self: undefined
-  }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: "/cont",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 22
     },
     __self: undefined
   }, __jsx("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 22
     },
     __self: undefined
   }, __jsx("div", {
     className: "contbox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 23
     },
     __self: undefined
   }, __jsx("div", {
     className: "dogimg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 24
     },
     __self: undefined
   }), __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 25
     },
     __self: undefined
   }, " \uB315\uB315\uC774\uC9D1\uC0AC \uADF8\uB8F9"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 26
     },
     __self: undefined
   }, "\uC138\uC824\uC608 \uB315\uB315\uC774\uB4E4 \uBAA8\uC5EC\uB77C~!")))), __jsx("div", {
     className: "contbox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 32
     },
     __self: undefined
   }, __jsx("div", {
     className: "travelimg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 33
     },
     __self: undefined
   }), __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 34
     },
     __self: undefined
   }, "\uC138\uACC4\uB300\uD0D0\uBC29\uADF8\uB8F9"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 35
     },
     __self: undefined
   }, "\uC5F4\uC2EC\uD788 \uC77C\uD55C \uB2F9\uC2E0, \uB5A0\uB098\uB77C. \uC5F4\uC2EC\uD788 \uB178\uB294 \uB2F9\uC2E0, \uB2F9\uC2E0\uB3C4 \uB5A0\uB098\uB77C.")), __jsx("div", {
     className: "contbox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 41
     },
     __self: undefined
   }, __jsx("div", {
     className: "foodimg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 42
     },
     __self: undefined
   }), __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 43
     },
     __self: undefined
   }, " \uBA39\uBD80\uB9BC \uADF8\uB8F9"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 44
     },
     __self: undefined
-  }, "\uBBF8\uC2DD\uAC00 \uC5EC\uB7EC\uBD84 \uD658\uC601\uD569\uB2C8\uB2E4~!")));
+  }, "\uBBF8\uC2DD\uAC00 \uC5EC\uB7EC\uBD84 \uD658\uC601\uD569\uB2C8\uB2E4~!")), addedGroupPost && GroupPosts.map(c => {
+    return __jsx("div", {
+      className: "contbox",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 67
+      },
+      __self: undefined
+    }, __jsx("div", {
+      className: "group_img",
+      key: c,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 68
+      },
+      __self: undefined
+    }, __jsx("img", {
+      src: c.img,
+      style: {
+        width: "100%"
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 69
+      },
+      __self: undefined
+    })), __jsx("h1", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 71
+      },
+      __self: undefined
+    }, c.content), __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 72
+      },
+      __self: undefined
+    }, c.gtext));
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (IndexPage); // {GroupPosts.map((v)=>{
@@ -4011,28 +4164,12 @@ const HomePage = () => {
   const {
     mainPosts
   } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.post);
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: undefined
-  }, isLoggedIn && __jsx(_components_IndexPage__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_components_IndexPage__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 31
     },
     __self: undefined
-  }), mainPosts.map(c => {
-    return __jsx("div", {
-      key: c,
-      post: c,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 34
-      },
-      __self: undefined
-    });
   }));
 };
 
@@ -4119,7 +4256,7 @@ const initialState = {
       id: 1,
       nickname: "위브"
     },
-    content: "첫번째 게시글",
+    content: "첫번째 게시글입니다.",
     img: "http://www.redpiltong.co.kr/shopimages/redpiltong/012002000104.jpg?1547186041",
     Comments: []
   }],
@@ -4130,9 +4267,9 @@ const initialState = {
       id: 1,
       nickname: "위브"
     },
-    content: "첫번째 게시글",
+    content: "두리안그룹",
     img: "https://img1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/liveboard/dailylife/187ea4bc2ad54b1db5030743265c5397.jpg",
-    Comments: []
+    gtext: ["두리안 좋아하는사람들의 모임"]
   }],
   // 그룹화면에 보일 포스트들 
   imagePaths: [],
@@ -4262,7 +4399,7 @@ const addGroupPost = {
       {
         return _objectSpread({}, state, {
           isAddingPost: false,
-          GroupPosts: [dummyPosts, ...state.mainPosts],
+          mainPosts: [dummyPosts, ...state.mainPosts],
           postAdded: true
         });
       }
@@ -4324,7 +4461,7 @@ const addGroupPost = {
       {
         return _objectSpread({}, state, {
           addingGroupPost: false,
-          mainPosts: [dummyGroupPost, ...state.GroupPosts],
+          GroupPosts: [dummyGroupPost, ...state.GroupPosts],
           addedGroupPost: true
         });
       }
@@ -4416,8 +4553,6 @@ const dummyUser = {
 }; //초기값
 
 const initialState = {
-  isLoggedIn: false,
-  // 로그인 여부
   isLoggingOut: false,
   // 로그아웃 시도중
   isLoggingIn: false,
@@ -4431,6 +4566,7 @@ const initialState = {
   signUpErrorReason: '',
   // 회원가입 실패사유
   me: null,
+  // 로그인 여부
   followingList: [],
   // 팔로잉 리스트
   followerList: [],
@@ -4509,8 +4645,7 @@ const loginAction = data => {
       {
         return _objectSpread({}, state, {
           isLoggingIn: false,
-          isLoggedIn: true,
-          me: dummyUser,
+          me: action.data,
           isLoading: false
         });
       }
@@ -4519,7 +4654,6 @@ const loginAction = data => {
       {
         return _objectSpread({}, state, {
           isLoggingIn: false,
-          isLoggedIn: false,
           logInErrorReason: action.error,
           me: null
         });
@@ -4528,7 +4662,6 @@ const loginAction = data => {
     case LOG_OUT_REQUEST:
       {
         return _objectSpread({}, state, {
-          isLoggedIn: true,
           isLoggingOut: true
         });
       }
@@ -4536,8 +4669,7 @@ const loginAction = data => {
     case LOG_OUT_SUCCESS:
       {
         return _objectSpread({}, state, {
-          isLoggedIn: false,
-          isLoggingOut: true,
+          isLoggingOut: false,
           me: null
         });
       }
@@ -4545,7 +4677,6 @@ const loginAction = data => {
     case LOG_OUT_FAILURE:
       {
         return _objectSpread({}, state, {
-          isLoggedIn: false,
           isLoggingOut: false,
           logInErrorReason: action.error,
           me: dummyUser
@@ -4575,6 +4706,23 @@ const loginAction = data => {
           isSigningUp: false,
           signUpErrorReason: action.error
         });
+      }
+
+    case LOAD_USER_REQUEST:
+      {
+        return _objectSpread({}, state);
+      }
+
+    case LOAD_USER_SUCCESS:
+      {
+        return _objectSpread({}, state, {
+          me: action.data
+        });
+      }
+
+    case LOAD_USER_FAILURE:
+      {
+        return _objectSpread({}, state);
       }
 
     default:
@@ -4771,17 +4919,6 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-redux");
-
-/***/ }),
-
-/***/ "react-router-dom":
-/*!***********************************!*\
-  !*** external "react-router-dom" ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-router-dom");
 
 /***/ }),
 

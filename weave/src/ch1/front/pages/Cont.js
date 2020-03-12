@@ -1,7 +1,7 @@
 // mode변경 test
 import React, { useCallback, useState, useEffect }  from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { ADD_POST_REQUEST, ADD_POST_SUCCESS, ADD_POST_FAILURE, ADD_COMMENT_REQUEST } from '../reducers/post';
+import { ADD_POST_REQUEST, ADD_GROUP_REQUEST, ADD_COMMENT_REQUEST } from '../reducers/post';
 
 import ContentForm from '../components/ContentForm';
 import ContentFormCopy from '../components/ContentForm';
@@ -49,7 +49,7 @@ const Cont = () => {
 
     const onSubmitForm = useCallback((e) => {
         e.preventDefault();
-        document.querySelector(".startT").style.display="none";
+        // document.querySelector(".startT").style.display="none";
         dispatch({
             type: ADD_POST_REQUEST,
             data: {
@@ -57,30 +57,6 @@ const Cont = () => {
             },  
         });
     }, []);
-    
-    // 댓글올리기 사이클
-    // const onSubmitComment = useCallback((e) => {
-    //     e.preventDefault();
-    //     dispatch({
-    //         type: ADD_COMMENT_REQUEST,
-    //         data: {
-    //             text,
-    //         },
-    //     });
-    // }, []);
-
-    // const onSubmitComment = useCallback((e) => {
-    //     e.preventDefault();
-    //     if(!me){
-    //         return alert('로그인이 필요합니다.');
-    //     }
-    //     return dispatch({
-    //         type: ADD_COMMENT_REQUEST,
-    //         data:{
-    //             postId: post.id,
-    //         },
-    //     });
-    // }, [me && me.id]);
     
     
     // 단일이미지 미리보기
@@ -99,29 +75,16 @@ const Cont = () => {
         //console.log('렌더링');
     }, []);
 
-    // 댓글
-    // const onChangeComment = useCallback((e) => {
-    //     setComments(e.target.value);
-    // }, []);
     // 소식남기기칸포스트올리기 사이클
-    const onGroupSubmitForm = useCallback((e) => {
-        e.preventDefault();
-        dispatch({
-            type: ADD_POST_REQUEST,
-            data: {
-                text,
-            },
-        });
-    }, []);
-
-    //댓글창나오게
-    // const onInputComment = (e) => {
+    // const onGroupSubmitForm = useCallback((e) => {
     //     e.preventDefault();
-    //     document.querySelector(".commentbox").style.display="block";
-    // };
-    // const onToggleComment = useCallback(() => {
-    //     setCommentFormOpened(prev => !prev);  
-    //   }, []);
+    //     dispatch({
+    //         type: ADD_GROUP_REQUEST,
+    //         data: {
+    //             text,
+    //         },
+    //     });
+    // }, []);
 
     if(Mode==='member'){
         return(
@@ -177,7 +140,7 @@ const Cont = () => {
                     </div>
                 </div>
                 
-                <form className="uploadTb" encType="multipart/form-data" onSubmit={onSubmitForm}>
+                <form className="uploadTb" encType="multipart/form-data" name="pp" onSubmit={onSubmitForm}>
                     <div className='row1'>
                         <textarea maxLength={1500} placeholder="소식을 남겨주세요"
                                   className="tarea" value={text} onChange={onChangeText} />
@@ -198,22 +161,32 @@ const Cont = () => {
                     
                         <div className="icon04">
                             <label for="file-input"></label>
-                            <input type="submit" value="" loading={isAddingPost} onSubmit={onGroupSubmitForm} />
+                            <input type="submit" value="" loading={isAddingPost} />
                         </div>
                     </div>
                 </form>
                 {/* 게시물올라가는부분 */}
                 <div className="letsbegin">
                     <div className="startT">그룹에 재미있는 이야기를 써보세요.</div>
-                    {postAdded && <ContentForm />}
+                    <div>
+                        {postAdded && mainPosts.map((i)=>{
+                            return(
+                                <ContentForm key={i} post={i} />
+                            );
+                        })}
+                    </div>
+                    {/* {postAdded && mainPosts.map((i)=>{
+                        return(
+                            <div className="postbox" key={i} post={i}>
+                                <div className="contBox">
+                                    <p>{i.id}</p>
+                                    <img style={{width:"200px", height:"200px", marginTop:"10px"}} alt="example" src={i.img}/> 
+                                    <div>{i.content}</div>
+                                </div>
+                            </div>
+                        );
+                    })} */}
                 </div>
-                {/* <div className="letsbegin">
-                    {postAdded===false && <div className="startT">그룹에 재미있는 이야기를 써보세요.</div>}
-                    {postAdded===true && mainPosts.map((v) => {
-                            <ContentFormCopy key={v} />
-                        })
-                    }
-                </div> */}
                 
                 {/* 더보기버튼 */}
                 <button className="more">더보기</button>

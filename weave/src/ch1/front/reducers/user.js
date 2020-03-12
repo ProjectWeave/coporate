@@ -8,15 +8,14 @@ const dummyUser = {
 };
 
 //초기값
-export const initialState = {
-   isLoggedIn: false,  // 로그인 여부
+export const initialState = { 
    isLoggingOut: false,  // 로그아웃 시도중
    isLoggingIn: false,  // 로그인 시도중
    logInErrorReason: '',  //로그인 실패사유
    signedUp: false,  // 회원가입 성공
    isSigningUp: false,  // 회원가입 시도중
    signUpErrorReason: '',  // 회원가입 실패사유
-   me : null,
+   me : null,  // 로그인 여부
    followingList:[],  // 팔로잉 리스트
    followerList:[],  // 팔로워 리스트
    userInfo: null,  // 남의정보
@@ -101,8 +100,7 @@ export default (state = initialState,action) => {
           return {
             ...state,
             isLoggingIn : false,
-            isLoggedIn : true,
-            me : dummyUser,
+            me : action.data,
             isLoading: false,
           };
       }
@@ -110,7 +108,6 @@ export default (state = initialState,action) => {
         return {
           ...state,
           isLoggingIn : false,
-          isLoggedIn : false,
           logInErrorReason : action.error,
           me : null,
         };
@@ -118,22 +115,19 @@ export default (state = initialState,action) => {
       case LOG_OUT_REQUEST : {
         return {
             ...state,
-            isLoggedIn : true,
             isLoggingOut: true,
         };
       }
       case LOG_OUT_SUCCESS : {
         return {
             ...state,
-            isLoggedIn : false,
-            isLoggingOut: true,
+            isLoggingOut: false,
             me : null,
         };
       }
       case LOG_OUT_FAILURE : {
         return {
             ...state,
-            isLoggedIn : false,
             isLoggingOut: false,
             logInErrorReason : action.error,
             me : dummyUser,
@@ -160,6 +154,23 @@ export default (state = initialState,action) => {
             ...state,
             isSigningUp: false,
             signUpErrorReason: action.error,
+        };
+      }
+
+      case LOAD_USER_REQUEST: {
+        return {
+          ...state,
+        };
+      }
+      case LOAD_USER_SUCCESS: {
+        return {
+          ...state,
+          me: action.data,
+        };
+      }
+      case LOAD_USER_FAILURE: {
+        return {
+          ...state,
         };
       }
       default: {

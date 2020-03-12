@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useCallback }  from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
 
 const Profile = () => {
+    const { me } = useSelector(state => state.user);
+
     return(
-            <div>
-                
+            <>
                 <div className="profileform">
                     프로필
+                    <div> 
+                        {/* <div key="twit">게시물 수<br />{me.Post.length}</div>
+                        <div key="following">팔로잉<br />{me.Followings.length}</div>
+                        <div key="follower">팔로워<br />{me.Followers.length}</div> */}
+                        
+                    </div>
                 </div>
-
-            </div>
+            </>
     );
 };
 

@@ -37,7 +37,7 @@
 }
 
 /* 이미지박스크기설정 */
-.contbox div{
+.contbox>div{
     width: 280px;
     height: 70%;
 }
@@ -53,4 +53,10 @@
     background: url(../imgs/fly.jpg) no-repeat center/cover;
 }
 
+
+.group_img{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
 

@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {  ADD_GROUP_REQUEST } from '../reducers/post';
 
 
-const File = () => {
+const File = ({gpost}) => {
     const dispatch = useDispatch();
     const [text, setText ] = useState('');
     //const [file, setFile ] = useState(null);
@@ -21,7 +21,7 @@ const File = () => {
 
     const InputChangeTit = (e) => {
       e.preventDefault();
-      console.log(e.target.value);
+      // console.log(e.target.value);
       setGrouptit(e.target.value);
     };
     const InputChangeText = (e) => {
@@ -53,22 +53,25 @@ const File = () => {
     // 그룹만들기서브밋
     const onSubmitGroup = useCallback((e) => {
       e.preventDefault();
+      // debugger;
+      // console.log(e);
       dispatch({
           type: ADD_GROUP_REQUEST,
           data: {
-              text,
-              img,
+            
           },
       });
   }, []);
 
+  //그룹포스트올리기성공하면 텍스트 초기화 & 창닫히기
   useEffect(() => {
     setText('');
+    
   },[addedGroupPost === true]);
  
 
     return (
-      <form className="pop" onSubmit={onSubmitGroup}>
+      <form className="pop" encType="multipart/form-data" method="post" name="gg" onSubmit={onSubmitGroup}>
         <div className="gimg">
           <img src={img} ></img>
         </div>
@@ -94,88 +97,120 @@ const File = () => {
 };
 export default File;
 
-// const handleChange = (event) => {
-//   //console.log(event.target);
-//   setFile({
-//     file: URL.createObjectURL(event.target.files[0])
-//   });
+// import React, { Component } from "react";
+// import './test.css';
+
+// class File extends Component{
+
+// inputChangedHandler = e => {
+//   const { changeInput } = this.props;
+//   const { name, value } = e.target;
+//   console.log("clicked", name, value);
+//   changeInput({ name, value });
 // };
 
-// const fileUpSelcetedHandler = (event) => {
-//   //console.log(event.target.file);
-//   setSelctedFile({
-//     selctedFile:event.target.file[0]
-//   })
-// };
-  
-// const fileUploadHandler = () => {
-//     axios.post('');
+// htmlChangedHandler = ({ name, value }) => {
+//   const { changeInput } = this.props;
+//   changeInput({ name, value });
 // };
 
+// fileSelectedHandler = e => {
+//   console.log(e.target.files[0]);
 
-// class File extends React.Component{
-//   constructor(props){
-//     super(props);
-//     this.state = {
-//       file: null
-//     }
-//     this.handleChange = this.handleChange.bind(this)
-//   }
-//   handleChange(event) {
-//     this.setState({
-//       file: URL.createObjectURL(event.target.files[0])
-//     })
-//   }
-//   state={
-//     selctedFile:null
-//   }
-//   fileUpSelcetedHandler=event=>{
-//     //console.log(event.target.file);
-//     this.setState({
-//       selctedFile:event.target.file[0]
-//     })
-//   }
+// // changeInput = ({ name, value }) => {
+// //   const { onChangeInput } = this.props;
+// //   onChangeInput({ name, value });
+// // };
 
-//   fileUploadHandler=()=>{
-//     axios.post('');
+// // changeFile = (name, file) => {
+// //   const { onChangeFile } = this.props;
+// //   onChangeFile(name, file);
+// // };
+
+//   if (e.target.files != null || e.target.files[0] != null) {
+//     const { changeFile } = this.props;
+//     const { name } = e.target;
+
+   
+//     let reader = new FileReader();
+//     reader.onload = e => {
+//       this.refImg.setAttribute("src", e.target.result);
+//       console.log(e.target.result);
+//       changeFile(name, e.target.result);
+//     };
+//     reader.readAsDataURL(e.target.files[0]);
 //   }
+// };
 
+// render() {
+//   const {
+//     title,
+//     sub,
+//     img,
+//     submitPost,
+//     isEdit
+//   } = this.props;
 
-//   render(){
 //     return(
-//       <form className="pop" onSubmit={onSubmitGroup}>
-//           <div className="gimg">
-//             <img src={this.state.file}/>
-//           </div>
-//           {/* <input type="image" alt="submit"></input> */}
-//           <div className="filebox">
-//             <label htmlFor ="file">사진을 선택해주세요.</label>
-//             <input type="file" id="file" name="file" size="2000" 
-//                    accept=".jpg, .jpeg, .png" className="upload"
-//                    onChange={this.handleChange} />
-//           </div>
-//           <div className="group">
-//             <label htmlFor ="name" className="gtit"> 그룹이름</label>
-//             <input type="text" name="gname" className="gname" />
-//             <label htmlFor ="name" className="gtit"> 그룹소개</label>
-//             <input type="text" name="gintro" className="gintro" />
-//             <p className="send">
-//               <input type="submit" value="올리기"
-//                      onClick={this.fileUploadHandler}
+//       <div className="">
+//       <form className="pop" onSubmit={submitPost}>
+//             <div>
+//               <input
+//                 style={{ display: "none" }}
+//                 type="file"
+//                 name="img"
+//                 onChange={this.fileSelectedHandler}
+//                 ref={ref => (this.refInput = ref)}
 //               />
-//               <input type="reset" value="취소" onClick={function(){
-//                 var pop = document.querySelector(".pop")
-//                 var block = document.querySelector(".block")
-//                 pop.style.display="none"
-//                 block.style.display="none"
-//               }} />
-//             </p>
-//             {this.props.children}
+//               <div className="filebox">
+//                 {/* <h4>그룹 사진 업로드</h4> */}
+//                 <button type="button" onClick={() => this.refInput.click()}>
+//                   사진을 선택해주세요.
+//                 </button>
+//               </div>
+//               <div className="">
+//                 <img
+//                   ref={ref => (this.refImg = ref)}
+//                   alt={img ? "seleted_image" : null}
+//                   src={img ? img : null}
+//                   align="middle"
+//                   width="100%"
+//                   height="100%"
+//                 />
+//               </div>
+//             </div>
+          
+
+//           <div className="group">
+            
+//             <input
+//               type="text"
+//               name="title"
+//               value={title}
+//               className="gname"
+//               placeholder="그룹이름을 입력하세요"
+//               onChange={this.inputChangedHandler}
+//             />
+            
+//             <input
+//               type="text"
+//               name="sub"
+//               value={sub}
+//               className="gintro"
+//               placeholder="그룹 소개를 입력하세요"
+//               onChange={this.inputChangedHandler}
+//             />
+//             <div className="">
+//               <button theme="point-big" type="submit">
+//                 {isEdit ? "수정" : "저장"}하기
+//               </button>
+//             </div>
 //           </div>
 //         </form>
+//       </div>
 //     );
 //   }
 // }
 
-//   export default File;
+// export default File;
 

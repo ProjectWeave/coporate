@@ -1,20 +1,29 @@
 import { all, fork, takeLatest, takeEvery, call, put, take, delay } from 'redux-saga/effects';
 import axios from "axios";
-import { LOG_IN_REQUEST, LOG_IN_SUCCESS, LOG_IN_FAILURE, SIGN_UP_REQUEST, SIGN_UP_FAILURE, SIGN_UP_SUCCESS, LOG_OUT_REQUEST,LOG_OUT_SUCCESS, LOG_OUT_FAILURE } from "../reducers/user";
+import { 
+    LOG_IN_REQUEST, LOG_IN_SUCCESS, LOG_IN_FAILURE, 
+    SIGN_UP_REQUEST, SIGN_UP_FAILURE, SIGN_UP_SUCCESS, 
+    LOG_OUT_REQUEST,LOG_OUT_SUCCESS, LOG_OUT_FAILURE,
+    LOAD_USER_REQUEST,LOAD_USER_SUCCESS,LOAD_USER_FAILURE
+} from "../reducers/user";
 
-// axios.defaults.baseURL = 'http://localhost:3065/api';
+axios.defaults.baseURL = 'http://localhost:3065/api';
 
-function loginAPI(){
+function loginAPI(loginData){
     //서버에 요청을 보내는 부분
-    return axios.post('/login');
+    return axios.post('user/login', loginData, {
+        withCredentials: true,
+    });
 }
 
-function* login(){
+function* login(action){
     try {
         // yield fork(logger);  // logger는 내기록을 로깅하는 함수,
-        yield delay(1000);
+        // yield delay(1000);
+        const result = yield call(loginAPI, action.data);
         yield put({ // put은 dispatch와 동일
             type: LOG_IN_SUCCESS,
+            data: result.data,
         });
     } catch (e) { // 로그인 실패시
         console.error(e);
@@ -30,7 +39,7 @@ function* watchLogin(){
 
 function signUpAPI(signUpData){
     //서버에 요청을 보내는 부분
-    return axios.post('http://localhost:3065/api/user/', signUpData);
+    return axios.post('/user/', signUpData);
 }
 
 function* signUp(action){
@@ -56,14 +65,17 @@ function* watchSignUp(){
 
 
 
-function logoutAPI(){
+function logOutAPI(){
     //서버에 요청을 보내는 부분
-    return axios.post('/login');
+    return axios.post('/user/logout', {}, {
+        withCredentials: true,
+    });
 }
 
-function* logout(){
+function* logout(action){
     try {
-        yield delay(1000);
+        // yield delay(1000);
+        yield call(logOutAPI);
         yield put({ // put은 dispatch와 동일
             type: LOG_OUT_SUCCESS,
         });
@@ -71,6 +83,7 @@ function* logout(){
         console.error(e);
         yield put({
             type: LOG_OUT_FAILURE,
+            error: e,
         });
     }
 }
@@ -79,11 +92,42 @@ function* watchLogout(){
     yield takeEvery(LOG_OUT_REQUEST, logout);
 }
 
+
+function loadUserAPI() {
+    // 서버에 요청을 보내는 부분
+    return axios.get('/user/', {
+      withCredentials: true,
+    });
+  }
+  
+  function* loadUser() {
+    try {
+      // yield call(loadUserAPI);
+      const result = yield call(loadUserAPI);
+      yield put({ // put은 dispatch 동일
+        type: LOAD_USER_SUCCESS,
+        data: result.data,
+      });
+    } catch (e) { // loginAPI 실패
+      console.error(e);
+      yield put({
+        type: LOAD_USER_FAILURE,
+        error: e,
+      });
+    }
+  }
+  
+  function* watchLoadUser() {
+    yield takeEvery(LOAD_USER_REQUEST, loadUser);
+  }
+
 export default function* userSaga(){
     yield all([
         fork(watchLogin),
         fork(watchSignUp), //순서의미없음
+        fork(watchLoadUser),
         fork(watchLogout),
+        
     ]);
 }
 

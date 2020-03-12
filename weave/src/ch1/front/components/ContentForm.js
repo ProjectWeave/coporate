@@ -28,15 +28,6 @@ const ContentForm = ({post}) => {
       }, []);
 
     // 댓글올리기 사이클
-    // const onSubmitComment = useCallback((e) => {
-    //     e.preventDefault();
-    //     dispatch({
-    //         type: ADD_COMMENT_REQUEST,
-    //         data: {
-    //             text,
-    //         },
-    //     });
-    // }, []);
     const onSubmitComment = useCallback((e) => {
         e.preventDefault();
         if(!me){
@@ -45,7 +36,7 @@ const ContentForm = ({post}) => {
         return dispatch({
             type: ADD_COMMENT_REQUEST,
             data:{
-
+                postId: post.id,
             },
         });
     }, [me && me.id]);
@@ -70,19 +61,23 @@ const ContentForm = ({post}) => {
     return(
         <>
             {/* 게시물올라갈부분 */}
-            {mainPosts.map((v) => {
-                return(
-                    <div key={v} className="postbox">
+            {/* {mainPosts.map((v) => { */}
+                {/* return( */}
+                    <div className="postbox">
                         <div className="contBox">
-                            {/* <img alt="example" src={post.img}/>  */}
-                            {imagePaths.map((c) => (
-                                <div key={c} style={{display:"inline-block"}}>
-                                    <img src={`http://localhost:3000/${c}`} alt={c}></img> 
+                            <p>{post.id}</p>
+                            <img style={{width:"200px", height:"200px"}} alt="example" src={post.img}/> 
+                            
+                            {/* {imagePaths.map((v) => (
+                                <div key={v} style={{display:"inline-block"}}>
+                                    <img src={`http://localhost:3000/${v}`} alt={v}></img> 
+                                    
                                     <div>
                                         <button>제거</button>
                                     </div>   
                                 </div>
-                            ))}
+                            ))} */}
+                            <div>{post.content}</div>
                         </div>
                         <div className="btnsbox">
                             <button type="button" className="commentBtn"  value={commentFormOpened} onClick={onToggleComment} />
@@ -95,11 +90,11 @@ const ContentForm = ({post}) => {
                                 </form>
                             }
                             {/* 댓글올라갈부분 */}
-                            {commentFormOpened===true && 
+                            {commentFormOpened===true && (
                                 <div style={{display:"inline-block",width:"100%",height:"100px"}}>
-                                    {/* <p>{post.Comments ? post.Comments.length + '댓글' : 0 + '댓글'}</p> */}
                                     <p style={{marginLeft:"10px"}}>{commentAdded ? '댓글' + post.Comments.length : '댓글'+' 0'}</p>
                                     <div className="comline"></div>
+
                                     { mainPosts.map((v) => {
                                         return( 
                                             <li key={v.createdAt} style={{listStyle:"none"}}>
@@ -110,12 +105,13 @@ const ContentForm = ({post}) => {
                                     })
                                     }
                                 </div>
+                                )
                             }
                         </div> 
                     </div>
-                );
-            })
-            }
+                {/* ); */}
+            {/* })
+            } */}
         </>
     );
     
