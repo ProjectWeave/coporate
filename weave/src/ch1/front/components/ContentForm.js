@@ -15,7 +15,7 @@ const ContentForm = ({post}) => {
     const { me } = useSelector(state => state.user);
     const dispatch = useDispatch();
 
-    const { imagePaths, postAdded, mainPosts, GroupPosts, commentAdded, isAddingComment } = useSelector(state => state.post);
+    const { imagePaths, postAdded, mainPosts, commentAdded, isAddingComment,CommentPosts } = useSelector(state => state.post);
 
     // 댓글
     const onChangeComment = useCallback((e) => {
@@ -50,33 +50,15 @@ const ContentForm = ({post}) => {
         alert('댓글을 삭제하시겠습니까?');
     };
 
-
-    // if(postAdded===false)
-    // return(
-    //     <div className="letsbegin" >
-    //         <div className="startT">그룹에 재미있는 이야기를 써보세요.</div>
-    //     </div>
-    // );
-    // if(postAdded===true)
     return(
         <>
             {/* 게시물올라갈부분 */}
             {/* {mainPosts.map((v) => { */}
                 {/* return( */}
-                    <div className="postbox">
+                    <div className="postbox">   
                         <div className="contBox">
-                            <p>{post.id}</p>
-                            <img style={{width:"200px", height:"200px"}} alt="example" src={post.img}/> 
-                            
-                            {/* {imagePaths.map((v) => (
-                                <div key={v} style={{display:"inline-block"}}>
-                                    <img src={`http://localhost:3000/${v}`} alt={v}></img> 
-                                    
-                                    <div>
-                                        <button>제거</button>
-                                    </div>   
-                                </div>
-                            ))} */}
+                            <p>{post.id} 님의 게시물</p>
+                            <img style={{display:"block", margin:"0 auto", height:"200px"}} alt="example" src={post.img}/> 
                             <div>{post.content}</div>
                         </div>
                         <div className="btnsbox">
@@ -91,13 +73,20 @@ const ContentForm = ({post}) => {
                             }
                             {/* 댓글올라갈부분 */}
                             {commentFormOpened===true && (
-                                <div style={{display:"inline-block",width:"100%",height:"100px"}}>
-                                    <p style={{marginLeft:"10px"}}>{commentAdded ? '댓글' + post.Comments.length : '댓글'+' 0'}</p>
+                                <div style={{display:"inline-block", width:"100%"}}>
+                                    <p style={{marginLeft:"10px"}}>{commentAdded ? '댓글' + post.Comments.length : '댓글'+ '0'}</p>
                                     <div className="comline"></div>
-
-                                    { mainPosts.map((v) => {
+                                            {/* <li style={{
+                                                listStyle:"none", display:"inline-block", clear:"both"}}
+                                            >
+                                                {post.id} : {post.content}
+                                                <button type="button" className="remove" onClick={onRemoveComments} >REMOVE</button>
+                                            </li> */}
+                                    { CommentPosts.map((v) => {
                                         return( 
-                                            <li key={v.createdAt} style={{listStyle:"none"}}>
+                                            <li key={v.createdAt} style={{
+                                                listStyle:"none", display:"inline-block", clear:"both"}}
+                                            >
                                                 {v.User.nickname} : {v.content}
                                                 <button type="button" className="remove" onClick={onRemoveComments} >REMOVE</button>
                                             </li>
@@ -123,7 +112,6 @@ ContentForm.propTypes={
         User: PropTypes.object,
         content: PropTypes.string,
         img: PropTypes.string,
-        createdAt: PropTypes.object,
     }),
 };
 

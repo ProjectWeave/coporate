@@ -1054,24 +1054,36 @@ html,body{
     height: 300px;
     margin: 0 auto;
 }
+.contBox>p{
+    text-align: right;
+    padding-right: 10px;
+    color: darkcyan;
+    background-color:rgba(238, 238, 238, 0.5);
+}
+.contBox>div{
+    padding-left: 20px;
+}
 
 /* 댓글 좋아요버튼 삭제하기 버튼박스 */
 .btnsbox{
     width: 100%;
-    height: 0px;
+    /* height: 0px; */
+    /* padding-bottom: 50px; */
 }
 /* 크기 3등분 */
 .btnsbox>button{
     width: 33.33%; 
     height: 50px;
     border: 0;
-    outline: 1px solid #999999;
+    /* outline: 1px solid #999999; */
+    border-bottom: 1px solid #999;
+    border-right: 1px solid #999;
     cursor: pointer;
 }
 
 /* 좋아요버튼 */
 .likeBtn{
-    background: #dedede url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAb5JREFUeNrslzFugzAUhoFm6Nb0Bj1CJC4QTpBygsLCDCdIegKalSXp1G5h7QQXQOIGZexIb9Bn6RH9oja2m6jtkCdZgPPzPuPn5+c4zsV+ydypH5MkWdBlDl1tURS9Qit0C+jqSdtagcnJPV3WI0eD1dSywSkPLqe2lGhb1tZaMDnaMFRnMV93BtpHgm+UYP7SA3R11J75/oZaNJp6Z6QtqX3y8wO1O/g9JHj5DcwxegfHTyTMJHHMeQBoe57SfqTfgVbE/FYGjmDaahIFE4uugpjaaGPSikE6M9DgtGw1MQth4XUa7RbAR8ZMIe6nPPGU1oYpK/Xl/dUG4ilGtjojYyVjILiE+4hX8EnGPiIZw4O4dRC3ueEmorM1pGfNDGmMMW9TTrGffq14N1X4dq7woWmaD9/3XVj+S3p+E/2WUJFqL9SuYct8NSkSmPRiQQRTlUYCrWCKS3o3NE2nkCvLEO+KHdpCWygmZvWYV2QFO9Tklyuggap+uwbpoIXbQrXgCXg2bPa8enMbqBFYAVcdBIygxmCAHxRHnOFIFJpArcCK4n48CBAwPtsp0xBuDT21AIgtNb38Q/j39iXAANGrv5M5Z1EbAAAAAElFTkSuQmCC) no-repeat center;
+    background: #eeeeee url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAb5JREFUeNrslzFugzAUhoFm6Nb0Bj1CJC4QTpBygsLCDCdIegKalSXp1G5h7QQXQOIGZexIb9Bn6RH9oja2m6jtkCdZgPPzPuPn5+c4zsV+ydypH5MkWdBlDl1tURS9Qit0C+jqSdtagcnJPV3WI0eD1dSywSkPLqe2lGhb1tZaMDnaMFRnMV93BtpHgm+UYP7SA3R11J75/oZaNJp6Z6QtqX3y8wO1O/g9JHj5DcwxegfHTyTMJHHMeQBoe57SfqTfgVbE/FYGjmDaahIFE4uugpjaaGPSikE6M9DgtGw1MQth4XUa7RbAR8ZMIe6nPPGU1oYpK/Xl/dUG4ilGtjojYyVjILiE+4hX8EnGPiIZw4O4dRC3ueEmorM1pGfNDGmMMW9TTrGffq14N1X4dq7woWmaD9/3XVj+S3p+E/2WUJFqL9SuYct8NSkSmPRiQQRTlUYCrWCKS3o3NE2nkCvLEO+KHdpCWygmZvWYV2QFO9Tklyuggap+uwbpoIXbQrXgCXg2bPa8enMbqBFYAVcdBIygxmCAHxRHnOFIFJpArcCK4n48CBAwPtsp0xBuDT21AIgtNb38Q/j39iXAANGrv5M5Z1EbAAAAAElFTkSuQmCC) no-repeat center;
 }
 /* 게시물지우기버튼 */
 .removeBtn{
@@ -1079,11 +1091,11 @@ html,body{
     border: 0;
     /* line-height: -50px; */
     /* vertical-align: middle; */ 
-    background: #dedede url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAATRJREFUeNpiYBhpgJFYhZ2dnQJAqh6IE4BYAE36AxAvAOLG8vLyD8SYx0KCI0GWFuCQE0CSKyTGMCYSLIYZDPKZIxpegKaGqj6GgYXA4DyAFg0M0ChgINtioCHngZQBuYkGqP8/FuELQMcaEgpqBQJmfyBSDK+Z2Cw2hMYbA1Jigccn0OUX0DVAxZDjHDmBOULNJC47IQWZI3qcEhHcDkBqP9RRjBQlLqBh76FMRVBehfGBbEFoHr8P41M7OwlAsQEanwEqJoClYKGKxVQFoxaPWjxq8ajFQ89iUlogF6D1KqxafIAm9wFNjDoWo7cggHxFJDbIUkFq+fgDtLbJh7apSAHxhFom+CxeAG01BkAxOWABLglmXBJ79uzZ6erqygiNVwESLQTF9URgFFQyjAIoAAgwAFAOUeDoLMk5AAAAAElFTkSuQmCC) no-repeat center;
+    background: #eeeeee url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAATRJREFUeNpiYBhpgJFYhZ2dnQJAqh6IE4BYAE36AxAvAOLG8vLyD8SYx0KCI0GWFuCQE0CSKyTGMCYSLIYZDPKZIxpegKaGqj6GgYXA4DyAFg0M0ChgINtioCHngZQBuYkGqP8/FuELQMcaEgpqBQJmfyBSDK+Z2Cw2hMYbA1Jigccn0OUX0DVAxZDjHDmBOULNJC47IQWZI3qcEhHcDkBqP9RRjBQlLqBh76FMRVBehfGBbEFoHr8P41M7OwlAsQEanwEqJoClYKGKxVQFoxaPWjxq8ajFQ89iUlogF6D1KqxafIAm9wFNjDoWo7cggHxFJDbIUkFq+fgDtLbJh7apSAHxhFom+CxeAG01BkAxOWABLglmXBJ79uzZ6erqygiNVwESLQTF9URgFFQyjAIoAAgwAFAOUeDoLMk5AAAAAElFTkSuQmCC) no-repeat center;
 }
 /* 댓글버튼 */
 .commentBtn{
-    background: #dedede url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAOtJREFUeNpiYBhpgBHGSEtLEwBS64HYgUZ2HQDiwFmzZn0AcViQJECWCkAlN1DTRqCnAoBUPdQOR5AYE5I8yKeN1LYUBKBmNiKHJhOamg80jNYDyBwmeiUmWNzS3WJ0MGox3QALEXnQAEj1Q7mFwERygVgxiiyGFioOSGxSxCiy+ANSHvxAohhRxdp/IHagZbyC7BjNTqMWDx+LoY0BEK1AbD6m1EJYwQJqgRwAlmgP8FoM1JAApOZTu82Ft+RCsjQR6MIFdIljeliKzcfxQJxAa0ux+ZgulsIthqY8BnpZiuxjBXpaOqAAIMAAftJYxe5vpvUAAAAASUVORK5CYII=) no-repeat center;
+    background: #eeeeee url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAOtJREFUeNpiYBhpgBHGSEtLEwBS64HYgUZ2HQDiwFmzZn0AcViQJECWCkAlN1DTRqCnAoBUPdQOR5AYE5I8yKeN1LYUBKBmNiKHJhOamg80jNYDyBwmeiUmWNzS3WJ0MGox3QALEXnQAEj1Q7mFwERygVgxiiyGFioOSGxSxCiy+ANSHvxAohhRxdp/IHagZbyC7BjNTqMWDx+LoY0BEK1AbD6m1EJYwQJqgRwAlmgP8FoM1JAApOZTu82Ft+RCsjQR6MIFdIljeliKzcfxQJxAa0ux+ZgulsIthqY8BnpZiuxjBXpaOqAAIMAAftJYxe5vpvUAAAAASUVORK5CYII=) no-repeat center;
 }
 
 .commentbox{
@@ -1118,7 +1130,7 @@ html,body{
     width: 80px;
     height: 30px;
     border: 0;
-    background-color: #0090A8;
+    background-color: #cecece;
     color: #fff;
     font: 0.875rem/1rem "Nanum Gothic";
     border: none;

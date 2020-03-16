@@ -20,7 +20,6 @@ const AppLayout = ({children}) => {
     useEffect((me) => {
         if(me){
             alert('로그인했으니 메인페이지로 이동합니다.');
-            Router.push("/homepage");
         }
 
         if(!me){
@@ -29,29 +28,15 @@ const AppLayout = ({children}) => {
             });
         }
     }, []);
-
-    useEffect(()=>{
-      
-    },[]);
    
 
-
     if(!me)return<><Home /></>
-    // if(!isLoggedIn && Mode === 'clicked')
-    // return
-    // <>
-    //     <Header />
-    //     <div className="col-12">{children}</div>
-    // </>
     if(me)
     return (
         <>
             <Header />
             <div>
-                {/* <IndexPage /> */}
                 {children}
-                    
-                {/* { isLoggedIn ? <IndexPage /> : <Home /> }       */}
             </div>
         </>
     );

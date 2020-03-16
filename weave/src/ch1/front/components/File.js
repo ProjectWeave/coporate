@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {  ADD_GROUP_REQUEST } from '../reducers/post';
 
 
-const File = ({gpost}) => {
+const File = () => {
     const dispatch = useDispatch();
     const [text, setText ] = useState('');
     //const [file, setFile ] = useState(null);
@@ -61,17 +61,21 @@ const File = ({gpost}) => {
             
           },
       });
+      //1초뒤에 닫히기
+      setTimeout(() => {
+        popBlockClose(e);
+      }, 1000);
+      
   }, []);
 
-  //그룹포스트올리기성공하면 텍스트 초기화 & 창닫히기
+  //그룹포스트올리기성공하면 텍스트 초기화
   useEffect(() => {
     setText('');
-    
   },[addedGroupPost === true]);
  
 
     return (
-      <form className="pop" encType="multipart/form-data" method="post" name="gg" onSubmit={onSubmitGroup}>
+      <form className="pop" encType="multipart/form-data" method="post" onSubmit={onSubmitGroup}>
         <div className="gimg">
           <img src={img} ></img>
         </div>

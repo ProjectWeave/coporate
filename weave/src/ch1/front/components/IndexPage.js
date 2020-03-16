@@ -62,17 +62,19 @@ const IndexPage = () => {
                 })  
                 }
             </div> */}
-            {addedGroupPost && GroupPosts.map((c) => {
+            { GroupPosts.map((c) => {
                 return (
-                    <div className="contbox" >
-                        <div className="group_img" key={c}> 
-                            <img src={c.img} style={{width:"100%"}} /> 
+                    <Link  href="/cont"><a>
+                        <div className="contbox" >
+                            <div className="group_img" key={c}> 
+                                <img src={c.img} style={{width:"100%"}} /> 
+                            </div>
+                            <h1>{c.content}</h1>
+                            <p>
+                                {c.gtext}
+                            </p>
                         </div>
-                        <h1>{c.content}</h1>
-                        <p>
-                            {c.gtext}
-                        </p>
-                    </div>
+                    </a></Link>
                 );
             })}
             

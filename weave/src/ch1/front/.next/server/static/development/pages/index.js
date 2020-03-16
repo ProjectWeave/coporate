@@ -130,9 +130,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const File = ({
-  gpost
-}) => {
+const File = () => {
   const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useDispatch"])();
   const {
     0: text,
@@ -197,8 +195,12 @@ const File = ({
     dispatch({
       type: _reducers_post__WEBPACK_IMPORTED_MODULE_3__["ADD_GROUP_REQUEST"],
       data: {}
-    });
-  }, []); //그룹포스트올리기성공하면 텍스트 초기화 & 창닫히기
+    }); //1초뒤에 닫히기
+
+    setTimeout(() => {
+      popBlockClose(e);
+    }, 1000);
+  }, []); //그룹포스트올리기성공하면 텍스트 초기화
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     setText('');
@@ -207,39 +209,38 @@ const File = ({
     className: "pop",
     encType: "multipart/form-data",
     method: "post",
-    name: "gg",
     onSubmit: onSubmitGroup,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 78
     },
     __self: undefined
   }, __jsx("div", {
     className: "gimg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 79
     },
     __self: undefined
   }, __jsx("img", {
     src: img,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 80
     },
     __self: undefined
   })), __jsx("div", {
     className: "filebox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 83
     },
     __self: undefined
   }, __jsx("label", {
     htmlFor: "file",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
+      lineNumber: 84
     },
     __self: undefined
   }, "\uC0AC\uC9C4\uC744 \uC120\uD0DD\uD574\uC8FC\uC138\uC694."), __jsx("input", {
@@ -250,14 +251,14 @@ const File = ({
     className: "upload",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81
+      lineNumber: 85
     },
     __self: undefined
   })), __jsx("div", {
     className: "group",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 89
     },
     __self: undefined
   }, __jsx("label", {
@@ -265,7 +266,7 @@ const File = ({
     className: "gtit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 90
     },
     __self: undefined
   }, " \uADF8\uB8F9\uC774\uB984"), __jsx("input", {
@@ -276,7 +277,7 @@ const File = ({
     onChange: InputChangeTit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 91
     },
     __self: undefined
   }), __jsx("label", {
@@ -284,7 +285,7 @@ const File = ({
     className: "gtit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 92
     },
     __self: undefined
   }, " \uADF8\uB8F9\uC18C\uAC1C"), __jsx("input", {
@@ -295,14 +296,14 @@ const File = ({
     onChange: InputChangeText,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 93
     },
     __self: undefined
   }), __jsx("p", {
     className: "send",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 94
     },
     __self: undefined
   }, __jsx("input", {
@@ -311,7 +312,7 @@ const File = ({
     loading: addingGroupPost,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 95
     },
     __self: undefined
   }), __jsx("input", {
@@ -320,7 +321,7 @@ const File = ({
     onClick: popBlockClose,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 96
     },
     __self: undefined
   }))));
@@ -453,22 +454,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./GroupItem.css */ "./components/GroupItem.css");
-/* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_GroupItem_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./GroupItem.css */ "./components/GroupItem.css");
+/* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_GroupItem_css__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\GroupBox.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 
-const GroupBox = () => {
-  const {
-    GroupPosts
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.post);
-  const {
-    grouptit,
-    grouptext
-  } = undefined.props;
+
+const GroupBox = ({
+  gpost
+}) => {
+  // const { GroupPosts } = useSelector(state => state.gpost);
+  // const { grouptit, grouptext } = this.props;
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
@@ -489,7 +490,7 @@ const GroupBox = () => {
     },
     __self: undefined
   }, __jsx("div", {
-    className: "contbox000000",
+    className: "contbox",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 15
@@ -508,15 +509,22 @@ const GroupBox = () => {
       lineNumber: 17
     },
     __self: undefined
-  }, " ", grouptit, " "), __jsx("p", {
+  }, " ", gpost.id, " "), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 18
     },
     __self: undefined
-  }, grouptext)))));
+  }, gpost.content)))));
 };
 
+GroupBox.propTypes = {
+  gpost: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.shape({
+    User: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object,
+    content: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
+    img: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string
+  })
+};
 /* harmony default export */ __webpack_exports__["default"] = (GroupBox);
 
 /***/ }),
@@ -899,12 +907,25 @@ const IndexPage = () => {
       lineNumber: 44
     },
     __self: undefined
-  }, "\uBBF8\uC2DD\uAC00 \uC5EC\uB7EC\uBD84 \uD658\uC601\uD569\uB2C8\uB2E4~!")), addedGroupPost && GroupPosts.map(c => {
-    return __jsx("div", {
-      className: "contbox",
+  }, "\uBBF8\uC2DD\uAC00 \uC5EC\uB7EC\uBD84 \uD658\uC601\uD569\uB2C8\uB2E4~!")), GroupPosts.map(c => {
+    return __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      href: "/cont",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 67
+      },
+      __self: undefined
+    }, __jsx("a", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 67
+      },
+      __self: undefined
+    }, __jsx("div", {
+      className: "contbox",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 68
       },
       __self: undefined
     }, __jsx("div", {
@@ -912,7 +933,7 @@ const IndexPage = () => {
       key: c,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 69
       },
       __self: undefined
     }, __jsx("img", {
@@ -922,22 +943,22 @@ const IndexPage = () => {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69
+        lineNumber: 70
       },
       __self: undefined
     })), __jsx("h1", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 71
+        lineNumber: 72
       },
       __self: undefined
     }, c.content), __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72
+        lineNumber: 73
       },
       __self: undefined
-    }, c.gtext));
+    }, c.gtext))));
   }));
 };
 
@@ -4256,22 +4277,31 @@ const initialState = {
       id: 1,
       nickname: "위브"
     },
-    content: "첫번째 게시글입니다.",
-    img: "http://www.redpiltong.co.kr/shopimages/redpiltong/012002000104.jpg?1547186041",
+    content: "첫번째 게시글입니다.(메인포스트)",
+    img: "http://www.9dog.co.kr/wp-content/uploads/2013/07/img-01.jpg",
     Comments: []
   }],
-  // 화면에 보일 포스트들 
-  GroupPosts: [{
+  CommentPosts: [{
     id: 1,
     User: {
       id: 1,
       nickname: "위브"
     },
-    content: "두리안그룹",
+    content: "테스트용.(커멘트포스트)",
+    img: "http://www.9dog.co.kr/wp-content/uploads/2013/07/img-01.jpg",
+    Comments: []
+  }],
+  GroupPosts: [{
+    id: 2,
+    User: {
+      id: 1,
+      nickname: "위브"
+    },
+    content: "두리안그룹(그룹포스트)",
     img: "https://img1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/liveboard/dailylife/187ea4bc2ad54b1db5030743265c5397.jpg",
     gtext: ["두리안 좋아하는사람들의 모임"]
   }],
-  // 그룹화면에 보일 포스트들 
+  // 그룹화면에 보일 포스트들  
   imagePaths: [],
   //미리보기 이미지경로
   addPostErrorReason: false,
@@ -4289,14 +4319,34 @@ const initialState = {
   //그룹만들기업로드 실패사유
   addedGroupPost: false // 그룹만들기폴더 업로드 성공
 
-};
+}; // export const initialStateForGroup={// 화면에 보일 포스트들 
+//     GroupPosts:[{
+//         id: 2,
+//         User:{
+//             id: 1,
+//             nickname: "위브",
+//         },
+//         content: "두리안그룹(그룹포스트)",
+//         img:"https://img1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/liveboard/dailylife/187ea4bc2ad54b1db5030743265c5397.jpg", 
+//         gtext: ["두리안 좋아하는사람들의 모임"],
+//     }], // 그룹화면에 보일 포스트들 
+//     imagePaths:[], //미리보기 이미지경로
+//     isAddingComment: false,
+//     addCommentErrorReason: '',
+//     commentAdded: false,
+//     addingGroupPost: false, // 그룹만들기폴더 업로드중
+//     GroupErrorReason: '', //그룹만들기업로드 실패사유
+//     addedGroupPost: false, // 그룹만들기폴더 업로드 성공
+// };
+
 const dummyPosts = {
-  id: 2,
+  id: 1,
   User: {
     id: 1,
     nickname: '위브'
   },
-  content: '위브위브위브',
+  content: '위브위브위브(더미포스트)',
+  img: "https://img.bemypet.kr/content/2018/10/07172706/puppies-1871260_1920.jpg",
   Comments: []
 };
 const dummyComment = {
@@ -4306,7 +4356,7 @@ const dummyComment = {
     nickname: "위브"
   },
   createdAt: new Date(),
-  content: '위브댓글입니다.'
+  content: '위브댓글입니다(더미커멘트).'
 };
 const dummyGroupPost = {
   id: 1,
@@ -4315,7 +4365,7 @@ const dummyGroupPost = {
     nickname: "위브"
   },
   createdAt: new Date(),
-  content: "위브글입니다."
+  content: "위브글입니다.(더미그룹포스트)"
 }; // mainPosts:[{
 //     id:1,
 //     User:{
@@ -4425,7 +4475,8 @@ const addGroupPost = {
     case ADD_COMMENT_SUCCESS:
       {
         //immutable
-        const postIndex = state.mainPosts.findIndex(v => v.id === action.data.postId);
+        const postIndex = state.mainPosts.findIndex(v => v.id === action.data.postId); //어떤게시물에 댓글을 작성할것인지
+
         const post = state.mainPosts[postIndex];
         const Comments = [...post.Comments, dummyComment];
         const mainPosts = [...state.mainPosts];
@@ -4479,7 +4530,39 @@ const addGroupPost = {
         return _objectSpread({}, state);
       }
   }
-});
+}); // export default (state = initialStateForGroup, action) => {
+//     switch (action.type){
+//         //그룹만들기 업로드 
+//         case ADD_GROUP_REQUEST: {
+//             return {
+//                 ...state,
+//                 addingGroupPost: true,
+//                 GroupErrorReason : '',
+//                 addedGroupPost: false,
+//             };
+//         }
+//         case ADD_GROUP_SUCCESS: {
+//             return {
+//                 ...state,
+//                 addingGroupPost: false,
+//                 GroupPosts: [dummyGroupPost, ...state.GroupPosts],
+//                 addedGroupPost: true,
+//             };
+//         }
+//         case ADD_GROUP_FAILURE: {
+//             return {
+//                 ...state,
+//                 addedGroupPost: false,
+//                 GroupErrorReason : action.error,
+//             };
+//         }
+//         default: {
+//             return{
+//                 ...state,
+//             };
+//         }
+//     }
+// };
 
 /***/ }),
 

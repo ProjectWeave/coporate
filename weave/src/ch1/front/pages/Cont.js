@@ -14,9 +14,6 @@ const Cont = () => {
     const dispatch = useDispatch();
 
     const [text, setText ] = useState('');
-    //const [initText, setinitText ] = useState('그룹에 재미있는 이야기를 써보세요.');
-    //const [comments, setComments ] = useState('');
-    //const [ commentFormOpened, setCommentFormOpened] = useState(false);
     const { imagePaths, isAddingPost, postAdded, mainPosts, GroupPosts, commentAdded, isAddingComment } = useSelector(state => state.post);
 
     //메뉴클릭시 컨텐츠 변경
@@ -43,13 +40,9 @@ const Cont = () => {
         setText('');
     },[postAdded === true]);
     
-    // useEffect(() => {
-    //     setComments('');
-    // },[commentAdded === true]);
 
     const onSubmitForm = useCallback((e) => {
         e.preventDefault();
-        // document.querySelector(".startT").style.display="none";
         dispatch({
             type: ADD_POST_REQUEST,
             data: {
@@ -140,7 +133,7 @@ const Cont = () => {
                     </div>
                 </div>
                 
-                <form className="uploadTb" encType="multipart/form-data" name="pp" onSubmit={onSubmitForm}>
+                <form className="uploadTb" encType="multipart/form-data" onSubmit={onSubmitForm}>
                     <div className='row1'>
                         <textarea maxLength={1500} placeholder="소식을 남겨주세요"
                                   className="tarea" value={text} onChange={onChangeText} />
@@ -169,23 +162,13 @@ const Cont = () => {
                 <div className="letsbegin">
                     <div className="startT">그룹에 재미있는 이야기를 써보세요.</div>
                     <div>
-                        {postAdded && mainPosts.map((i)=>{
+                        {mainPosts.map((i)=>{
                             return(
                                 <ContentForm key={i} post={i} />
                             );
                         })}
                     </div>
-                    {/* {postAdded && mainPosts.map((i)=>{
-                        return(
-                            <div className="postbox" key={i} post={i}>
-                                <div className="contBox">
-                                    <p>{i.id}</p>
-                                    <img style={{width:"200px", height:"200px", marginTop:"10px"}} alt="example" src={i.img}/> 
-                                    <div>{i.content}</div>
-                                </div>
-                            </div>
-                        );
-                    })} */}
+                    
                 </div>
                 
                 {/* 더보기버튼 */}

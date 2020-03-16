@@ -5,20 +5,30 @@ export const initialState={
             id: 1,
             nickname: "위브",
         },
-        content: "첫번째 게시글입니다.",
-        img:"http://www.redpiltong.co.kr/shopimages/redpiltong/012002000104.jpg?1547186041", 
+        content: "첫번째 게시글입니다.(메인포스트)",
+        img:"http://www.9dog.co.kr/wp-content/uploads/2013/07/img-01.jpg", 
         Comments: [],
-    }], // 화면에 보일 포스트들 
-    GroupPosts:[{
+    }], 
+    CommentPosts:[{
         id: 1,
         User:{
             id: 1,
             nickname: "위브",
         },
-        content: "두리안그룹",
+        content: "테스트용.(커멘트포스트)",
+        img:"http://www.9dog.co.kr/wp-content/uploads/2013/07/img-01.jpg", 
+        Comments: [],
+    }],
+    GroupPosts:[{
+        id: 2,
+        User:{
+            id: 1,
+            nickname: "위브",
+        },
+        content: "두리안그룹(그룹포스트)",
         img:"https://img1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/liveboard/dailylife/187ea4bc2ad54b1db5030743265c5397.jpg", 
         gtext: ["두리안 좋아하는사람들의 모임"],
-    }], // 그룹화면에 보일 포스트들 
+    }], // 그룹화면에 보일 포스트들  
     imagePaths:[], //미리보기 이미지경로
     addPostErrorReason: false,  //포스트 업로드 실패사유
     isAddingPost: false,  //포스트 업로드중
@@ -31,14 +41,35 @@ export const initialState={
     addedGroupPost: false, // 그룹만들기폴더 업로드 성공
 
 };
+// export const initialStateForGroup={// 화면에 보일 포스트들 
+//     GroupPosts:[{
+//         id: 2,
+//         User:{
+//             id: 1,
+//             nickname: "위브",
+//         },
+//         content: "두리안그룹(그룹포스트)",
+//         img:"https://img1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/liveboard/dailylife/187ea4bc2ad54b1db5030743265c5397.jpg", 
+//         gtext: ["두리안 좋아하는사람들의 모임"],
+//     }], // 그룹화면에 보일 포스트들 
+//     imagePaths:[], //미리보기 이미지경로
+//     isAddingComment: false,
+//     addCommentErrorReason: '',
+//     commentAdded: false,
+//     addingGroupPost: false, // 그룹만들기폴더 업로드중
+//     GroupErrorReason: '', //그룹만들기업로드 실패사유
+//     addedGroupPost: false, // 그룹만들기폴더 업로드 성공
+
+// };
 
 const dummyPosts = {
-    id:2,
+    id:1,
     User: {
         id: 1,
         nickname: '위브',
     },
-    content: '위브위브위브',
+    content: '위브위브위브(더미포스트)',
+    img:"https://img.bemypet.kr/content/2018/10/07172706/puppies-1871260_1920.jpg", 
     Comments: [],
 };
 
@@ -49,7 +80,7 @@ const dummyComment = {
       nickname:"위브",
   },
     createdAt: new Date(),
-    content: '위브댓글입니다.',
+    content: '위브댓글입니다(더미커멘트).',
 };
 
 const dummyGroupPost = {
@@ -59,7 +90,7 @@ const dummyGroupPost = {
       nickname:"위브",
   },
     createdAt: new Date(),
-    content: "위브글입니다.",
+    content: "위브글입니다.(더미그룹포스트)",
 };
 
 // mainPosts:[{
@@ -181,7 +212,7 @@ export default (state = initialState, action) => {
             };
         }
         case ADD_COMMENT_SUCCESS: { //immutable
-            const postIndex = state.mainPosts.findIndex(v => v.id === action.data.postId);
+            const postIndex = state.mainPosts.findIndex(v => v.id === action.data.postId);//어떤게시물에 댓글을 작성할것인지
             const post = state.mainPosts[postIndex];
             const Comments = [...post.Comments, dummyComment];
             const mainPosts = [...state.mainPosts];
@@ -231,3 +262,37 @@ export default (state = initialState, action) => {
         }
     }
 };
+
+// export default (state = initialStateForGroup, action) => {
+//     switch (action.type){
+//         //그룹만들기 업로드 
+//         case ADD_GROUP_REQUEST: {
+//             return {
+//                 ...state,
+//                 addingGroupPost: true,
+//                 GroupErrorReason : '',
+//                 addedGroupPost: false,
+//             };
+//         }
+//         case ADD_GROUP_SUCCESS: {
+//             return {
+//                 ...state,
+//                 addingGroupPost: false,
+//                 GroupPosts: [dummyGroupPost, ...state.GroupPosts],
+//                 addedGroupPost: true,
+//             };
+//         }
+//         case ADD_GROUP_FAILURE: {
+//             return {
+//                 ...state,
+//                 addedGroupPost: false,
+//                 GroupErrorReason : action.error,
+//             };
+//         }
+//         default: {
+//             return{
+//                 ...state,
+//             };
+//         }
+//     }
+// };
