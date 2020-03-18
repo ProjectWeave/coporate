@@ -8,13 +8,10 @@ import GroupForm from './GroupForm';
 import './Contents.css';
 import './Templete.css';
 import './GroupItem.css';
-import GroupBox from './GroupBox';
 
 
 const IndexPage = () => {
     const { GroupPosts } = useSelector(state => state.post);
-    const { addedGroupPost } = useSelector(state => state.user);
-    const { gimg, grouptit, grouptext } = useSelector(state => state.user);
     
     return (
         <div className="groupitem">
@@ -46,22 +43,6 @@ const IndexPage = () => {
                 </p>
             </div>
             {/* 그룹 올라갈곳 */}
-            {/* <div>
-                {addedGroupPost==='true'&& <GroupBox />}
-                {GroupPosts.map((val)=>{
-                    <GroupBox key={val} gpost={val} />
-                    <div className="contbox" key={val} gpost={val}>
-                        <div className="group_img"> 
-                            <img src={} style={{width:"100%"}} /> 
-                        </div>
-                        <h1>{val.grouptit}</h1>
-                        <p>
-                            {val.grouptext}
-                        </p>
-                    </div>
-                })  
-                }
-            </div> */}
             { GroupPosts.map((c) => {
                 return (
                     <Link  href="/cont"><a>
@@ -83,17 +64,3 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
-
-
-// {GroupPosts.map((v)=>{
-//     return(
-//         <div className="contbox">
-//             <div className="foodimg"></div>
-//             <h1></h1> {/* {grouptit} */}
-//             <p>
-//                 {/* {grouptext} */}
-//             </p>
-//         </div>
-//     );
-// })
-// }

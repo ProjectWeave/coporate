@@ -106,14 +106,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reducers/post */ "./reducers/post.js");
 /* harmony import */ var _components_Contents_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Contents.css */ "./components/Contents.css");
 /* harmony import */ var _components_Contents_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_Contents_css__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components_reset_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/reset.css */ "./components/reset.css");
-/* harmony import */ var _components_reset_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_components_reset_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _components_reset_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/reset.css */ "./components/reset.css");
+/* harmony import */ var _components_reset_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_components_reset_css__WEBPACK_IMPORTED_MODULE_5__);
 var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\ContentForm.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 // mode변경 test
-
 
 
 
@@ -180,20 +177,20 @@ const ContentForm = ({
     className: "postbox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 54
     },
     __self: undefined
   }, __jsx("div", {
     className: "contBox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 55
     },
     __self: undefined
   }, __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 56
     },
     __self: undefined
   }, post.id, " \uB2D8\uC758 \uAC8C\uC2DC\uBB3C"), __jsx("img", {
@@ -206,20 +203,20 @@ const ContentForm = ({
     src: post.img,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 57
     },
     __self: undefined
   }), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 58
     },
     __self: undefined
   }, post.content)), __jsx("div", {
     className: "btnsbox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 60
     },
     __self: undefined
   }, __jsx("button", {
@@ -229,7 +226,7 @@ const ContentForm = ({
     onClick: onToggleComment,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 61
     },
     __self: undefined
   }), __jsx("button", {
@@ -237,7 +234,7 @@ const ContentForm = ({
     className: "likeBtn",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 62
     },
     __self: undefined
   }), __jsx("button", {
@@ -245,7 +242,7 @@ const ContentForm = ({
     className: "removeBtn",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 63
     },
     __self: undefined
   }), commentFormOpened === true && __jsx("form", {
@@ -253,7 +250,7 @@ const ContentForm = ({
     onSubmit: onSubmitComment,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 65
     },
     __self: undefined
   }, __jsx("textarea", {
@@ -262,7 +259,7 @@ const ContentForm = ({
     onChange: onChangeComment,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 66
     },
     __self: undefined
   }), __jsx("button", {
@@ -272,7 +269,7 @@ const ContentForm = ({
     loading: isAddingComment,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 67
     },
     __self: undefined
   }, "COMMENT")), commentFormOpened === true && __jsx("div", {
@@ -282,7 +279,7 @@ const ContentForm = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 72
     },
     __self: undefined
   }, __jsx("p", {
@@ -291,14 +288,14 @@ const ContentForm = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 73
     },
     __self: undefined
   }, commentAdded ? '댓글' + post.Comments.length : '댓글' + '0'), __jsx("div", {
     className: "comline",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 74
     },
     __self: undefined
   }), CommentPosts.map(v => {
@@ -311,7 +308,7 @@ const ContentForm = ({
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87
+        lineNumber: 78
       },
       __self: undefined
     }, v.User.nickname, " : ", v.content, __jsx("button", {
@@ -320,7 +317,7 @@ const ContentForm = ({
       onClick: onRemoveComments,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91
+        lineNumber: 82
       },
       __self: undefined
     }, "REMOVE"));
@@ -428,11 +425,11 @@ const File = () => {
     dispatch({
       type: _reducers_post__WEBPACK_IMPORTED_MODULE_3__["ADD_GROUP_REQUEST"],
       data: {}
-    }); //1초뒤에 닫히기
+    }); //1.5초뒤에 닫히기
 
     setTimeout(() => {
       popBlockClose(e);
-    }, 1000);
+    }, 1500);
   }, []); //그룹포스트올리기성공하면 텍스트 초기화
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
@@ -742,66 +739,82 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const GroupBox = ({
-  gpost
-}) => {
-  // const { GroupPosts } = useSelector(state => state.gpost);
-  // const { grouptit, grouptext } = this.props;
+const GroupBox = () => {
+  const {
+    grouptit,
+    grouptext
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.user);
   return __jsx("div", {
+    className: "groupinfo",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "groupimg",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 13
     },
     __self: undefined
-  }, __jsx(Link, {
-    href: "/cont",
+  }), __jsx("div", {
+    className: "grouptext",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 14
     },
     __self: undefined
-  }, __jsx("a", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "contbox",
+  }, __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 15
     },
     __self: undefined
-  }, __jsx("div", {
-    className: "group_img",
+  }, " ", grouptit, " "), __jsx("p", {
+    className: "numMem",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16
     },
     __self: undefined
-  }), __jsx("h1", {
+  }, "Member. 43"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 17
     },
     __self: undefined
-  }, " ", gpost.id, " "), __jsx("p", {
+  }, " ", grouptext, " "), __jsx("nav", {
+    className: "groupSubmitBtn",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 18
     },
     __self: undefined
-  }, gpost.content)))));
-};
+  }, __jsx("button", {
+    className: "gjoin",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: undefined
+  }, "\uAC00\uC785\uD558\uAE30"), __jsx("button", {
+    className: "gout",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: undefined
+  }, "\uADF8\uB8F9\uD0C8\uD1F4"))));
+}; // GroupBox.propTypes={
+//     post: PropTypes.shape({
+//         User: PropTypes.object,
+//         content: PropTypes.string,
+//         img: PropTypes.string,
+//     }),
+// };
 
-GroupBox.propTypes = {
-  gpost: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.shape({
-    User: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object,
-    content: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
-    img: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string
-  })
-};
+
 /* harmony default export */ __webpack_exports__["default"] = (GroupBox);
 
 /***/ }),
@@ -1246,7 +1259,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Templete_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_Templete_css__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./GroupItem.css */ "./components/GroupItem.css");
 /* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_GroupItem_css__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _GroupBox__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./GroupBox */ "./components/GroupBox.js");
 var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\IndexPage.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -1259,121 +1271,112 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-
 const IndexPage = () => {
   const {
     GroupPosts
   } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.post);
-  const {
-    addedGroupPost
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.user);
-  const {
-    gimg,
-    grouptit,
-    grouptext
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.user);
   return __jsx("div", {
     className: "groupitem",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 17
     },
     __self: undefined
   }, __jsx(_Plus__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 18
     },
     __self: undefined
   }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: "/cont",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 19
     },
     __self: undefined
   }, __jsx("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 19
     },
     __self: undefined
   }, __jsx("div", {
     className: "contbox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 20
     },
     __self: undefined
   }, __jsx("div", {
     className: "dogimg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 21
     },
     __self: undefined
   }), __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 22
     },
     __self: undefined
   }, " \uB315\uB315\uC774\uC9D1\uC0AC \uADF8\uB8F9"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 23
     },
     __self: undefined
   }, "\uC138\uC824\uC608 \uB315\uB315\uC774\uB4E4 \uBAA8\uC5EC\uB77C~!")))), __jsx("div", {
     className: "contbox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 29
     },
     __self: undefined
   }, __jsx("div", {
     className: "travelimg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 30
     },
     __self: undefined
   }), __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 31
     },
     __self: undefined
   }, "\uC138\uACC4\uB300\uD0D0\uBC29\uADF8\uB8F9"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 32
     },
     __self: undefined
   }, "\uC5F4\uC2EC\uD788 \uC77C\uD55C \uB2F9\uC2E0, \uB5A0\uB098\uB77C. \uC5F4\uC2EC\uD788 \uB178\uB294 \uB2F9\uC2E0, \uB2F9\uC2E0\uB3C4 \uB5A0\uB098\uB77C.")), __jsx("div", {
     className: "contbox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 38
     },
     __self: undefined
   }, __jsx("div", {
     className: "foodimg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 39
     },
     __self: undefined
   }), __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 40
     },
     __self: undefined
   }, " \uBA39\uBD80\uB9BC \uADF8\uB8F9"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 41
     },
     __self: undefined
   }, "\uBBF8\uC2DD\uAC00 \uC5EC\uB7EC\uBD84 \uD658\uC601\uD569\uB2C8\uB2E4~!")), GroupPosts.map(c => {
@@ -1381,20 +1384,20 @@ const IndexPage = () => {
       href: "/cont",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67
+        lineNumber: 48
       },
       __self: undefined
     }, __jsx("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67
+        lineNumber: 48
       },
       __self: undefined
     }, __jsx("div", {
       className: "contbox",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 49
       },
       __self: undefined
     }, __jsx("div", {
@@ -1402,7 +1405,7 @@ const IndexPage = () => {
       key: c,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69
+        lineNumber: 50
       },
       __self: undefined
     }, __jsx("img", {
@@ -1412,37 +1415,26 @@ const IndexPage = () => {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70
+        lineNumber: 51
       },
       __self: undefined
     })), __jsx("h1", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72
+        lineNumber: 53
       },
       __self: undefined
     }, c.content), __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 54
       },
       __self: undefined
     }, c.gtext))));
   }));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (IndexPage); // {GroupPosts.map((v)=>{
-//     return(
-//         <div className="contbox">
-//             <div className="foodimg"></div>
-//             <h1></h1> {/* {grouptit} */}
-//             <p>
-//                 {/* {grouptext} */}
-//             </p>
-//         </div>
-//     );
-// })
-// }
+/* harmony default export */ __webpack_exports__["default"] = (IndexPage);
 
 /***/ }),
 
@@ -1464,10 +1456,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _Join_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Join.css */ "./components/Join.css");
-/* harmony import */ var _Join_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_Join_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Home */ "./components/Home.js");
+/* harmony import */ var _Join_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Join.css */ "./components/Join.css");
+/* harmony import */ var _Join_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_Join_css__WEBPACK_IMPORTED_MODULE_6__);
 var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\Join.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -1481,7 +1475,7 @@ const TextInput = ({
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 12
     },
     __self: undefined
   }, value) //npmjs.com
@@ -1525,15 +1519,16 @@ const Join = () => {
   const [password, onChangePassword] = useInput();
   const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useDispatch"])();
   const {
+    isSignedUp,
     isSigningUp,
     me
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useSelector"])(state => state.user);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(me => {
-    if (me) {
-      alert('로그인했으니 메인페이지로 이동합니다.');
-      next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push("/indexpage");
-    }
-  }, [me && me.id]);
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useSelector"])(state => state.user); // useEffect((me) => {
+  //     if(me){
+  //         alert('로그인했으니 메인페이지로 이동합니다.');
+  //         Router.push("/indexpage");
+  //     }
+  // }, [me && me.id]);
+
   const onSubmit = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
     e.preventDefault();
 
@@ -1543,6 +1538,12 @@ const Join = () => {
 
     if (!term) {
       return setTermError(true);
+    } // 회원가입 성공시 로그인상태로 돌아가기
+
+
+    if (isSignedUp === true) {
+      alert('가입해주셔서 감사합니다!');
+      window.location.reload();
     }
 
     return dispatch({
@@ -1577,21 +1578,21 @@ const Join = () => {
     className: "logo_",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 98
     },
     __self: undefined
   }), __jsx("div", {
     className: "rbg2",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 100
     },
     __self: undefined
   }, __jsx("div", {
     className: "lg_title2",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 101
     },
     __self: undefined
   }, "\uC9C0\uAE08 \uBC14\uB85C \uAC00\uC785\uD558\uC138\uC694!"), __jsx("form", {
@@ -1599,13 +1600,13 @@ const Join = () => {
     className: "joinForm",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 102
     },
     __self: undefined
   }, __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 103
     },
     __self: undefined
   }, __jsx("label", {
@@ -1613,7 +1614,7 @@ const Join = () => {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 104
     },
     __self: undefined
   }), __jsx("input", {
@@ -1625,13 +1626,13 @@ const Join = () => {
     placeholder: "\uC544\uC774\uB514\uB97C \uC785\uB825\uD558\uC138\uC694.",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 105
     },
     __self: undefined
   })), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 107
     },
     __self: undefined
   }, __jsx("label", {
@@ -1639,7 +1640,7 @@ const Join = () => {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 108
     },
     __self: undefined
   }), __jsx("input", {
@@ -1651,13 +1652,13 @@ const Join = () => {
     placeholder: "\uB2C9\uB124\uC784\uC744 \uC785\uB825\uD558\uC138\uC694.",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 109
     },
     __self: undefined
   })), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 111
     },
     __self: undefined
   }, __jsx("label", {
@@ -1665,7 +1666,7 @@ const Join = () => {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 112
     },
     __self: undefined
   }), __jsx("input", {
@@ -1678,13 +1679,13 @@ const Join = () => {
     placeholder: "\uBE44\uBC00\uBC88\uD638\uB97C \uC785\uB825\uD558\uC138\uC694.",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 113
     },
     __self: undefined
   })), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 115
     },
     __self: undefined
   }, __jsx("label", {
@@ -1692,7 +1693,7 @@ const Join = () => {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 116
     },
     __self: undefined
   }), __jsx("input", {
@@ -1705,7 +1706,7 @@ const Join = () => {
     placeholder: "\uBE44\uBC00\uBC88\uD638\uB97C \uD655\uC778\uD558\uC138\uC694.",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110
+      lineNumber: 117
     },
     __self: undefined
   }), passwordError && __jsx("div", {
@@ -1714,13 +1715,13 @@ const Join = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111
+      lineNumber: 118
     },
     __self: undefined
   }, "\uBE44\uBC00\uBC88\uD638\uAC00 \uC77C\uCE58\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.")), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113
+      lineNumber: 120
     },
     __self: undefined
   }, __jsx("input", {
@@ -1730,7 +1731,7 @@ const Join = () => {
     onChange: onChangeTerm,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114
+      lineNumber: 121
     },
     __self: undefined
   }), "\uAC1C\uC778\uC815\uBCF4 \uC218\uC9D1 \uBC0F \uC774\uC6A9\uC5D0 \uB3D9\uC758\uD569\uB2C8\uB2E4.", termError && __jsx("div", {
@@ -1739,14 +1740,14 @@ const Join = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115
+      lineNumber: 122
     },
     __self: undefined
   }, "\uC57D\uAD00\uC5D0 \uB3D9\uC758\uD558\uC154\uC57C\uD569\uB2C8\uB2E4.")), __jsx("div", {
     className: "joinBtn",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117
+      lineNumber: 124
     },
     __self: undefined
   }, __jsx("button", {
@@ -1755,7 +1756,7 @@ const Join = () => {
     loading: isSigningUp,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118
+      lineNumber: 125
     },
     __self: undefined
   }, "\uAC00\uC785\uD558\uAE30")))));
@@ -1802,7 +1803,10 @@ const Login = () => {
     isLoggingIn
   } = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.user);
   const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useDispatch"])();
-  const [Mode, setMode] = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState('read'); //초기값
+  const {
+    0: Mode,
+    1: setMode
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('read'); //초기값
 
   const onSubmitForm = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
     e.preventDefault();
@@ -1819,17 +1823,13 @@ const Login = () => {
     e.preventDefault(); //setMode(e.target.mode);
 
     setMode('clicked');
-  }; // const onChangePage = () => {
-  //   alert('로그인했으니 메인페이지로 이동합니다.');
-  //   Router.push("/main");
-  // };
-
+  };
 
   if (Mode === 'clicked') {
     return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_Join__WEBPACK_IMPORTED_MODULE_6__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
+        lineNumber: 38
       },
       __self: undefined
     }));
@@ -1839,35 +1839,35 @@ const Login = () => {
   if (Mode === 'read') return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 44
     },
     __self: undefined
   }, __jsx("article", {
     className: "rLg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 45
     },
     __self: undefined
   }, __jsx("div", {
     className: "logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 46
     },
     __self: undefined
   }), __jsx("div", {
     className: "lg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 47
     },
     __self: undefined
   }, __jsx("h2", {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 48
     },
     __self: undefined
   }, "\uB85C\uADF8\uC778"), __jsx("form", {
@@ -1877,20 +1877,20 @@ const Login = () => {
     onSubmit: onSubmitForm,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 49
     },
     __self: undefined
   }, __jsx("div", {
     className: "lg_title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 53
     },
     __self: undefined
   }, "\uC9C0\uAE08 \uBC14\uB85C \uAC00\uC785\uD558\uC138\uC694!"), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 54
     },
     __self: undefined
   }, __jsx("label", {
@@ -1898,7 +1898,7 @@ const Login = () => {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 55
     },
     __self: undefined
   }, "\uC544\uC774\uB514"), __jsx("input", {
@@ -1910,7 +1910,7 @@ const Login = () => {
     required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 56
     },
     __self: undefined
   }), __jsx("label", {
@@ -1918,7 +1918,7 @@ const Login = () => {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 57
     },
     __self: undefined
   }, "\uBE44\uBC00\uBC88\uD638"), __jsx("input", {
@@ -1931,14 +1931,14 @@ const Login = () => {
     required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 58
     },
     __self: undefined
   })), __jsx("div", {
     className: "btngroup",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 61
     },
     __self: undefined
   }, __jsx("button", {
@@ -1947,7 +1947,7 @@ const Login = () => {
     loading: isLoggingIn,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 62
     },
     __self: undefined
   }, "\uB85C\uADF8\uC778"), __jsx("button", {
@@ -1956,7 +1956,7 @@ const Login = () => {
     onClick: onChangeMode,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 63
     },
     __self: undefined
   }, "\uD68C\uC6D0\uAC00\uC785"))))));
@@ -16656,7 +16656,7 @@ module.exports = (__webpack_require__(/*! dll-reference dll_ef0ff7c60362f24a921f
 /*!***********************************************************************!*\
   !*** ./node_modules/redux-saga/dist/redux-saga-core-npm-proxy.esm.js ***!
   \***********************************************************************/
-/*! exports provided: CANCEL, SAGA_LOCATION, buffers, detach, END, channel, eventChannel, isEnd, multicastChannel, runSaga, stdChannel, default */
+/*! exports provided: default, CANCEL, SAGA_LOCATION, buffers, detach, END, channel, eventChannel, isEnd, multicastChannel, runSaga, stdChannel */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18293,10 +18293,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/post */ "./reducers/post.js");
 /* harmony import */ var _components_ContentForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/ContentForm */ "./components/ContentForm.js");
-/* harmony import */ var _components_Contents_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Contents.css */ "./components/Contents.css");
-/* harmony import */ var _components_Contents_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_Contents_css__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _components_GroupBox__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/GroupBox */ "./components/GroupBox.js");
+/* harmony import */ var _components_Contents_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Contents.css */ "./components/Contents.css");
+/* harmony import */ var _components_Contents_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_components_Contents_css__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _components_Menu_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Menu.css */ "./components/Menu.css");
 /* harmony import */ var _components_Menu_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_components_Menu_css__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _components_reset_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/reset.css */ "./components/reset.css");
@@ -18313,7 +18312,6 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-
 const Cont = () => {
   const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])();
   const {
@@ -18321,13 +18319,9 @@ const Cont = () => {
     1: setText
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
   const {
-    imagePaths,
     isAddingPost,
     postAdded,
-    mainPosts,
-    GroupPosts,
-    commentAdded,
-    isAddingComment
+    mainPosts
   } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.post); //메뉴클릭시 컨텐츠 변경
 
   const {
@@ -18357,14 +18351,19 @@ const Cont = () => {
     setText('');
   }, [postAdded === true]);
   const onSubmitForm = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    e.preventDefault();
+    e.preventDefault(); // 빈텍스트, 스페이스바 게시물올리기 막기
+
+    if (!text || !text.trim()) {
+      return alert('게시글을 작성하세요.');
+    }
+
     dispatch({
       type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_POST_REQUEST"],
       data: {
-        text
+        content: text
       }
     });
-  }, []); // 단일이미지 미리보기
+  }, [text]); // 단일이미지 미리보기
 
   const {
     0: img,
@@ -18380,31 +18379,22 @@ const Cont = () => {
   }, []); // 소식을 남겨주세요부분 텍스트입력
 
   const onChangeText = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    setText(e.target.value); //console.log('렌더링');
-  }, []); // 소식남기기칸포스트올리기 사이클
-  // const onGroupSubmitForm = useCallback((e) => {
-  //     e.preventDefault();
-  //     dispatch({
-  //         type: ADD_GROUP_REQUEST,
-  //         data: {
-  //             text,
-  //         },
-  //     });
-  // }, []);
+    setText(e.target.value);
+  }, []);
 
   if (Mode === 'member') {
     return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
       className: "top",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 77
       },
       __self: undefined
     }, __jsx("ul", {
       className: "menubox",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86
+        lineNumber: 78
       },
       __self: undefined
     }, __jsx("li", {
@@ -18413,7 +18403,7 @@ const Cont = () => {
       onClick: handleChangePage2,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87
+        lineNumber: 79
       },
       __self: undefined
     }, "\uC804\uCCB4\uAE00"), __jsx("li", {
@@ -18421,82 +18411,27 @@ const Cont = () => {
       onClick: handleChangePage,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88
+        lineNumber: 80
       },
       __self: undefined
     }, "\uBA64\uBC84"))), __jsx("div", {
       className: "wrap",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91
+        lineNumber: 83
       },
       __self: undefined
-    }, __jsx("div", {
-      className: "groupinfo",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 92
-      },
-      __self: undefined
-    }, __jsx("div", {
-      className: "groupimg",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 93
-      },
-      __self: undefined
-    }), __jsx("div", {
-      className: "grouptext",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 94
-      },
-      __self: undefined
-    }, __jsx("h1", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 95
-      },
-      __self: undefined
-    }, "\uB315\uB315\uC774\uC9D1\uC0AC \uADF8\uB8F9"), __jsx("p", {
-      className: "numMem",
+    }, __jsx(_components_GroupBox__WEBPACK_IMPORTED_MODULE_4__["default"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 96
       },
       __self: undefined
-    }, "Member. 43"), __jsx("p", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 97
-      },
-      __self: undefined
-    }, "\uC138\uC824\uC608 \uB315\uB315\uC774\uB4E4 \uBAA8\uC5EC\uB77C~!"), __jsx("nav", {
-      className: "groupSubmitBtn",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 98
-      },
-      __self: undefined
-    }, __jsx("button", {
-      className: "gjoin",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 99
-      },
-      __self: undefined
-    }, "\uAC00\uC785\uD558\uAE30"), __jsx("button", {
-      className: "gout",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 100
-      },
-      __self: undefined
-    }, "\uADF8\uB8F9\uD0C8\uD1F4")))), __jsx("div", {
+    }), __jsx("div", {
       className: "memberbox",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 105
+        lineNumber: 98
       },
       __self: undefined
     }, "\uBA64\uBC84\uBAA9\uB85D")));
@@ -18507,14 +18442,14 @@ const Cont = () => {
     className: "top",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116
+      lineNumber: 109
     },
     __self: undefined
   }, __jsx("ul", {
     className: "menubox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117
+      lineNumber: 110
     },
     __self: undefined
   }, __jsx("li", {
@@ -18523,7 +18458,7 @@ const Cont = () => {
     onClick: handleChangePage2,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118
+      lineNumber: 111
     },
     __self: undefined
   }, "\uC804\uCCB4\uAE00"), __jsx("li", {
@@ -18531,91 +18466,36 @@ const Cont = () => {
     onClick: handleChangePage,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119
+      lineNumber: 112
     },
     __self: undefined
   }, "\uBA64\uBC84"))), __jsx("div", {
     className: "wrap",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122
+      lineNumber: 115
     },
     __self: undefined
-  }, __jsx("div", {
-    className: "groupinfo",
+  }, __jsx(_components_GroupBox__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 123
+      lineNumber: 116
     },
     __self: undefined
-  }, __jsx("div", {
-    className: "groupimg",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 124
-    },
-    __self: undefined
-  }), __jsx("div", {
-    className: "grouptext",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 125
-    },
-    __self: undefined
-  }, __jsx("h1", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 126
-    },
-    __self: undefined
-  }, "\uB315\uB315\uC774\uC9D1\uC0AC \uADF8\uB8F9"), __jsx("p", {
-    className: "numMem",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 127
-    },
-    __self: undefined
-  }, "Member. 43"), __jsx("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 128
-    },
-    __self: undefined
-  }, "\uC138\uC824\uC608 \uB315\uB315\uC774\uB4E4 \uBAA8\uC5EC\uB77C~!"), __jsx("nav", {
-    className: "groupSubmitBtn",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 129
-    },
-    __self: undefined
-  }, __jsx("button", {
-    className: "gjoin",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 130
-    },
-    __self: undefined
-  }, "\uAC00\uC785\uD558\uAE30"), __jsx("button", {
-    className: "gout",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 131
-    },
-    __self: undefined
-  }, "\uADF8\uB8F9\uD0C8\uD1F4")))), __jsx("form", {
+  }), __jsx("form", {
     className: "uploadTb",
     encType: "multipart/form-data",
     onSubmit: onSubmitForm,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 136
+      lineNumber: 118
     },
     __self: undefined
   }, __jsx("div", {
     className: "row1",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 137
+      lineNumber: 119
     },
     __self: undefined
   }, __jsx("textarea", {
@@ -18626,21 +18506,21 @@ const Cont = () => {
     onChange: onChangeText,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 138
+      lineNumber: 120
     },
     __self: undefined
   })), __jsx("div", {
     className: "row2",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 141
+      lineNumber: 123
     },
     __self: undefined
   }, __jsx("div", {
     class: "fileBox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142
+      lineNumber: 124
     },
     __self: undefined
   }, __jsx("label", {
@@ -18648,7 +18528,7 @@ const Cont = () => {
     className: "btn_file",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 143
+      lineNumber: 125
     },
     __self: undefined
   }, " "), __jsx("input", {
@@ -18659,14 +18539,14 @@ const Cont = () => {
     accept: ".jpg, .jpeg, .png",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 144
+      lineNumber: 126
     },
     __self: undefined
   })), __jsx("div", {
     class: "fileBox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 128
     },
     __self: undefined
   }, __jsx("label", {
@@ -18674,7 +18554,7 @@ const Cont = () => {
     className: "btn_file",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147
+      lineNumber: 129
     },
     __self: undefined
   }, " "), __jsx("input", {
@@ -18685,14 +18565,14 @@ const Cont = () => {
     accept: ".mp4, .wmv, .avi",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 148
+      lineNumber: 130
     },
     __self: undefined
   })), __jsx("div", {
     class: "fileBox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 150
+      lineNumber: 132
     },
     __self: undefined
   }, __jsx("label", {
@@ -18700,7 +18580,7 @@ const Cont = () => {
     className: "btn_file",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 151
+      lineNumber: 133
     },
     __self: undefined
   }, " "), __jsx("input", {
@@ -18711,21 +18591,21 @@ const Cont = () => {
     accept: ".txt",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 152
+      lineNumber: 134
     },
     __self: undefined
   })), __jsx("div", {
     className: "icon04",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 155
+      lineNumber: 137
     },
     __self: undefined
   }, __jsx("label", {
     for: "file-input",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 156
+      lineNumber: 138
     },
     __self: undefined
   }), __jsx("input", {
@@ -18734,27 +18614,27 @@ const Cont = () => {
     loading: isAddingPost,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 157
+      lineNumber: 139
     },
     __self: undefined
   })))), __jsx("div", {
     className: "letsbegin",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 162
+      lineNumber: 144
     },
     __self: undefined
   }, __jsx("div", {
     className: "startT",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 163
+      lineNumber: 145
     },
     __self: undefined
   }, "\uADF8\uB8F9\uC5D0 \uC7AC\uBBF8\uC788\uB294 \uC774\uC57C\uAE30\uB97C \uC368\uBCF4\uC138\uC694."), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 164
+      lineNumber: 146
     },
     __self: undefined
   }, mainPosts.map(i => {
@@ -18763,7 +18643,7 @@ const Cont = () => {
       post: i,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 167
+        lineNumber: 149
       },
       __self: undefined
     });
@@ -18771,7 +18651,7 @@ const Cont = () => {
     className: "more",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 175
+      lineNumber: 157
     },
     __self: undefined
   }, "\uB354\uBCF4\uAE30")));
@@ -19292,7 +19172,7 @@ const initialState = {
     Comments: []
   }],
   GroupPosts: [{
-    id: 2,
+    id: 1,
     User: {
       id: 1,
       nickname: "위브"
@@ -19449,7 +19329,7 @@ const addGroupPost = {
       {
         return _objectSpread({}, state, {
           isAddingPost: false,
-          mainPosts: [dummyPosts, ...state.mainPosts],
+          mainPosts: [action.data, ...state.mainPosts],
           postAdded: true
         });
       }
@@ -19830,8 +19710,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux-saga/effects */ "./node_modules/redux-saga/dist/redux-saga-effects-npm-proxy.esm.js");
 /* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./user */ "./sagas/user.js");
 /* harmony import */ var _post__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./post */ "./sagas/post.js");
+ // import axios from "axios";
 
 
+ // axios.defaults.baseURL = 'http://localhost:3065/api';
 
 function* rootSaga() {
   yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["call"])(_user__WEBPACK_IMPORTED_MODULE_1__["default"]), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["call"])(_post__WEBPACK_IMPORTED_MODULE_2__["default"])]);
@@ -19865,13 +19747,27 @@ function addPostAPI() {
 
 function addCommentAPI() {}
 
-function addGroupPosttAPI() {}
+function addGroupPosttAPI() {} // function* addPost() {
+//     try {
+//       yield delay(2000);
+//       yield put({
+//         type: ADD_POST_SUCCESS,
+//       });
+//     } catch (e) {
+//       yield put({
+//         type: ADD_POST_FAILURE,
+//         error: e,
+//       });
+//     }
+//   }
 
-function* addPost() {
+
+function* addPost(action) {
   try {
-    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["delay"])(2000);
+    const result = yield call(addPostAPI, action.data);
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
-      type: _reducers_post__WEBPACK_IMPORTED_MODULE_1__["ADD_POST_SUCCESS"]
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_1__["ADD_POST_SUCCESS"],
+      data: result.data
     });
   } catch (e) {
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({

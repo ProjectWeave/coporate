@@ -90,11 +90,11 @@ const File = () => {
     dispatch({
       type: _reducers_post__WEBPACK_IMPORTED_MODULE_3__["ADD_GROUP_REQUEST"],
       data: {}
-    }); //1초뒤에 닫히기
+    }); //1.5초뒤에 닫히기
 
     setTimeout(() => {
       popBlockClose(e);
-    }, 1000);
+    }, 1500);
   }, []); //그룹포스트올리기성공하면 텍스트 초기화
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
@@ -322,93 +322,6 @@ const File = () => {
 //   }
 // }
 // export default File;
-
-/***/ }),
-
-/***/ "./components/GroupBox.js":
-/*!********************************!*\
-  !*** ./components/GroupBox.js ***!
-  \********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./GroupItem.css */ "./components/GroupItem.css");
-/* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_GroupItem_css__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\GroupBox.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-
-const GroupBox = ({
-  gpost
-}) => {
-  // const { GroupPosts } = useSelector(state => state.gpost);
-  // const { grouptit, grouptext } = this.props;
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: undefined
-  }, __jsx(Link, {
-    href: "/cont",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: undefined
-  }, __jsx("a", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "contbox",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "group_img",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    },
-    __self: undefined
-  }), __jsx("h1", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: undefined
-  }, " ", gpost.id, " "), __jsx("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    },
-    __self: undefined
-  }, gpost.content)))));
-};
-
-GroupBox.propTypes = {
-  gpost: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.shape({
-    User: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object,
-    content: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
-    img: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string
-  })
-};
-/* harmony default export */ __webpack_exports__["default"] = (GroupBox);
 
 /***/ }),
 
@@ -647,7 +560,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Templete_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_Templete_css__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./GroupItem.css */ "./components/GroupItem.css");
 /* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_GroupItem_css__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _GroupBox__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./GroupBox */ "./components/GroupBox.js");
 var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\IndexPage.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -660,121 +572,112 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-
 const IndexPage = () => {
   const {
     GroupPosts
   } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.post);
-  const {
-    addedGroupPost
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.user);
-  const {
-    gimg,
-    grouptit,
-    grouptext
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.user);
   return __jsx("div", {
     className: "groupitem",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 17
     },
     __self: undefined
   }, __jsx(_Plus__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 18
     },
     __self: undefined
   }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: "/cont",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 19
     },
     __self: undefined
   }, __jsx("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 19
     },
     __self: undefined
   }, __jsx("div", {
     className: "contbox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 20
     },
     __self: undefined
   }, __jsx("div", {
     className: "dogimg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 21
     },
     __self: undefined
   }), __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 22
     },
     __self: undefined
   }, " \uB315\uB315\uC774\uC9D1\uC0AC \uADF8\uB8F9"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 23
     },
     __self: undefined
   }, "\uC138\uC824\uC608 \uB315\uB315\uC774\uB4E4 \uBAA8\uC5EC\uB77C~!")))), __jsx("div", {
     className: "contbox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 29
     },
     __self: undefined
   }, __jsx("div", {
     className: "travelimg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 30
     },
     __self: undefined
   }), __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 31
     },
     __self: undefined
   }, "\uC138\uACC4\uB300\uD0D0\uBC29\uADF8\uB8F9"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 32
     },
     __self: undefined
   }, "\uC5F4\uC2EC\uD788 \uC77C\uD55C \uB2F9\uC2E0, \uB5A0\uB098\uB77C. \uC5F4\uC2EC\uD788 \uB178\uB294 \uB2F9\uC2E0, \uB2F9\uC2E0\uB3C4 \uB5A0\uB098\uB77C.")), __jsx("div", {
     className: "contbox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 38
     },
     __self: undefined
   }, __jsx("div", {
     className: "foodimg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 39
     },
     __self: undefined
   }), __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 40
     },
     __self: undefined
   }, " \uBA39\uBD80\uB9BC \uADF8\uB8F9"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 41
     },
     __self: undefined
   }, "\uBBF8\uC2DD\uAC00 \uC5EC\uB7EC\uBD84 \uD658\uC601\uD569\uB2C8\uB2E4~!")), GroupPosts.map(c => {
@@ -782,20 +685,20 @@ const IndexPage = () => {
       href: "/cont",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67
+        lineNumber: 48
       },
       __self: undefined
     }, __jsx("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67
+        lineNumber: 48
       },
       __self: undefined
     }, __jsx("div", {
       className: "contbox",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 49
       },
       __self: undefined
     }, __jsx("div", {
@@ -803,7 +706,7 @@ const IndexPage = () => {
       key: c,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69
+        lineNumber: 50
       },
       __self: undefined
     }, __jsx("img", {
@@ -813,37 +716,26 @@ const IndexPage = () => {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70
+        lineNumber: 51
       },
       __self: undefined
     })), __jsx("h1", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72
+        lineNumber: 53
       },
       __self: undefined
     }, c.content), __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 54
       },
       __self: undefined
     }, c.gtext))));
   }));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (IndexPage); // {GroupPosts.map((v)=>{
-//     return(
-//         <div className="contbox">
-//             <div className="foodimg"></div>
-//             <h1></h1> {/* {grouptit} */}
-//             <p>
-//                 {/* {grouptext} */}
-//             </p>
-//         </div>
-//     );
-// })
-// }
+/* harmony default export */ __webpack_exports__["default"] = (IndexPage);
 
 /***/ }),
 
@@ -865,10 +757,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _Join_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Join.css */ "./components/Join.css");
-/* harmony import */ var _Join_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_Join_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Home */ "./components/Home.js");
+/* harmony import */ var _Join_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Join.css */ "./components/Join.css");
+/* harmony import */ var _Join_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_Join_css__WEBPACK_IMPORTED_MODULE_6__);
 var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\Join.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -882,7 +776,7 @@ const TextInput = ({
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 12
     },
     __self: undefined
   }, value) //npmjs.com
@@ -926,15 +820,16 @@ const Join = () => {
   const [password, onChangePassword] = useInput();
   const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useDispatch"])();
   const {
+    isSignedUp,
     isSigningUp,
     me
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useSelector"])(state => state.user);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(me => {
-    if (me) {
-      alert('로그인했으니 메인페이지로 이동합니다.');
-      next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push("/indexpage");
-    }
-  }, [me && me.id]);
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useSelector"])(state => state.user); // useEffect((me) => {
+  //     if(me){
+  //         alert('로그인했으니 메인페이지로 이동합니다.');
+  //         Router.push("/indexpage");
+  //     }
+  // }, [me && me.id]);
+
   const onSubmit = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
     e.preventDefault();
 
@@ -944,6 +839,12 @@ const Join = () => {
 
     if (!term) {
       return setTermError(true);
+    } // 회원가입 성공시 로그인상태로 돌아가기
+
+
+    if (isSignedUp === true) {
+      alert('가입해주셔서 감사합니다!');
+      window.location.reload();
     }
 
     return dispatch({
@@ -978,21 +879,21 @@ const Join = () => {
     className: "logo_",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 98
     },
     __self: undefined
   }), __jsx("div", {
     className: "rbg2",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 100
     },
     __self: undefined
   }, __jsx("div", {
     className: "lg_title2",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 101
     },
     __self: undefined
   }, "\uC9C0\uAE08 \uBC14\uB85C \uAC00\uC785\uD558\uC138\uC694!"), __jsx("form", {
@@ -1000,13 +901,13 @@ const Join = () => {
     className: "joinForm",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 102
     },
     __self: undefined
   }, __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 103
     },
     __self: undefined
   }, __jsx("label", {
@@ -1014,7 +915,7 @@ const Join = () => {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 104
     },
     __self: undefined
   }), __jsx("input", {
@@ -1026,13 +927,13 @@ const Join = () => {
     placeholder: "\uC544\uC774\uB514\uB97C \uC785\uB825\uD558\uC138\uC694.",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 105
     },
     __self: undefined
   })), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 107
     },
     __self: undefined
   }, __jsx("label", {
@@ -1040,7 +941,7 @@ const Join = () => {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 108
     },
     __self: undefined
   }), __jsx("input", {
@@ -1052,13 +953,13 @@ const Join = () => {
     placeholder: "\uB2C9\uB124\uC784\uC744 \uC785\uB825\uD558\uC138\uC694.",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 109
     },
     __self: undefined
   })), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 111
     },
     __self: undefined
   }, __jsx("label", {
@@ -1066,7 +967,7 @@ const Join = () => {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 112
     },
     __self: undefined
   }), __jsx("input", {
@@ -1079,13 +980,13 @@ const Join = () => {
     placeholder: "\uBE44\uBC00\uBC88\uD638\uB97C \uC785\uB825\uD558\uC138\uC694.",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 113
     },
     __self: undefined
   })), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 115
     },
     __self: undefined
   }, __jsx("label", {
@@ -1093,7 +994,7 @@ const Join = () => {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 116
     },
     __self: undefined
   }), __jsx("input", {
@@ -1106,7 +1007,7 @@ const Join = () => {
     placeholder: "\uBE44\uBC00\uBC88\uD638\uB97C \uD655\uC778\uD558\uC138\uC694.",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110
+      lineNumber: 117
     },
     __self: undefined
   }), passwordError && __jsx("div", {
@@ -1115,13 +1016,13 @@ const Join = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111
+      lineNumber: 118
     },
     __self: undefined
   }, "\uBE44\uBC00\uBC88\uD638\uAC00 \uC77C\uCE58\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.")), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113
+      lineNumber: 120
     },
     __self: undefined
   }, __jsx("input", {
@@ -1131,7 +1032,7 @@ const Join = () => {
     onChange: onChangeTerm,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114
+      lineNumber: 121
     },
     __self: undefined
   }), "\uAC1C\uC778\uC815\uBCF4 \uC218\uC9D1 \uBC0F \uC774\uC6A9\uC5D0 \uB3D9\uC758\uD569\uB2C8\uB2E4.", termError && __jsx("div", {
@@ -1140,14 +1041,14 @@ const Join = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115
+      lineNumber: 122
     },
     __self: undefined
   }, "\uC57D\uAD00\uC5D0 \uB3D9\uC758\uD558\uC154\uC57C\uD569\uB2C8\uB2E4.")), __jsx("div", {
     className: "joinBtn",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117
+      lineNumber: 124
     },
     __self: undefined
   }, __jsx("button", {
@@ -1156,7 +1057,7 @@ const Join = () => {
     loading: isSigningUp,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118
+      lineNumber: 125
     },
     __self: undefined
   }, "\uAC00\uC785\uD558\uAE30")))));
@@ -1203,7 +1104,10 @@ const Login = () => {
     isLoggingIn
   } = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.user);
   const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useDispatch"])();
-  const [Mode, setMode] = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState('read'); //초기값
+  const {
+    0: Mode,
+    1: setMode
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('read'); //초기값
 
   const onSubmitForm = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
     e.preventDefault();
@@ -1220,17 +1124,13 @@ const Login = () => {
     e.preventDefault(); //setMode(e.target.mode);
 
     setMode('clicked');
-  }; // const onChangePage = () => {
-  //   alert('로그인했으니 메인페이지로 이동합니다.');
-  //   Router.push("/main");
-  // };
-
+  };
 
   if (Mode === 'clicked') {
     return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_Join__WEBPACK_IMPORTED_MODULE_6__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
+        lineNumber: 38
       },
       __self: undefined
     }));
@@ -1240,35 +1140,35 @@ const Login = () => {
   if (Mode === 'read') return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 44
     },
     __self: undefined
   }, __jsx("article", {
     className: "rLg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 45
     },
     __self: undefined
   }, __jsx("div", {
     className: "logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 46
     },
     __self: undefined
   }), __jsx("div", {
     className: "lg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 47
     },
     __self: undefined
   }, __jsx("h2", {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 48
     },
     __self: undefined
   }, "\uB85C\uADF8\uC778"), __jsx("form", {
@@ -1278,20 +1178,20 @@ const Login = () => {
     onSubmit: onSubmitForm,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 49
     },
     __self: undefined
   }, __jsx("div", {
     className: "lg_title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 53
     },
     __self: undefined
   }, "\uC9C0\uAE08 \uBC14\uB85C \uAC00\uC785\uD558\uC138\uC694!"), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 54
     },
     __self: undefined
   }, __jsx("label", {
@@ -1299,7 +1199,7 @@ const Login = () => {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 55
     },
     __self: undefined
   }, "\uC544\uC774\uB514"), __jsx("input", {
@@ -1311,7 +1211,7 @@ const Login = () => {
     required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 56
     },
     __self: undefined
   }), __jsx("label", {
@@ -1319,7 +1219,7 @@ const Login = () => {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 57
     },
     __self: undefined
   }, "\uBE44\uBC00\uBC88\uD638"), __jsx("input", {
@@ -1332,14 +1232,14 @@ const Login = () => {
     required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 58
     },
     __self: undefined
   })), __jsx("div", {
     className: "btngroup",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 61
     },
     __self: undefined
   }, __jsx("button", {
@@ -1348,7 +1248,7 @@ const Login = () => {
     loading: isLoggingIn,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 62
     },
     __self: undefined
   }, "\uB85C\uADF8\uC778"), __jsx("button", {
@@ -1357,7 +1257,7 @@ const Login = () => {
     onClick: onChangeMode,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 63
     },
     __self: undefined
   }, "\uD68C\uC6D0\uAC00\uC785"))))));
@@ -1455,163 +1355,6 @@ const Plus = () => {
 //     }
 // }
 // export default Plus;
-
-/***/ }),
-
-/***/ "./components/PostForm.js":
-/*!********************************!*\
-  !*** ./components/PostForm.js ***!
-  \********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/post */ "./reducers/post.js");
-var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\PostForm.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
- //임시로만든 데이터객체
-// const dummy={
-//     isLoggedIn: true,
-//     imagePaths:[],
-//     mainPosts:[{
-//         User:{
-//             id: 1,
-//             nickname: "두리안",
-//         },
-//             content: "첫번째 게시글",
-//             img:"https://img1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/liveboard/dailylife/187ea4bc2ad54b1db5030743265c5397.jpg", 
-//     }],
-// };
-
-const PostForm = () => {
-  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])();
-  const {
-    0: text,
-    1: setText
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
-  const {
-    imagePaths,
-    isAddingPost,
-    postAdded
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.post);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    setText('');
-  }, [postAdded === true]);
-  const onSubmitForm = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    e.preventDefault();
-    dispatch({
-      type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_POST_REQUEST"],
-      data: {
-        text
-      }
-    });
-  }, []);
-  const onChangeText = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    setText(e.target.value);
-  }, []);
-  return __jsx("form", {
-    style: {
-      margin: '10px 0 20px'
-    },
-    encType: "multipart/form-data",
-    onSubmit: onSubmitForm,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: undefined
-  }, __jsx("input", {
-    htmlType: "textarea",
-    maxLength: 140,
-    placeholder: "\uC18C\uC2DD\uC744 \uB0A8\uACA8\uC8FC\uC138\uC694",
-    value: text,
-    onChange: onChangeText,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: undefined
-  }), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 45
-    },
-    __self: undefined
-  }, __jsx("input", {
-    type: "file",
-    multiple: true,
-    hidden: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 46
-    },
-    __self: undefined
-  }), __jsx("button", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 47
-    },
-    __self: undefined
-  }, "\uC774\uBBF8\uC9C0 \uC5C5\uB85C\uB4DC"), __jsx("button", {
-    style: {
-      float: "right"
-    },
-    htmlType: "submit",
-    loading: isAddingPost,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 48
-    },
-    __self: undefined
-  }, "\uC9F9\uC9F9")), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 50
-    },
-    __self: undefined
-  }, imagePaths.map(v => __jsx("div", {
-    key: v,
-    style: {
-      display: "inline-block"
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 53
-    },
-    __self: undefined
-  }, __jsx("img", {
-    src: "http://localhost:3065/".concat(v),
-    style: {
-      width: '200px'
-    },
-    alt: v,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 54
-    },
-    __self: undefined
-  }), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 55
-    },
-    __self: undefined
-  }, __jsx("button", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 56
-    },
-    __self: undefined
-  }, "\uC81C\uAC70"))))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (PostForm);
 
 /***/ }),
 
@@ -12948,45 +12691,22 @@ const Join = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Home */ "./components/Home.js");
-/* harmony import */ var _components_PostForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/PostForm */ "./components/PostForm.js");
-/* harmony import */ var _components_IndexPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/IndexPage */ "./components/IndexPage.js");
-/* harmony import */ var _components_First_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/First.css */ "./components/First.css");
-/* harmony import */ var _components_First_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_components_First_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Home */ "./components/Home.js");
+/* harmony import */ var _components_IndexPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/IndexPage */ "./components/IndexPage.js");
+/* harmony import */ var _components_First_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/First.css */ "./components/First.css");
+/* harmony import */ var _components_First_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_First_css__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\pages\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-// import React from 'react';
-// import Information from '../components/Information';
-// import Login from '../components/Login';
-// import '../components/First.css';
-// const HomePage = () => {
-//     return (
-//         <div>
-//             <Information />
-//             <Login />
-//         </div>
-//     );
-// };
-// export default HomePage;
-
-
 
 
 
 
 
 const HomePage = () => {
-  const {
-    isLoggedIn
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.user);
-  const {
-    mainPosts
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.post);
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_components_IndexPage__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_components_IndexPage__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 10
     },
     __self: undefined
   }));
@@ -13090,7 +12810,7 @@ const initialState = {
     Comments: []
   }],
   GroupPosts: [{
-    id: 2,
+    id: 1,
     User: {
       id: 1,
       nickname: "위브"
@@ -13247,7 +12967,7 @@ const addGroupPost = {
       {
         return _objectSpread({}, state, {
           isAddingPost: false,
-          mainPosts: [dummyPosts, ...state.mainPosts],
+          mainPosts: [action.data, ...state.mainPosts],
           postAdded: true
         });
       }

@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { ADD_COMMENT_REQUEST } from '../reducers/post';
 
 import '../components/Contents.css';
-import Link from 'next/link';
 import '../components/reset.css';
 
 const ContentForm = ({post}) => {
@@ -52,55 +51,44 @@ const ContentForm = ({post}) => {
 
     return(
         <>
-            {/* 게시물올라갈부분 */}
-            {/* {mainPosts.map((v) => { */}
-                {/* return( */}
-                    <div className="postbox">   
-                        <div className="contBox">
-                            <p>{post.id} 님의 게시물</p>
-                            <img style={{display:"block", margin:"0 auto", height:"200px"}} alt="example" src={post.img}/> 
-                            <div>{post.content}</div>
+            <div className="postbox">   
+                <div className="contBox">
+                    <p>{post.id} 님의 게시물</p>
+                    <img style={{display:"block", margin:"0 auto", height:"200px"}} alt="example" src={post.img}/> 
+                    <div>{post.content}</div>
+                </div>
+                <div className="btnsbox">
+                    <button type="button" className="commentBtn"  value={commentFormOpened} onClick={onToggleComment} />
+                    <button type="button" className="likeBtn" /> 
+                    <button type="button" className="removeBtn" />
+                    {commentFormOpened===true &&
+                        <form className="commentbox" onSubmit={onSubmitComment}>
+                            <textarea className="comment" value={comments} onChange={onChangeComment} />
+                            <button type="primary" htmlType="submit" className="combtn" loading={isAddingComment} >COMMENT</button>
+                        </form>
+                    }
+                    {/* 댓글올라갈부분 */}
+                    {commentFormOpened===true && (
+                        <div style={{display:"inline-block", width:"100%"}}>
+                            <p style={{marginLeft:"10px"}}>{commentAdded ? '댓글' + post.Comments.length : '댓글'+ '0'}</p>
+                            <div className="comline"></div>
+
+                            { CommentPosts.map((v) => {
+                                return( 
+                                    <li key={v.createdAt} style={{
+                                        listStyle:"none", display:"inline-block", clear:"both"}}
+                                    >
+                                        {v.User.nickname} : {v.content}
+                                        <button type="button" className="remove" onClick={onRemoveComments} >REMOVE</button>
+                                    </li>
+                                );
+                            })
+                            }
                         </div>
-                        <div className="btnsbox">
-                            <button type="button" className="commentBtn"  value={commentFormOpened} onClick={onToggleComment} />
-                            <button type="button" className="likeBtn" /> 
-                            <button type="button" className="removeBtn" />
-                            {commentFormOpened===true &&
-                                <form className="commentbox" onSubmit={onSubmitComment}>
-                                    <textarea className="comment" value={comments} onChange={onChangeComment} />
-                                    <button type="primary" htmlType="submit" className="combtn" loading={isAddingComment} >COMMENT</button>
-                                </form>
-                            }
-                            {/* 댓글올라갈부분 */}
-                            {commentFormOpened===true && (
-                                <div style={{display:"inline-block", width:"100%"}}>
-                                    <p style={{marginLeft:"10px"}}>{commentAdded ? '댓글' + post.Comments.length : '댓글'+ '0'}</p>
-                                    <div className="comline"></div>
-                                            {/* <li style={{
-                                                listStyle:"none", display:"inline-block", clear:"both"}}
-                                            >
-                                                {post.id} : {post.content}
-                                                <button type="button" className="remove" onClick={onRemoveComments} >REMOVE</button>
-                                            </li> */}
-                                    { CommentPosts.map((v) => {
-                                        return( 
-                                            <li key={v.createdAt} style={{
-                                                listStyle:"none", display:"inline-block", clear:"both"}}
-                                            >
-                                                {v.User.nickname} : {v.content}
-                                                <button type="button" className="remove" onClick={onRemoveComments} >REMOVE</button>
-                                            </li>
-                                        );
-                                    })
-                                    }
-                                </div>
-                                )
-                            }
-                        </div> 
-                    </div>
-                {/* ); */}
-            {/* })
-            } */}
+                        )
+                    }
+                </div> 
+            </div>
         </>
     );
     

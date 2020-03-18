@@ -20,7 +20,7 @@ export const initialState={
         Comments: [],
     }],
     GroupPosts:[{
-        id: 2,
+        id: 1,
         User:{
             id: 1,
             nickname: "위브",
@@ -192,7 +192,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 isAddingPost: false, 
-                mainPosts: [dummyPosts, ...state.mainPosts],
+                mainPosts: [action.data, ...state.mainPosts],
                 postAdded: true, 
             };
         }

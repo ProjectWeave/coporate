@@ -10,7 +10,7 @@ router.get('/', async (req, res, next) => { // GET /api/posts
         model: db.User,
         attributes: ['id', 'nickname'],
       }],
-      order: [['createdAt', 'DESC']], // DESC는 내림차순, ASC는 오름차순
+      order: [['createdAt', 'DESC']], // 게시물순서 : DESC는 내림차순, ASC는 오름차순
     });
     res.json(posts);
   } catch (e) {

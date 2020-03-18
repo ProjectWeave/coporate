@@ -13,7 +13,7 @@ const Login = () => {
   const [password, onChangePassword] = useInput();
   const { isLoggingIn } = useSelector(state => state.user);
   const dispatch = useDispatch();
-  const [ Mode, setMode ] = React.useState('read'); //초기값
+  const [ Mode, setMode ] = useState('read'); //초기값
   
   const onSubmitForm = useCallback((e) => {
     e.preventDefault();
@@ -31,11 +31,6 @@ const Login = () => {
     //setMode(e.target.mode);
     setMode('clicked');
   };
-
-  // const onChangePage = () => {
-  //   alert('로그인했으니 메인페이지로 이동합니다.');
-  //   Router.push("/main");
-  // };
 
   if(Mode==='clicked'){
     return(

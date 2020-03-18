@@ -1,10 +1,14 @@
 import { all, delay, fork, put, takeLatest } from 'redux-saga/effects';
-import { ADD_COMMENT_FAILURE, ADD_COMMENT_REQUEST, ADD_COMMENT_SUCCESS, ADD_POST_FAILURE, ADD_POST_REQUEST, ADD_POST_SUCCESS, ADD_GROUP_REQUEST, ADD_GROUP_SUCCESS, ADD_GROUP_FAILURE } from '../reducers/post';
-import Axios from 'axios';
+import { 
+    ADD_COMMENT_FAILURE, ADD_COMMENT_REQUEST, ADD_COMMENT_SUCCESS, 
+    ADD_POST_FAILURE, ADD_POST_REQUEST, ADD_POST_SUCCESS, ADD_GROUP_REQUEST, 
+    ADD_GROUP_SUCCESS, ADD_GROUP_FAILURE 
+} from '../reducers/post';
+import axios from 'axios';
 
 
 function addPostAPI(){
-    return Axios.post("/post", postData,{
+    return axios.post("/post", postData,{
         withCredentials: true
     });
 }
@@ -16,11 +20,26 @@ function addGroupPosttAPI(){
 }
 
 
-function* addPost() {
+// function* addPost() {
+//     try {
+//       yield delay(2000);
+//       yield put({
+//         type: ADD_POST_SUCCESS,
+//       });
+//     } catch (e) {
+//       yield put({
+//         type: ADD_POST_FAILURE,
+//         error: e,
+//       });
+//     }
+//   }
+
+  function* addPost(action) {
     try {
-      yield delay(2000);
+      const result = yield call(addPostAPI, action.data);
       yield put({
         type: ADD_POST_SUCCESS,
+        data: result.data,
       });
     } catch (e) {
       yield put({
@@ -29,6 +48,7 @@ function* addPost() {
       });
     }
   }
+  
 
 function* addComment(action){
     try{

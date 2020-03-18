@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { SIGN_UP_REQUEST } from '../reducers/user';
 import { useDispatch, useSelector } from 'react-redux';
 import Router from 'next/router';
+import Home from '../components/Home';
+
 import './Join.css';
 
 const TextInput=({value})=>{
@@ -35,15 +37,14 @@ const Join = () => {
     const [nick, onChangeNick] = useInput();
     const [password, onChangePassword] = useInput();
     const dispatch = useDispatch();
-    const { isSigningUp,me } = useSelector(state=> state.user);
+    const { isSignedUp,isSigningUp,me } = useSelector(state=> state.user);
 
-    useEffect((me) => {
-        if(me){
-            alert('로그인했으니 메인페이지로 이동합니다.');
-            Router.push("/indexpage");
-        }
-    }, [me && me.id]);
-
+    // useEffect((me) => {
+    //     if(me){
+    //         alert('로그인했으니 메인페이지로 이동합니다.');
+    //         Router.push("/indexpage");
+    //     }
+    // }, [me && me.id]);
 
     const onSubmit= useCallback((e)=>{
         e.preventDefault();
@@ -53,6 +54,11 @@ const Join = () => {
         if(!term){
             return setTermError(true);
         }
+        // 회원가입 성공시 로그인상태로 돌아가기
+        if(isSignedUp === true){
+            alert('가입해주셔서 감사합니다!');
+            window.location.reload();
+        }    
         return dispatch({
             type : SIGN_UP_REQUEST,
             data : {
@@ -61,6 +67,7 @@ const Join = () => {
                 nickname: nick,
             },
         });
+
     },[id, nick, password, passwordCheck, term]);
 
     // const onChangeId=(e)=>{
