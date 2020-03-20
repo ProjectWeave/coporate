@@ -41,29 +41,9 @@ export const initialState={
     addedGroupPost: false, // 그룹만들기폴더 업로드 성공
 
 };
-// export const initialStateForGroup={// 화면에 보일 포스트들 
-//     GroupPosts:[{
-//         id: 2,
-//         User:{
-//             id: 1,
-//             nickname: "위브",
-//         },
-//         content: "두리안그룹(그룹포스트)",
-//         img:"https://img1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/liveboard/dailylife/187ea4bc2ad54b1db5030743265c5397.jpg", 
-//         gtext: ["두리안 좋아하는사람들의 모임"],
-//     }], // 그룹화면에 보일 포스트들 
-//     imagePaths:[], //미리보기 이미지경로
-//     isAddingComment: false,
-//     addCommentErrorReason: '',
-//     commentAdded: false,
-//     addingGroupPost: false, // 그룹만들기폴더 업로드중
-//     GroupErrorReason: '', //그룹만들기업로드 실패사유
-//     addedGroupPost: false, // 그룹만들기폴더 업로드 성공
-
-// };
 
 const dummyPosts = {
-    id:1,
+    id:2,
     User: {
         id: 1,
         nickname: '위브',
@@ -92,18 +72,6 @@ const dummyGroupPost = {
     createdAt: new Date(),
     content: "위브글입니다.(더미그룹포스트)",
 };
-
-// mainPosts:[{
-//     id:1,
-//     User:{
-//         id: 1,
-//         nickname: "위브",
-//     },
-//     content: "첫번째 게시글",
-//     img:"https://img1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/liveboard/dailylife/187ea4bc2ad54b1db5030743265c5397.jpg", 
-//     Comments: [],
-// }], // 화면에 보일 포스트들 
-
 
 
 export const LOAD_MAIN_POSTS_REQUEST = 'LOAD_MAIN_POSTS_REQUEST';
@@ -156,33 +124,22 @@ export const ADD_GROUP_REQUEST = 'ADD_GROUP_REQUEST';
 export const ADD_GROUP_SUCCESS = 'ADD_GROUP_SUCCESS';
 export const ADD_GROUP_FAILURE = 'ADD_GROUP_FAILURE';
 
-const ADD_POST = "ADD_POST";
-const ADD_GROUPPOST = "ADD_GROUPPOST";
-const ADD_DUMMY = "ADD_DUMMY";
+// const ADD_POST = "ADD_POST";
+// const ADD_GROUPPOST = "ADD_GROUPPOST";
+// const ADD_DUMMY = "ADD_DUMMY";
 
-const addPost={
-    type: ADD_POST,   
-};
-const addGroupPost={
-    type: ADD_GROUPPOST,   
-};
-
-// const addDummy = {
-//     type: ADD_DUMMY,
-//     data:{
-//         content:'Hello',
-//         UserId: 1,
-//         User:{
-//             nickname:"두리안",
-//         },
-//     },
+// const addPost={
+//     type: ADD_POST,   
+// };
+// const addGroupPost={
+//     type: ADD_GROUPPOST,   
 // };
 
 export default (state = initialState, action) => {
     switch (action.type){
         case ADD_POST_REQUEST: {
             return {
-                ...state, //immutable
+                ...state, 
                 isAddingPost: true,
                 addPostErrorReason: '',
                 postAdded: false,
@@ -205,16 +162,16 @@ export default (state = initialState, action) => {
         }
         case ADD_COMMENT_REQUEST: {
             return {
-                ...state, //immutable
+                ...state,
                 isAddingComment: true,
                 addCommentErrorReason: '',
                 commentAdded: false,
             };
         }
-        case ADD_COMMENT_SUCCESS: { //immutable
+        case ADD_COMMENT_SUCCESS: { 
             const postIndex = state.mainPosts.findIndex(v => v.id === action.data.postId);//어떤게시물에 댓글을 작성할것인지
             const post = state.mainPosts[postIndex];
-            const Comments = [...post.Comments, dummyComment];
+            const Comments = [...post.Comments, data.comment];
             const mainPosts = [...state.mainPosts];
             mainPosts[postIndex] = { ...post, Comments };
             return {
@@ -231,6 +188,23 @@ export default (state = initialState, action) => {
                 addCommentErrorReason : action.error,
             };
         }
+        case LOAD_MAIN_POSTS_REQUEST: {
+            return {
+              ...state,
+              mainPosts: [],
+            };
+          }
+          case LOAD_MAIN_POSTS_SUCCESS: {
+            return {
+              ...state,
+              mainPosts: action.data,
+            };
+          }
+          case LOAD_MAIN_POSTS_FAILURE: {
+            return {
+              ...state,
+            };
+          }
         //그룹만들기 업로드 
         case ADD_GROUP_REQUEST: {
             return {
@@ -262,37 +236,3 @@ export default (state = initialState, action) => {
         }
     }
 };
-
-// export default (state = initialStateForGroup, action) => {
-//     switch (action.type){
-//         //그룹만들기 업로드 
-//         case ADD_GROUP_REQUEST: {
-//             return {
-//                 ...state,
-//                 addingGroupPost: true,
-//                 GroupErrorReason : '',
-//                 addedGroupPost: false,
-//             };
-//         }
-//         case ADD_GROUP_SUCCESS: {
-//             return {
-//                 ...state,
-//                 addingGroupPost: false,
-//                 GroupPosts: [dummyGroupPost, ...state.GroupPosts],
-//                 addedGroupPost: true,
-//             };
-//         }
-//         case ADD_GROUP_FAILURE: {
-//             return {
-//                 ...state,
-//                 addedGroupPost: false,
-//                 GroupErrorReason : action.error,
-//             };
-//         }
-//         default: {
-//             return{
-//                 ...state,
-//             };
-//         }
-//     }
-// };

@@ -1,7 +1,5 @@
-//import React from 'react';
 import React, { useCallback, useState, useEffect } from 'react';
 //import { useSelector, useDispatch } from 'react-redux';
-//import axios from 'axios';
 import './Templete.css';
 
 import { useSelector, useDispatch } from 'react-redux';

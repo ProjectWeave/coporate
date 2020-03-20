@@ -147,15 +147,7 @@
     background-position: center;
     cursor: pointer;
 }
-/* label */
-.btn_file{
-    display:inline-block;
-    position: absolute;
-    width: 24%;
-    height: 30%;
-    margin-left: -12%;
-    cursor: pointer;
-}
+
 
 
 .icon04{
@@ -192,18 +184,16 @@
 
 /* 더보기버튼 */
 .more{
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(50%);
-    /* margin-top: 300px; */
+    border: 0;
     width: 90px;
     height: 30px;
-    border: none;
-    font: 1rem/1rem "Nanum Gothic";
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: #cecece;
     color: #333;
-    display: none;
+    /* outline: 1px solid red; */
 }
 
 
@@ -219,6 +209,17 @@
     margin: 0;
 }
 
+/* label */
+.btn_file{
+    /* display:inline-block; */
+    position: absolute;
+    width: 24%;
+    height: 30%;
+    margin-left: -12%;
+    cursor: pointer;
+}
+
+/* 소식을 남겨주세요 아이콘 */
 .fileBox:nth-child(1){
     background: url(../imgs/ico01.jpg) no-repeat;
 }
@@ -267,15 +268,12 @@
 /* 댓글 좋아요버튼 삭제하기 버튼박스 */
 .btnsbox{
     width: 100%;
-    /* height: 0px; */
-    /* padding-bottom: 50px; */
 }
 /* 크기 3등분 */
 .btnsbox>button{
     width: 33.33%; 
     height: 50px;
     border: 0;
-    /* outline: 1px solid #999999; */
     border-bottom: 1px solid #999;
     border-right: 1px solid #999;
     cursor: pointer;
@@ -289,8 +287,6 @@
 .removeBtn{
     background-color: #dedede;
     border: 0;
-    /* line-height: -50px; */
-    /* vertical-align: middle; */ 
     background: #eeeeee url(../imgs/trash.png) no-repeat center;
 }
 /* 댓글버튼 */
@@ -301,7 +297,6 @@
 .commentbox{
     width: 100%;
     height: 120px;
-    /* display: none; */
 }
 .comment{
     display: block;

@@ -1,4 +1,3 @@
-// mode변경 test
 import React, { useCallback, useState, useEffect }  from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
@@ -8,23 +7,24 @@ import '../components/Contents.css';
 import '../components/reset.css';
 
 const ContentForm = ({post}) => {
+
+    const [commentFormOpened, setCommentFormOpened] = useState(false);
+    const [commentText, setCommentText ] = useState('');
     
-    const [comments, setComments ] = useState('');
-    const [ commentFormOpened, setCommentFormOpened] = useState(false);
     const { me } = useSelector(state => state.user);
+    const { commentAdded, isAddingComment,CommentPosts } = useSelector(state => state.post);
     const dispatch = useDispatch();
 
-    const { imagePaths, postAdded, mainPosts, commentAdded, isAddingComment,CommentPosts } = useSelector(state => state.post);
-
-    // 댓글
-    const onChangeComment = useCallback((e) => {
-        setComments(e.target.value);
-    }, []);
-
+   
     //댓글창토글
     const onToggleComment = useCallback(() => {
         setCommentFormOpened(prev => !prev);
       }, []);
+
+    // 댓글
+    const onChangeComment = useCallback((e) => {
+        setCommentText(e.target.value);
+    }, []);
 
     // 댓글올리기 사이클
     const onSubmitComment = useCallback((e) => {
@@ -36,15 +36,17 @@ const ContentForm = ({post}) => {
             type: ADD_COMMENT_REQUEST,
             data:{
                 postId: post.id,
+                content: commentText,
             },
         });
-    }, [me && me.id]);
+    }, [me && me.id, commentText]);
     
     // 댓글 성공시, 빈텍스트로 
     useEffect(() => {
-        setComments('');
+        setCommentText('');
     },[commentAdded === true]);
 
+    // 댓글삭제하기
     const onRemoveComments = () => {
         alert('댓글을 삭제하시겠습니까?');
     };
@@ -53,7 +55,7 @@ const ContentForm = ({post}) => {
         <>
             <div className="postbox">   
                 <div className="contBox">
-                    <p>{post.id} 님의 게시물</p>
+                    <p>{post.User.nickname} 님의 게시물</p>
                     <img style={{display:"block", margin:"0 auto", height:"200px"}} alt="example" src={post.img}/> 
                     <div>{post.content}</div>
                 </div>
@@ -63,7 +65,7 @@ const ContentForm = ({post}) => {
                     <button type="button" className="removeBtn" />
                     {commentFormOpened===true &&
                         <form className="commentbox" onSubmit={onSubmitComment}>
-                            <textarea className="comment" value={comments} onChange={onChangeComment} />
+                            <textarea className="comment" value={commentText} onChange={onChangeComment} />
                             <button type="primary" htmlType="submit" className="combtn" loading={isAddingComment} >COMMENT</button>
                         </form>
                     }

@@ -7,7 +7,6 @@ const Home = () => {
 
     return (
         <div>
-            
             <article className="lLg">
                 <h2 className="bld">위브설명란</h2>
                 <div className="wlogo"></div>

@@ -1,19 +1,25 @@
-import React,{ useCallback,useState } from 'react'; 
-import Link from 'next/link';
+import React,{ useCallback, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useInput } from '../pages/Join';
 import { LOG_IN_REQUEST } from '../reducers/user';
 import Router from 'next/router';
-// import IndexPage from './IndexPage';
+
 import Join from './Join';
 
 
 const Login = () => {
   const [id, onChangeId] = useInput();
   const [password, onChangePassword] = useInput();
-  const { isLoggingIn } = useSelector(state => state.user);
+  const { isLoggingIn, me } = useSelector(state => state.user);
   const dispatch = useDispatch();
   const [ Mode, setMode ] = useState('read'); //초기값
+
+  useEffect(() => {
+    if(me){
+        alert('로그인했으니 메인페이지로 이동합니다.');
+        Router.push("/");
+    }
+  }, [me && me.id]);
   
   const onSubmitForm = useCallback((e) => {
     e.preventDefault();

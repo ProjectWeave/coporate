@@ -1,8 +1,8 @@
-import React, { useState,useCallback, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { SIGN_UP_REQUEST } from '../reducers/user';
 import { useDispatch, useSelector } from 'react-redux';
-import Router from 'next/router';
+import { SIGN_UP_REQUEST } from '../reducers/user';
+
 
 const TextInput=({value})=>{
     return(
@@ -14,7 +14,7 @@ TextInput.propTypes={
     value: PropTypes.string,
 };
 
- //커스텀훅
+ // 커스텀훅
  export const useInput = (initValue = null)=>{
     const [value, setter] = useState(initValue);
     const handler = useCallback((e)=>{
@@ -34,15 +34,7 @@ const Join = () => {
     const [nick, onChangeNick] = useInput();
     const [password, onChangePassword] = useInput();
     const dispatch = useDispatch();
-    const { isSigningUp,me } = useSelector(state=> state.user);
-
-    useEffect(() => {
-        if(me){
-            alert('로그인했으니 메인페이지로 이동합니다.');
-            Router.push("/indexpage");
-        }
-    }, [me && me.id]);
-
+    const { isSigningUp } = useSelector(state=> state.user);
 
     const onSubmit= useCallback((e)=>{
         e.preventDefault();
@@ -55,7 +47,7 @@ const Join = () => {
         return dispatch({
             type : SIGN_UP_REQUEST,
             data : {
-                userID: id,
+                userId: id,
                 password,
                 nickname: nick,
             },
@@ -74,11 +66,13 @@ const Join = () => {
     //     setPassword(e.target.value);
     // };
     
+    // 비밀번호 체크
     const onChangePasswordCheck=useCallback((e)=>{
-        setPasswordError(e.target.value !== password); //비밀번호체크
+        setPasswordError(e.target.value !== password); 
         setPasswordCheck(e.target.value);
     },[password]);
     
+    // 개인정보수집 체크
     const onChangeTerm=useCallback((e)=>{
         setTermError(false); //setTermError메세기 기본적으로 꺼두기
         setTerm(e.target.checked);
@@ -86,7 +80,7 @@ const Join = () => {
 
    
     return(
-        <div>
+        <>
             <form onSubmit={onSubmit}>
                 <div>
                     <label htmlFor="user-id" />아이디<br />
@@ -113,7 +107,7 @@ const Join = () => {
                     <button htmlType="submit" loading={isSigningUp}>가입하기</button>
                 </div>
             </form>
-        </div>
+        </>
     );
 };
 

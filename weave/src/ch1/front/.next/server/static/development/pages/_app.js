@@ -108,23 +108,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
-/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
-/* harmony import */ var _Gmenu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Gmenu */ "./components/Gmenu.js");
-/* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Home */ "./components/Home.js");
-/* harmony import */ var _IndexPage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./IndexPage */ "./components/IndexPage.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
+/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
+/* harmony import */ var _Gmenu__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Gmenu */ "./components/Gmenu.js");
+/* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Home */ "./components/Home.js");
 /* harmony import */ var _Header_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Header.css */ "./components/Header.css");
 /* harmony import */ var _Header_css__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_Header_css__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _pages_Cont__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../pages/Cont */ "./pages/Cont.js");
-/* harmony import */ var _Grid_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Grid.css */ "./components/Grid.css");
-/* harmony import */ var _Grid_css__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_Grid_css__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _Grid_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Grid.css */ "./components/Grid.css");
+/* harmony import */ var _Grid_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_Grid_css__WEBPACK_IMPORTED_MODULE_9__);
 var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\AppLayout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
- //import Router from 'next/router';
 
 
 
@@ -144,33 +139,29 @@ const AppLayout = ({
   } = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.user);
   const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useDispatch"])();
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(me => {
-    if (me) {
-      alert('로그인했으니 메인페이지로 이동합니다.');
-    }
-
     if (!me) {
       dispatch({
-        type: _reducers_user__WEBPACK_IMPORTED_MODULE_3__["LOAD_USER_REQUEST"]
+        type: _reducers_user__WEBPACK_IMPORTED_MODULE_4__["LOAD_USER_REQUEST"]
       });
     }
   }, []);
-  if (!me) return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_Home__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  if (!me) return __jsx(_Home__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 27
     },
     __self: undefined
-  }));
-  if (me) return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_Header__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  });
+  if (me) return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_Header__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 31
     },
     __self: undefined
   }), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 32
     },
     __self: undefined
   }, children));
@@ -180,590 +171,6 @@ AppLayout.propTypes = {
   children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node
 };
 /* harmony default export */ __webpack_exports__["default"] = (AppLayout);
-
-/***/ }),
-
-/***/ "./components/ContentForm.js":
-/*!***********************************!*\
-  !*** ./components/ContentForm.js ***!
-  \***********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reducers/post */ "./reducers/post.js");
-/* harmony import */ var _components_Contents_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Contents.css */ "./components/Contents.css");
-/* harmony import */ var _components_Contents_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_Contents_css__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _components_reset_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/reset.css */ "./components/reset.css");
-/* harmony import */ var _components_reset_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_components_reset_css__WEBPACK_IMPORTED_MODULE_5__);
-var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\ContentForm.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-// mode변경 test
-
-
-
-
-
-
-
-const ContentForm = ({
-  post
-}) => {
-  const {
-    0: comments,
-    1: setComments
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
-  const {
-    0: commentFormOpened,
-    1: setCommentFormOpened
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-  const {
-    me
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.user);
-  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useDispatch"])();
-  const {
-    imagePaths,
-    postAdded,
-    mainPosts,
-    commentAdded,
-    isAddingComment,
-    CommentPosts
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.post); // 댓글
-
-  const onChangeComment = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    setComments(e.target.value);
-  }, []); //댓글창토글
-
-  const onToggleComment = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(() => {
-    setCommentFormOpened(prev => !prev);
-  }, []); // 댓글올리기 사이클
-
-  const onSubmitComment = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    e.preventDefault();
-
-    if (!me) {
-      return alert('로그인이 필요합니다.');
-    }
-
-    return dispatch({
-      type: _reducers_post__WEBPACK_IMPORTED_MODULE_3__["ADD_COMMENT_REQUEST"],
-      data: {
-        postId: post.id
-      }
-    });
-  }, [me && me.id]); // 댓글 성공시, 빈텍스트로 
-
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    setComments('');
-  }, [commentAdded === true]);
-
-  const onRemoveComments = () => {
-    alert('댓글을 삭제하시겠습니까?');
-  };
-
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
-    className: "postbox",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 54
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "contBox",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 55
-    },
-    __self: undefined
-  }, __jsx("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 56
-    },
-    __self: undefined
-  }, post.id, " \uB2D8\uC758 \uAC8C\uC2DC\uBB3C"), __jsx("img", {
-    style: {
-      display: "block",
-      margin: "0 auto",
-      height: "200px"
-    },
-    alt: "example",
-    src: post.img,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 57
-    },
-    __self: undefined
-  }), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 58
-    },
-    __self: undefined
-  }, post.content)), __jsx("div", {
-    className: "btnsbox",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 60
-    },
-    __self: undefined
-  }, __jsx("button", {
-    type: "button",
-    className: "commentBtn",
-    value: commentFormOpened,
-    onClick: onToggleComment,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 61
-    },
-    __self: undefined
-  }), __jsx("button", {
-    type: "button",
-    className: "likeBtn",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 62
-    },
-    __self: undefined
-  }), __jsx("button", {
-    type: "button",
-    className: "removeBtn",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 63
-    },
-    __self: undefined
-  }), commentFormOpened === true && __jsx("form", {
-    className: "commentbox",
-    onSubmit: onSubmitComment,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 65
-    },
-    __self: undefined
-  }, __jsx("textarea", {
-    className: "comment",
-    value: comments,
-    onChange: onChangeComment,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 66
-    },
-    __self: undefined
-  }), __jsx("button", {
-    type: "primary",
-    htmlType: "submit",
-    className: "combtn",
-    loading: isAddingComment,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 67
-    },
-    __self: undefined
-  }, "COMMENT")), commentFormOpened === true && __jsx("div", {
-    style: {
-      display: "inline-block",
-      width: "100%"
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 72
-    },
-    __self: undefined
-  }, __jsx("p", {
-    style: {
-      marginLeft: "10px"
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 73
-    },
-    __self: undefined
-  }, commentAdded ? '댓글' + post.Comments.length : '댓글' + '0'), __jsx("div", {
-    className: "comline",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 74
-    },
-    __self: undefined
-  }), CommentPosts.map(v => {
-    return __jsx("li", {
-      key: v.createdAt,
-      style: {
-        listStyle: "none",
-        display: "inline-block",
-        clear: "both"
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 78
-      },
-      __self: undefined
-    }, v.User.nickname, " : ", v.content, __jsx("button", {
-      type: "button",
-      className: "remove",
-      onClick: onRemoveComments,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 82
-      },
-      __self: undefined
-    }, "REMOVE"));
-  })))));
-};
-
-ContentForm.propTypes = {
-  post: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
-    User: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
-    content: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
-    img: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
-  })
-};
-/* harmony default export */ __webpack_exports__["default"] = (ContentForm);
-
-/***/ }),
-
-/***/ "./components/Contents.css":
-/*!*********************************!*\
-  !*** ./components/Contents.css ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ "./components/File.js":
-/*!****************************!*\
-  !*** ./components/File.js ***!
-  \****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Templete_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Templete.css */ "./components/Templete.css");
-/* harmony import */ var _Templete_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Templete_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reducers/post */ "./reducers/post.js");
-var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\File.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-//import React from 'react';
- //import { useSelector, useDispatch } from 'react-redux';
-//import axios from 'axios';
-
-
-
-
-
-const File = () => {
-  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useDispatch"])();
-  const {
-    0: text,
-    1: setText
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''); //const [file, setFile ] = useState(null);
-  //const [selctedFile, setSelctedFile ] = useState(null);
-
-  const {
-    addingGroupPost,
-    addedGroupPost
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.post); //text 초기값
-
-  const {
-    0: grouptit,
-    1: setGrouptit
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
-  const {
-    0: grouptext,
-    1: setGrouptext
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
-
-  const InputChangeTit = e => {
-    e.preventDefault(); // console.log(e.target.value);
-
-    setGrouptit(e.target.value);
-  };
-
-  const InputChangeText = e => {
-    setGrouptext(e.target.value);
-  }; //단일 이미지 미리보기
-
-
-  const {
-    0: img,
-    1: setImg
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
-  const onChangeImage = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    var reader = new FileReader();
-    reader.readAsDataURL(e.target.files[0]);
-
-    reader.onloadend = function () {
-      setImg(reader.result);
-    };
-  }, []); // 취소버튼클릭시 파일창닫기
-
-  const popBlockClose = e => {
-    e.preventDefault();
-    let pop = document.querySelector(".pop");
-    let block = document.querySelector(".block");
-    pop.style.display = "none";
-    block.style.display = "none";
-    setGrouptit('');
-    setGrouptext('');
-    setImg(null);
-  }; // 그룹만들기서브밋
-
-
-  const onSubmitGroup = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    e.preventDefault(); // debugger;
-    // console.log(e);
-
-    dispatch({
-      type: _reducers_post__WEBPACK_IMPORTED_MODULE_3__["ADD_GROUP_REQUEST"],
-      data: {}
-    }); //1.5초뒤에 닫히기
-
-    setTimeout(() => {
-      popBlockClose(e);
-    }, 1500);
-  }, []); //그룹포스트올리기성공하면 텍스트 초기화
-
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    setText('');
-  }, [addedGroupPost === true]);
-  return __jsx("form", {
-    className: "pop",
-    encType: "multipart/form-data",
-    method: "post",
-    onSubmit: onSubmitGroup,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 78
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "gimg",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 79
-    },
-    __self: undefined
-  }, __jsx("img", {
-    src: img,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 80
-    },
-    __self: undefined
-  })), __jsx("div", {
-    className: "filebox",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 83
-    },
-    __self: undefined
-  }, __jsx("label", {
-    htmlFor: "file",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 84
-    },
-    __self: undefined
-  }, "\uC0AC\uC9C4\uC744 \uC120\uD0DD\uD574\uC8FC\uC138\uC694."), __jsx("input", {
-    type: "file",
-    id: "file",
-    onChange: onChangeImage,
-    accept: ".jpg, .jpeg, .png",
-    className: "upload",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 85
-    },
-    __self: undefined
-  })), __jsx("div", {
-    className: "group",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 89
-    },
-    __self: undefined
-  }, __jsx("label", {
-    htmlFor: "name",
-    className: "gtit",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 90
-    },
-    __self: undefined
-  }, " \uADF8\uB8F9\uC774\uB984"), __jsx("input", {
-    type: "text",
-    name: "gname",
-    className: "gname",
-    value: grouptit,
-    onChange: InputChangeTit,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 91
-    },
-    __self: undefined
-  }), __jsx("label", {
-    htmlFor: "name",
-    className: "gtit",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 92
-    },
-    __self: undefined
-  }, " \uADF8\uB8F9\uC18C\uAC1C"), __jsx("input", {
-    type: "text",
-    name: "gintro",
-    className: "gintro",
-    value: grouptext,
-    onChange: InputChangeText,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 93
-    },
-    __self: undefined
-  }), __jsx("p", {
-    className: "send",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 94
-    },
-    __self: undefined
-  }, __jsx("input", {
-    type: "submit",
-    value: "\uC62C\uB9AC\uAE30",
-    loading: addingGroupPost,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 95
-    },
-    __self: undefined
-  }), __jsx("input", {
-    type: "button",
-    value: "\uCDE8\uC18C",
-    onClick: popBlockClose,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 96
-    },
-    __self: undefined
-  }))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (File); // import React, { Component } from "react";
-// import './test.css';
-// class File extends Component{
-// inputChangedHandler = e => {
-//   const { changeInput } = this.props;
-//   const { name, value } = e.target;
-//   console.log("clicked", name, value);
-//   changeInput({ name, value });
-// };
-// htmlChangedHandler = ({ name, value }) => {
-//   const { changeInput } = this.props;
-//   changeInput({ name, value });
-// };
-// fileSelectedHandler = e => {
-//   console.log(e.target.files[0]);
-// // changeInput = ({ name, value }) => {
-// //   const { onChangeInput } = this.props;
-// //   onChangeInput({ name, value });
-// // };
-// // changeFile = (name, file) => {
-// //   const { onChangeFile } = this.props;
-// //   onChangeFile(name, file);
-// // };
-//   if (e.target.files != null || e.target.files[0] != null) {
-//     const { changeFile } = this.props;
-//     const { name } = e.target;
-//     let reader = new FileReader();
-//     reader.onload = e => {
-//       this.refImg.setAttribute("src", e.target.result);
-//       console.log(e.target.result);
-//       changeFile(name, e.target.result);
-//     };
-//     reader.readAsDataURL(e.target.files[0]);
-//   }
-// };
-// render() {
-//   const {
-//     title,
-//     sub,
-//     img,
-//     submitPost,
-//     isEdit
-//   } = this.props;
-//     return(
-//       <div className="">
-//       <form className="pop" onSubmit={submitPost}>
-//             <div>
-//               <input
-//                 style={{ display: "none" }}
-//                 type="file"
-//                 name="img"
-//                 onChange={this.fileSelectedHandler}
-//                 ref={ref => (this.refInput = ref)}
-//               />
-//               <div className="filebox">
-//                 {/* <h4>그룹 사진 업로드</h4> */}
-//                 <button type="button" onClick={() => this.refInput.click()}>
-//                   사진을 선택해주세요.
-//                 </button>
-//               </div>
-//               <div className="">
-//                 <img
-//                   ref={ref => (this.refImg = ref)}
-//                   alt={img ? "seleted_image" : null}
-//                   src={img ? img : null}
-//                   align="middle"
-//                   width="100%"
-//                   height="100%"
-//                 />
-//               </div>
-//             </div>
-//           <div className="group">
-//             <input
-//               type="text"
-//               name="title"
-//               value={title}
-//               className="gname"
-//               placeholder="그룹이름을 입력하세요"
-//               onChange={this.inputChangedHandler}
-//             />
-//             <input
-//               type="text"
-//               name="sub"
-//               value={sub}
-//               className="gintro"
-//               placeholder="그룹 소개를 입력하세요"
-//               onChange={this.inputChangedHandler}
-//             />
-//             <div className="">
-//               <button theme="point-big" type="submit">
-//                 {isEdit ? "수정" : "저장"}하기
-//               </button>
-//             </div>
-//           </div>
-//         </form>
-//       </div>
-//     );
-//   }
-// }
-// export default File;
 
 /***/ }),
 
@@ -838,267 +245,6 @@ const Menu = () => {
 /*!*****************************!*\
   !*** ./components/Grid.css ***!
   \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ "./components/GroupBox.js":
-/*!********************************!*\
-  !*** ./components/GroupBox.js ***!
-  \********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "prop-types");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./GroupItem.css */ "./components/GroupItem.css");
-/* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_GroupItem_css__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\GroupBox.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-
-const GroupBox = () => {
-  const {
-    grouptit,
-    grouptext
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.user);
-  return __jsx("div", {
-    className: "groupinfo",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "groupimg",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: undefined
-  }), __jsx("div", {
-    className: "grouptext",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: undefined
-  }, __jsx("h1", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    },
-    __self: undefined
-  }, " ", grouptit, " "), __jsx("p", {
-    className: "numMem",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    },
-    __self: undefined
-  }, "Member. 43"), __jsx("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: undefined
-  }, " ", grouptext, " "), __jsx("nav", {
-    className: "groupSubmitBtn",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    },
-    __self: undefined
-  }, __jsx("button", {
-    className: "gjoin",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: undefined
-  }, "\uAC00\uC785\uD558\uAE30"), __jsx("button", {
-    className: "gout",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20
-    },
-    __self: undefined
-  }, "\uADF8\uB8F9\uD0C8\uD1F4"))));
-}; // GroupBox.propTypes={
-//     post: PropTypes.shape({
-//         User: PropTypes.object,
-//         content: PropTypes.string,
-//         img: PropTypes.string,
-//     }),
-// };
-
-
-/* harmony default export */ __webpack_exports__["default"] = (GroupBox);
-
-/***/ }),
-
-/***/ "./components/GroupForm.js":
-/*!*********************************!*\
-  !*** ./components/GroupForm.js ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/post */ "./reducers/post.js");
-var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\GroupForm.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-const GroupForm = () => {
-  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])();
-  const {
-    0: text,
-    1: setText
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
-  const {
-    imagePaths,
-    isAddingPost,
-    postAdded
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.post);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    setText('');
-  }, [postAdded === true]);
-  const onSubmitForm = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    e.preventDefault();
-    dispatch({
-      type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_POST_REQUEST"],
-      data: {
-        text
-      }
-    });
-  }, []);
-  const onChangeText = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    setText(e.target.value);
-  }, []);
-  return __jsx("form", {
-    style: {
-      margin: '10px 0 20px'
-    },
-    encType: "multipart/form-data",
-    onSubmit: onSubmitForm,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29
-    },
-    __self: undefined
-  }, __jsx("input", {
-    htmltype: "textarea",
-    maxLength: 140,
-    placeholder: "\uC18C\uC2DD\uC744 \uB0A8\uACA8\uC8FC\uC138\uC694",
-    value: text,
-    onChange: onChangeText,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: undefined
-  }), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31
-    },
-    __self: undefined
-  }, __jsx("input", {
-    type: "file",
-    multiple: true,
-    hidden: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 32
-    },
-    __self: undefined
-  }), __jsx("button", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 33
-    },
-    __self: undefined
-  }, "\uC774\uBBF8\uC9C0 \uC5C5\uB85C\uB4DC"), __jsx("button", {
-    style: {
-      float: "right"
-    },
-    htmltype: "submit",
-    loading: isAddingPost,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 34
-    },
-    __self: undefined
-  }, "\uC9F9\uC9F9")), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 36
-    },
-    __self: undefined
-  }, imagePaths.map(v => __jsx("div", {
-    key: v,
-    style: {
-      display: "inline-block"
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39
-    },
-    __self: undefined
-  }, __jsx("img", {
-    src: `http://localhost:3065/${v}`,
-    style: {
-      width: '200px'
-    },
-    alt: v,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40
-    },
-    __self: undefined
-  }), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41
-    },
-    __self: undefined
-  }, __jsx("button", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: undefined
-  }, "\uC81C\uAC70"))))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (GroupForm);
-
-/***/ }),
-
-/***/ "./components/GroupItem.css":
-/*!**********************************!*\
-  !*** ./components/GroupItem.css ***!
-  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -1354,242 +500,40 @@ const Home = () => {
     className: "lLg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 10
     },
     __self: undefined
   }, __jsx("h2", {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 11
     },
     __self: undefined
   }, "\uC704\uBE0C\uC124\uBA85\uB780"), __jsx("div", {
     className: "wlogo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 12
     },
     __self: undefined
   }), __jsx("div", {
     className: "tpic",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 13
     },
     __self: undefined
   })), __jsx(_components_Login__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 15
     },
     __self: undefined
   }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
-
-/***/ }),
-
-/***/ "./components/IndexPage.js":
-/*!*********************************!*\
-  !*** ./components/IndexPage.js ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _Plus__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Plus */ "./components/Plus.js");
-/* harmony import */ var _GroupForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./GroupForm */ "./components/GroupForm.js");
-/* harmony import */ var _Contents_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Contents.css */ "./components/Contents.css");
-/* harmony import */ var _Contents_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_Contents_css__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _Templete_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Templete.css */ "./components/Templete.css");
-/* harmony import */ var _Templete_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_Templete_css__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./GroupItem.css */ "./components/GroupItem.css");
-/* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_GroupItem_css__WEBPACK_IMPORTED_MODULE_7__);
-var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\IndexPage.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
- // import { BrowserRouter as Router,Route, Switch } from 'react-router-dom';
-
-
-
-
-
-
-
-
-const IndexPage = () => {
-  const {
-    GroupPosts
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.post);
-  return __jsx("div", {
-    className: "groupitem",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: undefined
-  }, __jsx(_Plus__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    },
-    __self: undefined
-  }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/cont",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: undefined
-  }, __jsx("a", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "contbox",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "dogimg",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: undefined
-  }), __jsx("h1", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 22
-    },
-    __self: undefined
-  }, " \uB315\uB315\uC774\uC9D1\uC0AC \uADF8\uB8F9"), __jsx("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23
-    },
-    __self: undefined
-  }, "\uC138\uC824\uC608 \uB315\uB315\uC774\uB4E4 \uBAA8\uC5EC\uB77C~!")))), __jsx("div", {
-    className: "contbox",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "travelimg",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: undefined
-  }), __jsx("h1", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31
-    },
-    __self: undefined
-  }, "\uC138\uACC4\uB300\uD0D0\uBC29\uADF8\uB8F9"), __jsx("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 32
-    },
-    __self: undefined
-  }, "\uC5F4\uC2EC\uD788 \uC77C\uD55C \uB2F9\uC2E0, \uB5A0\uB098\uB77C. \uC5F4\uC2EC\uD788 \uB178\uB294 \uB2F9\uC2E0, \uB2F9\uC2E0\uB3C4 \uB5A0\uB098\uB77C.")), __jsx("div", {
-    className: "contbox",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 38
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "foodimg",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39
-    },
-    __self: undefined
-  }), __jsx("h1", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40
-    },
-    __self: undefined
-  }, " \uBA39\uBD80\uB9BC \uADF8\uB8F9"), __jsx("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41
-    },
-    __self: undefined
-  }, "\uBBF8\uC2DD\uAC00 \uC5EC\uB7EC\uBD84 \uD658\uC601\uD569\uB2C8\uB2E4~!")), GroupPosts.map(c => {
-    return __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-      href: "/cont",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 48
-      },
-      __self: undefined
-    }, __jsx("a", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 48
-      },
-      __self: undefined
-    }, __jsx("div", {
-      className: "contbox",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 49
-      },
-      __self: undefined
-    }, __jsx("div", {
-      className: "group_img",
-      key: c,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 50
-      },
-      __self: undefined
-    }, __jsx("img", {
-      src: c.img,
-      style: {
-        width: "100%"
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 51
-      },
-      __self: undefined
-    })), __jsx("h1", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 53
-      },
-      __self: undefined
-    }, c.content), __jsx("p", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 54
-      },
-      __self: undefined
-    }, c.gtext))));
-  }));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (IndexPage);
 
 /***/ }),
 
@@ -1944,15 +888,13 @@ const Join = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _pages_Join__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/Join */ "./pages/Join.js");
-/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _Join__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Join */ "./components/Join.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _pages_Join__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/Join */ "./pages/Join.js");
+/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _Join__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Join */ "./components/Join.js");
 var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\Login.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -1960,26 +902,31 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
- // import IndexPage from './IndexPage';
-
 
 
 const Login = () => {
-  const [id, onChangeId] = Object(_pages_Join__WEBPACK_IMPORTED_MODULE_3__["useInput"])();
-  const [password, onChangePassword] = Object(_pages_Join__WEBPACK_IMPORTED_MODULE_3__["useInput"])();
+  const [id, onChangeId] = Object(_pages_Join__WEBPACK_IMPORTED_MODULE_2__["useInput"])();
+  const [password, onChangePassword] = Object(_pages_Join__WEBPACK_IMPORTED_MODULE_2__["useInput"])();
   const {
-    isLoggingIn
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.user);
-  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useDispatch"])();
+    isLoggingIn,
+    me
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.user);
+  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])();
   const {
     0: Mode,
     1: setMode
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('read'); //초기값
 
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (me) {
+      alert('로그인했으니 메인페이지로 이동합니다.');
+      next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push("/");
+    }
+  }, [me && me.id]);
   const onSubmitForm = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
     e.preventDefault();
     dispatch({
-      type: _reducers_user__WEBPACK_IMPORTED_MODULE_4__["LOG_IN_REQUEST"],
+      type: _reducers_user__WEBPACK_IMPORTED_MODULE_3__["LOG_IN_REQUEST"],
       data: {
         userId: id,
         password
@@ -1994,10 +941,10 @@ const Login = () => {
   };
 
   if (Mode === 'clicked') {
-    return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_Join__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_Join__WEBPACK_IMPORTED_MODULE_5__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
+        lineNumber: 44
       },
       __self: undefined
     }));
@@ -2007,35 +954,35 @@ const Login = () => {
   if (Mode === 'read') return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 50
     },
     __self: undefined
   }, __jsx("article", {
     className: "rLg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 51
     },
     __self: undefined
   }, __jsx("div", {
     className: "logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 52
     },
     __self: undefined
   }), __jsx("div", {
     className: "lg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 53
     },
     __self: undefined
   }, __jsx("h2", {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 54
     },
     __self: undefined
   }, "\uB85C\uADF8\uC778"), __jsx("form", {
@@ -2045,20 +992,20 @@ const Login = () => {
     onSubmit: onSubmitForm,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 55
     },
     __self: undefined
   }, __jsx("div", {
     className: "lg_title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 59
     },
     __self: undefined
   }, "\uC9C0\uAE08 \uBC14\uB85C \uAC00\uC785\uD558\uC138\uC694!"), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 60
     },
     __self: undefined
   }, __jsx("label", {
@@ -2066,7 +1013,7 @@ const Login = () => {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 61
     },
     __self: undefined
   }, "\uC544\uC774\uB514"), __jsx("input", {
@@ -2078,7 +1025,7 @@ const Login = () => {
     required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 62
     },
     __self: undefined
   }), __jsx("label", {
@@ -2086,7 +1033,7 @@ const Login = () => {
     className: "bld",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 63
     },
     __self: undefined
   }, "\uBE44\uBC00\uBC88\uD638"), __jsx("input", {
@@ -2099,14 +1046,14 @@ const Login = () => {
     required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 64
     },
     __self: undefined
   })), __jsx("div", {
     className: "btngroup",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 67
     },
     __self: undefined
   }, __jsx("button", {
@@ -2115,7 +1062,7 @@ const Login = () => {
     loading: isLoggingIn,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 68
     },
     __self: undefined
   }, "\uB85C\uADF8\uC778"), __jsx("button", {
@@ -2124,7 +1071,7 @@ const Login = () => {
     onClick: onChangeMode,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 69
     },
     __self: undefined
   }, "\uD68C\uC6D0\uAC00\uC785"))))));
@@ -2138,108 +1085,6 @@ const Login = () => {
 /*!*****************************!*\
   !*** ./components/Menu.css ***!
   \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ "./components/Plus.js":
-/*!****************************!*\
-  !*** ./components/Plus.js ***!
-  \****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_File__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/File */ "./components/File.js");
-/* harmony import */ var _Templete_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Templete.css */ "./components/Templete.css");
-/* harmony import */ var _Templete_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Templete_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./GroupItem.css */ "./components/GroupItem.css");
-/* harmony import */ var _GroupItem_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_GroupItem_css__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\Plus.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-
-const Plus = () => {
-  const popBlock = e => {
-    e.preventDefault();
-    let pop = document.querySelector('.pop');
-    let block = document.querySelector(".block");
-    pop.style.display = "block";
-    block.style.display = "block";
-  };
-
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_components_File__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20
-    },
-    __self: undefined
-  }), __jsx("div", {
-    className: "btnbox contbox",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: undefined
-  }, __jsx("p", {
-    className: "plustit",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 22
-    },
-    __self: undefined
-  }, "\uADF8\uB8F9\uB9CC\uB4E4\uAE30"), __jsx("button", {
-    type: "button",
-    id: "myBtn",
-    onClick: popBlock,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23
-    },
-    __self: undefined
-  })), __jsx("div", {
-    className: "block",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 26
-    },
-    __self: undefined
-  }));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Plus); // import React,{ Component } from 'react';
-// class Plus extends Component {
-//     render() {
-//         return (
-//             <div className="btnbox">
-//                 <p>그룹만들기</p>
-//                 <button id="myBtn" onClick={function(){
-//                     var pop = document.querySelector('.pop');
-//                     var block = document.querySelector(".block");
-//                     pop.style.display="block"
-//                     block.style.display="block"
-//                 }}></button>
-//             </div>
-//         );
-//     }
-// }
-// export default Plus;
-
-/***/ }),
-
-/***/ "./components/Templete.css":
-/*!*********************************!*\
-  !*** ./components/Templete.css ***!
-  \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -4312,389 +3157,6 @@ if (false) {} else {
 
 /***/ }),
 
-/***/ "./pages/Cont.js":
-/*!***********************!*\
-  !*** ./pages/Cont.js ***!
-  \***********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/post */ "./reducers/post.js");
-/* harmony import */ var _components_ContentForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/ContentForm */ "./components/ContentForm.js");
-/* harmony import */ var _components_GroupBox__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/GroupBox */ "./components/GroupBox.js");
-/* harmony import */ var _components_Contents_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Contents.css */ "./components/Contents.css");
-/* harmony import */ var _components_Contents_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_components_Contents_css__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components_Menu_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Menu.css */ "./components/Menu.css");
-/* harmony import */ var _components_Menu_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_components_Menu_css__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _components_reset_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/reset.css */ "./components/reset.css");
-/* harmony import */ var _components_reset_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_components_reset_css__WEBPACK_IMPORTED_MODULE_7__);
-var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\pages\\Cont.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-// mode변경 test
-
-
-
-
-
-
-
-
-
-const Cont = () => {
-  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])();
-  const {
-    0: text,
-    1: setText
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
-  const {
-    isAddingPost,
-    postAdded,
-    mainPosts
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.post); //메뉴클릭시 컨텐츠 변경
-
-  const {
-    0: Mode,
-    1: setMode
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('read');
-
-  const handleChangePage = e => {
-    e.preventDefault();
-    setMode('member');
-    let classa = document.querySelector(".menu_a");
-    let classm = document.querySelector(".menu_m");
-    classa.setAttribute("id", "");
-    classm.setAttribute("id", "on");
-  };
-
-  const handleChangePage2 = e => {
-    e.preventDefault();
-    setMode('read');
-    let classa = document.querySelector(".menu_a");
-    let classm = document.querySelector(".menu_m");
-    classa.setAttribute("id", "on");
-    classm.setAttribute("id", "");
-  };
-
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    setText('');
-  }, [postAdded === true]);
-  const onSubmitForm = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    e.preventDefault(); // 빈텍스트, 스페이스바 게시물올리기 막기
-
-    if (!text || !text.trim()) {
-      return alert('게시글을 작성하세요.');
-    }
-
-    dispatch({
-      type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_POST_REQUEST"],
-      data: {
-        content: text
-      }
-    });
-  }, [text]); // 단일이미지 미리보기
-
-  const {
-    0: img,
-    1: setImg
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
-  const onChangeImage = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    var reader = new FileReader();
-    reader.readAsDataURL(e.target.files[0]);
-
-    reader.onloadend = function () {
-      setImg(reader.result);
-    };
-  }, []); // 소식을 남겨주세요부분 텍스트입력
-
-  const onChangeText = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    setText(e.target.value);
-  }, []);
-
-  if (Mode === 'member') {
-    return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
-      className: "top",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 77
-      },
-      __self: undefined
-    }, __jsx("ul", {
-      className: "menubox",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 78
-      },
-      __self: undefined
-    }, __jsx("li", {
-      className: "menu_a",
-      id: "on",
-      onClick: handleChangePage2,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 79
-      },
-      __self: undefined
-    }, "\uC804\uCCB4\uAE00"), __jsx("li", {
-      className: "menu_m",
-      onClick: handleChangePage,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 80
-      },
-      __self: undefined
-    }, "\uBA64\uBC84"))), __jsx("div", {
-      className: "wrap",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 83
-      },
-      __self: undefined
-    }, __jsx(_components_GroupBox__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 96
-      },
-      __self: undefined
-    }), __jsx("div", {
-      className: "memberbox",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 98
-      },
-      __self: undefined
-    }, "\uBA64\uBC84\uBAA9\uB85D")));
-  }
-
-  ;
-  if (Mode === 'read') return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
-    className: "top",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 109
-    },
-    __self: undefined
-  }, __jsx("ul", {
-    className: "menubox",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 110
-    },
-    __self: undefined
-  }, __jsx("li", {
-    className: "menu_a",
-    id: "on",
-    onClick: handleChangePage2,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 111
-    },
-    __self: undefined
-  }, "\uC804\uCCB4\uAE00"), __jsx("li", {
-    className: "menu_m",
-    onClick: handleChangePage,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 112
-    },
-    __self: undefined
-  }, "\uBA64\uBC84"))), __jsx("div", {
-    className: "wrap",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 115
-    },
-    __self: undefined
-  }, __jsx(_components_GroupBox__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 116
-    },
-    __self: undefined
-  }), __jsx("form", {
-    className: "uploadTb",
-    encType: "multipart/form-data",
-    onSubmit: onSubmitForm,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 118
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "row1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 119
-    },
-    __self: undefined
-  }, __jsx("textarea", {
-    maxLength: 1500,
-    placeholder: "\uC18C\uC2DD\uC744 \uB0A8\uACA8\uC8FC\uC138\uC694",
-    className: "tarea",
-    value: text,
-    onChange: onChangeText,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 120
-    },
-    __self: undefined
-  })), __jsx("div", {
-    className: "row2",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 123
-    },
-    __self: undefined
-  }, __jsx("div", {
-    class: "fileBox",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 124
-    },
-    __self: undefined
-  }, __jsx("label", {
-    for: "uploadBtn",
-    className: "btn_file",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 125
-    },
-    __self: undefined
-  }, " "), __jsx("input", {
-    type: "file",
-    id: "uploadBtn_0",
-    className: "uploadBtn",
-    onChange: onChangeImage,
-    accept: ".jpg, .jpeg, .png",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 126
-    },
-    __self: undefined
-  })), __jsx("div", {
-    class: "fileBox",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 128
-    },
-    __self: undefined
-  }, __jsx("label", {
-    for: "uploadBtn",
-    className: "btn_file",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 129
-    },
-    __self: undefined
-  }, " "), __jsx("input", {
-    type: "file",
-    id: "uploadBtn_1",
-    className: "uploadBtn",
-    onChange: onChangeImage,
-    accept: ".mp4, .wmv, .avi",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 130
-    },
-    __self: undefined
-  })), __jsx("div", {
-    class: "fileBox",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 132
-    },
-    __self: undefined
-  }, __jsx("label", {
-    for: "uploadBtn",
-    className: "btn_file",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 133
-    },
-    __self: undefined
-  }, " "), __jsx("input", {
-    type: "file",
-    id: "uploadBtn_2",
-    className: "uploadBtn",
-    onChange: onChangeImage,
-    accept: ".txt",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 134
-    },
-    __self: undefined
-  })), __jsx("div", {
-    className: "icon04",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 137
-    },
-    __self: undefined
-  }, __jsx("label", {
-    for: "file-input",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 138
-    },
-    __self: undefined
-  }), __jsx("input", {
-    type: "submit",
-    value: "",
-    loading: isAddingPost,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 139
-    },
-    __self: undefined
-  })))), __jsx("div", {
-    className: "letsbegin",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 144
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "startT",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 145
-    },
-    __self: undefined
-  }, "\uADF8\uB8F9\uC5D0 \uC7AC\uBBF8\uC788\uB294 \uC774\uC57C\uAE30\uB97C \uC368\uBCF4\uC138\uC694."), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 146
-    },
-    __self: undefined
-  }, mainPosts.map(i => {
-    return __jsx(_components_ContentForm__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      key: i,
-      post: i,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 149
-      },
-      __self: undefined
-    });
-  }))), __jsx("button", {
-    className: "more",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 157
-    },
-    __self: undefined
-  }, "\uB354\uBCF4\uAE30")));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Cont);
-
-/***/ }),
-
 /***/ "./pages/Join.js":
 /*!***********************!*\
   !*** ./pages/Join.js ***!
@@ -4709,14 +3171,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
 var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\pages\\Join.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -4737,7 +3196,7 @@ const TextInput = ({
 
 TextInput.propTypes = {
   value: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
-}; //커스텀훅
+}; // 커스텀훅
 
 const useInput = (initValue = null) => {
   const {
@@ -4770,17 +3229,10 @@ const Join = () => {
   const [id, onChangeId] = useInput();
   const [nick, onChangeNick] = useInput();
   const [password, onChangePassword] = useInput();
-  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useDispatch"])();
+  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useDispatch"])();
   const {
-    isSigningUp,
-    me
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useSelector"])(state => state.user);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    if (me) {
-      alert('로그인했으니 메인페이지로 이동합니다.');
-      next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push("/indexpage");
-    }
-  }, [me && me.id]);
+    isSigningUp
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.user);
   const onSubmit = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
     e.preventDefault();
 
@@ -4793,9 +3245,9 @@ const Join = () => {
     }
 
     return dispatch({
-      type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["SIGN_UP_REQUEST"],
+      type: _reducers_user__WEBPACK_IMPORTED_MODULE_3__["SIGN_UP_REQUEST"],
       data: {
-        userID: id,
+        userId: id,
         password,
         nickname: nick
       }
@@ -4809,47 +3261,42 @@ const Join = () => {
   // const onChangePassword=(e)=>{
   //     setPassword(e.target.value);
   // };
+  // 비밀번호 체크
 
   const onChangePasswordCheck = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    setPasswordError(e.target.value !== password); //비밀번호체크
-
+    setPasswordError(e.target.value !== password);
     setPasswordCheck(e.target.value);
-  }, [password]);
+  }, [password]); // 개인정보수집 체크
+
   const onChangeTerm = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
     setTermError(false); //setTermError메세기 기본적으로 꺼두기
 
     setTerm(e.target.checked);
   }, []);
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 89
-    },
-    __self: undefined
-  }, __jsx("form", {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("form", {
     onSubmit: onSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 84
     },
     __self: undefined
   }, __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 85
     },
     __self: undefined
   }, __jsx("label", {
     htmlFor: "user-id",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 86
     },
     __self: undefined
   }), "\uC544\uC774\uB514", __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 86
     },
     __self: undefined
   }), __jsx("input", {
@@ -4859,26 +3306,26 @@ const Join = () => {
     onChange: onChangeId,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 87
     },
     __self: undefined
   })), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 89
     },
     __self: undefined
   }, __jsx("label", {
     htmlFor: "user-nick",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 90
     },
     __self: undefined
   }), "\uB2C9\uB124\uC784", __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 90
     },
     __self: undefined
   }), __jsx("input", {
@@ -4888,26 +3335,26 @@ const Join = () => {
     onChange: onChangeNick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 91
     },
     __self: undefined
   })), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 93
     },
     __self: undefined
   }, __jsx("label", {
     htmlFor: "user-password",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 94
     },
     __self: undefined
   }), "\uBE44\uBC00\uBC88\uD638", __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 94
     },
     __self: undefined
   }), __jsx("input", {
@@ -4918,26 +3365,26 @@ const Join = () => {
     onChange: onChangePassword,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 95
     },
     __self: undefined
   })), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 97
     },
     __self: undefined
   }, __jsx("label", {
     htmlFor: "user-password-chk",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 98
     },
     __self: undefined
   }), "\uBE44\uBC00\uBC88\uD638\uCCB4\uD06C", __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 98
     },
     __self: undefined
   }), __jsx("input", {
@@ -4948,7 +3395,7 @@ const Join = () => {
     onChange: onChangePasswordCheck,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 99
     },
     __self: undefined
   }), passwordError && __jsx("div", {
@@ -4957,13 +3404,13 @@ const Join = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 100
     },
     __self: undefined
   }, "\uBE44\uBC00\uBC88\uD638\uAC00 \uC77C\uCE58\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.")), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 102
     },
     __self: undefined
   }, __jsx("input", {
@@ -4973,7 +3420,7 @@ const Join = () => {
     onChange: onChangeTerm,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 103
     },
     __self: undefined
   }), "\uB9D0\uC744 \uC798 \uB4E4\uC744\uAC83\uC5D0 \uB3D9\uC758 \uD569\uB2C8\uB2E4.", termError && __jsx("div", {
@@ -4982,7 +3429,7 @@ const Join = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110
+      lineNumber: 104
     },
     __self: undefined
   }, "\uC57D\uAD00\uC5D0 \uB3D9\uC758\uD558\uC154\uC57C\uD569\uB2C8\uB2E4.")), __jsx("div", {
@@ -4991,7 +3438,7 @@ const Join = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112
+      lineNumber: 106
     },
     __self: undefined
   }, __jsx("button", {
@@ -4999,7 +3446,7 @@ const Join = () => {
     loading: isSigningUp,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113
+      lineNumber: 107
     },
     __self: undefined
   }, "\uAC00\uC785\uD558\uAE30"))));
@@ -5020,24 +3467,23 @@ const Join = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_redux_wrapper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next-redux-wrapper */ "next-redux-wrapper");
-/* harmony import */ var next_redux_wrapper__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_redux_wrapper__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! redux */ "redux");
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var redux_saga__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! redux-saga */ "redux-saga");
-/* harmony import */ var redux_saga__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(redux_saga__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../reducers */ "./reducers/index.js");
-/* harmony import */ var _sagas__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../sagas */ "./sagas/index.js");
-/* harmony import */ var _components_AppLayout__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/AppLayout */ "./components/AppLayout.js");
-/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
-/* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/Home */ "./components/Home.js");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_redux_wrapper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next-redux-wrapper */ "next-redux-wrapper");
+/* harmony import */ var next_redux_wrapper__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_redux_wrapper__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! redux */ "redux");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var redux_saga__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! redux-saga */ "redux-saga");
+/* harmony import */ var redux_saga__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(redux_saga__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _components_AppLayout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/AppLayout */ "./components/AppLayout.js");
+/* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../reducers */ "./reducers/index.js");
+/* harmony import */ var _sagas__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../sagas */ "./sagas/index.js");
 var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\pages\\_app.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -5053,15 +3499,26 @@ const Weave = ({
   Component,
   store
 }) => {
-  // if(LOG_IN_SUCCESS)
-  return __jsx(react_redux__WEBPACK_IMPORTED_MODULE_4__["Provider"], {
+  return __jsx(react_redux__WEBPACK_IMPORTED_MODULE_5__["Provider"], {
     store: store,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 16
     },
     __self: undefined
-  }, __jsx(_components_AppLayout__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: undefined
+  }, __jsx("title", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: undefined
+  }, "\uD658\uC601\uD569\uB2C8\uB2E4! Weave")), __jsx(_components_AppLayout__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 20
@@ -5077,20 +3534,20 @@ const Weave = ({
 };
 
 Weave.propTypes = {
-  Component: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.elementType.isRequired,
-  store: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired
+  Component: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.elementType.isRequired,
+  store: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object.isRequired
 };
 
 const configureStore = (initialState, options) => {
-  const sagaMiddleware = redux_saga__WEBPACK_IMPORTED_MODULE_5___default()();
+  const sagaMiddleware = redux_saga__WEBPACK_IMPORTED_MODULE_6___default()();
   const middlewares = [sagaMiddleware];
-  const enhancer =  false ? undefined : Object(redux__WEBPACK_IMPORTED_MODULE_3__["compose"])(Object(redux__WEBPACK_IMPORTED_MODULE_3__["applyMiddleware"])(...middlewares), !options.isServer && typeof window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined' ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f);
-  const store = Object(redux__WEBPACK_IMPORTED_MODULE_3__["createStore"])(_reducers__WEBPACK_IMPORTED_MODULE_6__["default"], initialState, enhancer);
-  sagaMiddleware.run(_sagas__WEBPACK_IMPORTED_MODULE_7__["default"]);
+  const enhancer =  false ? undefined : Object(redux__WEBPACK_IMPORTED_MODULE_4__["compose"])(Object(redux__WEBPACK_IMPORTED_MODULE_4__["applyMiddleware"])(...middlewares), !options.isServer && typeof window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined' ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f);
+  const store = Object(redux__WEBPACK_IMPORTED_MODULE_4__["createStore"])(_reducers__WEBPACK_IMPORTED_MODULE_8__["default"], initialState, enhancer);
+  sagaMiddleware.run(_sagas__WEBPACK_IMPORTED_MODULE_9__["default"]);
   return store;
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (next_redux_wrapper__WEBPACK_IMPORTED_MODULE_2___default()(configureStore)(Weave));
+/* harmony default export */ __webpack_exports__["default"] = (next_redux_wrapper__WEBPACK_IMPORTED_MODULE_3___default()(configureStore)(Weave));
 
 /***/ }),
 
@@ -5239,28 +3696,9 @@ const initialState = {
   //그룹만들기업로드 실패사유
   addedGroupPost: false // 그룹만들기폴더 업로드 성공
 
-}; // export const initialStateForGroup={// 화면에 보일 포스트들 
-//     GroupPosts:[{
-//         id: 2,
-//         User:{
-//             id: 1,
-//             nickname: "위브",
-//         },
-//         content: "두리안그룹(그룹포스트)",
-//         img:"https://img1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/liveboard/dailylife/187ea4bc2ad54b1db5030743265c5397.jpg", 
-//         gtext: ["두리안 좋아하는사람들의 모임"],
-//     }], // 그룹화면에 보일 포스트들 
-//     imagePaths:[], //미리보기 이미지경로
-//     isAddingComment: false,
-//     addCommentErrorReason: '',
-//     commentAdded: false,
-//     addingGroupPost: false, // 그룹만들기폴더 업로드중
-//     GroupErrorReason: '', //그룹만들기업로드 실패사유
-//     addedGroupPost: false, // 그룹만들기폴더 업로드 성공
-// };
-
+};
 const dummyPosts = {
-  id: 1,
+  id: 2,
   User: {
     id: 1,
     nickname: '위브'
@@ -5286,17 +3724,7 @@ const dummyGroupPost = {
   },
   createdAt: new Date(),
   content: "위브글입니다.(더미그룹포스트)"
-}; // mainPosts:[{
-//     id:1,
-//     User:{
-//         id: 1,
-//         nickname: "위브",
-//     },
-//     content: "첫번째 게시글",
-//     img:"https://img1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/liveboard/dailylife/187ea4bc2ad54b1db5030743265c5397.jpg", 
-//     Comments: [],
-// }], // 화면에 보일 포스트들 
-
+};
 const LOAD_MAIN_POSTS_REQUEST = 'LOAD_MAIN_POSTS_REQUEST';
 const LOAD_MAIN_POSTS_SUCCESS = 'LOAD_MAIN_POSTS_SUCCESS';
 const LOAD_MAIN_POSTS_FAILURE = 'LOAD_MAIN_POSTS_FAILURE';
@@ -5333,24 +3761,14 @@ const REMOVE_POST_SUCCESS = 'REMOVE_POST_SUCCESS';
 const REMOVE_POST_FAILURE = 'REMOVE_POST_FAILURE';
 const ADD_GROUP_REQUEST = 'ADD_GROUP_REQUEST';
 const ADD_GROUP_SUCCESS = 'ADD_GROUP_SUCCESS';
-const ADD_GROUP_FAILURE = 'ADD_GROUP_FAILURE';
-const ADD_POST = "ADD_POST";
-const ADD_GROUPPOST = "ADD_GROUPPOST";
-const ADD_DUMMY = "ADD_DUMMY";
-const addPost = {
-  type: ADD_POST
-};
-const addGroupPost = {
-  type: ADD_GROUPPOST
-}; // const addDummy = {
-//     type: ADD_DUMMY,
-//     data:{
-//         content:'Hello',
-//         UserId: 1,
-//         User:{
-//             nickname:"두리안",
-//         },
-//     },
+const ADD_GROUP_FAILURE = 'ADD_GROUP_FAILURE'; // const ADD_POST = "ADD_POST";
+// const ADD_GROUPPOST = "ADD_GROUPPOST";
+// const ADD_DUMMY = "ADD_DUMMY";
+// const addPost={
+//     type: ADD_POST,   
+// };
+// const addGroupPost={
+//     type: ADD_GROUPPOST,   
 // };
 
 /* harmony default export */ __webpack_exports__["default"] = ((state = initialState, action) => {
@@ -5358,7 +3776,6 @@ const addGroupPost = {
     case ADD_POST_REQUEST:
       {
         return _objectSpread({}, state, {
-          //immutable
           isAddingPost: true,
           addPostErrorReason: '',
           postAdded: false
@@ -5385,7 +3802,6 @@ const addGroupPost = {
     case ADD_COMMENT_REQUEST:
       {
         return _objectSpread({}, state, {
-          //immutable
           isAddingComment: true,
           addCommentErrorReason: '',
           commentAdded: false
@@ -5394,11 +3810,10 @@ const addGroupPost = {
 
     case ADD_COMMENT_SUCCESS:
       {
-        //immutable
         const postIndex = state.mainPosts.findIndex(v => v.id === action.data.postId); //어떤게시물에 댓글을 작성할것인지
 
         const post = state.mainPosts[postIndex];
-        const Comments = [...post.Comments, dummyComment];
+        const Comments = [...post.Comments, data.comment];
         const mainPosts = [...state.mainPosts];
         mainPosts[postIndex] = _objectSpread({}, post, {
           Comments
@@ -5416,6 +3831,25 @@ const addGroupPost = {
           isAddingComment: false,
           addCommentErrorReason: action.error
         });
+      }
+
+    case LOAD_MAIN_POSTS_REQUEST:
+      {
+        return _objectSpread({}, state, {
+          mainPosts: []
+        });
+      }
+
+    case LOAD_MAIN_POSTS_SUCCESS:
+      {
+        return _objectSpread({}, state, {
+          mainPosts: action.data
+        });
+      }
+
+    case LOAD_MAIN_POSTS_FAILURE:
+      {
+        return _objectSpread({}, state);
       }
     //그룹만들기 업로드 
 
@@ -5450,39 +3884,7 @@ const addGroupPost = {
         return _objectSpread({}, state);
       }
   }
-}); // export default (state = initialStateForGroup, action) => {
-//     switch (action.type){
-//         //그룹만들기 업로드 
-//         case ADD_GROUP_REQUEST: {
-//             return {
-//                 ...state,
-//                 addingGroupPost: true,
-//                 GroupErrorReason : '',
-//                 addedGroupPost: false,
-//             };
-//         }
-//         case ADD_GROUP_SUCCESS: {
-//             return {
-//                 ...state,
-//                 addingGroupPost: false,
-//                 GroupPosts: [dummyGroupPost, ...state.GroupPosts],
-//                 addedGroupPost: true,
-//             };
-//         }
-//         case ADD_GROUP_FAILURE: {
-//             return {
-//                 ...state,
-//                 addedGroupPost: false,
-//                 GroupErrorReason : action.error,
-//             };
-//         }
-//         default: {
-//             return{
-//                 ...state,
-//             };
-//         }
-//     }
-// };
+});
 
 /***/ }),
 
@@ -5490,7 +3892,7 @@ const addGroupPost = {
 /*!**************************!*\
   !*** ./reducers/user.js ***!
   \**************************/
-/*! exports provided: initialState, SIGN_UP_REQUEST, SIGN_UP_SUCCESS, SIGN_UP_FAILURE, LOG_IN_REQUEST, LOG_IN_SUCCESS, LOG_IN_FAILURE, LOAD_USER_REQUEST, LOAD_USER_SUCCESS, LOAD_USER_FAILURE, LOG_OUT_REQUEST, LOG_OUT_SUCCESS, LOG_OUT_FAILURE, LOAD_FOLLOW_REQUEST, LOAD_FOLLOW_SUCCESS, LOAD_FOLLOW_FAILURE, FOLLOW_USER_REQUEST, FOLLOW_USER_SUCCESS, FOLLOW_USER_FAILURE, UNFOLLOW_USER_REQUEST, UNFOLLOW_USER_SUCCESS, UNFOLLOW_USER_FAILURE, REMOVE_FOLLOWER_REQUEST, REMOVE_FOLLOWER_SUCCESS, REMOVE_FOLLOWER_FAILURE, ADD_POST_TO_ME, loginAction, default */
+/*! exports provided: initialState, SIGN_UP_REQUEST, SIGN_UP_SUCCESS, SIGN_UP_FAILURE, LOG_IN_REQUEST, LOG_IN_SUCCESS, LOG_IN_FAILURE, LOAD_USER_REQUEST, LOAD_USER_SUCCESS, LOAD_USER_FAILURE, LOG_OUT_REQUEST, LOG_OUT_SUCCESS, LOG_OUT_FAILURE, LOAD_FOLLOW_REQUEST, LOAD_FOLLOW_SUCCESS, LOAD_FOLLOW_FAILURE, FOLLOW_USER_REQUEST, FOLLOW_USER_SUCCESS, FOLLOW_USER_FAILURE, UNFOLLOW_USER_REQUEST, UNFOLLOW_USER_SUCCESS, UNFOLLOW_USER_FAILURE, REMOVE_FOLLOWER_REQUEST, REMOVE_FOLLOWER_SUCCESS, REMOVE_FOLLOWER_FAILURE, ADD_POST_TO_ME, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5521,7 +3923,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_FOLLOWER_SUCCESS", function() { return REMOVE_FOLLOWER_SUCCESS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_FOLLOWER_FAILURE", function() { return REMOVE_FOLLOWER_FAILURE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_POST_TO_ME", function() { return ADD_POST_TO_ME; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loginAction", function() { return loginAction; });
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-properties */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js");
@@ -5581,12 +3982,9 @@ const initialState = {
 const SIGN_UP_REQUEST = "SIGN_UP_REQUEST";
 const SIGN_UP_SUCCESS = "SIGN_UP_SUCCESS";
 const SIGN_UP_FAILURE = "SIGN_UP_FAILURE";
-const LOG_IN_REQUEST = "LOG_IN_REQUEST"; //액션의 이름
-
-const LOG_IN_SUCCESS = "LOG_IN_SUCCESS"; //액션의 이름
-
-const LOG_IN_FAILURE = "LOG_IN_FAILURE"; //액션의 이름
-
+const LOG_IN_REQUEST = "LOG_IN_REQUEST";
+const LOG_IN_SUCCESS = "LOG_IN_SUCCESS";
+const LOG_IN_FAILURE = "LOG_IN_FAILURE";
 const LOAD_USER_REQUEST = "LOAD_USER_REQUEST";
 const LOAD_USER_SUCCESS = "LOAD_USER_SUCCESS";
 const LOAD_USER_FAILURE = "LOAD_USER_FAILURE";
@@ -5606,34 +4004,6 @@ const REMOVE_FOLLOWER_REQUEST = "REMOVE_FOLLOWER_REQUEST";
 const REMOVE_FOLLOWER_SUCCESS = "REMOVE_FOLLOWER_SUCCESS";
 const REMOVE_FOLLOWER_FAILURE = "REMOVE_FOLLOWER_FAILURE";
 const ADD_POST_TO_ME = "ADD_POST_TO_ME";
-const loginAction = data => {
-  return {
-    type: LOG_IN,
-    data
-  };
-}; ///////////////////////////////////////
-// export const signUpAction = (data) => {
-//     return{
-//         type: SIGN_UP_REQUEST,
-//         data: data,
-//     };
-// };
-// export const signUp = data => ({
-//         type: SIGN_UP_REQUEST,
-//         data: data,
-// });
-// export const signUpSuccess = {
-//         type: SIGN_UP_SUCCESS,
-//     };
-// export const loginRequestAction = data=> ({
-//     type : LOG_IN_REQUEST,
-//     data,
-// });
-// export const logoutRequestAction = {
-//     type : LOG_OUT_REQUEST,
-// };
-///////////////////////////////////////
-
 /* harmony default export */ __webpack_exports__["default"] = ((state = initialState, action) => {
   switch (action.type) {
     case LOG_IN_REQUEST:
@@ -5674,15 +4044,6 @@ const loginAction = data => {
         return _objectSpread({}, state, {
           isLoggingOut: false,
           me: null
-        });
-      }
-
-    case LOG_OUT_FAILURE:
-      {
-        return _objectSpread({}, state, {
-          isLoggingOut: false,
-          logInErrorReason: action.error,
-          me: dummyUser
         });
       }
 
@@ -5749,15 +4110,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return rootSaga; });
 /* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux-saga/effects */ "redux-saga/effects");
 /* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./user */ "./sagas/user.js");
-/* harmony import */ var _post__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./post */ "./sagas/post.js");
- // import axios from "axios";
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user */ "./sagas/user.js");
+/* harmony import */ var _post__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./post */ "./sagas/post.js");
 
 
- // axios.defaults.baseURL = 'http://localhost:3065/api';
 
+
+axios__WEBPACK_IMPORTED_MODULE_1___default.a.defaults.baseURL = 'http://localhost:3065/api';
 function* rootSaga() {
-  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["call"])(_user__WEBPACK_IMPORTED_MODULE_1__["default"]), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["call"])(_post__WEBPACK_IMPORTED_MODULE_2__["default"])]);
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(_user__WEBPACK_IMPORTED_MODULE_2__["default"]), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(_post__WEBPACK_IMPORTED_MODULE_3__["default"])]);
 }
 
 /***/ }),
@@ -5774,100 +4137,124 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return postSaga; });
 /* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux-saga/effects */ "redux-saga/effects");
 /* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reducers/post */ "./reducers/post.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/post */ "./reducers/post.js");
 
 
+ // 게시물 올리기
 
-
-function addPostAPI() {
-  return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/post", postData, {
+function addPostAPI(postData) {
+  return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/post", postData, {
     withCredentials: true
   });
 }
 
-function addCommentAPI() {}
-
-function addGroupPosttAPI() {} // function* addPost() {
-//     try {
-//       yield delay(2000);
-//       yield put({
-//         type: ADD_POST_SUCCESS,
-//       });
-//     } catch (e) {
-//       yield put({
-//         type: ADD_POST_FAILURE,
-//         error: e,
-//       });
-//     }
-//   }
-
-
 function* addPost(action) {
   try {
-    const result = yield call(addPostAPI, action.data);
+    const result = yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["call"])(addPostAPI, action.data);
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
-      type: _reducers_post__WEBPACK_IMPORTED_MODULE_1__["ADD_POST_SUCCESS"],
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_POST_SUCCESS"],
       data: result.data
     });
   } catch (e) {
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
-      type: _reducers_post__WEBPACK_IMPORTED_MODULE_1__["ADD_POST_FAILURE"],
-      error: e
-    });
-  }
-}
-
-function* addComment(action) {
-  try {
-    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["delay"])(2000);
-    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
-      type: _reducers_post__WEBPACK_IMPORTED_MODULE_1__["ADD_COMMENT_SUCCESS"],
-      data: {
-        postId: action.data.postId
-      }
-    });
-  } catch (e) {
-    console.error(e);
-    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
-      type: _reducers_post__WEBPACK_IMPORTED_MODULE_1__["ADD_COMMENT_FAILURE"],
-      error: e
-    });
-  }
-}
-
-function* addGroupPost(action) {
-  try {
-    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["delay"])(2000);
-    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
-      type: _reducers_post__WEBPACK_IMPORTED_MODULE_1__["ADD_GROUP_SUCCESS"],
-      data: {
-        postId: action.data.postId
-      }
-    });
-  } catch (e) {
-    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
-      type: _reducers_post__WEBPACK_IMPORTED_MODULE_1__["ADD_GROUP_FAILURE"],
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_POST_FAILURE"],
       error: e
     });
   }
 }
 
 function* watchAddPost() {
-  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeLatest"])(_reducers_post__WEBPACK_IMPORTED_MODULE_1__["ADD_POST_REQUEST"], addPost);
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeLatest"])(_reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_POST_REQUEST"], addPost);
+} // 게시물 로드하기
+
+
+function loadMainPostsAPI() {
+  return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/posts');
 }
 
-function* watchAddComment() {
-  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeLatest"])(_reducers_post__WEBPACK_IMPORTED_MODULE_1__["ADD_COMMENT_REQUEST"], addComment);
+function* loadMainPosts() {
+  try {
+    const result = yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["call"])(loadMainPostsAPI);
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["LOAD_MAIN_POSTS_SUCCESS"],
+      data: result.data
+    });
+  } catch (e) {
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["LOAD_MAIN_POSTS_FAILURE"],
+      error: e
+    });
+  }
+}
+
+function* watchLoadMainPosts() {
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeLatest"])(_reducers_post__WEBPACK_IMPORTED_MODULE_2__["LOAD_MAIN_POSTS_REQUEST"], loadMainPosts);
+} // 그룹 만들기
+
+
+function addGroupPosttAPI() {// return axios.post("/gpost", gpostData,{
+  //     withCredentials: true
+  // });
+}
+
+function* addGroupPost(action) {
+  try {
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["delay"])(2000);
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_GROUP_SUCCESS"],
+      data: {
+        postId: action.data.postId
+      }
+    });
+  } catch (e) {
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_GROUP_FAILURE"],
+      error: e
+    });
+  }
 }
 
 function* watchAddGroupPost() {
-  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeLatest"])(_reducers_post__WEBPACK_IMPORTED_MODULE_1__["ADD_GROUP_REQUEST"], addGroupPost);
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeLatest"])(_reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_GROUP_REQUEST"], addGroupPost);
+} // 댓글 올리기
+
+
+function addCommentAPI(data) {
+  return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(`/post/${data.postId}/comment`, {
+    content: data.content
+  }, {
+    withCredentials: true
+  });
+}
+
+function* addComment(action) {
+  try {
+    // yield delay(2000);
+    const result = yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["call"])(addCommentAPI, action.data);
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_COMMENT_SUCCESS"],
+      data: {
+        postId: action.data.postId,
+        comment: result.data
+      }
+    });
+  } catch (e) {
+    console.error(e);
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_COMMENT_FAILURE"],
+      error: e
+    });
+  }
+}
+
+function* watchAddComment() {
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeLatest"])(_reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_COMMENT_REQUEST"], addComment);
 }
 
 function* postSaga() {
-  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchAddPost), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchAddComment), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchAddGroupPost)]);
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchLoadMainPosts), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchAddPost), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchAddComment), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchAddGroupPost)]);
 }
 
 /***/ }),
@@ -5889,28 +4276,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
 
 
-
-axios__WEBPACK_IMPORTED_MODULE_1___default.a.defaults.baseURL = 'http://localhost:3065/api';
+ // 로그인 하기
 
 function loginAPI(loginData) {
   //서버에 요청을 보내는 부분
-  return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('user/login', loginData, {
+  return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/user/login', loginData, {
     withCredentials: true
   });
 }
 
 function* login(action) {
   try {
-    // yield fork(logger);  // logger는 내기록을 로깅하는 함수,
-    // yield delay(1000);
     const result = yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["call"])(loginAPI, action.data);
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
-      // put은 dispatch와 동일
+      // put은 dispatch 동일
       type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_SUCCESS"],
       data: result.data
     });
   } catch (e) {
-    // 로그인 실패시
+    // loginAPI 실패
     console.error(e);
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
       type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_FAILURE"]
@@ -5920,7 +4304,8 @@ function* login(action) {
 
 function* watchLogin() {
   yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeEvery"])(_reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_REQUEST"], login);
-}
+} // 회원가입하기
+
 
 function signUpAPI(signUpData) {
   //서버에 요청을 보내는 부분
@@ -5933,11 +4318,10 @@ function* signUp(action) {
     // yield delay(2000);
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["call"])(signUpAPI, action.data);
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
-      // put은 dispatch와 동일
       type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["SIGN_UP_SUCCESS"]
     });
   } catch (e) {
-    // 로그인 실패시
+    // 회원가입 실패시
     console.error(e);
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
       type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["SIGN_UP_FAILURE"],
@@ -5948,7 +4332,8 @@ function* signUp(action) {
 
 function* watchSignUp() {
   yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeEvery"])(_reducers_user__WEBPACK_IMPORTED_MODULE_2__["SIGN_UP_REQUEST"], signUp);
-}
+} // 로그아웃하기
+
 
 function logOutAPI() {
   //서버에 요청을 보내는 부분
@@ -5957,7 +4342,7 @@ function logOutAPI() {
   });
 }
 
-function* logout(action) {
+function* logout() {
   try {
     // yield delay(1000);
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["call"])(logOutAPI);
@@ -5977,7 +4362,8 @@ function* logout(action) {
 
 function* watchLogout() {
   yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeEvery"])(_reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_OUT_REQUEST"], logout);
-}
+} // 로그인한 유저 로드하기
+
 
 function loadUserAPI() {
   // 서버에 요청을 보내는 부분
@@ -5991,12 +4377,11 @@ function* loadUser() {
     // yield call(loadUserAPI);
     const result = yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["call"])(loadUserAPI);
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
-      // put은 dispatch 동일
       type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOAD_USER_SUCCESS"],
       data: result.data
     });
   } catch (e) {
-    // loginAPI 실패
+    // loadUserAPI 실패시
     console.error(e);
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
       type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOAD_USER_FAILURE"],
@@ -6171,6 +4556,17 @@ module.exports = require("core-js/library/fn/weak-map");
 /***/ (function(module, exports) {
 
 module.exports = require("next-redux-wrapper");
+
+/***/ }),
+
+/***/ "next/head":
+/*!****************************!*\
+  !*** external "next/head" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/head");
 
 /***/ }),
 

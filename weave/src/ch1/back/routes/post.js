@@ -7,12 +7,12 @@ router.post('/', async (req, res, next) => { // POST /api/post
   try {
     const hashtags = req.body.content.match(/#[^\s]+/g);
     const newPost = await db.Post.create({
-      content: req.body.content, // ex) '제로초 파이팅 #구독 #좋아요 눌러주세요'
+      content: req.body.content, // ex) ' #구독 #좋아요 눌러주세요'
       UserId: req.user.id,
     });
     if (hashtags) {
       const result = await Promise.all(hashtags.map(tag => db.Hashtag.findOrCreate({
-        where: { name: tag.slice(1).toLowerCase() },
+        where: { name: tag.slice(1).toLowerCase() }, // LowerCase : 소문자통일
       })));
       console.log(result);
       await newPost.addHashtags(result.map(r => r[0]));

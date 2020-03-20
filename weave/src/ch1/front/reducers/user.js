@@ -26,9 +26,9 @@ export const SIGN_UP_REQUEST = "SIGN_UP_REQUEST";
 export const SIGN_UP_SUCCESS = "SIGN_UP_SUCCESS";
 export const SIGN_UP_FAILURE = "SIGN_UP_FAILURE";
 
-export const LOG_IN_REQUEST = "LOG_IN_REQUEST" ;  //액션의 이름
-export const LOG_IN_SUCCESS = "LOG_IN_SUCCESS" ;  //액션의 이름
-export const LOG_IN_FAILURE = "LOG_IN_FAILURE" ;  //액션의 이름
+export const LOG_IN_REQUEST = "LOG_IN_REQUEST" ; 
+export const LOG_IN_SUCCESS = "LOG_IN_SUCCESS" ;  
+export const LOG_IN_FAILURE = "LOG_IN_FAILURE" ;  
 
 export const LOAD_USER_REQUEST = "LOAD_USER_REQUEST";
 export const LOAD_USER_SUCCESS = "LOAD_USER_SUCCESS";
@@ -56,37 +56,8 @@ export const REMOVE_FOLLOWER_FAILURE = "REMOVE_FOLLOWER_FAILURE";
 
 export const ADD_POST_TO_ME = "ADD_POST_TO_ME";
 
-export const loginAction = (data) => {
-  return {
-    type: LOG_IN,
-    data,
-  }
-};
-///////////////////////////////////////
-// export const signUpAction = (data) => {
-//     return{
-//         type: SIGN_UP_REQUEST,
-//         data: data,
-//     };
-// };
 
-// export const signUp = data => ({
-//         type: SIGN_UP_REQUEST,
-//         data: data,
-// });
 
-// export const signUpSuccess = {
-//         type: SIGN_UP_SUCCESS,
-//     };
-
-// export const loginRequestAction = data=> ({
-//     type : LOG_IN_REQUEST,
-//     data,
-// });
-// export const logoutRequestAction = {
-//     type : LOG_OUT_REQUEST,
-// };
-///////////////////////////////////////
 export default (state = initialState,action) => {
   switch (action.type){
       case LOG_IN_REQUEST:{
@@ -125,15 +96,6 @@ export default (state = initialState,action) => {
             me : null,
         };
       }
-      case LOG_OUT_FAILURE : {
-        return {
-            ...state,
-            isLoggingOut: false,
-            logInErrorReason : action.error,
-            me : dummyUser,
-        };
-      }
-
       case SIGN_UP_REQUEST : {
         return {
             ...state,

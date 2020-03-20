@@ -1,7 +1,7 @@
 // mode변경 test
 import React, { useCallback, useState, useEffect }  from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { ADD_POST_REQUEST } from '../reducers/post';
+import { ADD_POST_REQUEST,LOAD_MAIN_POSTS_REQUEST } from '../reducers/post';
 
 import ContentForm from '../components/ContentForm';
 import GroupBox from '../components/GroupBox';
@@ -16,8 +16,15 @@ const Cont = () => {
     const [text, setText ] = useState('');
     const { isAddingPost, postAdded, mainPosts } = useSelector(state => state.post);
 
-    //메뉴클릭시 컨텐츠 변경
+    // 메뉴클릭시 컨텐츠 변경
     const [ Mode, setMode ] = useState('read');
+
+    // 게시물 로드하기
+    useEffect(() => {
+        dispatch({
+          type: LOAD_MAIN_POSTS_REQUEST,
+        });
+      }, []);
 
     const handleChangePage = (e) => {
         e.preventDefault();
@@ -36,10 +43,10 @@ const Cont = () => {
         classm.setAttribute("id","");
     };
 
+    
     useEffect(() => {
         setText('');
     },[postAdded === true]);
-    
 
     const onSubmitForm = useCallback((e) => {
         e.preventDefault();
@@ -59,10 +66,11 @@ const Cont = () => {
     // 단일이미지 미리보기
     const [img, setImg] = useState(null);
     const onChangeImage = useCallback((e)=>{
+        console.log('파일창열리니?');
         var reader = new FileReader();
         reader.readAsDataURL(e.target.files[0]);
         reader.onloadend = function () {
-            setImg(reader.result)
+            setImg(reader.result);
           }
     },[]);
 
@@ -117,21 +125,27 @@ const Cont = () => {
                 
                 <form className="uploadTb" encType="multipart/form-data" onSubmit={onSubmitForm}>
                     <div className='row1'>
+                        <img src={img} style={{ width: '50%' }} />
                         <textarea maxLength={1500} placeholder="소식을 남겨주세요"
-                                  className="tarea" value={text} onChange={onChangeText} />
+                                  className="tarea" value={text} onChange={onChangeText} >
+                                       
+                        </textarea>
                     </div>
                     <div className='row2'>
                         <div class="fileBox" >
-                            <label for="uploadBtn" className="btn_file" > </label>
-                            <input type="file" id="uploadBtn_0" className="uploadBtn" onChange={onChangeImage} accept=".jpg, .jpeg, .png" />
+                            <label for="uploadBtn_0" className="btn_file" > </label>
+                            <input type="file" id="uploadBtn_0" className="uploadBtn" 
+                                onChange={onChangeImage} accept=".jpg, .jpeg, .png" />
                         </div>
                         <div class="fileBox" >
-                            <label for="uploadBtn" className="btn_file" > </label>
-                            <input type="file" id="uploadBtn_1" className="uploadBtn" onChange={onChangeImage} accept=".mp4, .wmv, .avi" />
+                            <label for="uploadBtn_1" className="btn_file" > </label>
+                            <input type="file" id="uploadBtn_1" className="uploadBtn" 
+                                onChange={onChangeImage} accept=".mp4, .wmv, .avi"  />
                         </div>
                         <div class="fileBox" >
-                            <label for="uploadBtn" className="btn_file" > </label>
-                            <input type="file" id="uploadBtn_2" className="uploadBtn" onChange={onChangeImage} accept=".txt" />
+                            <label for="uploadBtn_2" className="btn_file" > </label>
+                            <input type="file" id="uploadBtn_2" className="uploadBtn" 
+                                onChange={onChangeImage} accept=".txt" hidden />
                         </div>
                     
                         <div className="icon04">
@@ -150,11 +164,11 @@ const Cont = () => {
                             );
                         })}
                     </div>
-                    
+                    {/* 더보기버튼 */}
+                    <button className="more">더보기</button>
                 </div>
                 
-                {/* 더보기버튼 */}
-                <button className="more">더보기</button>
+                
             </div>
            
             

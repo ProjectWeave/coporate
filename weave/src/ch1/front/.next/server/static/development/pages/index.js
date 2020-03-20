@@ -122,9 +122,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reducers/post */ "./reducers/post.js");
 var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\File.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-//import React from 'react';
  //import { useSelector, useDispatch } from 'react-redux';
-//import axios from 'axios';
 
 
 
@@ -212,35 +210,35 @@ const File = () => {
     onSubmit: onSubmitGroup,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 76
     },
     __self: undefined
   }, __jsx("div", {
     className: "gimg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 77
     },
     __self: undefined
   }, __jsx("img", {
     src: img,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
+      lineNumber: 78
     },
     __self: undefined
   })), __jsx("div", {
     className: "filebox",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
+      lineNumber: 81
     },
     __self: undefined
   }, __jsx("label", {
     htmlFor: "file",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 82
     },
     __self: undefined
   }, "\uC0AC\uC9C4\uC744 \uC120\uD0DD\uD574\uC8FC\uC138\uC694."), __jsx("input", {
@@ -251,14 +249,14 @@ const File = () => {
     className: "upload",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 83
     },
     __self: undefined
   })), __jsx("div", {
     className: "group",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 87
     },
     __self: undefined
   }, __jsx("label", {
@@ -266,7 +264,7 @@ const File = () => {
     className: "gtit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 88
     },
     __self: undefined
   }, " \uADF8\uB8F9\uC774\uB984"), __jsx("input", {
@@ -277,7 +275,7 @@ const File = () => {
     onChange: InputChangeTit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 89
     },
     __self: undefined
   }), __jsx("label", {
@@ -285,7 +283,7 @@ const File = () => {
     className: "gtit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 90
     },
     __self: undefined
   }, " \uADF8\uB8F9\uC18C\uAC1C"), __jsx("input", {
@@ -296,14 +294,14 @@ const File = () => {
     onChange: InputChangeText,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 91
     },
     __self: undefined
   }), __jsx("p", {
     className: "send",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 92
     },
     __self: undefined
   }, __jsx("input", {
@@ -312,7 +310,7 @@ const File = () => {
     loading: addingGroupPost,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 93
     },
     __self: undefined
   }), __jsx("input", {
@@ -321,7 +319,7 @@ const File = () => {
     onClick: popBlockClose,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 94
     },
     __self: undefined
   }))));
@@ -445,145 +443,54 @@ const File = () => {
 /*!*********************************!*\
   !*** ./components/GroupForm.js ***!
   \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/post */ "./reducers/post.js");
-var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\GroupForm.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-const GroupForm = () => {
-  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])();
-  const {
-    0: text,
-    1: setText
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
-  const {
-    imagePaths,
-    isAddingPost,
-    postAdded
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.post);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    setText('');
-  }, [postAdded === true]);
-  const onSubmitForm = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    e.preventDefault();
-    dispatch({
-      type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_POST_REQUEST"],
-      data: {
-        text
-      }
-    });
-  }, []);
-  const onChangeText = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    setText(e.target.value);
-  }, []);
-  return __jsx("form", {
-    style: {
-      margin: '10px 0 20px'
-    },
-    encType: "multipart/form-data",
-    onSubmit: onSubmitForm,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29
-    },
-    __self: undefined
-  }, __jsx("input", {
-    htmltype: "textarea",
-    maxLength: 140,
-    placeholder: "\uC18C\uC2DD\uC744 \uB0A8\uACA8\uC8FC\uC138\uC694",
-    value: text,
-    onChange: onChangeText,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: undefined
-  }), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31
-    },
-    __self: undefined
-  }, __jsx("input", {
-    type: "file",
-    multiple: true,
-    hidden: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 32
-    },
-    __self: undefined
-  }), __jsx("button", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 33
-    },
-    __self: undefined
-  }, "\uC774\uBBF8\uC9C0 \uC5C5\uB85C\uB4DC"), __jsx("button", {
-    style: {
-      float: "right"
-    },
-    htmltype: "submit",
-    loading: isAddingPost,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 34
-    },
-    __self: undefined
-  }, "\uC9F9\uC9F9")), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 36
-    },
-    __self: undefined
-  }, imagePaths.map(v => __jsx("div", {
-    key: v,
-    style: {
-      display: "inline-block"
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39
-    },
-    __self: undefined
-  }, __jsx("img", {
-    src: `http://localhost:3065/${v}`,
-    style: {
-      width: '200px'
-    },
-    alt: v,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40
-    },
-    __self: undefined
-  }), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41
-    },
-    __self: undefined
-  }, __jsx("button", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: undefined
-  }, "\uC81C\uAC70"))))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (GroupForm);
+// import React, { useCallback, useState, useEffect } from 'react';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { ADD_POST_REQUEST } from '../reducers/post';
+// const GroupForm = () => {
+//     const dispatch = useDispatch();
+//     const [text, setText ] = useState('');
+//     const { imagePaths, isAddingPost, postAdded } = useSelector(state => state.post);
+//     useEffect(() => {
+//         setText('');
+//     },[postAdded === true]);
+//     const onSubmitForm = useCallback((e) => {
+//         e.preventDefault();
+//         dispatch({
+//             type: ADD_POST_REQUEST,
+//             data: {
+//                 text,
+//             },
+//         });
+//     }, []);
+//     const onChangeText = useCallback((e) => {
+//         setText(e.target.value);
+//     }, []);
+//     return (
+//         <form style={{ margin: '10px 0 20px'}} encType="multipart/form-data" onSubmit={onSubmitForm}>
+//             <input htmltype="textarea" maxLength={140} placeholder="소식을 남겨주세요" value={text} onChange={onChangeText}></input>
+//             <div>
+//                 <input type="file" multiple hidden></input>
+//                 <button>이미지 업로드</button>
+//                 <button style={{float:"right"}} htmltype="submit" loading={isAddingPost.toString()}>짹짹</button>
+//             </div>
+//             <div>
+//                 {/* 반복문 */}
+//                 {imagePaths.map((v) => (
+//                         <div key={v} style={{display:"inline-block"}}>
+//                             <img src={`http://localhost:3065/${v}`} style={{ width:'200px'}} alt={v}></img> 
+//                             <div>
+//                                 <button>제거</button>
+//                             </div>   
+//                         </div>
+//                 ))}
+//             </div>
+//         </form>
+//     );
+// };
+// export default GroupForm;
 
 /***/ }),
 
@@ -595,74 +502,6 @@ const GroupForm = () => {
 /***/ (function(module, exports) {
 
 
-
-/***/ }),
-
-/***/ "./components/Home.js":
-/*!****************************!*\
-  !*** ./components/Home.js ***!
-  \****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_Login__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Login */ "./components/Login.js");
-/* harmony import */ var _components_First_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/First.css */ "./components/First.css");
-/* harmony import */ var _components_First_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_First_css__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\Home.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-const Home = () => {
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9
-    },
-    __self: undefined
-  }, __jsx("article", {
-    className: "lLg",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    },
-    __self: undefined
-  }, __jsx("h2", {
-    className: "bld",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: undefined
-  }, "\uC704\uBE0C\uC124\uBA85\uB780"), __jsx("div", {
-    className: "wlogo",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: undefined
-  }), __jsx("div", {
-    className: "tpic",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: undefined
-  })), __jsx(_components_Login__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    },
-    __self: undefined
-  }));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Home);
 
 /***/ }),
 
@@ -683,6 +522,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _Plus__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Plus */ "./components/Plus.js");
 /* harmony import */ var _GroupForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./GroupForm */ "./components/GroupForm.js");
+/* harmony import */ var _GroupForm__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_GroupForm__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _Contents_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Contents.css */ "./components/Contents.css");
 /* harmony import */ var _Contents_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_Contents_css__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _Templete_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Templete.css */ "./components/Templete.css");
@@ -865,547 +705,6 @@ const IndexPage = () => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (IndexPage);
-
-/***/ }),
-
-/***/ "./components/Join.css":
-/*!*****************************!*\
-  !*** ./components/Join.css ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ "./components/Join.js":
-/*!****************************!*\
-  !*** ./components/Join.js ***!
-  \****************************/
-/*! exports provided: useInput, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useInput", function() { return useInput; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Home */ "./components/Home.js");
-/* harmony import */ var _Join_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Join.css */ "./components/Join.css");
-/* harmony import */ var _Join_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_Join_css__WEBPACK_IMPORTED_MODULE_6__);
-var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\Join.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-
-
-
-
-const TextInput = ({
-  value
-}) => {
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: undefined
-  }, value) //npmjs.com
-  ;
-};
-
-TextInput.propTypes = {
-  value: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
-}; //커스텀훅
-
-const useInput = (initValue = null) => {
-  const {
-    0: value,
-    1: setter
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(initValue);
-  const handler = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    setter(e.target.value);
-  }, []);
-  return [value, handler];
-};
-
-const Join = () => {
-  const {
-    0: passwordCheck,
-    1: setPasswordCheck
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])();
-  const {
-    0: term,
-    1: setTerm
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-  const {
-    0: passwordError,
-    1: setPasswordError
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-  const {
-    0: termError,
-    1: setTermError
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-  const [id, onChangeId] = useInput();
-  const [nick, onChangeNick] = useInput();
-  const [password, onChangePassword] = useInput();
-  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useDispatch"])();
-  const {
-    isSignedUp,
-    isSigningUp,
-    me
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useSelector"])(state => state.user); // useEffect((me) => {
-  //     if(me){
-  //         alert('로그인했으니 메인페이지로 이동합니다.');
-  //         Router.push("/indexpage");
-  //     }
-  // }, [me && me.id]);
-
-  const onSubmit = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    e.preventDefault();
-
-    if (password !== passwordCheck) {
-      return setPasswordError(true);
-    }
-
-    if (!term) {
-      return setTermError(true);
-    } // 회원가입 성공시 로그인상태로 돌아가기
-
-
-    if (isSignedUp === true) {
-      alert('가입해주셔서 감사합니다!');
-      window.location.reload();
-    }
-
-    return dispatch({
-      type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["SIGN_UP_REQUEST"],
-      data: {
-        userId: id,
-        password,
-        nickname: nick
-      }
-    });
-  }, [id, nick, password, passwordCheck, term]); // const onChangeId=(e)=>{
-  //     setId(e.target.value);
-  // };
-  // const onChangeNick=(e)=>{
-  //     setNick(e.target.value);
-  // };
-  // const onChangePassword=(e)=>{
-  //     setPassword(e.target.value);
-  // };
-
-  const onChangePasswordCheck = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    setPasswordError(e.target.value !== password); //비밀번호체크
-
-    setPasswordCheck(e.target.value);
-  }, [password]);
-  const onChangeTerm = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    setTermError(false); //setTermError메세기 기본적으로 꺼두기
-
-    setTerm(e.target.checked);
-  }, []);
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
-    className: "logo_",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 98
-    },
-    __self: undefined
-  }), __jsx("div", {
-    className: "rbg2",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 100
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "lg_title2",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 101
-    },
-    __self: undefined
-  }, "\uC9C0\uAE08 \uBC14\uB85C \uAC00\uC785\uD558\uC138\uC694!"), __jsx("form", {
-    onSubmit: onSubmit,
-    className: "joinForm",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 102
-    },
-    __self: undefined
-  }, __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 103
-    },
-    __self: undefined
-  }, __jsx("label", {
-    htmlFor: "user-id",
-    className: "bld",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 104
-    },
-    __self: undefined
-  }), __jsx("input", {
-    name: "user-id",
-    value: id,
-    required: true,
-    onChange: onChangeId,
-    className: "tbox",
-    placeholder: "\uC544\uC774\uB514\uB97C \uC785\uB825\uD558\uC138\uC694.",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 105
-    },
-    __self: undefined
-  })), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 107
-    },
-    __self: undefined
-  }, __jsx("label", {
-    htmlFor: "user-nick",
-    className: "bld",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 108
-    },
-    __self: undefined
-  }), __jsx("input", {
-    name: "user-nick",
-    value: nick,
-    required: true,
-    onChange: onChangeNick,
-    className: "tbox",
-    placeholder: "\uB2C9\uB124\uC784\uC744 \uC785\uB825\uD558\uC138\uC694.",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 109
-    },
-    __self: undefined
-  })), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 111
-    },
-    __self: undefined
-  }, __jsx("label", {
-    htmlFor: "user-password",
-    className: "bld",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 112
-    },
-    __self: undefined
-  }), __jsx("input", {
-    name: "user-password",
-    type: "password",
-    value: password,
-    required: true,
-    onChange: onChangePassword,
-    className: "tbox",
-    placeholder: "\uBE44\uBC00\uBC88\uD638\uB97C \uC785\uB825\uD558\uC138\uC694.",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 113
-    },
-    __self: undefined
-  })), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 115
-    },
-    __self: undefined
-  }, __jsx("label", {
-    htmlFor: "user-password-chk",
-    className: "bld",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 116
-    },
-    __self: undefined
-  }), __jsx("input", {
-    name: "user-password-chk",
-    type: "password",
-    value: passwordCheck,
-    required: true,
-    onChange: onChangePasswordCheck,
-    className: "tbox",
-    placeholder: "\uBE44\uBC00\uBC88\uD638\uB97C \uD655\uC778\uD558\uC138\uC694.",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 117
-    },
-    __self: undefined
-  }), passwordError && __jsx("div", {
-    style: {
-      color: 'red'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 118
-    },
-    __self: undefined
-  }, "\uBE44\uBC00\uBC88\uD638\uAC00 \uC77C\uCE58\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.")), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 120
-    },
-    __self: undefined
-  }, __jsx("input", {
-    type: "checkbox",
-    name: "user-term",
-    checked: term,
-    onChange: onChangeTerm,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 121
-    },
-    __self: undefined
-  }), "\uAC1C\uC778\uC815\uBCF4 \uC218\uC9D1 \uBC0F \uC774\uC6A9\uC5D0 \uB3D9\uC758\uD569\uB2C8\uB2E4.", termError && __jsx("div", {
-    style: {
-      color: 'red'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 122
-    },
-    __self: undefined
-  }, "\uC57D\uAD00\uC5D0 \uB3D9\uC758\uD558\uC154\uC57C\uD569\uB2C8\uB2E4.")), __jsx("div", {
-    className: "joinBtn",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 124
-    },
-    __self: undefined
-  }, __jsx("button", {
-    type: "submit",
-    className: "btn",
-    loading: isSigningUp,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 125
-    },
-    __self: undefined
-  }, "\uAC00\uC785\uD558\uAE30")))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Join);
-
-/***/ }),
-
-/***/ "./components/Login.js":
-/*!*****************************!*\
-  !*** ./components/Login.js ***!
-  \*****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _pages_Join__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/Join */ "./pages/Join.js");
-/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _Join__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Join */ "./components/Join.js");
-var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\components\\Login.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-
- // import IndexPage from './IndexPage';
-
-
-
-const Login = () => {
-  const [id, onChangeId] = Object(_pages_Join__WEBPACK_IMPORTED_MODULE_3__["useInput"])();
-  const [password, onChangePassword] = Object(_pages_Join__WEBPACK_IMPORTED_MODULE_3__["useInput"])();
-  const {
-    isLoggingIn
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.user);
-  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useDispatch"])();
-  const {
-    0: Mode,
-    1: setMode
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('read'); //초기값
-
-  const onSubmitForm = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    e.preventDefault();
-    dispatch({
-      type: _reducers_user__WEBPACK_IMPORTED_MODULE_4__["LOG_IN_REQUEST"],
-      data: {
-        userId: id,
-        password
-      }
-    });
-  }, [id, password]);
-
-  const onChangeMode = e => {
-    e.preventDefault(); //setMode(e.target.mode);
-
-    setMode('clicked');
-  };
-
-  if (Mode === 'clicked') {
-    return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_Join__WEBPACK_IMPORTED_MODULE_6__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 38
-      },
-      __self: undefined
-    }));
-  }
-
-  ;
-  if (Mode === 'read') return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: undefined
-  }, __jsx("article", {
-    className: "rLg",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 45
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "logo",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 46
-    },
-    __self: undefined
-  }), __jsx("div", {
-    className: "lg",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 47
-    },
-    __self: undefined
-  }, __jsx("h2", {
-    className: "bld",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 48
-    },
-    __self: undefined
-  }, "\uB85C\uADF8\uC778"), __jsx("form", {
-    className: "lgform",
-    action: "create_process",
-    method: "post",
-    onSubmit: onSubmitForm,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 49
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "lg_title",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 53
-    },
-    __self: undefined
-  }, "\uC9C0\uAE08 \uBC14\uB85C \uAC00\uC785\uD558\uC138\uC694!"), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 54
-    },
-    __self: undefined
-  }, __jsx("label", {
-    htmlFor: "user-id",
-    className: "bld",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 55
-    },
-    __self: undefined
-  }, "\uC544\uC774\uB514"), __jsx("input", {
-    name: "user-id",
-    value: id,
-    onChange: onChangeId,
-    placeholder: "\uC544\uC774\uB514\uB97C \uC785\uB825\uD558\uC138\uC694.",
-    className: "tbox",
-    required: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 56
-    },
-    __self: undefined
-  }), __jsx("label", {
-    htmlFor: "user-password",
-    className: "bld",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 57
-    },
-    __self: undefined
-  }, "\uBE44\uBC00\uBC88\uD638"), __jsx("input", {
-    name: "user-pasword",
-    type: "password",
-    placeholder: "\uBE44\uBC00\uBC88\uD638\uB97C \uC785\uB825\uD558\uC138\uC694.",
-    className: "tbox",
-    value: password,
-    onChange: onChangePassword,
-    required: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 58
-    },
-    __self: undefined
-  })), __jsx("div", {
-    className: "btngroup",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 61
-    },
-    __self: undefined
-  }, __jsx("button", {
-    htmltype: "submit",
-    className: "btn",
-    loading: isLoggingIn,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 62
-    },
-    __self: undefined
-  }, "\uB85C\uADF8\uC778"), __jsx("button", {
-    htmltype: "button",
-    className: "btn",
-    onClick: onChangeMode,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 63
-    },
-    __self: undefined
-  }, "\uD68C\uC6D0\uAC00\uC785"))))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Login);
 
 /***/ }),
 
@@ -3565,320 +2864,6 @@ if (false) {} else {
 
 /***/ }),
 
-/***/ "./pages/Join.js":
-/*!***********************!*\
-  !*** ./pages/Join.js ***!
-  \***********************/
-/*! exports provided: useInput, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useInput", function() { return useInput; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\pages\\Join.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-
-
-const TextInput = ({
-  value
-}) => {
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9
-    },
-    __self: undefined
-  }, value) //npmjs.com
-  ;
-};
-
-TextInput.propTypes = {
-  value: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
-}; //커스텀훅
-
-const useInput = (initValue = null) => {
-  const {
-    0: value,
-    1: setter
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(initValue);
-  const handler = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    setter(e.target.value);
-  }, []);
-  return [value, handler];
-};
-
-const Join = () => {
-  const {
-    0: passwordCheck,
-    1: setPasswordCheck
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])();
-  const {
-    0: term,
-    1: setTerm
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-  const {
-    0: passwordError,
-    1: setPasswordError
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-  const {
-    0: termError,
-    1: setTermError
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-  const [id, onChangeId] = useInput();
-  const [nick, onChangeNick] = useInput();
-  const [password, onChangePassword] = useInput();
-  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useDispatch"])();
-  const {
-    isSigningUp,
-    me
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useSelector"])(state => state.user);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    if (me) {
-      alert('로그인했으니 메인페이지로 이동합니다.');
-      next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push("/indexpage");
-    }
-  }, [me && me.id]);
-  const onSubmit = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    e.preventDefault();
-
-    if (password !== passwordCheck) {
-      return setPasswordError(true);
-    }
-
-    if (!term) {
-      return setTermError(true);
-    }
-
-    return dispatch({
-      type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["SIGN_UP_REQUEST"],
-      data: {
-        userID: id,
-        password,
-        nickname: nick
-      }
-    });
-  }, [id, nick, password, passwordCheck, term]); // const onChangeId=(e)=>{
-  //     setId(e.target.value);
-  // };
-  // const onChangeNick=(e)=>{
-  //     setNick(e.target.value);
-  // };
-  // const onChangePassword=(e)=>{
-  //     setPassword(e.target.value);
-  // };
-
-  const onChangePasswordCheck = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    setPasswordError(e.target.value !== password); //비밀번호체크
-
-    setPasswordCheck(e.target.value);
-  }, [password]);
-  const onChangeTerm = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-    setTermError(false); //setTermError메세기 기본적으로 꺼두기
-
-    setTerm(e.target.checked);
-  }, []);
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 89
-    },
-    __self: undefined
-  }, __jsx("form", {
-    onSubmit: onSubmit,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 90
-    },
-    __self: undefined
-  }, __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 91
-    },
-    __self: undefined
-  }, __jsx("label", {
-    htmlFor: "user-id",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 92
-    },
-    __self: undefined
-  }), "\uC544\uC774\uB514", __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 92
-    },
-    __self: undefined
-  }), __jsx("input", {
-    name: "user-id",
-    value: id,
-    required: true,
-    onChange: onChangeId,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 93
-    },
-    __self: undefined
-  })), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 95
-    },
-    __self: undefined
-  }, __jsx("label", {
-    htmlFor: "user-nick",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 96
-    },
-    __self: undefined
-  }), "\uB2C9\uB124\uC784", __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 96
-    },
-    __self: undefined
-  }), __jsx("input", {
-    name: "user-nick",
-    value: nick,
-    required: true,
-    onChange: onChangeNick,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 97
-    },
-    __self: undefined
-  })), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 99
-    },
-    __self: undefined
-  }, __jsx("label", {
-    htmlFor: "user-password",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 100
-    },
-    __self: undefined
-  }), "\uBE44\uBC00\uBC88\uD638", __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 100
-    },
-    __self: undefined
-  }), __jsx("input", {
-    name: "user-password",
-    type: "password",
-    value: password,
-    required: true,
-    onChange: onChangePassword,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 101
-    },
-    __self: undefined
-  })), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 103
-    },
-    __self: undefined
-  }, __jsx("label", {
-    htmlFor: "user-password-chk",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 104
-    },
-    __self: undefined
-  }), "\uBE44\uBC00\uBC88\uD638\uCCB4\uD06C", __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 104
-    },
-    __self: undefined
-  }), __jsx("input", {
-    name: "user-password-chk",
-    type: "password",
-    value: passwordCheck,
-    required: true,
-    onChange: onChangePasswordCheck,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 105
-    },
-    __self: undefined
-  }), passwordError && __jsx("div", {
-    style: {
-      color: 'red'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 106
-    },
-    __self: undefined
-  }, "\uBE44\uBC00\uBC88\uD638\uAC00 \uC77C\uCE58\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.")), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 108
-    },
-    __self: undefined
-  }, __jsx("input", {
-    type: "checkbox",
-    name: "user-term",
-    checked: term,
-    onChange: onChangeTerm,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 109
-    },
-    __self: undefined
-  }), "\uB9D0\uC744 \uC798 \uB4E4\uC744\uAC83\uC5D0 \uB3D9\uC758 \uD569\uB2C8\uB2E4.", termError && __jsx("div", {
-    style: {
-      color: 'red'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 110
-    },
-    __self: undefined
-  }, "\uC57D\uAD00\uC5D0 \uB3D9\uC758\uD558\uC154\uC57C\uD569\uB2C8\uB2E4.")), __jsx("div", {
-    style: {
-      marginTop: 10
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 112
-    },
-    __self: undefined
-  }, __jsx("button", {
-    htmlType: "submit",
-    loading: isSigningUp,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 113
-    },
-    __self: undefined
-  }, "\uAC00\uC785\uD558\uAE30"))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Join);
-
-/***/ }),
-
 /***/ "./pages/index.js":
 /*!************************!*\
   !*** ./pages/index.js ***!
@@ -3890,19 +2875,17 @@ const Join = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Home */ "./components/Home.js");
-/* harmony import */ var _components_IndexPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/IndexPage */ "./components/IndexPage.js");
-/* harmony import */ var _components_First_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/First.css */ "./components/First.css");
-/* harmony import */ var _components_First_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_First_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_IndexPage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/IndexPage */ "./components/IndexPage.js");
+/* harmony import */ var _components_First_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/First.css */ "./components/First.css");
+/* harmony import */ var _components_First_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_First_css__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "C:\\Users\\\uC774\uADC0\uC601\\Documents\\coporate\\weave\\src\\ch1\\front\\pages\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 
-
 const HomePage = () => {
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_components_IndexPage__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_components_IndexPage__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10
@@ -4036,28 +3019,9 @@ const initialState = {
   //그룹만들기업로드 실패사유
   addedGroupPost: false // 그룹만들기폴더 업로드 성공
 
-}; // export const initialStateForGroup={// 화면에 보일 포스트들 
-//     GroupPosts:[{
-//         id: 2,
-//         User:{
-//             id: 1,
-//             nickname: "위브",
-//         },
-//         content: "두리안그룹(그룹포스트)",
-//         img:"https://img1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/liveboard/dailylife/187ea4bc2ad54b1db5030743265c5397.jpg", 
-//         gtext: ["두리안 좋아하는사람들의 모임"],
-//     }], // 그룹화면에 보일 포스트들 
-//     imagePaths:[], //미리보기 이미지경로
-//     isAddingComment: false,
-//     addCommentErrorReason: '',
-//     commentAdded: false,
-//     addingGroupPost: false, // 그룹만들기폴더 업로드중
-//     GroupErrorReason: '', //그룹만들기업로드 실패사유
-//     addedGroupPost: false, // 그룹만들기폴더 업로드 성공
-// };
-
+};
 const dummyPosts = {
-  id: 1,
+  id: 2,
   User: {
     id: 1,
     nickname: '위브'
@@ -4083,17 +3047,7 @@ const dummyGroupPost = {
   },
   createdAt: new Date(),
   content: "위브글입니다.(더미그룹포스트)"
-}; // mainPosts:[{
-//     id:1,
-//     User:{
-//         id: 1,
-//         nickname: "위브",
-//     },
-//     content: "첫번째 게시글",
-//     img:"https://img1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/liveboard/dailylife/187ea4bc2ad54b1db5030743265c5397.jpg", 
-//     Comments: [],
-// }], // 화면에 보일 포스트들 
-
+};
 const LOAD_MAIN_POSTS_REQUEST = 'LOAD_MAIN_POSTS_REQUEST';
 const LOAD_MAIN_POSTS_SUCCESS = 'LOAD_MAIN_POSTS_SUCCESS';
 const LOAD_MAIN_POSTS_FAILURE = 'LOAD_MAIN_POSTS_FAILURE';
@@ -4130,24 +3084,14 @@ const REMOVE_POST_SUCCESS = 'REMOVE_POST_SUCCESS';
 const REMOVE_POST_FAILURE = 'REMOVE_POST_FAILURE';
 const ADD_GROUP_REQUEST = 'ADD_GROUP_REQUEST';
 const ADD_GROUP_SUCCESS = 'ADD_GROUP_SUCCESS';
-const ADD_GROUP_FAILURE = 'ADD_GROUP_FAILURE';
-const ADD_POST = "ADD_POST";
-const ADD_GROUPPOST = "ADD_GROUPPOST";
-const ADD_DUMMY = "ADD_DUMMY";
-const addPost = {
-  type: ADD_POST
-};
-const addGroupPost = {
-  type: ADD_GROUPPOST
-}; // const addDummy = {
-//     type: ADD_DUMMY,
-//     data:{
-//         content:'Hello',
-//         UserId: 1,
-//         User:{
-//             nickname:"두리안",
-//         },
-//     },
+const ADD_GROUP_FAILURE = 'ADD_GROUP_FAILURE'; // const ADD_POST = "ADD_POST";
+// const ADD_GROUPPOST = "ADD_GROUPPOST";
+// const ADD_DUMMY = "ADD_DUMMY";
+// const addPost={
+//     type: ADD_POST,   
+// };
+// const addGroupPost={
+//     type: ADD_GROUPPOST,   
 // };
 
 /* harmony default export */ __webpack_exports__["default"] = ((state = initialState, action) => {
@@ -4155,7 +3099,6 @@ const addGroupPost = {
     case ADD_POST_REQUEST:
       {
         return _objectSpread({}, state, {
-          //immutable
           isAddingPost: true,
           addPostErrorReason: '',
           postAdded: false
@@ -4182,7 +3125,6 @@ const addGroupPost = {
     case ADD_COMMENT_REQUEST:
       {
         return _objectSpread({}, state, {
-          //immutable
           isAddingComment: true,
           addCommentErrorReason: '',
           commentAdded: false
@@ -4191,11 +3133,10 @@ const addGroupPost = {
 
     case ADD_COMMENT_SUCCESS:
       {
-        //immutable
         const postIndex = state.mainPosts.findIndex(v => v.id === action.data.postId); //어떤게시물에 댓글을 작성할것인지
 
         const post = state.mainPosts[postIndex];
-        const Comments = [...post.Comments, dummyComment];
+        const Comments = [...post.Comments, data.comment];
         const mainPosts = [...state.mainPosts];
         mainPosts[postIndex] = _objectSpread({}, post, {
           Comments
@@ -4213,6 +3154,25 @@ const addGroupPost = {
           isAddingComment: false,
           addCommentErrorReason: action.error
         });
+      }
+
+    case LOAD_MAIN_POSTS_REQUEST:
+      {
+        return _objectSpread({}, state, {
+          mainPosts: []
+        });
+      }
+
+    case LOAD_MAIN_POSTS_SUCCESS:
+      {
+        return _objectSpread({}, state, {
+          mainPosts: action.data
+        });
+      }
+
+    case LOAD_MAIN_POSTS_FAILURE:
+      {
+        return _objectSpread({}, state);
       }
     //그룹만들기 업로드 
 
@@ -4240,289 +3200,6 @@ const addGroupPost = {
           addedGroupPost: false,
           GroupErrorReason: action.error
         });
-      }
-
-    default:
-      {
-        return _objectSpread({}, state);
-      }
-  }
-}); // export default (state = initialStateForGroup, action) => {
-//     switch (action.type){
-//         //그룹만들기 업로드 
-//         case ADD_GROUP_REQUEST: {
-//             return {
-//                 ...state,
-//                 addingGroupPost: true,
-//                 GroupErrorReason : '',
-//                 addedGroupPost: false,
-//             };
-//         }
-//         case ADD_GROUP_SUCCESS: {
-//             return {
-//                 ...state,
-//                 addingGroupPost: false,
-//                 GroupPosts: [dummyGroupPost, ...state.GroupPosts],
-//                 addedGroupPost: true,
-//             };
-//         }
-//         case ADD_GROUP_FAILURE: {
-//             return {
-//                 ...state,
-//                 addedGroupPost: false,
-//                 GroupErrorReason : action.error,
-//             };
-//         }
-//         default: {
-//             return{
-//                 ...state,
-//             };
-//         }
-//     }
-// };
-
-/***/ }),
-
-/***/ "./reducers/user.js":
-/*!**************************!*\
-  !*** ./reducers/user.js ***!
-  \**************************/
-/*! exports provided: initialState, SIGN_UP_REQUEST, SIGN_UP_SUCCESS, SIGN_UP_FAILURE, LOG_IN_REQUEST, LOG_IN_SUCCESS, LOG_IN_FAILURE, LOAD_USER_REQUEST, LOAD_USER_SUCCESS, LOAD_USER_FAILURE, LOG_OUT_REQUEST, LOG_OUT_SUCCESS, LOG_OUT_FAILURE, LOAD_FOLLOW_REQUEST, LOAD_FOLLOW_SUCCESS, LOAD_FOLLOW_FAILURE, FOLLOW_USER_REQUEST, FOLLOW_USER_SUCCESS, FOLLOW_USER_FAILURE, UNFOLLOW_USER_REQUEST, UNFOLLOW_USER_SUCCESS, UNFOLLOW_USER_FAILURE, REMOVE_FOLLOWER_REQUEST, REMOVE_FOLLOWER_SUCCESS, REMOVE_FOLLOWER_FAILURE, ADD_POST_TO_ME, loginAction, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGN_UP_REQUEST", function() { return SIGN_UP_REQUEST; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGN_UP_SUCCESS", function() { return SIGN_UP_SUCCESS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGN_UP_FAILURE", function() { return SIGN_UP_FAILURE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_IN_REQUEST", function() { return LOG_IN_REQUEST; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_IN_SUCCESS", function() { return LOG_IN_SUCCESS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_IN_FAILURE", function() { return LOG_IN_FAILURE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOAD_USER_REQUEST", function() { return LOAD_USER_REQUEST; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOAD_USER_SUCCESS", function() { return LOAD_USER_SUCCESS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOAD_USER_FAILURE", function() { return LOAD_USER_FAILURE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_OUT_REQUEST", function() { return LOG_OUT_REQUEST; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_OUT_SUCCESS", function() { return LOG_OUT_SUCCESS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_OUT_FAILURE", function() { return LOG_OUT_FAILURE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOAD_FOLLOW_REQUEST", function() { return LOAD_FOLLOW_REQUEST; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOAD_FOLLOW_SUCCESS", function() { return LOAD_FOLLOW_SUCCESS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOAD_FOLLOW_FAILURE", function() { return LOAD_FOLLOW_FAILURE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FOLLOW_USER_REQUEST", function() { return FOLLOW_USER_REQUEST; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FOLLOW_USER_SUCCESS", function() { return FOLLOW_USER_SUCCESS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FOLLOW_USER_FAILURE", function() { return FOLLOW_USER_FAILURE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UNFOLLOW_USER_REQUEST", function() { return UNFOLLOW_USER_REQUEST; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UNFOLLOW_USER_SUCCESS", function() { return UNFOLLOW_USER_SUCCESS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UNFOLLOW_USER_FAILURE", function() { return UNFOLLOW_USER_FAILURE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_FOLLOWER_REQUEST", function() { return REMOVE_FOLLOWER_REQUEST; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_FOLLOWER_SUCCESS", function() { return REMOVE_FOLLOWER_SUCCESS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_FOLLOWER_FAILURE", function() { return REMOVE_FOLLOWER_FAILURE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_POST_TO_ME", function() { return ADD_POST_TO_ME; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loginAction", function() { return loginAction; });
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-properties */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptors */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptors.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptor */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-symbols */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-
-
-
-
-
-
-
-
-function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(object); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default.a) { var symbols = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default()(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(target, key, source[key]); }); } else if (_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default.a) { _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default()(target, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default()(source)); } else { ownKeys(source).forEach(function (key) { _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(target, key, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(source, key)); }); } } return target; }
-
-const dummyUser = {
-  nickname: '위브',
-  Post: [],
-  Followings: [],
-  Followers: [],
-  id: 1
-}; //초기값
-
-const initialState = {
-  isLoggingOut: false,
-  // 로그아웃 시도중
-  isLoggingIn: false,
-  // 로그인 시도중
-  logInErrorReason: '',
-  //로그인 실패사유
-  signedUp: false,
-  // 회원가입 성공
-  isSigningUp: false,
-  // 회원가입 시도중
-  signUpErrorReason: '',
-  // 회원가입 실패사유
-  me: null,
-  // 로그인 여부
-  followingList: [],
-  // 팔로잉 리스트
-  followerList: [],
-  // 팔로워 리스트
-  userInfo: null // 남의정보
-
-}; // 액션의이름
-
-const SIGN_UP_REQUEST = "SIGN_UP_REQUEST";
-const SIGN_UP_SUCCESS = "SIGN_UP_SUCCESS";
-const SIGN_UP_FAILURE = "SIGN_UP_FAILURE";
-const LOG_IN_REQUEST = "LOG_IN_REQUEST"; //액션의 이름
-
-const LOG_IN_SUCCESS = "LOG_IN_SUCCESS"; //액션의 이름
-
-const LOG_IN_FAILURE = "LOG_IN_FAILURE"; //액션의 이름
-
-const LOAD_USER_REQUEST = "LOAD_USER_REQUEST";
-const LOAD_USER_SUCCESS = "LOAD_USER_SUCCESS";
-const LOAD_USER_FAILURE = "LOAD_USER_FAILURE";
-const LOG_OUT_REQUEST = "LOG_OUT_REQUEST";
-const LOG_OUT_SUCCESS = "LOG_OUT_SUCCESS";
-const LOG_OUT_FAILURE = "LOG_OUT_FAILURE";
-const LOAD_FOLLOW_REQUEST = "LOAD_FOLLOW_REQUEST";
-const LOAD_FOLLOW_SUCCESS = "LOAD_FOLLOW_SUCCESS";
-const LOAD_FOLLOW_FAILURE = "LOAD_FOLLOW_FAILURE";
-const FOLLOW_USER_REQUEST = "FOLLOW_USER_REQUEST";
-const FOLLOW_USER_SUCCESS = "FOLLOW_USER_SUCCESS";
-const FOLLOW_USER_FAILURE = "FOLLOW_USER_FAILURE";
-const UNFOLLOW_USER_REQUEST = "UNFOLLOW_USER_REQUEST";
-const UNFOLLOW_USER_SUCCESS = "UNFOLLOW_USER_SUCCESS";
-const UNFOLLOW_USER_FAILURE = "UNFOLLOW_USER_FAILURE";
-const REMOVE_FOLLOWER_REQUEST = "REMOVE_FOLLOWER_REQUEST";
-const REMOVE_FOLLOWER_SUCCESS = "REMOVE_FOLLOWER_SUCCESS";
-const REMOVE_FOLLOWER_FAILURE = "REMOVE_FOLLOWER_FAILURE";
-const ADD_POST_TO_ME = "ADD_POST_TO_ME";
-const loginAction = data => {
-  return {
-    type: LOG_IN,
-    data
-  };
-}; ///////////////////////////////////////
-// export const signUpAction = (data) => {
-//     return{
-//         type: SIGN_UP_REQUEST,
-//         data: data,
-//     };
-// };
-// export const signUp = data => ({
-//         type: SIGN_UP_REQUEST,
-//         data: data,
-// });
-// export const signUpSuccess = {
-//         type: SIGN_UP_SUCCESS,
-//     };
-// export const loginRequestAction = data=> ({
-//     type : LOG_IN_REQUEST,
-//     data,
-// });
-// export const logoutRequestAction = {
-//     type : LOG_OUT_REQUEST,
-// };
-///////////////////////////////////////
-
-/* harmony default export */ __webpack_exports__["default"] = ((state = initialState, action) => {
-  switch (action.type) {
-    case LOG_IN_REQUEST:
-      {
-        return _objectSpread({}, state, {
-          isLoading: true,
-          logInErrorReason: ''
-        });
-      }
-
-    case LOG_IN_SUCCESS:
-      {
-        return _objectSpread({}, state, {
-          isLoggingIn: false,
-          me: action.data,
-          isLoading: false
-        });
-      }
-
-    case LOG_IN_FAILURE:
-      {
-        return _objectSpread({}, state, {
-          isLoggingIn: false,
-          logInErrorReason: action.error,
-          me: null
-        });
-      }
-
-    case LOG_OUT_REQUEST:
-      {
-        return _objectSpread({}, state, {
-          isLoggingOut: true
-        });
-      }
-
-    case LOG_OUT_SUCCESS:
-      {
-        return _objectSpread({}, state, {
-          isLoggingOut: false,
-          me: null
-        });
-      }
-
-    case LOG_OUT_FAILURE:
-      {
-        return _objectSpread({}, state, {
-          isLoggingOut: false,
-          logInErrorReason: action.error,
-          me: dummyUser
-        });
-      }
-
-    case SIGN_UP_REQUEST:
-      {
-        return _objectSpread({}, state, {
-          isSigningUp: true,
-          isSignedUp: false,
-          signUpErrorReason: ''
-        });
-      }
-
-    case SIGN_UP_SUCCESS:
-      {
-        return _objectSpread({}, state, {
-          isSigningUp: false,
-          isSignedUp: true
-        });
-      }
-
-    case SIGN_UP_FAILURE:
-      {
-        return _objectSpread({}, state, {
-          isSigningUp: false,
-          signUpErrorReason: action.error
-        });
-      }
-
-    case LOAD_USER_REQUEST:
-      {
-        return _objectSpread({}, state);
-      }
-
-    case LOAD_USER_SUCCESS:
-      {
-        return _objectSpread({}, state, {
-          me: action.data
-        });
-      }
-
-    case LOAD_USER_FAILURE:
-      {
-        return _objectSpread({}, state);
       }
 
     default:
@@ -4664,17 +3341,6 @@ module.exports = require("core-js/library/fn/promise");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/weak-map");
-
-/***/ }),
-
-/***/ "next/router":
-/*!******************************!*\
-  !*** external "next/router" ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("next/router");
 
 /***/ }),
 
