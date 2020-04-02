@@ -66,7 +66,7 @@ const Cont = () => {
     // 단일이미지 미리보기
     const [img, setImg] = useState(null);
     const onChangeImage = useCallback((e)=>{
-        console.log('파일창열리니?');
+        // console.log('파일창열리니?');
         var reader = new FileReader();
         reader.readAsDataURL(e.target.files[0]);
         reader.onloadend = function () {

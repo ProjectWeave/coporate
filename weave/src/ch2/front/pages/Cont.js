@@ -48,6 +48,7 @@ const Cont = () => {
         setText('');
     },[postAdded === true]);
 
+
     const onSubmitForm = useCallback((e) => {
         e.preventDefault();
         // 빈텍스트, 스페이스바 게시물올리기 막기
@@ -66,7 +67,6 @@ const Cont = () => {
     // 단일이미지 미리보기
     const [img, setImg] = useState(null);
     const onChangeImage = useCallback((e)=>{
-        // console.log('파일창열리니?');
         var reader = new FileReader();
         reader.readAsDataURL(e.target.files[0]);
         reader.onloadend = function () {
@@ -89,18 +89,6 @@ const Cont = () => {
                 </ul>           
             </div>
             <div className="wrap">
-                {/* <div className="groupinfo">
-                    <div className="groupimg"></div>
-                    <div className="grouptext">
-                        <h1>댕댕이집사 그룹</h1>
-                        <p className="numMem">Member. 43</p>
-                        <p>세젤예 댕댕이들 모여라~!</p>
-                        <nav className="groupSubmitBtn">
-                            <button className="gjoin">가입하기</button>
-                            <button className="gout">그룹탈퇴</button>
-                        </nav>
-                    </div>
-                </div> */}
                 <GroupBox />
                
                 <div className="memberbox">

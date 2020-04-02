@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 
 import Link from 'next/link';
 import Plus from './Plus';
-import GroupForm from './GroupForm';
 import './Contents.css';
 import './Templete.css';
 import './GroupItem.css';

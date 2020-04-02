@@ -2,6 +2,7 @@ import { all, delay, fork, put, takeLatest, call } from 'redux-saga/effects';
 import axios from 'axios';
 import { 
     ADD_COMMENT_FAILURE, ADD_COMMENT_REQUEST, ADD_COMMENT_SUCCESS, 
+    LOAD_COMMENTS_REQUEST, LOAD_COMMENTS_SUCCESS, LOAD_COMMENTS_FAILURE,
     ADD_POST_FAILURE, ADD_POST_REQUEST, ADD_POST_SUCCESS,
     ADD_GROUP_REQUEST, ADD_GROUP_SUCCESS, ADD_GROUP_FAILURE,
     LOAD_MAIN_POSTS_FAILURE, LOAD_MAIN_POSTS_REQUEST, LOAD_MAIN_POSTS_SUCCESS 
@@ -110,7 +111,32 @@ function* watchAddComment(){
     yield takeLatest(ADD_COMMENT_REQUEST, addComment);
 }
 
-
+// 댓글 불러오기
+function loadCommentsAPI(postId) {
+    return axios.get(`/post/${postId}/comments`);
+}  
+function* loadComments(action) {
+    try {
+        const result = yield call(loadCommentsAPI, action.data);
+        yield put({
+        type: LOAD_COMMENTS_SUCCESS,
+        data: {
+            postId: action.data,
+            comments: result.data,
+        },
+        });
+    } catch (e) {
+        console.error(e);
+        yield put({
+        type: LOAD_COMMENTS_FAILURE,
+        error: e,
+        });
+    }
+}
+function* watchLoadComments() {
+    yield takeLatest(LOAD_COMMENTS_REQUEST, loadComments);
+}
+  
 
 export default function* postSaga(){
     yield all([
@@ -118,5 +144,6 @@ export default function* postSaga(){
         fork(watchAddPost),
         fork(watchAddComment),
         fork(watchAddGroupPost),
+        fork(watchLoadComments),
     ]);
 }

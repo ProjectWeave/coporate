@@ -1,7 +1,7 @@
 import React, { useCallback, useState, useEffect }  from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { ADD_COMMENT_REQUEST } from '../reducers/post';
+import { ADD_COMMENT_REQUEST, LOAD_COMMENTS_REQUEST } from '../reducers/post';
 
 import '../components/Contents.css';
 import '../components/reset.css';
@@ -19,6 +19,12 @@ const ContentForm = ({post}) => {
     //댓글창토글
     const onToggleComment = useCallback(() => {
         setCommentFormOpened(prev => !prev);
+        if (!commentFormOpened) {
+            dispatch({
+              type: LOAD_COMMENTS_REQUEST,
+              data: post.id,
+            });
+          }
       }, []);
 
     // 댓글

@@ -5,7 +5,8 @@ import {
     LOAD_COMMENTS_REQUEST, LOAD_COMMENTS_SUCCESS, LOAD_COMMENTS_FAILURE,
     ADD_POST_FAILURE, ADD_POST_REQUEST, ADD_POST_SUCCESS,
     ADD_GROUP_REQUEST, ADD_GROUP_SUCCESS, ADD_GROUP_FAILURE,
-    LOAD_MAIN_POSTS_FAILURE, LOAD_MAIN_POSTS_REQUEST, LOAD_MAIN_POSTS_SUCCESS 
+    LOAD_MAIN_POSTS_FAILURE, LOAD_MAIN_POSTS_REQUEST, LOAD_MAIN_POSTS_SUCCESS ,
+    LOAD_GROUP_POSTS_REQUEST, LOAD_GROUP_POSTS_SUCCESS, LOAD_GROUP_POSTS_FAILURE
 } from '../reducers/post';
 
 // 게시물 올리기
@@ -81,6 +82,29 @@ function* watchAddGroupPost(){
 }
 
 
+// 그룹 로드하기
+function loadGroupPostAPI(){
+    return axios.get('/gpost');
+}
+function* loadGroupPost(){
+    try {
+        const result = yield call(loadGroupPostAPI);
+        yield put({
+          type: LOAD_GROUP_POSTS_SUCCESS,
+          data: result.data,
+        });
+      } catch (e) {
+        yield put({
+          type: LOAD_GROUP_POSTS_FAILURE,
+          error: e,
+        });
+      }
+}
+function* watchloadGroupPost(){
+    yield takeLatest(LOAD_GROUP_POSTS_REQUEST, loadGroupPost);
+}
+
+
 // 댓글 올리기
 function addCommentAPI(data){
     return axios.post(`/post/${data.postId}/comment`, { content: data.content }, {
@@ -144,5 +168,6 @@ export default function* postSaga(){
         fork(watchAddComment),
         fork(watchAddGroupPost),
         fork(watchLoadComments),
+        fork(watchloadGroupPost),
     ]);
 }

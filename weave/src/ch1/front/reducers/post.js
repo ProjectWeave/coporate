@@ -124,16 +124,6 @@ export const ADD_GROUP_REQUEST = 'ADD_GROUP_REQUEST';
 export const ADD_GROUP_SUCCESS = 'ADD_GROUP_SUCCESS';
 export const ADD_GROUP_FAILURE = 'ADD_GROUP_FAILURE';
 
-// const ADD_POST = "ADD_POST";
-// const ADD_GROUPPOST = "ADD_GROUPPOST";
-// const ADD_DUMMY = "ADD_DUMMY";
-
-// const addPost={
-//     type: ADD_POST,   
-// };
-// const addGroupPost={
-//     type: ADD_GROUPPOST,   
-// };
 
 export default (state = initialState, action) => {
     switch (action.type){
@@ -171,7 +161,7 @@ export default (state = initialState, action) => {
         case ADD_COMMENT_SUCCESS: { 
             const postIndex = state.mainPosts.findIndex(v => v.id === action.data.postId);//어떤게시물에 댓글을 작성할것인지
             const post = state.mainPosts[postIndex];
-            const Comments = [...post.Comments, data.comment];
+            const Comments = [...post.Comments, action.data.comment];
             const mainPosts = [...state.mainPosts];
             mainPosts[postIndex] = { ...post, Comments };
             return {
@@ -186,6 +176,17 @@ export default (state = initialState, action) => {
                 ...state,
                 isAddingComment: false,
                 addCommentErrorReason : action.error,
+            };
+        }
+        case LOAD_COMMENTS_SUCCESS: {
+            const postIndex = state.mainPosts.findIndex(v => v.id === action.data.postId);
+            const post = state.mainPosts[postIndex];
+            const Comments = action.data.comments;
+            const mainPosts = [...state.mainPosts];
+            mainPosts[postIndex] = { ...post, Comments };
+            return {
+              ...state,
+              mainPosts,
             };
         }
         case LOAD_MAIN_POSTS_REQUEST: {
