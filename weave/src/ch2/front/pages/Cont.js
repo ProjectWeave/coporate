@@ -15,6 +15,7 @@ const Cont = () => {
 
     const [text, setText ] = useState('');
     const { isAddingPost, postAdded, mainPosts } = useSelector(state => state.post);
+    const { GroupPosts } = useSelector(state => state.gpost);
 
     // 메뉴클릭시 컨텐츠 변경
     const [ Mode, setMode ] = useState('read');
@@ -89,7 +90,11 @@ const Cont = () => {
                 </ul>           
             </div>
             <div className="wrap">
-                <GroupBox />
+                {GroupPosts.map((val)=>{
+                    return(
+                        <GroupBox gpost={val} />
+                    );
+                })}
                
                 <div className="memberbox">
                     멤버목록
@@ -109,7 +114,11 @@ const Cont = () => {
                 </ul>           
             </div>
             <div className="wrap">
-                <GroupBox />
+                {GroupPosts.map((val)=>{
+                    return(
+                        <GroupBox gpost={val} />
+                    );
+                })}
                 
                 <form className="uploadTb" encType="multipart/form-data" onSubmit={onSubmitForm}>
                     <div className='row1'>

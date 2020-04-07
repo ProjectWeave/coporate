@@ -110,13 +110,13 @@ export const REMOVE_POST_REQUEST = 'REMOVE_POST_REQUEST';
 export const REMOVE_POST_SUCCESS = 'REMOVE_POST_SUCCESS';
 export const REMOVE_POST_FAILURE = 'REMOVE_POST_FAILURE';
 
-export const ADD_GROUP_REQUEST = 'ADD_GROUP_REQUEST';
-export const ADD_GROUP_SUCCESS = 'ADD_GROUP_SUCCESS';
-export const ADD_GROUP_FAILURE = 'ADD_GROUP_FAILURE';
+// export const ADD_GROUP_REQUEST = 'ADD_GROUP_REQUEST';
+// export const ADD_GROUP_SUCCESS = 'ADD_GROUP_SUCCESS';
+// export const ADD_GROUP_FAILURE = 'ADD_GROUP_FAILURE';
 
-export const LOAD_GROUP_POSTS_REQUEST = 'LOAD_GROUP_POSTS_REQUEST';
-export const LOAD_GROUP_POSTS_SUCCESS = 'LOAD_GROUP_POSTS_SUCCESS';
-export const LOAD_GROUP_POSTS_FAILURE = 'LOAD_GROUP_POSTS_FAILURE';
+// export const LOAD_GROUP_POSTS_REQUEST = 'LOAD_GROUP_POSTS_REQUEST';
+// export const LOAD_GROUP_POSTS_SUCCESS = 'LOAD_GROUP_POSTS_SUCCESS';
+// export const LOAD_GROUP_POSTS_FAILURE = 'LOAD_GROUP_POSTS_FAILURE';
 
 
 export default (state = initialState, action) => {
@@ -133,7 +133,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 isAddingPost: false, 
-                mainPosts: [action.data, ...state.mainPosts],
+                mainPosts: [dummyPosts, ...state.mainPosts],
                 postAdded: true, 
             };
         }
@@ -184,23 +184,23 @@ export default (state = initialState, action) => {
             };
         }
 
-        // case LOAD_MAIN_POSTS_REQUEST: {
-        //     return {
-        //       ...state,
-        //       mainPosts: [],
-        //     };
-        //   }
-        // case LOAD_MAIN_POSTS_SUCCESS: {
-        //     return {
-        //       ...state,
-        //       mainPosts: action.data,
-        //     };
-        //   }
-        // case LOAD_MAIN_POSTS_FAILURE: {
-        //     return {
-        //           ...state,
-        //     };
-        //   }
+        case LOAD_MAIN_POSTS_REQUEST: {
+            return {
+              ...state,
+              mainPosts: [],
+            };
+          }
+        case LOAD_MAIN_POSTS_SUCCESS: {
+            return {
+              ...state,
+              mainPosts: action.data,
+            };
+          }
+        case LOAD_MAIN_POSTS_FAILURE: {
+            return {
+                  ...state,
+            };
+          }
 
         //그룹만들기 업로드 
         // case ADD_GROUP_REQUEST: {

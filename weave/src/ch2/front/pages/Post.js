@@ -1,5 +1,5 @@
 import React, { useState, useEffect }  from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { LOAD_MAIN_POSTS_REQUEST } from '../reducers/post';
 
 import GroupBox from '../components/GroupBox';
@@ -19,9 +19,9 @@ const Contents = (props) => (
 
 )
 
-const Cont = (props) => {
+const Cont = () => {
     const dispatch = useDispatch();
-
+    const {GroupPosts} = useSelector(state=> state.gpost);
     // 메뉴클릭시 컨텐츠 변경
     const [ Mode, setMode ] = useState('read');
 
@@ -59,7 +59,11 @@ const Cont = (props) => {
                 </ul>           
             </div>
             <div className="wrap">
-                <GroupBox />
+                {GroupPosts.map((val)=>{
+                    return(
+                        <GroupBox gpost={val} />
+                    );
+                })}
                 <div className="memberbox">
                     멤버목록
                 </div>
@@ -78,7 +82,13 @@ const Cont = (props) => {
                 </ul>           
             </div>
             <div className="wrap">
-                <GroupBox gpost={props}/>
+                {/* 그룹이름이랑 같으면: 만약에 IndexPage의 그룹제목과 ---제목이 같을경우에만  */}
+                {/* { gpost.title === val.title ? return :  return false;} */}
+                {GroupPosts.map((val)=>{
+                    return(
+                        <GroupBox gpost={val} />
+                    );
+                })}
                 <UploadForm />
             </div>
         </>

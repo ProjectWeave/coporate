@@ -1,0 +1,340 @@
+/* 전체글 게시물올리기 양식 CSS - Contents.css */
+
+.wrap{
+    position: relative;
+    /* top: 30px; */
+    /* left: 0; */
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 80%;
+    /* height: 100%; */
+    /* outline: 3px solid orange; */
+}
+
+/* 그룹정보 전체 */
+.groupinfo{
+    position: relative;
+    /* left: 0; */
+    width: 23%;
+    height: 390px;
+    outline: 1px solid #cecece;
+    display: inline-block;
+    margin-right: 1%;
+}
+
+.grouptext{
+    margin: 13px;
+}
+/* 그룹정보 h1텍스트 */
+.grouptext h1{
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+/* 그룹정보 p 텍스트 */
+.grouptext p{
+    font-size: 1rem;
+    color: #777;
+}
+.grouptext div{
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 50px;
+    margin-right: 20px;
+}
+
+
+/* 그룹가입탈퇴버튼공통 */
+.groupSubmitBtn{
+    position: relative;
+    width: 100%;
+    /* outline: 1px dotted blueviolet; */
+    margin: 30px auto;
+}
+
+/* 가입하기 */
+.gjoin{
+    position: relative;
+    width: 90px;
+    height: 30px;
+    background-color: #0090A8;
+    border-radius: 5px;
+    text-align: center;
+    font: 0.875rem/1.75rem "Nanum Gothic";
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+/* 탈퇴하기 */
+.gout{
+    position: absolute;
+    left: 0;
+    top: 105%;
+    color: #0090A8;
+    font: 0.875rem/1.75rem "Nanum Gothic";
+    border: none;
+    background-color: transparent;
+}
+.gout::before{
+    content: "";
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background: url(../imgs/ico_setting.jpg) no-repeat;
+    vertical-align: -9px;
+    cursor: pointer;
+    padding-left: 5px;
+}
+
+
+/* 테이블전체 */
+.uploadTb{
+    position: absolute;
+    /* top: 0;
+    right: 0; */
+    width: 75%;
+    /* height: 54%; */
+    height: 220px;
+    outline: 1px solid #cecece;
+    /* padding: 0;
+    margin: 0; */
+    display: inline-block;
+}
+
+/* 행1 */
+.uploadTb > .row1{
+    width: 100%;
+    height: 70%;
+    text-align: left;
+}
+
+/* 텍스트창 */
+.tarea{
+    width: 100%;
+    height: 100%;
+    resize: none;
+    /* white-space: pre-line;
+    word-break:break-all; */
+    border: none;
+    border-bottom: 1px solid #cecece;
+}
+.tarea::placeholder{
+    text-indent: 20px;
+    color: #0090A8;
+    font: bold 1rem/1rem "Nanum Gothic",'san-serief';
+    line-height: 130px;
+}
+
+/* 행2 */
+.uploadTb > .row2{
+    display: inline-block;
+    width: 100%;
+    height: 30%;
+}
+
+/* 두번째행 각 열 */
+.uploadTb .row2 div{
+    display: inline-block;
+    width: 25%; 
+    height: 100%;
+    background-color: #fff; 
+    text-align: center;
+    outline: 1px solid #cecece;
+    background-position: center;
+    cursor: pointer;
+}
+
+
+
+.icon04{
+    background: url(../imgs/ico04.jpg) no-repeat;
+}
+.icon04 input[type="submit"]{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 게시물 아무것도 없을 때 */
+.letsbegin{
+    position: absolute;
+    top: 60%;
+    /* bottom: -30%; */
+    right: 1%;
+    /* left: 0%; */
+    width: 75%;
+    /* height: 50px; */
+    outline: 1px solid #cecece;
+    font: 1rem/3.125rem "Nanum Gothic";
+    color: #666;
+}
+/* 그룹에 재미있는 소식을 남겨주세요 */
+.startT{
+    text-indent:20px;
+    display: block;
+}
+
+/* 더보기버튼 */
+.more{
+    border: 0;
+    width: 90px;
+    height: 30px;
+    position: absolute;
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #cecece;
+    color: #333;
+    /* outline: 1px solid red; */
+}
+
+
+/* 멤버페이지.CSS */
+.memberbox{
+    position: absolute;
+    top: 0;
+    right: 1%;
+    width: 75%;
+    height: 390px;
+    outline: 1px solid #cecece;
+    padding: 0;
+    margin: 0;
+}
+
+/* label */
+.btn_file{
+    /* display:inline-block; */
+    position: absolute;
+    width: 24%;
+    height: 30%;
+    margin-left: -12%;
+    cursor: pointer;
+}
+
+/* 소식을 남겨주세요 아이콘 */
+.fileBox:nth-child(1){
+    background: url(../imgs/ico01.jpg) no-repeat;
+}
+
+.fileBox:nth-child(2){
+    background: url(../imgs/ico02.jpg) no-repeat;
+}
+
+.fileBox:nth-child(3){
+    background: url(../imgs/ico03.jpg) no-repeat;
+}
+
+/* 파일선택 선택된 파일 없음 없애기 */
+.fileBox input[type="file"]{
+    position:absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    border:0;
+}
+
+
+.postbox{
+    /* outline: 1px solid pink; */
+    width: 100%;
+}
+.contBox{
+    outline: 1px solid #999999;
+    width: 100%; 
+    height: 300px;
+    margin: 0 auto;
+}
+.contBox>p{
+    text-align: right;
+    padding-right: 10px;
+    color: darkcyan;
+    background-color:rgba(238, 238, 238, 0.5);
+}
+.contBox>div{
+    padding-left: 20px;
+}
+
+/* 댓글 좋아요버튼 삭제하기 버튼박스 */
+.btnsbox{
+    width: 100%;
+}
+/* 크기 3등분 */
+.btnsbox>button{
+    width: 33.33%; 
+    height: 50px;
+    border: 0;
+    border-bottom: 1px solid #999;
+    border-right: 1px solid #999;
+    cursor: pointer;
+}
+
+/* 좋아요버튼 */
+.likeBtn{
+    background: #eeeeee url(../imgs/like.png) no-repeat center;
+}
+.likeBtn:hover{
+    background: #eeeeee url(../imgs/liked.png) no-repeat center;;
+}
+/* 게시물지우기버튼 */
+.removeBtn{
+    background-color: #dedede;
+    border: 0;
+    background: #eeeeee url(../imgs/trash.png) no-repeat center;
+}
+/* 댓글버튼 */
+.commentBtn{
+    background: #eeeeee url(../imgs/comment.png) no-repeat center;
+}
+
+.commentbox{
+    width: 100%;
+    height: 120px;
+}
+.comment{
+    display: block;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 75px;
+    resize: none;
+}
+/* 댓글올리기버튼 */
+.commentbox>button{
+    position: absolute;
+    right: 0;
+    width: 80px;
+    height: 30px;
+    border: 0;
+    background-color: #0090A8;
+    color: #fff;
+    font: 0.875rem/1rem "Nanum Gothic","sans-serif";
+    border: none;
+}
+
+
+.remove{
+    position: absolute;
+    right: 5%;
+    width: 80px;
+    height: 30px;
+    border: 0;
+    background-color: #cecece;
+    color: #fff;
+    font: 0.875rem/1rem "Nanum Gothic";
+    border: none;
+    margin-top: 10px;
+}
+
+
+.comline{
+    border-bottom: 1px solid #cecece;
+    width: 100%;
+    height: 1px;
+    margin: 0 auto;
+}

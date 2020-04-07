@@ -3,7 +3,7 @@ import axios from 'axios';
 import { 
     ADD_GROUP_REQUEST, ADD_GROUP_SUCCESS, ADD_GROUP_FAILURE,
     LOAD_GROUP_POSTS_REQUEST, LOAD_GROUP_POSTS_SUCCESS, LOAD_GROUP_POSTS_FAILURE
-} from '../reducers/post';
+} from '../reducers/gpost';
 
 // 그룹 만들기
 function addGroupPostAPI(gpostData){
@@ -19,7 +19,7 @@ function* addGroupPost(action){
             type: ADD_GROUP_SUCCESS,
             data: {
                 gpostId: action.data,
-                content: result.data,
+                descp: result.data,
             }
         });
     } catch (e){ 

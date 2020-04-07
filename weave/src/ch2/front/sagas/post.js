@@ -4,10 +4,9 @@ import {
     ADD_COMMENT_FAILURE, ADD_COMMENT_REQUEST, ADD_COMMENT_SUCCESS, 
     LOAD_COMMENTS_REQUEST, LOAD_COMMENTS_SUCCESS, LOAD_COMMENTS_FAILURE,
     ADD_POST_FAILURE, ADD_POST_REQUEST, ADD_POST_SUCCESS,
-    ADD_GROUP_REQUEST, ADD_GROUP_SUCCESS, ADD_GROUP_FAILURE,
-    LOAD_MAIN_POSTS_FAILURE, LOAD_MAIN_POSTS_REQUEST, LOAD_MAIN_POSTS_SUCCESS ,
-    LOAD_GROUP_POSTS_REQUEST, LOAD_GROUP_POSTS_SUCCESS, LOAD_GROUP_POSTS_FAILURE
+    LOAD_MAIN_POSTS_FAILURE, LOAD_MAIN_POSTS_REQUEST, LOAD_MAIN_POSTS_SUCCESS
 } from '../reducers/post';
+
 
 // 게시물 올리기
 function addPostAPI(postData){
@@ -20,7 +19,7 @@ function* addPost(action) {
       const result = yield call(addPostAPI, action.data);
       yield put({
         type: ADD_POST_SUCCESS,
-        data: result.data,
+        // data: result.data,
       });
     } catch (e) {
       yield put({
@@ -166,8 +165,6 @@ export default function* postSaga(){
         fork(watchLoadMainPosts),
         fork(watchAddPost),
         fork(watchAddComment),
-        fork(watchAddGroupPost),
         fork(watchLoadComments),
-        fork(watchloadGroupPost),
     ]);
 }
