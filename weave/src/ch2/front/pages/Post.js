@@ -89,6 +89,10 @@ const Cont = () => {
                         <GroupBox gpost={val} />
                     );
                 })}
+                {/* 즉시실행문 */}
+                {(()=>{
+                    
+                })()}
                 <UploadForm />
             </div>
         </>

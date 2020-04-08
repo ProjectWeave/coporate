@@ -4,7 +4,7 @@ import {
     ADD_COMMENT_FAILURE, ADD_COMMENT_REQUEST, ADD_COMMENT_SUCCESS, 
     LOAD_COMMENTS_REQUEST, LOAD_COMMENTS_SUCCESS, LOAD_COMMENTS_FAILURE,
     ADD_POST_FAILURE, ADD_POST_REQUEST, ADD_POST_SUCCESS,
-    LOAD_MAIN_POSTS_FAILURE, LOAD_MAIN_POSTS_REQUEST, LOAD_MAIN_POSTS_SUCCESS
+    LOAD_MAIN_POSTS_FAILURE, LOAD_MAIN_POSTS_REQUEST, LOAD_MAIN_POSTS_SUCCESS, UPLOAD_IMAGES_REQUEST, UPLOAD_IMAGES_FAILURE
 } from '../reducers/post';
 
 
@@ -158,6 +158,31 @@ function* loadComments(action) {
 function* watchLoadComments() {
     yield takeLatest(LOAD_COMMENTS_REQUEST, loadComments);
 }
+
+// 이미지업로드
+function uploadImagesAPI(formData) {
+    return axios.post(`/post/iamges`,formData, {
+        withCredentials: true,
+    });
+}  
+function* uploadImages(action) {
+    try {
+        const result = yield call(uploadImagesAPI, action.data);
+        yield put({
+            type: UPLOAD_IMAGES_REQUEST,
+            data: result.data,
+        });
+    } catch (e) {
+        console.error(e);
+        yield put({
+            type: UPLOAD_IMAGES_FAILURE,
+            error: e,
+        });
+    }
+}
+function* watchUploadImages() {
+    yield takeLatest(UPLOAD_IMAGES_REQUEST, uploadImages);
+}
   
 
 export default function* postSaga(){
@@ -166,5 +191,6 @@ export default function* postSaga(){
         fork(watchAddPost),
         fork(watchAddComment),
         fork(watchLoadComments),
+        fork(watchUploadImages),
     ]);
 }
