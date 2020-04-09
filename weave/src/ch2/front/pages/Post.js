@@ -11,13 +11,11 @@ import '../components/Contents.css';
 import '../components/Templete.css';
 
 // 동적페이지
-const Contents = (props) => (
+const Contents = () => (
     <div>
         <Cont  />
-        <p>여기는 {props.title} 의 페이지</p>
     </div>
-
-)
+);
 
 const Cont = () => {
     const dispatch = useDispatch();
@@ -60,9 +58,12 @@ const Cont = () => {
             </div>
             <div className="wrap">
                 {GroupPosts.map((val)=>{
-                    return(
-                        <GroupBox gpost={val} />
-                    );
+                     var url = decodeURI(window.location.href).split("=")[1];
+                     if(url == val.title){
+                         return(
+                             <GroupBox gpost={val} />
+                         );
+                     }
                 })}
                 <div className="memberbox">
                     멤버목록
@@ -82,17 +83,18 @@ const Cont = () => {
                 </ul>           
             </div>
             <div className="wrap">
-                {/* 그룹이름이랑 같으면: 만약에 IndexPage의 그룹제목과 ---제목이 같을경우에만  */}
-                {/* { gpost.title === val.title ? return :  return false;} */}
+                {/* 주소제목과 그룹제목이 같을경우에만 화면에 표시 */}
                 {GroupPosts.map((val)=>{
-                    return(
-                        <GroupBox gpost={val} />
-                    );
+                    // console.log(val.title);
+                    // console.log("url",window.location.href);
+                    var url = decodeURI(window.location.href).split("=")[1];
+                    if(url == val.title){
+                        return(
+                            <GroupBox gpost={val} />
+                        );
+                    }
                 })}
-                {/* 즉시실행문 */}
-                {(()=>{
-                    
-                })()}
+                
                 <UploadForm />
             </div>
         </>

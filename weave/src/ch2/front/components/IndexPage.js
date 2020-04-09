@@ -76,7 +76,7 @@ const IndexPage = () => {
             
             { GroupPosts.map((val) => {
                 return(
-                    <PostLink title={val.title+"그룹"}  key={val} gpost={val} >
+                    <PostLink title={val.title}  key={val} gpost={val} >
                         <GroupShowBox key={val} gpost={val}/>
                     </PostLink>
                 );

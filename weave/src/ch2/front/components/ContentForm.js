@@ -7,7 +7,6 @@ import '../components/Contents.css';
 import '../components/reset.css';
 
 const ContentForm = ({post}) => {
-
     const [commentFormOpened, setCommentFormOpened] = useState(false);
     const [commentText, setCommentText ] = useState('');
     const [likeNum, setLikeNum ] = useState(0);
@@ -83,14 +82,26 @@ const ContentForm = ({post}) => {
                             <div className="comline"></div>
 
                             { mainPosts.map((v) => {
-                                return( 
-                                    <li style={{listStyle:"none", display:"inline-block", clear:"both"}} >
-                                        {v.User.nickname} : {v.content}
-                                        <button type="button" className="remove" onClick={onRemoveComments} >
-                                            REMOVE
-                                        </button>
-                                    </li>
-                                );
+                                
+                                if(v.Comments !== undefined){
+                                    v.Comments.forEach(element => {
+                                        // console.log(post.id,element);
+                                        // console.log("닉네임이랑 댓글/",element.User.nickname,element.content);
+                                        // if(post.id==element.PostId){
+                                        //     console.log("닉네임이랑 댓글/",element.User.nickname,element.content);
+                                        // }
+                                        // console.log("닉네임이랑 댓글/",element.User.nickname,element.content);
+                                        return(
+                                            <li style={{listStyle:"none", display:"inline-block", clear:"both"}} >
+                                                {element.User.nickname} : {element.content }
+                                                <button type="button" className="remove" onClick={onRemoveComments} >
+                                                    REMOVE
+                                                </button>
+                                            </li>
+                                        );
+                                    });
+                                }
+                                
                             })
                             }
                         </div>
