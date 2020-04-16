@@ -10,37 +10,6 @@ export const initialState={
     commentAdded: false,
 };
 
-const dummyPosts = {
-    id:2,
-    User: {
-        id: 1,
-        nickname: '위브',
-    },
-    content: '위브위브위브(더미포스트)',
-    img:"https://img.bemypet.kr/content/2018/10/07172706/puppies-1871260_1920.jpg", 
-    Comments: [],
-};
-
-const dummyComment = {
-    id:1,
-    User : {
-      id:1,
-      nickname:"위브",
-  },
-    createdAt: new Date(),
-    content: '위브댓글입니다(더미커멘트).',
-};
-
-const dummyGroupPost = {
-    id:1,
-    User : {
-      id:1,
-      nickname:"위브",
-  },
-    createdAt: new Date(),
-    content: "위브글입니다.(더미그룹포스트)",
-};
-
 
 export const LOAD_MAIN_POSTS_REQUEST = 'LOAD_MAIN_POSTS_REQUEST';
 export const LOAD_MAIN_POSTS_SUCCESS = 'LOAD_MAIN_POSTS_SUCCESS';
@@ -103,8 +72,9 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 isAddingPost: false, 
-                mainPosts: [dummyPosts, ...state.mainPosts],
+                mainPosts: [action.data, ...state.mainPosts],
                 postAdded: true, 
+                imagePaths:[],
             };
         }
         case ADD_POST_FAILURE: {
@@ -114,6 +84,24 @@ export default (state = initialState, action) => {
                 addPostErrorReason : action.error,
             };
         }
+        // 게시물 지우기
+        case REMOVE_POST_REQUEST: {
+            return {
+                ...state,
+            };
+        }
+        case REMOVE_POST_SUCCESS: {
+            return {
+                ...state,
+                mainPosts: state.mainPosts.filter( v => v.id !== action.data),
+            };
+        }
+        case REMOVE_POST_FAILURE: {
+            return {
+                ...state,
+            };
+        }
+        // 댓글 리퀘스트
         case ADD_COMMENT_REQUEST: {
             return {
                 ...state,
@@ -142,6 +130,7 @@ export default (state = initialState, action) => {
                 addCommentErrorReason : action.error,
             };
         }
+        // 댓글 불러오기
         case LOAD_COMMENTS_SUCCESS: {
             const postIndex = state.mainPosts.findIndex(v => v.id === action.data.postId);
             const post = state.mainPosts[postIndex];
@@ -153,7 +142,7 @@ export default (state = initialState, action) => {
               mainPosts,
             };
         }
-
+        // 게시물 불러오기
         case LOAD_MAIN_POSTS_REQUEST: {
             return {
               ...state,
@@ -187,6 +176,13 @@ export default (state = initialState, action) => {
         case  UPLOAD_IMAGES_FAILURE: {
             return {
                 ...state,
+            };
+        }
+        //미리보기 이미지 삭제
+        case REMOVE_IMAGE: {
+            return {
+                ...state,
+                imagePaths: state.imagePaths.filter((v,i) => i !== action.index),
             };
         }
        

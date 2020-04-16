@@ -12,7 +12,7 @@ const UploadForm = () => {
     const dispatch = useDispatch();
 
     const [text, setText ] = useState('');
-    const { isAddingPost, postAdded, mainPosts } = useSelector(state => state.post);
+    const { isAddingPost, postAdded, mainPosts, imagePaths } = useSelector(state => state.post);
 
     // 게시물 로드하기
     useEffect(() => {
@@ -60,12 +60,21 @@ const UploadForm = () => {
             
             <form className="uploadTb" encType="multipart/form-data" onSubmit={onSubmitForm}>
                 <div className='row1'>
-                    <img src={img} style={{ width: '50%' }} />
-                    <textarea maxLength={1500} placeholder="소식을 남겨주세요"
-                                className="tarea" value={text} onChange={onChangeText} >
-                                    
-                    </textarea>
-                </div>
+                        {/* <img src={img} style={{ width: '50%' }} /> */}
+                        <textarea maxLength={1500} placeholder="소식을 남겨주세요" resize="none"
+                            className="tarea" value={text} onChange={onChangeText} style={{
+                                width:"100%",height:"110px", overflowY: "hidden"
+                            }}>
+
+                        </textarea>
+                        <div>
+                            {imagePaths.map( v => (
+                                <div key={v} style={{display:"inline-block"}}>
+                                        <img src={`http://localhost:3065/${v}`}  style={{width:"100px"}} alt={v} />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 <div className='row2'>
                     <div class="fileBox" >
                         <label for="uploadBtn_0" className="btn_file" > </label>

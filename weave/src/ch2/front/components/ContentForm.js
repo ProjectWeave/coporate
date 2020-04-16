@@ -1,10 +1,11 @@
 import React, { useCallback, useState, useEffect }  from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { array } from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { ADD_COMMENT_REQUEST, LOAD_COMMENTS_REQUEST } from '../reducers/post';
+import { ADD_COMMENT_REQUEST, LOAD_COMMENTS_REQUEST, REMOVE_POST_REQUEST } from '../reducers/post';
 
 import '../components/Contents.css';
 import '../components/reset.css';
+import PostImages from './PostImages';
 
 const ContentForm = ({post}) => {
     const [commentFormOpened, setCommentFormOpened] = useState(false);
@@ -14,12 +15,12 @@ const ContentForm = ({post}) => {
     const { me } = useSelector(state => state.user);
     const { commentAdded, isAddingComment, mainPosts } = useSelector(state => state.post);
     const dispatch = useDispatch();
-
     
     //댓글창토글
     const onToggleComment = useCallback(() => {
         setCommentFormOpened(prev => !prev);
-        if (!commentFormOpened) { // 댓글창 켤때 불러오기
+        if (!commentFormOpened) { 
+          // 댓글창 켤때 불러오기
             dispatch({
               type: LOAD_COMMENTS_REQUEST,
               data: post.id,
@@ -57,18 +58,42 @@ const ContentForm = ({post}) => {
         alert('댓글을 삭제하시겠습니까?');
     };
 
+    // 댓글 변수선언
+    var listIndex;
+    // 이미지
+    var idxImg = post.Images;
+    idxImg = post.Images.map((j)=>
+            ( j.src )
+        );
+
+    // 게시글 삭제
+    const onRemovePost = useCallback(userId => () => {
+        alert('게시물을 삭제하시겠습니까?');
+        // console.log("포스트아이디",me.id, post.User.id)
+        if(me.id === post.User.id)
+        dispatch({
+          type: REMOVE_POST_REQUEST,
+          data: userId,
+        });
+        if(me.id !== post.User.id)
+        alert('다른 사용자의 게시물은 삭제할 수 없습니다.');
+    });
+
     return(
         <>
+            {/* {console.log("이미지 src:", idxImg)} */}
             <div className="postbox">   
                 <div className="contBox">
                 <p>{post.User.nickname} 님의 게시물 - 좋아요 : { likeNum } </p>
-                    <img style={{display:"block", margin:"0 auto", height:"200px"}} alt="example" src={post.img}/> 
+                    {/* <img style={{display:"block", margin:"0 auto", height:"200px"}} alt="example" 
+                        src={`http://localhost:3065/${idxImg}`}/>  */}
+                        <PostImages images={post.Images} />
                     <div>{post.content}</div>
                 </div>
                 <div className="btnsbox">
                     <button type="button" className="commentBtn"  value={commentFormOpened} onClick={onToggleComment} />
                     <button type="button" className="likeBtn" onClick={()=> setLikeNum(likeNum+1)} /> 
-                    <button type="button" className="removeBtn" />
+                    <button type="button" className="removeBtn" onClick={onRemovePost(post.id)} />
                     {commentFormOpened===true &&
                         <form className="commentbox" onSubmit={onSubmitComment}>
                             <textarea className="comment" value={commentText} onChange={onChangeComment} />
@@ -80,30 +105,26 @@ const ContentForm = ({post}) => {
                         <div style={{display:"inline-block", width:"100%"}}>
                             <p style={{marginLeft:"10px"}}>{commentAdded ? '댓글' + post.Comments.length : '댓글'+ '0'}</p>
                             <div className="comline"></div>
-
-                            { mainPosts.map((v) => {
-                                
-                                if(v.Comments !== undefined){
-                                    v.Comments.forEach(element => {
-                                        // console.log(post.id,element);
-                                        // console.log("닉네임이랑 댓글/",element.User.nickname,element.content);
-                                        // if(post.id==element.PostId){
-                                        //     console.log("닉네임이랑 댓글/",element.User.nickname,element.content);
-                                        // }
-                                        // console.log("닉네임이랑 댓글/",element.User.nickname,element.content);
-                                        return(
-                                            <li style={{listStyle:"none", display:"inline-block", clear:"both"}} >
-                                                {element.User.nickname} : {element.content }
-                                                <button type="button" className="remove" onClick={onRemoveComments} >
-                                                    REMOVE
-                                                </button>
-                                            </li>
-                                        );
-                                    });
+                            
+                            {(()=>{
+                                if(post.Comments){
+                                    // console.log(post.Comments[0])
+                                    listIndex = post.Comments.map((el)=>
+                                        (
+                                        <li style={{listStyle:"none", display:"inline-block", clear:"both"}} >
+                                            {el.User.nickname} : {el.content}
+                                            <button type="button" className="remove" onClick={onRemoveComments} >
+                                                REMOVE
+                                            </button>
+                                        </li>
+                                        )
+                                   )
                                 }
-                                
-                            })
-                            }
+                                return(
+                                    <ul> {listIndex} </ul>
+                                );
+                            })()}
+                            
                         </div>
                         )
                     }
@@ -126,3 +147,5 @@ ContentForm.propTypes={
 
 
 export default ContentForm;
+
+// {commentAdded ? '댓글' + post.Comments.length : '댓글'+ '0'}

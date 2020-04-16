@@ -4,7 +4,9 @@ import {
     ADD_COMMENT_FAILURE, ADD_COMMENT_REQUEST, ADD_COMMENT_SUCCESS, 
     LOAD_COMMENTS_REQUEST, LOAD_COMMENTS_SUCCESS, LOAD_COMMENTS_FAILURE,
     ADD_POST_FAILURE, ADD_POST_REQUEST, ADD_POST_SUCCESS,
-    LOAD_MAIN_POSTS_FAILURE, LOAD_MAIN_POSTS_REQUEST, LOAD_MAIN_POSTS_SUCCESS, UPLOAD_IMAGES_REQUEST, UPLOAD_IMAGES_FAILURE
+    LOAD_MAIN_POSTS_FAILURE, LOAD_MAIN_POSTS_REQUEST, LOAD_MAIN_POSTS_SUCCESS, 
+    UPLOAD_IMAGES_REQUEST, UPLOAD_IMAGES_SUCCESS, UPLOAD_IMAGES_FAILURE,
+    REMOVE_POST_REQUEST,REMOVE_POST_SUCCESS,REMOVE_POST_FAILURE
 } from '../reducers/post';
 
 
@@ -19,7 +21,7 @@ function* addPost(action) {
       const result = yield call(addPostAPI, action.data);
       yield put({
         type: ADD_POST_SUCCESS,
-        // data: result.data,
+        data: result.data,
       });
     } catch (e) {
       yield put({
@@ -54,6 +56,30 @@ function* watchLoadMainPosts() {
     yield takeLatest(LOAD_MAIN_POSTS_REQUEST, loadMainPosts);
 }
 
+//게시물 삭제하기
+function removePostAPI(postId) {
+    return axios.delete(`/post/${postId}`, {
+      withCredentials: true,
+    });
+  }
+  function* removePost(action) {
+    try {
+      const result = yield call(removePostAPI, action.data);
+      yield put({
+        type: REMOVE_POST_SUCCESS,
+        data: result.data,
+      });
+    } catch (e) {
+      console.error(e);
+      yield put({
+        type: REMOVE_POST_FAILURE,
+        error: e,
+      });
+    }
+  }
+  function* watchRemovePost() {
+    yield takeLatest(REMOVE_POST_REQUEST, removePost);
+  }
 
 // 그룹 만들기
 function addGroupPostAPI(gpostData){
@@ -161,7 +187,7 @@ function* watchLoadComments() {
 
 // 이미지업로드
 function uploadImagesAPI(formData) {
-    return axios.post(`/post/iamges`,formData, {
+    return axios.post(`/post/images`,formData, {
         withCredentials: true,
     });
 }  
@@ -169,7 +195,7 @@ function* uploadImages(action) {
     try {
         const result = yield call(uploadImagesAPI, action.data);
         yield put({
-            type: UPLOAD_IMAGES_REQUEST,
+            type: UPLOAD_IMAGES_SUCCESS,
             data: result.data,
         });
     } catch (e) {
@@ -192,5 +218,6 @@ export default function* postSaga(){
         fork(watchAddComment),
         fork(watchLoadComments),
         fork(watchUploadImages),
+        fork(watchRemovePost),
     ]);
 }

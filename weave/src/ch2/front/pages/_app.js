@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import PropTypes from 'prop-types';
 
 import withRedux from 'next-redux-wrapper';
@@ -14,6 +15,11 @@ import AppLayout from '../components/AppLayout';
 const Weave = ({Component, store}) => {
     return (
         <Provider store={store}>
+          <Head>
+            <title>Weave에 오신것을 환영합니다.</title>
+            <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+          </Head>
                 <AppLayout>
                     <Component />
                 </AppLayout>

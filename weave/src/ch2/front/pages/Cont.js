@@ -1,7 +1,7 @@
 // mode변경 test
 import React, { useCallback, useState, useEffect, useRef }  from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { ADD_POST_REQUEST,LOAD_MAIN_POSTS_REQUEST, UPLOAD_IMAGES_REQUEST } from '../reducers/post';
+import { ADD_POST_REQUEST,LOAD_MAIN_POSTS_REQUEST, UPLOAD_IMAGES_REQUEST, REMOVE_IMAGE } from '../reducers/post';
 
 import ContentForm from '../components/ContentForm';
 import GroupBox from '../components/GroupBox';
@@ -28,14 +28,6 @@ const Cont = () => {
         });
       }, []);
 
-    
-    
-    const onClickImageUpload = useCallback(()=>{
-        imageInput.current.click();
-    },[imageInput.current]);
-    
-
-
     const handleChangePage = (e) => {
         e.preventDefault();
         setMode('member');
@@ -58,21 +50,21 @@ const Cont = () => {
         setText('');
     },[postAdded === true]);
 
-
     const onSubmitForm = useCallback((e) => {
         e.preventDefault();
-        // 빈텍스트, 스페이스바 게시물올리기 막기
-        // if(!text || !text.trim()){
-        //     return alert('게시글을 작성하세요.');
+        // if (!text || !text.trim()) {
+        //   return alert('게시글을 작성하세요.');
         // }
-        dispatch({
-            type: ADD_POST_REQUEST,
-            data: {
-                content: text,
-            },  
+        const formData = new FormData();
+        imagePaths.forEach((i) => {
+          formData.append('image', i);
         });
-    }, [text]);
-    
+        formData.append('content', text);
+        dispatch({
+          type: ADD_POST_REQUEST,
+          data: formData,
+        });
+      }, [text, imagePaths]);
     
     // 단일이미지 미리보기
     const [img, setImg] = useState(null);
@@ -88,15 +80,27 @@ const Cont = () => {
     const onChangeImages = useCallback((e) => {
         console.log(e.target.files);
         const imageFormData = new FormData();
-        [],forEach.call(e.target.files, (f) => {
-            imageFormData.append('image', f);
+        [].forEach.call(e.target.files, (f) => {
+          imageFormData.append('image', f);
         });
         dispatch({
-            type: UPLOAD_IMAGES_REQUEST,
-            data: imageFormData,
+          type: UPLOAD_IMAGES_REQUEST,
+          data: imageFormData,
         });
-    },[]);
+        console.log("이미지폼데이터:",imageFormData);
+      }, []);
+      const onClickImageUpload = useCallback(() => {
+        imageInput.current.click();
+      }, [imageInput.current]);
     
+    // 미리보기 이미지 지우기
+    const onRemoveImage = useCallback(index => () => {
+        dispatch({
+            type: REMOVE_IMAGE,
+            index,
+        });
+    }, []);
+  
     // 소식을 남겨주세요부분 텍스트입력
     const onChangeText = useCallback((e) => {
         setText(e.target.value);
@@ -113,9 +117,12 @@ const Cont = () => {
             </div>
             <div className="wrap">
                 {GroupPosts.map((val)=>{
-                    return(
-                        <GroupBox gpost={val} />
-                    );
+                    var url = decodeURI(window.location.href).split("=")[1];
+                    if(url == val.title){
+                        return(
+                            <GroupBox gpost={val} />
+                        );
+                    }
                 })}
                
                 <div className="memberbox">
@@ -137,30 +144,45 @@ const Cont = () => {
             </div>
             <div className="wrap">
                 {GroupPosts.map((val)=>{
-                    return(
-                        <GroupBox gpost={val} />
-                    );
+                    // var url = decodeURI(window.location.href).split("=")[1];
+                    // if(url == val.title){
+                        return(
+                            <GroupBox gpost={val} />
+                        );
+                    // }
                 })}
                 
                 <form className="uploadTb" encType="multipart/form-data" onSubmit={onSubmitForm}>
                     <div className='row1'>
-                        {/* <img src={img} style={{ width: '50%' }} /> */}
-                        
-                        <textarea maxLength={1500} placeholder="소식을 남겨주세요"
-                                  className="tarea" value={text} onChange={onChangeText} >
-                            {imagePaths.map(v=>{
-                                <div key={v} style={{display:"inline-block",width:"50%"}}>
-                                    <img src={`http://localhost:3065/${v}`} style={{ width: '100%' }} alt={v} />
-                                </div>
-                            })}
+                        <textarea maxLength={1500} placeholder="소식을 남겨주세요" resize="none"
+                            className="tarea" value={text} onChange={onChangeText} style={{
+                                width:"100%",height:"110px", overflowY: "hidden"
+                            }}>
+
                         </textarea>
+                        <div>
+                            {imagePaths.map( (v,i) => (
+                                <div key={v} style={{display:"inline-block"}}>
+                                        <img src={`http://localhost:3065/${v}`}  style={{width:"90px"}} alt={v} />
+                                        <button onClick={onRemoveImage(i)}> X </button>
+                                </div>
+                            ))}
+                        </div>
                     </div>
+                  
                     <div className='row2'>
+                        {/* <div>
+                            <button onClick={onClickImageUpload} > test </button>
+                            <input type="file" id="uploadBtn_0" className="uploadBtn" multiple hidden
+                                onChange={onChangeImages} ref={imageInput} />
+                        </div> */}
+                        
                         <div class="fileBox" >
                             <label for="uploadBtn_0" className="btn_file" onClick={onClickImageUpload} > </label>
                             <input type="file" id="uploadBtn_0" className="uploadBtn" multiple
                                 onChange={onChangeImages} ref={imageInput} accept=".jpg, .jpeg, .png" />
                         </div>
+                        
                         <div class="fileBox" >
                             <label for="uploadBtn_1" className="btn_file" > </label>
                             <input type="file" id="uploadBtn_1" className="uploadBtn" 
@@ -176,7 +198,7 @@ const Cont = () => {
                             <label for="file-input"></label>
                             <input type="submit" value="" loading={isAddingPost} />
                         </div>
-                    </div>
+                    </div>  
                 </form>
                 {/* 게시물올라가는부분 */}
                 <div className="letsbegin">
